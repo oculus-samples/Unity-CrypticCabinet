@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7508869533207170262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2894623027526515628}
+  - component: {fileID: 3946662989263791572}
+  - component: {fileID: 6941232199337133592}
+  - component: {fileID: 6579325016409665980}
+  m_Layer: 0
+  m_Name: PassthroughManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2894623027526515628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7508869533207170262}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3946662989263791572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7508869533207170262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa6979f16233a84f962ed9cb62ae18d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  m_passthroughLayer: {fileID: 0}
+  m_currentOpacity: 1
+  m_currentContrast: 0
+  m_currentBrightness: 0
+  m_currentSaturation: 0
+  m_currentLutId: 0
+  m_currentLutBlend: 0
+  m_opacityTransitionDuration: 1
+  m_contrastTransitionDuration: 1
+  m_brightnessTransitionDuration: 1
+  m_saturationTransitionDuration: 1
+  m_lutTransitionDuration: 1
+  m_defaultLut: {fileID: 2800000, guid: 1177e07906cbddc41b9769eaed0a4ec7, type: 3}
+  m_darkerRoomLut: {fileID: 2800000, guid: 8cba95a32eebc3545b7ef971b0f3792e, type: 3}
+--- !u!114 &6941232199337133592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7508869533207170262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectInterest: 1
+  DefaultInterestGroups: []
+  DestroyWhenStateAuthorityLeaves: 0
+  AllowStateAuthorityOverride: 1
+  AoiPositionSource: {fileID: 0}
+  Flags: 2305
+  NetworkGuid:
+    RawGuidValue: 20e30616a27c6cd49aedf29037551ec8
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 3946662989263791572}
+  SimulationBehaviours: []
+--- !u!114 &6579325016409665980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7508869533207170262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a381134a0c7f0944891646365e0d3f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_propagateToAllClients: 1

@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3a9c38f5eacfe46958063d536e0386, type: 3}
+  m_Name: ObjectSpawningGamePhase
+  m_EditorClassIdentifier: 
+  m_gamePhaseDescription: 
+  m_placementPrefab: {fileID: 3934644313501825075, guid: 877145fdac7a8f14a819afa04e39b32b, type: 3}

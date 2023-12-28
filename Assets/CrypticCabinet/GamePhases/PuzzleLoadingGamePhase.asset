@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10269f83d1d94e7496f4b76b84b3a4ce, type: 3}
+  m_Name: PuzzleLoadingGamePhase
+  m_EditorClassIdentifier: 
+  m_gamePhaseDescription: This phase loads the required prefabs for the puzzles of
+    the game, and spawn them into the scene through Photon.
+  m_prefabSandPuzzlePrefabs:
+  - {fileID: 1600281773873608376, guid: df13abd8312cac94990abe8050b2ab1b, type: 3}
+  - {fileID: 1526122854192904045, guid: 85a8cf09083ae6a4baa66a33318400d6, type: 3}
+  - {fileID: 2678168454725809896, guid: 675dd01cdd7c748439485d8cf33565fd, type: 3}
+  - {fileID: 3790196783336891192, guid: 372e26ea584c3ae43ab5c4ded5d2ee09, type: 3}
+  - {fileID: 5636755012250960579, guid: d5b368310db433548a09e5ad30bb0de3, type: 3}
+  - {fileID: 6568388284361559194, guid: c48b306f21bd6d24b86fc2885eeecfac, type: 3}
+  - {fileID: 6756175021120526179, guid: c0ac0b5763f385c4181e90d18fc90c34, type: 3}
+  - {fileID: 206473132557009639, guid: 4cdb9cfc22bed5a4f911ec69797c4790, type: 3}
+  - {fileID: 6630010157478687839, guid: 57153460de61bdd49a8aa5da072e8043, type: 3}
+  - {fileID: 8794356296572981551, guid: 9f8aa8e3b3c5c1c4bbe1615ecb6a43b0, type: 3}
+  - {fileID: 4051413335382517285, guid: 921d729a430e51e468b402b3c38fd686, type: 3}
+  - {fileID: 3794308526817958245, guid: 3fc76916372669e4c8137f986046024c, type: 3}
+  - {fileID: 952094124176619535, guid: cf80e97179f106a44a7de6b3d51f0158, type: 3}
