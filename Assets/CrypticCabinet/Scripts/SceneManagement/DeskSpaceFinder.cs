@@ -352,6 +352,8 @@ namespace CrypticCabinet.SceneManagement
                     var debugVisualiser = AddDebugVisualiser(position);
                     var debugRenderer = debugVisualiser.GetComponent<Renderer>();
                     debugRenderer.material = debugMaterial;
+                    debugRenderer.material.color = Color.green;
+                    debugRenderer.enabled = false;
                     var distance = DistanceToNearestEdge(position);
                     m_maxDist = Mathf.Max(m_maxDist, distance);
                     m_cells[x].Add(new Cell
@@ -362,12 +364,15 @@ namespace CrypticCabinet.SceneManagement
                         DistToBlockedArea = distance,
                         DebugRenderer = debugRenderer
                     });
+
+#if UNITY_EDITOR
+                    debugVisualiser.gameObject.name = distance.ToString(CultureInfo.InvariantCulture);
+#endif
                 }
             }
 
-            SetDebugViewEnabled(false);
+            m_debugViewEnabled = false;
             RememberDistanceField();
-            UpdateCellVisualisations();
             m_isSetUp = true;
         }
 
@@ -465,8 +470,9 @@ namespace CrypticCabinet.SceneManagement
                     {
                         ren.material.color = cell.Blocked ? Color.red : Color.green;
                     }
-
+#if UNITY_EDITOR
                     cell.CellDebugRoot.gameObject.name = cell.DistToBlockedArea.ToString(CultureInfo.InvariantCulture);
+#endif
                 }
             }
         }

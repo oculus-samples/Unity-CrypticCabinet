@@ -163,15 +163,23 @@ namespace CrypticCabinet.IntroOutro
                     var foundRotation = Quaternion.LookRotation(m_raycastHits[0].normal, Vector3.up);
                     var newPosition = m_raycastHits[0].point;
 
-                    m_ray.direction = Vector3.down;
-                    m_ray.origin = newPosition;
-
-                    size = Physics.RaycastNonAlloc(m_ray, m_raycastHits, 10, m_layerMaskFloor.value);
+                    var center = newPosition + m_raycastHits[0].normal * 0.05f;
+                    var direction = Vector3.down;
+                    var extent = Vector3.one * 0.05f;
+                    // use boxcast to cover any potential gaps between wall and floor
+                    size = Physics.BoxCastNonAlloc(center, extent, direction, m_raycastHits, foundRotation, m_layerMaskFloor.value);
                     if (size > 0)
                     {
-                        m_target.position = m_raycastHits[0].point;
-                        m_target.rotation = foundRotation;
+                        // anchor to floor
+                        newPosition.y = m_raycastHits[0].point.y;
                     }
+                    else
+                    {
+                        Debug.LogWarning("No floor found at wall, default position to y=0");
+                        newPosition.y = 0;
+                    }
+                    m_target.position = newPosition;
+                    m_target.rotation = foundRotation;
                 }
             }
         }

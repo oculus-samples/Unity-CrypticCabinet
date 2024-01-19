@@ -1,7 +1,9 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Meta.Utilities;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,7 +15,7 @@ namespace CrypticCabinet.SceneManagement
     ///     Once set up also handles moving the debug visual props to the appropriate locations.
     /// </summary>
     [RequireComponent(typeof(OVRSceneManager))]
-    public class SceneUnderstandingLocationPlacer : MonoBehaviour
+    public class SceneUnderstandingLocationPlacer : Singleton<SceneUnderstandingLocationPlacer>
     {
         /// <summary>
         /// Interface to the underlying scene system. 
@@ -25,6 +27,10 @@ namespace CrypticCabinet.SceneManagement
         private readonly List<OVRScenePlane> m_walls = new();
         private readonly List<OVRSceneVolume> m_objects = new();
         private readonly List<OVRScenePlane> m_blockingPlanes = new();
+
+        private readonly List<DeskSpaceFinder> m_deskSpaceFinders = new();
+        private readonly List<FloorSpaceFinder> m_floorSpaceFinders = new();
+        // horizontal includes desks and floor
         private readonly List<ISpaceFinder> m_horizontalSurfaces = new();
 
         /// <summary>
@@ -49,8 +55,9 @@ namespace CrypticCabinet.SceneManagement
         /// <summary>
         /// Set up the scene manager and register callbacks.
         /// </summary>
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
             m_sceneManager = GetComponent<OVRSceneManager>();
             m_sceneManager.SceneModelLoadedSuccessfully += SceneModelLoadedSuccessfully;
             m_sceneManager.NoSceneModelToLoad += NoSceneModelToLoad;
@@ -92,6 +99,8 @@ namespace CrypticCabinet.SceneManagement
             m_objects.Clear();
             m_blockingPlanes.Clear();
             m_horizontalSurfaces.Clear();
+            m_floorSpaceFinders.Clear();
+            m_deskSpaceFinders.Clear();
         }
 
         public void ResetHorizontalBlockedAreas()
@@ -108,7 +117,7 @@ namespace CrypticCabinet.SceneManagement
         /// </summary>
         private void SceneModelLoadedSuccessfully()
         {
-            LoadSpaceFindingSystem();
+            _ = StartCoroutine(LoadSpaceFindingSystem());
         }
 
         /// <summary>
@@ -121,7 +130,7 @@ namespace CrypticCabinet.SceneManagement
         /// <summary>
         /// Finds all SceneRoomObjects and loads them into the space finding calculator.
         /// </summary>
-        private void LoadSpaceFindingSystem()
+        private IEnumerator LoadSpaceFindingSystem()
         {
             m_sceneLoadingComplete = false;
 
@@ -131,18 +140,38 @@ namespace CrypticCabinet.SceneManagement
             var sceneRoomObjects = FindObjectsOfType<SceneRoomObject>();
             foreach (var roomObject in sceneRoomObjects)
             {
-                roomObject.SetUpObject();
+                roomObject.SetUpObject(this);
+            }
+
+            // Generate horizontal
+            foreach (var deskSpaceFinder in m_deskSpaceFinders)
+            {
+                deskSpaceFinder.GenerateDeskCells(DebugMaterial);
+                yield return null;
+            }
+
+            // Do floors next since they need time to generate the mesh
+            foreach (var floorSpaceFinder in m_floorSpaceFinders)
+            {
+                while (!floorSpaceFinder.IsReadyToGenerate)
+                {
+                    yield return null;
+                }
+                floorSpaceFinder.GenerateCells();
+                yield return null;
             }
 
             foreach (var wall in m_walls)
             {
-                m_wallSpaceFinder.AddWall(wall.transform.localToWorldMatrix, wall.Dimensions);
+                m_wallSpaceFinder.AddWall(wall.transform, wall.Dimensions);
+                yield return null;
             }
 
             foreach (var opening in m_openings)
             {
                 m_wallSpaceFinder.AddPlaneObject(opening.transform.localToWorldMatrix, opening.Dimensions);
             }
+            yield return null;
 
             foreach (var objectVolume in m_objects)
             {
@@ -153,29 +182,34 @@ namespace CrypticCabinet.SceneManagement
                     surface.CalculateBlockedArea(objectVolume.transform.localToWorldMatrix, objectVolume.Dimensions);
                 }
             }
+            yield return null;
 
-            foreach (var desk in m_horizontalSurfaces.Where(finder => finder is DeskSpaceFinder))
+            foreach (var desk in m_deskSpaceFinders)
             {
-                foreach (var floor in m_horizontalSurfaces.Where(finder => finder is FloorSpaceFinder))
+                foreach (var floor in m_floorSpaceFinders)
                 {
                     desk.GetFinderTransform(out var localToWorldMatrix);
                     desk.GetFinderSize(out var size);
                     floor.CalculateBlockedArea(localToWorldMatrix, size);
                 }
             }
+            yield return null;
 
             foreach (var ovrScenePlane in m_blockingPlanes)
             {
-                foreach (var floor in m_horizontalSurfaces.Where(finder => finder is FloorSpaceFinder))
+                foreach (var floor in m_floorSpaceFinders)
                 {
                     floor.CalculateBlockedArea(ovrScenePlane.transform.localToWorldMatrix, ovrScenePlane.Dimensions);
                 }
             }
+            yield return null;
 
             m_wallSpaceFinder.SetDebugVisible(false);
+            yield return null;
             foreach (var spaceFinder in m_horizontalSurfaces)
             {
                 spaceFinder?.SetDebugViewEnabled(false);
+                yield return null;
             }
 
             m_sceneLoadingComplete = true;
@@ -215,25 +249,22 @@ namespace CrypticCabinet.SceneManagement
 
         public bool RequestRandomFloorLocation(Vector3 locationToFace, Vector3 objectDimensions, out Vector3 foundPosition, out Quaternion foundRotation, float edgeDistance = -1)
         {
-            var foundDesks = m_horizontalSurfaces.Where(finder => finder is FloorSpaceFinder).ToList();
-            return RequestLocation(locationToFace, objectDimensions, out foundPosition, out foundRotation, foundDesks, edgeDistance: edgeDistance);
+            return RequestLocation(locationToFace, objectDimensions, out foundPosition, out foundRotation, m_floorSpaceFinders, edgeDistance: edgeDistance);
         }
 
         public bool RequestRandomFloorWallLocation(float halfDepth, float width, float height,
             out Vector3 foundFloorPosition, out Vector3 foundWallPosition, out Quaternion foundWallRotation,
-            float edgeDistance)
+            Vector2 edgeDistance)
         {
-            var foundFloorsFinders = m_horizontalSurfaces.Where(finder => finder is FloorSpaceFinder).ToList();
-            foreach (var floor in foundFloorsFinders)
+            foreach (var floorSpaceFinder in m_floorSpaceFinders)
             {
-                var floorSpaceFinder = floor as FloorSpaceFinder;
                 if (!floorSpaceFinder)
                 {
                     continue;
                 }
 
                 var result = m_wallSpaceFinder.RequestRandomLocationCustomWithFloor(
-                    halfDepth, width, height, out foundFloorPosition, out foundWallRotation,
+                    halfDepth, width, height, edgeDistance, out foundFloorPosition, out foundWallRotation,
                     floorSpaceFinder.CheckPhysicsResultIsClear,
                     floorSpaceFinder.BlockPhysicsResult, true);
 
@@ -254,8 +285,7 @@ namespace CrypticCabinet.SceneManagement
 
         public bool RequestRandomDeskLocation(Vector3 locationToFace, float radius, out Vector3 foundPosition)
         {
-            var foundDesks = m_horizontalSurfaces.Where(finder => finder is DeskSpaceFinder).ToList();
-            return RequestLocation(locationToFace, radius, out foundPosition, out _, foundDesks);
+            return RequestLocation(locationToFace, radius, out foundPosition, out _, m_deskSpaceFinders);
         }
 
         private static bool RequestLocation(Vector3 locationToFace, float radius, out Vector3 foundPosition, out Quaternion foundRotation,
@@ -310,11 +340,14 @@ namespace CrypticCabinet.SceneManagement
             return false;
         }
 
-        public bool RequestRandomWallLocation(float heightOffFloor, float objectWidth, float objectHeight, bool ignoreSceneBlocked, out Vector3 foundPosition, out Quaternion foundRotation)
+        public bool RequestRandomWallLocation(float heightOffFloor, float objectWidth, float objectHeight,
+            Vector2 edgeDistance, bool ignoreSceneBlocked, out Vector3 foundPosition, out Quaternion foundRotation)
         {
             if (m_wallSpaceFinder != null)
             {
-                return m_wallSpaceFinder.QueryForSafeWallLocation(heightOffFloor, objectHeight, objectWidth, out foundPosition, out foundRotation, ignoreSceneBlocked);
+                return m_wallSpaceFinder.QueryForSafeWallLocation(heightOffFloor, objectHeight, objectWidth,
+                    edgeDistance, out foundPosition, out foundRotation,
+                    ignoreSceneBlocked);
             }
 
             foundPosition = Vector3.zero;
@@ -357,7 +390,7 @@ namespace CrypticCabinet.SceneManagement
         {
             var deskSpaceFinder = plane.gameObject.AddComponent<DeskSpaceFinder>();
             deskSpaceFinder.DeskSize = plane.Dimensions;
-            deskSpaceFinder.GenerateDeskCells(DebugMaterial);
+            m_deskSpaceFinders.Add(deskSpaceFinder);
             m_horizontalSurfaces.Add(deskSpaceFinder);
         }
 
@@ -377,6 +410,7 @@ namespace CrypticCabinet.SceneManagement
         public void AddFloor(FloorSpaceFinder floorSpaceFinder)
         {
             floorSpaceFinder.DebugMaterial = DebugMaterial;
+            m_floorSpaceFinders.Add(floorSpaceFinder);
             m_horizontalSurfaces.Add(floorSpaceFinder);
         }
 
@@ -387,7 +421,7 @@ namespace CrypticCabinet.SceneManagement
 
         public void RequestTotallyRandomFloorLocation(out Vector3 position)
         {
-            var foundFloors = m_horizontalSurfaces.Where(finder => finder is FloorSpaceFinder).ToList();
+            var foundFloors = m_floorSpaceFinders;
 
             if (foundFloors.Count > 0)
             {

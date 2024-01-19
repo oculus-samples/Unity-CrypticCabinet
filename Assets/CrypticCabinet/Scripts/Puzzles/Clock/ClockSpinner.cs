@@ -2,6 +2,7 @@
 
 using System.Collections;
 using CrypticCabinet.Audio;
+using Oculus.Interaction;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.Clock
@@ -18,6 +19,7 @@ namespace CrypticCabinet.Puzzles.Clock
         [SerializeField] private ClockHandMover m_clockHandMover;
         [SerializeField] private ClockSpinnerAudio m_clockSpinnerAudioScript;
         [SerializeField] private float m_audioSourceCooldownInterval;
+        [SerializeField] private Grabbable m_spinnerGrabbable;
 
         private bool m_audioIsPlaying;
         private Vector3 m_lastRight;
@@ -25,6 +27,18 @@ namespace CrypticCabinet.Puzzles.Clock
         private void Start()
         {
             m_lastRight = m_handleRoot.worldToLocalMatrix.MultiplyVector(m_handleTarget.right);
+            if (m_spinnerGrabbable != null)
+            {
+                m_spinnerGrabbable.WhenPointerEventRaised += OnSpinnerEventRaised;
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (m_spinnerGrabbable != null)
+            {
+                m_spinnerGrabbable.WhenPointerEventRaised -= OnSpinnerEventRaised;
+            }
         }
 
         private void Update()
@@ -54,6 +68,14 @@ namespace CrypticCabinet.Puzzles.Clock
         {
             yield return new WaitForSeconds(m_audioSourceCooldownInterval);
             m_audioIsPlaying = false;
+        }
+
+        private void OnSpinnerEventRaised(PointerEvent obj)
+        {
+            if (obj.Type == PointerEventType.Unselect)
+            {
+                m_clockHandMover.SpinnerReleased();
+            }
         }
     }
 }

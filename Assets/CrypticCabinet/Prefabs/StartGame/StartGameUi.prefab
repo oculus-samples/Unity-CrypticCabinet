@@ -328,6 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ca50be9ddb8d844af333dd2ddd5158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_messageLabel: {fileID: 3533949846289048780}
 --- !u!1 &1142936002550838574
 GameObject:
   m_ObjectHideFlags: 0
@@ -2266,10 +2267,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Waiting for guests to join.
+  m_text: 'Waiting for guests to join: {ROOM}
 
 
-    Once everyone joined, press "Start Game"'
+    Once everyone joined, press "Start
+    Game"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 171ffc2c8ef8c6342957bb13c6885e71, type: 2}
   m_sharedMaterial: {fileID: -6652610950869467651, guid: 171ffc2c8ef8c6342957bb13c6885e71, type: 2}

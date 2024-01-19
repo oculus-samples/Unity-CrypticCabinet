@@ -10,6 +10,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
     public class DistanceChecker : MonoBehaviour
     {
         [SerializeField] private Transform m_ropeRoot;
+        [SerializeField] private float m_distance = 2.2f;
 
         private List<Grabbable> m_grabbables = new();
         private PointerEvent? m_currentGrab;
@@ -27,7 +28,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
                 return;
 
             var dist = Vector3.Distance(transform.position, m_ropeRoot.position);
-            if (dist > 1.7f)
+            if (dist > m_distance)
             {
                 ForceUnselect();
             }

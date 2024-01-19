@@ -114,15 +114,25 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
             m_nodeCollider = m_nodeTester.AddComponent<SphereCollider>();
             m_nodeCollider.radius = m_nodeColliderRadius;
 
+            m_meshNodeGap = Mathf.Max(m_meshNodeGap, 0.001f);
 
-            var startPosition = Vector3.zero;
+            Reset();
+        }
+
+        public void Reset()
+        {
+            m_startLock = m_startHandle.position;
+            var stiffnessDiff = (1 - m_stiffness) * m_nodeDistance * m_totalNodes;
+            var position = m_startLock + Vector3.down * stiffnessDiff;
             for (var i = 0; i < m_totalNodes; i++)
             {
-                m_currentNodePositions[i] = startPosition;
+                m_currentNodePositions[i] = position;
                 m_currentNodeRotations[i] = Quaternion.identity;
-                m_previousNodePositions[i] = startPosition;
-                startPosition.y -= m_nodeDistance;
+                m_previousNodePositions[i] = position;
+                position.y -= m_nodeDistance;
             }
+
+            UpdateMeshVisuals(1);
         }
 
         private void Update()

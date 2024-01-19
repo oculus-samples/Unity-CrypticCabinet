@@ -68,6 +68,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 14336
   m_placementEaseTime: 3
+  m_boxCollider: {fileID: 2303484379159457978}
 --- !u!65 &2303484379159457978
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -2452,7 +2452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3642677875037163029, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3743308445438792535, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
       propertyPath: m_miniGeneratorID
@@ -2488,7 +2488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4297672348464994030, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5239280349712349420, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
       propertyPath: m_LocalPosition.y

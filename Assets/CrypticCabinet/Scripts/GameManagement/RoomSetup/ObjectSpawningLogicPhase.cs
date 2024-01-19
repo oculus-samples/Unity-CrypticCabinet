@@ -22,9 +22,6 @@ namespace CrypticCabinet.GameManagement.RoomSetup
 
         protected override void InitializeInternal()
         {
-            // Ensure all messages are hidden before showing the UI
-            UISystem.Instance.HideAll();
-
             if (PhotonConnector.Instance != null && PhotonConnector.Instance.IsMasterClient())
             {
                 // Spawn the prefab and hooks the callback for when the user accepts the desired objects' placement.
@@ -33,6 +30,7 @@ namespace CrypticCabinet.GameManagement.RoomSetup
             }
             else
             {
+                UISystem.Instance.HideAll();
                 GameManager.Instance.NextGameplayPhase();
             }
         }

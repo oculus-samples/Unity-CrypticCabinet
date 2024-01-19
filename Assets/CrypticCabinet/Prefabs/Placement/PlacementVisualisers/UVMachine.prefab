@@ -398,7 +398,7 @@ MonoBehaviour:
   m_wallObjectWidth: 0.6787725
   m_wallObjectVerticalSize: 0
   m_objectType: 14
-  m_grabbable: {fileID: 0}
+  m_grabbable: {fileID: 2772644743494867385}
   m_userWarningLayers:
     serializedVersion: 2
     m_Bits: 24576
@@ -406,6 +406,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 14336
   m_placementEaseTime: 3
+  m_boxCollider: {fileID: 199707678392767073}
 --- !u!65 &199707678392767073
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -425,8 +426,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 0.5, z: 0.4}
-  m_Center: {x: 0, y: 0.25, z: -0.12}
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!54 &5357524163412961606
 Rigidbody:
   m_ObjectHideFlags: 0

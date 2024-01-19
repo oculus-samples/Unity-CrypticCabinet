@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 8713484567708071133}
   - component: {fileID: 2556675056931675686}
   m_Layer: 14
-  m_Name: Cabinate
+  m_Name: Cabinet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -392,6 +392,7 @@ MonoBehaviour:
   m_userInteractableObject: 1
   m_radius: 0.5145
   m_placeAgainstWall: 1
+  m_onTheWall: 1
   m_flipFaceDirection: 0
   m_forceToGroundLevel: 1
   m_wallObjectPlacementHeight: 1.92555
@@ -406,6 +407,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 14336
   m_placementEaseTime: 3
+  m_distFromEdgeLeft: 0.6
+  m_distFromEdgeRight: 0.6
+  m_boxCollider: {fileID: 1518988667788268115}
 --- !u!65 &1518988667788268115
 BoxCollider:
   m_ObjectHideFlags: 0

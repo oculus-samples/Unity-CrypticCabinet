@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using CrypticCabinet.Passthrough;
 using CrypticCabinet.Photon;
 using CrypticCabinet.SceneManagement;
+using CrypticCabinet.UI;
 using Fusion;
 using Meta.Utilities;
 using UnityEngine;
@@ -64,6 +65,7 @@ namespace CrypticCabinet.GameManagement
                 return;
             }
 
+            UISystem.Instance.ShowMessage("Analyzing the room.\nPlease wait...", null, -1);
             m_sceneUnderstanding.SetActive(true);
             m_objectPlacer.gameObject.SetActive(true);
             if (m_waitForSceneUnderstandingCoroutine != null)

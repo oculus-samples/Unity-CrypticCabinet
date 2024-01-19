@@ -177,6 +177,7 @@ MonoBehaviour:
   m_userInteractableObject: 0
   m_radius: 0.336
   m_placeAgainstWall: 0
+  m_onTheWall: 1
   m_flipFaceDirection: 0
   m_forceToGroundLevel: 0
   m_wallObjectPlacementHeight: 1
@@ -191,6 +192,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 14336
   m_placementEaseTime: 3
+  m_distFromEdgeLeft: 0
+  m_distFromEdgeRight: 0
+  m_boxCollider: {fileID: 8547385483949493825}
 --- !u!65 &8547385483949493825
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -142,13 +142,13 @@ namespace CrypticCabinet.SceneManagement
         ///     on wall surfaces. This assumes the location provided is in the middle of the wall.
         ///     Note: All walls should be added before trying to add any other scene objects or request a wall location.
         /// </summary>
-        /// <param name="locationMatrix">The matrix describing the position and rotation of the wall.</param>
+        /// <param name="wallTransform">The wall transform for position and rotation.</param>
         /// <param name="bounds">The size of the wall.</param>
-        public void AddWall(Matrix4x4 locationMatrix, Vector2 bounds)
+        public void AddWall(Transform wallTransform, Vector2 bounds)
         {
             // Create a new wall root object.
             var newWallRoot = new GameObject("Wall");
-            newWallRoot.transform.SetPositionAndRotation(locationMatrix.GetPosition(), locationMatrix.rotation);
+            newWallRoot.transform.SetParent(wallTransform, false);
 
             // Create the new wall data structure. 
             var newWall = new WallCells
@@ -215,10 +215,14 @@ namespace CrypticCabinet.SceneManagement
                     cubeVisual.layer = LayerMask.NameToLayer(StringConstants.SCENE_UNDERSTANDING_LAYER);
                     cubeVisual.transform.SetParent(newCell.transform);
                     cubeVisual.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
-                    cubeVisual.transform.localScale = boxCollider.size * 0.9f;
+                    var scale = boxCollider.size * 0.9f;
+                    scale.z = 0.05f;
+                    cubeVisual.transform.localScale = scale;
+                    UnityEngine.Object.Destroy(cubeVisual.GetComponent<BoxCollider>());
                     var renderer = cubeVisual.GetComponent<Renderer>();
                     renderer.material = m_debugMaterial;
                     renderer.material.color = new Color(0, 1, 0, 0.3f);
+                    renderer.enabled = false;
                 }
 
                 // Add the full colum of cells to the wall before moving across to the next column of cells.
@@ -309,20 +313,22 @@ namespace CrypticCabinet.SceneManagement
         /// <param name="heightOffFloor">The height to search for.</param>
         /// <param name="objectHeight">The height of the object for the requested cell.</param>
         /// <param name="objectWidth">The width of the object for the requested cell.</param>
+        /// <param name="edgeDistance">The minimum distance from the wall edge, x: left y: right</param>
         /// <param name="position">The position of the resulting cell.</param>
         /// <param name="rotation">The rotation of the resulting cell.</param>
         /// <param name="ignoreSceneBlocked">Flag to indicate if this should allow being placed over scene blocked cells.</param>
         /// <param name="markAsBlocked">When true, the returned cell is marked as blocked, otherwise it is unchanged.</param>
         /// <returns>Transform of the found cell.</returns>
         public bool QueryForSafeWallLocation(float heightOffFloor, float objectHeight, float objectWidth,
-            out Vector3 position, out Quaternion rotation, bool ignoreSceneBlocked, bool markAsBlocked = true)
+            Vector2 edgeDistance, out Vector3 position, out Quaternion rotation, bool ignoreSceneBlocked,
+            bool markAsBlocked = true)
         {
             return InternalQueryForSafeWallLocation(heightOffFloor, objectHeight, objectWidth, 0.1f,
-                out position, out rotation, ignoreSceneBlocked, markAsBlocked);
+                edgeDistance, out position, out rotation, ignoreSceneBlocked, markAsBlocked);
         }
 
         private bool InternalQueryForSafeWallLocation(float heightOffFloor, float objectHeight,
-            float objectWidth, float objectDepth,
+            float objectWidth, float objectDepth, Vector2 edgeDistance,
             out Vector3 position, out Quaternion rotation, bool ignoreSceneBlocked, bool markAsBlocked = true,
             Func<Collider[], int, bool> checkPhysicsResultIsClear = null,
             Action<Collider[], int> blockPhysicsResult = null)
@@ -331,11 +337,11 @@ namespace CrypticCabinet.SceneManagement
 
             var testPos = new Vector3(0, heightOffFloor, 0);
 
-            var startOffset = Random.Range(0, m_testableWalls.Count);
+            var startWallIndex = Random.Range(0, m_testableWalls.Count);
 
             for (var i = 0; i < m_testableWalls.Count; i++)
             {
-                var wallIndex = startOffset + i;
+                var wallIndex = startWallIndex + i;
                 if (wallIndex >= m_testableWalls.Count)
                 {
                     wallIndex -= m_testableWalls.Count;
@@ -344,8 +350,21 @@ namespace CrypticCabinet.SceneManagement
                 var halfTestLength = (m_testableWalls[wallIndex].WallLength - objectWidth) * 0.5f;
                 var cellSize = m_testableWalls[wallIndex].CellSize;
 
-                for (var xPos = -halfTestLength; xPos < halfTestLength; xPos += cellSize)
+                // remove left and right edge distance
+                var totalTestLenght = halfTestLength * 2 - edgeDistance.x - edgeDistance.y;
+                var cellCount = Mathf.FloorToInt(totalTestLenght / cellSize);
+                var startPos = halfTestLength - edgeDistance.x; // left to right
+
+                var startCell = Random.Range(0, cellCount);
+
+                for (var c = 0; c < cellCount; ++c)
                 {
+                    var cell = startCell + c;
+                    if (cell >= cellCount)
+                    {
+                        cell -= cellCount;
+                    }
+                    var xPos = startPos - cell * cellSize;
                     testPos.x = xPos;
 
                     var worldSpacePoint = m_testableWalls[wallIndex].WallRoot.localToWorldMatrix.MultiplyPoint(testPos);
@@ -382,11 +401,12 @@ namespace CrypticCabinet.SceneManagement
         }
 
         public bool RequestRandomLocationCustomWithFloor(float halfDepth, float width, float height,
-            out Vector3 position, out Quaternion rotation,
+            Vector2 edgeDistance, out Vector3 position, out Quaternion rotation,
             Func<Collider[], int, bool> checkPhysicsResultIsClear, Action<Collider[], int> blockPhysicsResult, bool markAsBlocked)
         {
             return InternalQueryForSafeWallLocation(
-                height * 0.48f, height, width, halfDepth, out position, out rotation, false,
+                height * 0.48f, height, width, halfDepth, edgeDistance,
+                out position, out rotation, false,
                 markAsBlocked, checkPhysicsResultIsClear, blockPhysicsResult);
         }
 

@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 1238164630679119413}
   - component: {fileID: 7704129043472196566}
   m_Layer: 0
-  m_Name: DebugViaual
+  m_Name: DebugVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -109,6 +109,7 @@ namespace CrypticCabinet.Puzzles.TeslaPuzzle
 
         private void Start()
         {
+            m_electricityVfx.gameObject.SetActive(false);
             if (m_toggleSwitch == null)
             {
                 m_toggleSwitch = GetComponentInChildren<MeshButtonSwitch>();

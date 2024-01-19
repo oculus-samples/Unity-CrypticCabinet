@@ -2915,6 +2915,7 @@ MonoBehaviour:
   m_clockHandMover: {fileID: 7885026607264249096}
   m_clockSpinnerAudioScript: {fileID: 8003501250559309562}
   m_audioSourceCooldownInterval: 0.06
+  m_spinnerGrabbable: {fileID: 8661273011874780300}
 --- !u!114 &6373046917312981129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8029,6 +8030,7 @@ MonoBehaviour:
   m_correctTimeValue: 11.2
   m_correctTimeErrorRange: 0.146
   m_correctTimeSelectDelay: 0.5
+  m_correctTimeStillMovingAudioDelay: 2
   m_correctTimeSelected:
     m_PersistentCalls:
       m_Calls:

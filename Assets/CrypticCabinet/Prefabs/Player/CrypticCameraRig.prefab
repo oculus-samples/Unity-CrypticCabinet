@@ -23007,8 +23007,8 @@ MonoBehaviour:
   isInsightPassthroughEnabled: 1
   requestBodyTrackingPermissionOnStartup: 0
   requestFaceTrackingPermissionOnStartup: 0
-  requestEyeTrackingPermissionOnStartup: 0
-  requestScenePermissionOnStartup: 0
+  requestEyeTrackingPermissionOnStartup: 1
+  requestScenePermissionOnStartup: 1
   requestRecordAudioPermissionOnStartup: 0
   _localDimming: 0
   _trackingOriginType: 1
@@ -23018,7 +23018,7 @@ MonoBehaviour:
   resetTrackerOnLoad: 0
   AllowRecenter: 1
   LateControllerUpdate: 1
-  LateLatching: 0
+  LateLatching: 1
   controllerDrivenHandPosesType: 0
 --- !u!114 &5193772985551192757
 MonoBehaviour:

@@ -16,7 +16,7 @@
     <meta-data android:name="com.oculus.ossplash" android:value="true" />
     <meta-data android:name="com.oculus.ossplash.type" android:value="mono" />
     <meta-data android:name="com.oculus.ossplash.colorspace" android:value="P3" />
-    <meta-data android:name="com.oculus.ossplash.background" android:value="black" />
+    <meta-data android:name="com.oculus.ossplash.background" android:value="passthrough-contextual" />
   </application>
   <uses-feature android:name="android.hardware.vr.headtracking" android:version="1" android:required="true" />
   <uses-feature android:name="oculus.software.handtracking" android:required="false" />

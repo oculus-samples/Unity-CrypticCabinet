@@ -18,6 +18,7 @@ namespace CrypticCabinet.Puzzles.Clock
         [Range(0, 12), SerializeField] private float m_correctTimeValue;
         [Range(0, 1), SerializeField] private float m_correctTimeErrorRange;
         [Range(0, 1), SerializeField] private float m_correctTimeSelectDelay;
+        [Range(0, 10), SerializeField] private float m_correctTimeStillMovingAudioDelay = 3.0f;
         [SerializeField] private UnityEvent m_correctTimeSelected;
         [SerializeField] private AudioSource m_audioSource;
         [SerializeField] private AudioSource m_correctTimeSelectedAudio;
@@ -28,6 +29,9 @@ namespace CrypticCabinet.Puzzles.Clock
         private float m_lastTimeChangeTime = -100;
         private bool m_correctFired;
         private bool m_instantCorrectFired;
+
+        private bool m_inTimeRange = false;
+        private float m_inTimeRangeStartTime = 0;
 
         private void Start()
         {
@@ -43,6 +47,18 @@ namespace CrypticCabinet.Puzzles.Clock
         {
             TimeValue += movementDelta;
             ApplyUpdatedTime();
+        }
+
+        public void SpinnerReleased()
+        {
+            if (!m_instantCorrectFired)
+            {
+                if (TimeValue > m_correctTimeValue - m_correctTimeErrorRange &&
+                    TimeValue < m_correctTimeValue + m_correctTimeErrorRange)
+                {
+                    PlayCorrectTimeAudio();
+                }
+            }
         }
 
         private void ApplyUpdatedTime()
@@ -70,24 +86,42 @@ namespace CrypticCabinet.Puzzles.Clock
             if (TimeValue > m_correctTimeValue - m_correctTimeErrorRange &&
                 TimeValue < m_correctTimeValue + m_correctTimeErrorRange)
             {
-                if (!m_instantCorrectFired)
+                if (!m_inTimeRange)
                 {
-                    if (m_correctTimeSelectedAudio != null)
-                    {
-                        m_correctTimeSelectedAudio.Play();
-                    }
+                    m_inTimeRangeStartTime = Time.time;
                 }
-
-                m_instantCorrectFired = true;
+                m_inTimeRange = true;
             }
             else
             {
+                m_inTimeRange = false;
                 m_instantCorrectFired = false;
+            }
+        }
+
+        private void PlayCorrectTimeAudio()
+        {
+            if (!m_instantCorrectFired)
+            {
+                if (m_correctTimeSelectedAudio != null)
+                {
+                    m_correctTimeSelectedAudio.Play();
+                }
+
+                m_instantCorrectFired = true;
             }
         }
 
         private void Update()
         {
+            if (!m_instantCorrectFired && m_inTimeRange)
+            {
+                if (Time.time >= m_inTimeRangeStartTime + m_correctTimeStillMovingAudioDelay)
+                {
+                    PlayCorrectTimeAudio();
+                }
+            }
+
             if (Time.time < m_lastTimeChangeTime + m_correctTimeSelectDelay)
             {
                 return;

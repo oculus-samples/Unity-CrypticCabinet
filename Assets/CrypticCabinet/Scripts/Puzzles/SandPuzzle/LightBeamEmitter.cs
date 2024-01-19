@@ -42,6 +42,12 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
             {
                 Debug.LogError("Couldn't find OVRCameraRig");
             }
+
+            // set initial light beam to be 0 length at source
+            var initialPosition = gameObject.transform.position;
+            m_linePoints[0] = initialPosition;
+            m_linePoints[1] = initialPosition;
+            m_lineRenderer.SetPositions(m_linePoints.GetRange(0, 2).ToArray());
         }
 
         private void Update()

@@ -59,6 +59,8 @@ namespace CrypticCabinet.SceneManagement
 
         public Material DebugMaterial;
 
+        public bool IsReadyToGenerate { get; private set; }
+
         /// <summary>
         /// Structure that describes the cells.
         /// </summary>
@@ -232,9 +234,9 @@ namespace CrypticCabinet.SceneManagement
         /// Due to the slightly odd nature of the the Scene understanding system, the floor boundary points
         /// are not immediately available so I've added a short delay before generating the cells. 
         /// </summary>
-        /// <returns>Waits 3 seconds.</returns>
         private IEnumerator Start()
         {
+            IsReadyToGenerate = false;
             m_floorPlane = GetComponent<OVRScenePlane>();
             var meshFilter = GetComponent<MeshFilter>();
             m_meshCollider = gameObject.AddComponent<MeshCollider>();
@@ -263,9 +265,8 @@ namespace CrypticCabinet.SceneManagement
 #endif
 
             m_meshCollider.sharedMesh = colliderMesh;
-
-            yield return new WaitForSeconds(3);
-            GenerateCells();
+            yield return null;
+            IsReadyToGenerate = true;
         }
 
         /// <summary>
@@ -273,7 +274,7 @@ namespace CrypticCabinet.SceneManagement
         /// grid using the <see cref="OVRScenePlane.Dimensions"/> field, and then raycast against the floor plane mesh
         /// collider to find valid locations.
         /// </summary>
-        private void GenerateCells()
+        public void GenerateCells()
         {
             var floorPlaneDimensions = m_floorPlane.Dimensions;
 
@@ -308,6 +309,8 @@ namespace CrypticCabinet.SceneManagement
                         var debugVisualiser = AddDebugVisualiser(position);
                         var distance = DistanceToNearestEdge(position);
                         m_largestDistToEdge = Mathf.Max(distance, m_largestDistToEdge);
+                        var cellRenderer = debugVisualiser.GetComponent<Renderer>();
+                        cellRenderer.enabled = false;
                         m_cells[x].Add(new Cell
                         {
                             CellDebugRoot = debugVisualiser,
@@ -315,36 +318,23 @@ namespace CrypticCabinet.SceneManagement
                             LocalPosition = position,
                             DistanceToWall = distance,
                             DistanceToAnyObject = distance,
-                            DebugRenderer = debugVisualiser.GetComponent<Renderer>()
+                            DebugRenderer = cellRenderer,
                         });
+                        cellRenderer.material = DebugMaterial;
+                        cellRenderer.material.color = Color.green;
+#if UNITY_EDITOR
+                        debugVisualiser.gameObject.name = distance.ToString(CultureInfo.InvariantCulture);
+#endif
                     }
                 }
             }
 
-            // initially set the colours of the debug cells to be those of the distance to walls.
-            foreach (var column in m_cells)
-            {
-                foreach (var cell in column)
-                {
-                    if (cell.CellDebugRoot != null)
-                    {
-                        var ren = cell.CellDebugRoot.GetComponent<Renderer>();
-                        if (ren != null)
-                        {
-                            ren.material = DebugMaterial;
-                            ren.material.color = cell.Blocked ? Color.red : Color.green;
-                        }
-
-                        cell.CellDebugRoot.gameObject.name = cell.DistanceToWall.ToString(CultureInfo.InvariantCulture);
-                    }
-                }
-            }
-
-            SetDebugViewEnabled(false);
-
-            m_isSetUp = true;
+            // debugView off by default
+            m_debugViewEnabled = false;
 
             RememberDistanceField();
+
+            m_isSetUp = true;
 
             // Set up any volumes that were passed in before the cells were initialised. 
             foreach (var volumeObject in m_volumeCache)
@@ -574,7 +564,9 @@ namespace CrypticCabinet.SceneManagement
                     if (ren != null)
                     {
                         ren.material.color = cell.Blocked ? Color.red : Color.green;
+#if UNITY_EDITOR
                         cell.CellDebugRoot.gameObject.name = cell.DistanceToAnyObject.ToString(CultureInfo.InvariantCulture);
+#endif
                     }
                 }
             }

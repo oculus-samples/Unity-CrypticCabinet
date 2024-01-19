@@ -19,7 +19,7 @@ namespace CrypticCabinet.Editor
         {
             "android.permission.MODIFY_AUDIO_SETTINGS",
             "android.permission.RECORD_AUDIO",
-            "android.permission.WRITE_EXTERNAL_STORAGE ",
+            "android.permission.WRITE_EXTERNAL_STORAGE",
             "android.permission.READ_EXTERNAL_STORAGE",
             "android.permission.READ_MEDIA_AUDIO",
             "android.permission.READ_MEDIA_VIDEO",

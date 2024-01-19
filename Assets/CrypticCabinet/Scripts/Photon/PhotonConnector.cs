@@ -8,7 +8,6 @@ using CrypticCabinet.Colocation;
 using CrypticCabinet.GameManagement;
 using CrypticCabinet.Photon.Utils;
 using CrypticCabinet.UI;
-using Cysharp.Threading.Tasks;
 using Fusion;
 using Fusion.Photon.Realtime;
 using Fusion.Sockets;
@@ -243,10 +242,11 @@ namespace CrypticCabinet.Photon
             ColocationDriverNetObj.OnColocationSkippedCallback += OnColocationSkipped;
             // We colocate even if in single player, to keep aligned with the room.
             ColocationDriverNetObj.SkipColocation = false;
+            await Task.Delay(1000); // delay before connecting to show the message
             await Connect(isHost);
         }
 
-        private async UniTask Connect(bool isHost)
+        private async Task Connect(bool isHost)
         {
             var sessionName = string.IsNullOrWhiteSpace(m_chosenRoomName) ? null : m_chosenRoomName;
             if (isHost)

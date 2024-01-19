@@ -63,6 +63,8 @@ namespace CrypticCabinet.GameManagement.WaitForGuests
                     return;
                 }
                 trigger.OnStartGame = StartGameCallback;
+
+                trigger.SetRoomNumber(PhotonConnector.Instance.Runner.SessionInfo.Name);
             }
 
             // Ensure the start game UI is visible

@@ -283,6 +283,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 14336
   m_placementEaseTime: 3
+  m_boxCollider: {fileID: 7730145670195364257}
 --- !u!65 &7730145670195364257
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -302,8 +303,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.4, y: 0.4, z: 0.4}
-  m_Center: {x: 0, y: 0.2, z: 0}
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!54 &7817528923336068369
 Rigidbody:
   m_ObjectHideFlags: 0

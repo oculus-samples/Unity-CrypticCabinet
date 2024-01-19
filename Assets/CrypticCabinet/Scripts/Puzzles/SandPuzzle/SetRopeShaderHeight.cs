@@ -12,7 +12,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
     public class SetRopeShaderHeight : MonoBehaviour
     {
         [SerializeField] private Renderer m_dummyRopeRenderer;
-        [SerializeField] private string m_fieldName = "_WorldVertialCutoff";
+        [SerializeField] private string m_fieldName = "_WorldVerticalCutoff";
 
         public IEnumerator Start()
         {

@@ -210,6 +210,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
                 ropePosition.y = ceilingHeightDetector.GetCeilingHeight();
                 m_ropeRoot.transform.position = ropePosition;
             }
+            m_rope.Reset();
         }
     }
 }

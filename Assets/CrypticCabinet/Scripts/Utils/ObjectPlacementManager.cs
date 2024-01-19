@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using CrypticCabinet.SceneManagement;
+using CrypticCabinet.UI;
+using Cysharp.Threading.Tasks;
 using Oculus.Interaction.Input;
 using UnityEngine;
 
@@ -14,6 +16,7 @@ namespace CrypticCabinet.Utils
     /// </summary>
     public class ObjectPlacementManager : Meta.Utilities.Singleton<ObjectPlacementManager>
     {
+#if UNITY_EDITOR
         private void Update()
         {
             if (gameObject.activeInHierarchy && Input.GetKeyDown(KeyCode.Alpha1))
@@ -21,6 +24,7 @@ namespace CrypticCabinet.Utils
                 ShufflePlacements();
             }
         }
+#endif
 
         public ObjectPlacementManager(SceneObject o)
         {
@@ -77,27 +81,48 @@ namespace CrypticCabinet.Utils
         private SceneUnderstandingLocationPlacer m_sceneUnderstandingLocationPlacer;
 
         private OVRCameraRigRef m_cameraRig;
+        private bool m_isInShuffleMode = false;
 
-        private void Start()
+        protected override void InternalAwake()
+        {
+            base.InternalAwake();
+            m_spawnUi.SetActive(false);
+        }
+
+        private async void Start()
         {
             m_spawnedVisualiserObjects = new List<GameObject>();
-            m_sceneUnderstandingLocationPlacer = FindObjectOfType<SceneUnderstandingLocationPlacer>();
+            m_sceneUnderstandingLocationPlacer = SceneUnderstandingLocationPlacer.Instance;
             if (m_sceneUnderstandingLocationPlacer == null)
             {
                 Debug.LogError("Missing SceneUnderstandingLocationPlacer in scene unable to layout objects.");
             }
 
-            FindFloorWallLocation();
+            await Init();
+        }
+
+        private async UniTask Init()
+        {
+            await FindFloorWallLocation();
+            await UniTask.Yield();
             FindWallLocation();
+            await UniTask.Yield();
             FindDeskLocation();
+            await UniTask.Yield();
             FindFloorLocation();
+            await UniTask.Yield();
             FindHorizontalLocation();
-
+            await UniTask.Yield();
             RequestCollidersDisabled();
+            await UniTask.Yield();
 
-            ShuffleIfNeeded();
-
+            await ShuffleIfNeeded();
+            await UniTask.Yield();
             RandomlyPlaceFailedObjects();
+            await UniTask.Yield();
+            ShowVisualizers();
+            UISystem.Instance.HideAll();
+            m_spawnUi.SetActive(true);
         }
 
         private void RandomlyPlaceFailedObjects()
@@ -154,13 +179,14 @@ namespace CrypticCabinet.Utils
             sceneObject.SpawnedDisplayObject.UpdateLocation();
         }
 
-        private void ShuffleIfNeeded(int maxRetries = 3)
+        private async UniTask ShuffleIfNeeded(int maxRetries = 3)
         {
             for (var i = 0; i < maxRetries; i++)
             {
                 if (DetectFailedPlacements() > 0)
                 {
-                    ShufflePlacements();
+                    Debug.Log($"Shuffle iteration {i + 1}");
+                    await ShufflePlacementsAsync();
                 }
                 else
                 {
@@ -196,6 +222,7 @@ namespace CrypticCabinet.Utils
             {
                 Destroy(visualiserObject);
             }
+            m_spawnedVisualiserObjects.Clear();
 
             if (m_spawnUi != null)
             {
@@ -204,24 +231,48 @@ namespace CrypticCabinet.Utils
         }
 
         [ContextMenu("Shuffle placements")]
-        public void ShufflePlacements()
+        public async void ShufflePlacements()
         {
+            if (m_isInShuffleMode)
+            {
+                return;
+            }
+            await ShufflePlacementsAsync();
+        }
+
+        private async UniTask ShufflePlacementsAsync()
+        {
+            m_isInShuffleMode = true;
             foreach (var visualiserObject in m_spawnedVisualiserObjects)
             {
                 Destroy(visualiserObject);
             }
+            m_spawnedVisualiserObjects.Clear();
+
+            await UniTask.Yield();
 
             SceneUnderstandingReset();
+            await UniTask.Yield();
 
-            FindFloorWallLocation();
+            await FindFloorWallLocation();
+            await UniTask.Yield();
             FindWallLocation();
+            await UniTask.Yield();
             FindDeskLocation();
+            await UniTask.Yield();
             FindFloorLocation();
+            await UniTask.Yield();
             FindHorizontalLocation();
+            await UniTask.Yield();
 
             RequestCollidersDisabled();
+            await UniTask.Yield();
 
             RandomlyPlaceFailedObjects();
+            await UniTask.Yield();
+
+            ShowVisualizers();
+            m_isInShuffleMode = false;
         }
 
         public List<SceneObject> RequestObjects(LoadableSceneObjects objectType)
@@ -264,7 +315,26 @@ namespace CrypticCabinet.Utils
             }
         }
 
-        private void FindFloorWallLocation()
+        private void ShowVisualizers()
+        {
+            foreach (var visualizer in m_spawnedVisualiserObjects)
+            {
+                visualizer.SetActive(true);
+            }
+        }
+
+        private ObjectPlacementVisualiser InstantiateVisualizer(ref SceneObject sceneObject)
+        {
+            var objectPlacementVisualiser = Instantiate(sceneObject.DisplayPrefab);
+            GameObject go;
+            (go = objectPlacementVisualiser.gameObject).SetActive(false);
+            m_spawnedVisualiserObjects.Add(go);
+            sceneObject.SpawnedDisplayObject = objectPlacementVisualiser;
+
+            return objectPlacementVisualiser;
+        }
+
+        private async UniTask FindFloorWallLocation()
         {
             m_againstWallObject.Sort((l, r) => r.DisplayPrefab.GetWallObjectWidth.CompareTo(l.DisplayPrefab.GetWallObjectWidth));
 
@@ -282,13 +352,12 @@ namespace CrypticCabinet.Utils
                     continue;
                 }
 
-                var objectPlacementVisualiser = Instantiate(sceneObject.DisplayPrefab);
+                var objectPlacementVisualiser = InstantiateVisualizer(ref sceneObject);
                 objectPlacementVisualiser.Setup(
                     this, sceneObject.MainPosition, sceneObject.WallPosition, sceneObject.WallRotation);
-                m_spawnedVisualiserObjects.Add(objectPlacementVisualiser.gameObject);
 
-                sceneObject.SpawnedDisplayObject = objectPlacementVisualiser;
                 m_againstWallObject[i] = sceneObject;
+                await UniTask.Yield();
             }
         }
 
@@ -301,7 +370,7 @@ namespace CrypticCabinet.Utils
                 out sceneObject.MainPosition,
                 out sceneObject.WallPosition,
                 out sceneObject.WallRotation,
-                0);
+                sceneObject.DisplayPrefab.GetDistanceFromEdge);
         }
 
         private void FindWallLocation()
@@ -315,6 +384,7 @@ namespace CrypticCabinet.Utils
                     sceneObject.DisplayPrefab.GetWallObjectHeight,
                     sceneObject.DisplayPrefab.GetWallObjectWidth,
                     sceneObject.DisplayPrefab.GetWallObjectVerticalSize,
+                    sceneObject.DisplayPrefab.GetDistanceFromEdge,
                     ignoreSceneBlocked: false,
                     out sceneObject.MainPosition,
                     out sceneObject.WallRotation);
@@ -326,6 +396,7 @@ namespace CrypticCabinet.Utils
                         sceneObject.DisplayPrefab.GetWallObjectHeight,
                         sceneObject.DisplayPrefab.GetWallObjectWidth,
                         sceneObject.DisplayPrefab.GetWallObjectVerticalSize,
+                        sceneObject.DisplayPrefab.GetDistanceFromEdge,
                         ignoreSceneBlocked: true,
                         out sceneObject.MainPosition,
                         out sceneObject.WallRotation);
@@ -340,12 +411,10 @@ namespace CrypticCabinet.Utils
                     continue;
                 }
 
-                var objectPlacementVisualiser = Instantiate(sceneObject.DisplayPrefab);
+                var objectPlacementVisualiser = InstantiateVisualizer(ref sceneObject);
                 objectPlacementVisualiser.Setup(
                     this, sceneObject.MainPosition, sceneObject.WallPosition, sceneObject.WallRotation);
-                m_spawnedVisualiserObjects.Add(objectPlacementVisualiser.gameObject);
 
-                sceneObject.SpawnedDisplayObject = objectPlacementVisualiser;
                 m_onWallObject[i] = sceneObject;
             }
         }
@@ -380,11 +449,9 @@ namespace CrypticCabinet.Utils
                     continue;
                 }
 
-                var objectPlacementVisualiser = Instantiate(sceneObject.DisplayPrefab);
+                var objectPlacementVisualiser = InstantiateVisualizer(ref sceneObject);
                 objectPlacementVisualiser.Setup(this, sceneObject.MainPosition);
-                m_spawnedVisualiserObjects.Add(objectPlacementVisualiser.gameObject);
 
-                sceneObject.SpawnedDisplayObject = objectPlacementVisualiser;
                 m_deskObject[i] = sceneObject;
             }
         }
@@ -424,11 +491,9 @@ namespace CrypticCabinet.Utils
                     Debug.LogError("Scene Object without object visualizer! Skip placement");
                     continue;
                 }
-                var objectPlacementVisualiser = Instantiate(sceneObject.DisplayPrefab);
+                var objectPlacementVisualiser = InstantiateVisualizer(ref sceneObject);
                 objectPlacementVisualiser.Setup(this, sceneObject.MainPosition, sceneObject.MainRotation);
-                m_spawnedVisualiserObjects.Add(objectPlacementVisualiser.gameObject);
 
-                sceneObject.SpawnedDisplayObject = objectPlacementVisualiser;
                 m_floorObject[i] = sceneObject;
             }
         }
@@ -469,11 +534,9 @@ namespace CrypticCabinet.Utils
                 sceneObject.MainRotation = GetRotationTowardsUser(sceneObject.MainPosition, sceneObject.DisplayPrefab.GetFlipFaceDir);
                 m_anyHorizontalObject[i] = sceneObject;
 
-                var objectPlacementVisualiser = Instantiate(sceneObject.DisplayPrefab);
+                var objectPlacementVisualiser = InstantiateVisualizer(ref sceneObject);
                 objectPlacementVisualiser.Setup(this, sceneObject.MainPosition);
-                m_spawnedVisualiserObjects.Add(objectPlacementVisualiser.gameObject);
 
-                sceneObject.SpawnedDisplayObject = objectPlacementVisualiser;
                 m_anyHorizontalObject[i] = sceneObject;
             }
         }

@@ -2,6 +2,7 @@
 
 using System.Collections;
 using CrypticCabinet.OVR;
+using Meta.Utilities;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ namespace CrypticCabinet.Utils
         [SerializeField] private bool m_userInteractableObject;
         [SerializeField] private float m_radius;
         [SerializeField] private bool m_placeAgainstWall;
+        [SerializeField] private bool m_onTheWall;
         [SerializeField] private bool m_flipFaceDirection;
         [SerializeField] private bool m_forceToGroundLevel;
         [SerializeField] private float m_wallObjectPlacementHeight;
@@ -27,6 +29,8 @@ namespace CrypticCabinet.Utils
         [SerializeField] private LayerMask m_userWarningLayers;
         [SerializeField] private LayerMask m_physicsEnvironmentLayers;
         [SerializeField] private float m_placementEaseTime = 3;
+        [SerializeField] private float m_distFromEdgeLeft = 0;
+        [SerializeField] private float m_distFromEdgeRight = 0;
 
         public float GetRadius => m_radius;
         public float GetWallObjectHeight => m_wallObjectPlacementHeight;
@@ -34,6 +38,9 @@ namespace CrypticCabinet.Utils
         public float GetWallObjectVerticalSize => m_wallObjectVerticalSize;
         public ObjectPlacementManager.LoadableSceneObjects GetObjectType => m_objectType;
         public bool GetFlipFaceDir => m_flipFaceDirection;
+        public Vector2 GetDistanceFromEdge => new(m_distFromEdgeLeft, m_distFromEdgeRight);
+
+        public bool IsOnTheWall => m_onTheWall;
 
         private GameObject m_validationGO;
         private bool m_hasGeometry;
@@ -51,14 +58,18 @@ namespace CrypticCabinet.Utils
         }
 
         private ObjectPlacementManager m_objectPlacementManager;
-        private BoxCollider m_boxCollider;
+        [AutoSet][SerializeField] private BoxCollider m_boxCollider;
         private readonly Collider[] m_overlapResults = new Collider[10];
         private bool m_shouldEasePosition;
 
         private void Awake()
         {
-            m_boxCollider = GetComponent<BoxCollider>();
             Debug.Assert(m_boxCollider != null, "Unity has returned a null box collider.", this);
+            if (m_placeAgainstWall)
+            {
+                m_onTheWall = true;
+            }
+            SetupVisual();
         }
 
         private IEnumerator Start()
@@ -93,8 +104,6 @@ namespace CrypticCabinet.Utils
             Setup(objectPlacementManager, pos);
 
             transform.rotation = wallRotation;
-
-            SetupInternal();
         }
 
         public void Setup(ObjectPlacementManager objectPlacementManager, Vector3 position)
@@ -102,7 +111,6 @@ namespace CrypticCabinet.Utils
             m_objectPlacementManager = objectPlacementManager;
 
             transform.position = position;
-            SetupInternal();
         }
 
         public void Setup(ObjectPlacementManager objectPlacementManager, Vector3 position, Quaternion rotation)
@@ -112,7 +120,6 @@ namespace CrypticCabinet.Utils
             var thisTransform = transform;
             thisTransform.position = position;
             thisTransform.rotation = rotation;
-            SetupInternal();
         }
 
         public void UpdateLocation()
@@ -126,14 +133,14 @@ namespace CrypticCabinet.Utils
             m_objectPlacementManager.UpdatePlacedObject(m_objectType, position, wallPosition, rotation, rotation);
         }
 
-        private void SetupInternal()
+        private void SetupVisual()
         {
             if (!m_hasGeometry)
             {
                 var validationPrefab = ObjectPlacementValidator.Instance.GetValidationVisualCubePrefab;
                 m_validationGO = Instantiate(validationPrefab, transform);
-                var boxColliderBounds = GetComponent<BoxCollider>().bounds;
-                m_validationGO.transform.localPosition = boxColliderBounds.center;
+                var boxColliderBounds = m_boxCollider.bounds;
+                m_validationGO.transform.localPosition = m_boxCollider.center;
                 m_validationGO.transform.localScale = boxColliderBounds.extents * 2f;
                 m_validationPrimitiveRenderer = m_validationGO.GetComponent<Renderer>();
                 if (m_validationPrimitiveRenderer == null)
@@ -182,6 +189,29 @@ namespace CrypticCabinet.Utils
                 var otherTransform = other.transform;
                 if (otherTransform == thisTransform)
                 {
+                    continue;
+                }
+
+                if (IsOnTheWall)
+                {
+                    if (other.TryGetComponent<ObjectPlacementVisualiser>(out var otherViz) &&
+                        otherViz.IsOnTheWall)
+                    {
+                        var axis = transform.right;
+                        var vec = otherTransform.position - transform.position;
+                        var dot = Vector3.Dot(vec, axis);
+                        var dist = Mathf.Abs(dot);
+                        var diff = dist - ((BoxCollider)other).size.x * 0.51f - m_boxCollider.size.x * 0.51f;
+                        if (diff < 0)
+                        {
+                            if (dot < 0)
+                            {
+                                axis = -axis;
+                            }
+
+                            thisTransform.position += axis * (diff * (Mathf.Abs(diff) < 0.01f ? 1 : 0.1f));
+                        }
+                    }
                     continue;
                 }
 

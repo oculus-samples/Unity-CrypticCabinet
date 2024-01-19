@@ -2085,6 +2085,10 @@ PrefabInstance:
       value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 3465232926127307574, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465232926127307574, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
       propertyPath: m_PropertySheet.m_Bool.m_Array.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -2146,7 +2150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3642677875037163029, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3743308445438792535, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
       propertyPath: m_miniGeneratorID
@@ -2175,10 +2179,6 @@ PrefabInstance:
     - target: {fileID: 4296853771416024337, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.096
-      objectReference: {fileID: 0}
-    - target: {fileID: 4297672348464994030, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4565239494490470727, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
       propertyPath: _pokeInteractable

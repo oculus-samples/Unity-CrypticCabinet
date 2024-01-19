@@ -269,7 +269,7 @@ namespace CrypticCabinet.Passthrough
                 Debug.LogWarning("SetLut failed: new lut ID not found!");
             }
 
-            if (propagateToAllClients)
+            if (propagateToAllClients && Object !=null && Object.IsValid)
             {
                 RPC_SetLut(lutID, targetBlend);
             }

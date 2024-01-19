@@ -3291,6 +3291,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnUi: {fileID: 7438812316205705168}
   m_againstWallObject:
+  - ObjectName: Cabinet
+    DisplayPrefab: {fileID: 1970403491106562584, guid: 7bda12650f20df446aab38bcd2c48332, type: 3}
+    MainPosition: {x: 0, y: 0, z: 0}
+    WallPosition: {x: 0, y: 0, z: 0}
+    WallRotation: {x: 0, y: 0, z: 0, w: 0}
+    SuccessfullyPlaced: 0
+    MainRotation: {x: 0, y: 0, z: 0, w: 0}
+    SpawnedDisplayObject: {fileID: 0}
   - ObjectName: SandShoot
     DisplayPrefab: {fileID: 3941454069537669016, guid: e1f0599694a645b4abf8792d9bd5bb91, type: 3}
     MainPosition: {x: 0, y: 0, z: 0}
@@ -3307,25 +3315,17 @@ MonoBehaviour:
     SuccessfullyPlaced: 0
     MainRotation: {x: 0, y: 0, z: 0, w: 0}
     SpawnedDisplayObject: {fileID: 0}
-  - ObjectName: Cabinet
-    DisplayPrefab: {fileID: 1970403491106562584, guid: 7bda12650f20df446aab38bcd2c48332, type: 3}
-    MainPosition: {x: 0, y: 0, z: 0}
-    WallPosition: {x: 0, y: 0, z: 0}
-    WallRotation: {x: 0, y: 0, z: 0, w: 0}
-    SuccessfullyPlaced: 0
-    MainRotation: {x: 0, y: 0, z: 0, w: 0}
-    SpawnedDisplayObject: {fileID: 0}
   m_onWallObject:
-  - ObjectName: GeneratorSchematic1
-    DisplayPrefab: {fileID: 7614037581535387453, guid: 252378c6116ae6042b1a92f07297b8c6, type: 3}
-    MainPosition: {x: 0, y: 0, z: 0}
-    WallPosition: {x: 0, y: 0, z: 0}
-    WallRotation: {x: 0, y: 0, z: 0, w: 0}
-    SuccessfullyPlaced: 0
-    MainRotation: {x: 0, y: 0, z: 0, w: 0}
-    SpawnedDisplayObject: {fileID: 0}
   - ObjectName: SafePuzzle
     DisplayPrefab: {fileID: 5323232461398502088, guid: 37cf60b5f4b15fd4da214f2612de5ccc, type: 3}
+    MainPosition: {x: 0, y: 0, z: 0}
+    WallPosition: {x: 0, y: 0, z: 0}
+    WallRotation: {x: 0, y: 0, z: 0, w: 0}
+    SuccessfullyPlaced: 0
+    MainRotation: {x: 0, y: 0, z: 0, w: 0}
+    SpawnedDisplayObject: {fileID: 0}
+  - ObjectName: GeneratorSchematic1
+    DisplayPrefab: {fileID: 7614037581535387453, guid: 252378c6116ae6042b1a92f07297b8c6, type: 3}
     MainPosition: {x: 0, y: 0, z: 0}
     WallPosition: {x: 0, y: 0, z: 0}
     WallRotation: {x: 0, y: 0, z: 0, w: 0}
@@ -3382,16 +3382,16 @@ MonoBehaviour:
     MainRotation: {x: 0, y: 0, z: 0, w: 0}
     SpawnedDisplayObject: {fileID: 0}
   m_floorObject:
-  - ObjectName: MainGenerator
-    DisplayPrefab: {fileID: 896352582034296102, guid: f1f318ed08a2b1a48bca27ba296f4ba9, type: 3}
+  - ObjectName: Orrery
+    DisplayPrefab: {fileID: 217616376657669213, guid: 1dd42052775fa664e83b9cd3bc59f7b9, type: 3}
     MainPosition: {x: 0, y: 0, z: 0}
     WallPosition: {x: 0, y: 0, z: 0}
     WallRotation: {x: 0, y: 0, z: 0, w: 0}
     SuccessfullyPlaced: 0
     MainRotation: {x: 0, y: 0, z: 0, w: 0}
     SpawnedDisplayObject: {fileID: 0}
-  - ObjectName: Orrary
-    DisplayPrefab: {fileID: 217616376657669213, guid: 1dd42052775fa664e83b9cd3bc59f7b9, type: 3}
+  - ObjectName: MainGenerator
+    DisplayPrefab: {fileID: 896352582034296102, guid: f1f318ed08a2b1a48bca27ba296f4ba9, type: 3}
     MainPosition: {x: 0, y: 0, z: 0}
     WallPosition: {x: 0, y: 0, z: 0}
     WallRotation: {x: 0, y: 0, z: 0, w: 0}

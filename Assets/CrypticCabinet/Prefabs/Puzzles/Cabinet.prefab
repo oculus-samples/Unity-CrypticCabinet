@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 4791017399673517990}
   - component: {fileID: 1316648068963919780}
   m_Layer: 0
-  m_Name: Cabinate
+  m_Name: Cabinet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

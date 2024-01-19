@@ -31,11 +31,11 @@ namespace CrypticCabinet.SceneManagement
         /// Due to the unusual execution ordering from the Unity game object life cycle this gets called by the
         /// space finding manager to make sure this is set up when needed.
         /// </summary>
-        public void SetUpObject()
+        public void SetUpObject(SceneUnderstandingLocationPlacer placer)
         {
             m_sceneAnchor = GetComponent<OVRSceneAnchor>();
             m_classification = GetComponent<OVRSemanticClassification>();
-            m_sceneUnderstandingLocationPlacer = FindObjectOfType<SceneUnderstandingLocationPlacer>();
+            m_sceneUnderstandingLocationPlacer = placer;
 
             LogObject();
         }
