@@ -10,7 +10,7 @@ var searchData=
   ['photonnetplayer_2ecs_7',['PhotonNetPlayer.cs',['../_photon_net_player_8cs.html',1,'']]],
   ['photonnetworkdata_2ecs_8',['PhotonNetworkData.cs',['../_photon_network_data_8cs.html',1,'']]],
   ['photonnetworkmessenger_2ecs_9',['PhotonNetworkMessenger.cs',['../_photon_network_messenger_8cs.html',1,'']]],
-  ['photonplayeriddictionary_2ecs_10',['PhotonPlayerIDDictionary.cs',['../_photon_player_i_d_dictionary_8cs.html',1,'']]],
+  ['photonshareandlocalizeparams_2ecs_10',['PhotonShareAndLocalizeParams.cs',['../_photon_share_and_localize_params_8cs.html',1,'']]],
   ['physicstoggleswitch_2ecs_11',['PhysicsToggleSwitch.cs',['../_physics_toggle_switch_8cs.html',1,'']]],
   ['placeclueoverceiling_2ecs_12',['PlaceClueOverCeiling.cs',['../_place_clue_over_ceiling_8cs.html',1,'']]],
   ['playaudiodelayed_2ecs_13',['PlayAudioDelayed.cs',['../_play_audio_delayed_8cs.html',1,'']]],

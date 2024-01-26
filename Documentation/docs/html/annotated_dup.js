@@ -10,6 +10,7 @@ var annotated_dup =
         [ "ShutterAudio", "class_cryptic_cabinet_1_1_audio_1_1_shutter_audio.html", null ]
       ] ],
       [ "Colocation", "namespace_cryptic_cabinet_1_1_colocation.html", [
+        [ "AlignCameraToAnchorManager", "class_cryptic_cabinet_1_1_colocation_1_1_align_camera_to_anchor_manager.html", "class_cryptic_cabinet_1_1_colocation_1_1_align_camera_to_anchor_manager" ],
         [ "ColocationDriverNetObj", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj" ],
         [ "ColocationManager", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_manager.html", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_manager" ]
       ] ],
@@ -70,7 +71,7 @@ var annotated_dup =
           [ "PhotonNetPlayer", "struct_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_net_player.html", "struct_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_net_player" ],
           [ "PhotonNetworkData", "class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_data.html", "class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_data" ],
           [ "PhotonNetworkMessenger", "class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger.html", "class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger" ],
-          [ "PhotonPlayerIDDictionary", "class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_player_i_d_dictionary.html", "class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_player_i_d_dictionary" ]
+          [ "PhotonShareAndLocalizeParams", "struct_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_share_and_localize_params.html", "struct_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_share_and_localize_params" ]
         ] ],
         [ "Replication", "namespace_cryptic_cabinet_1_1_photon_1_1_replication.html", [
           [ "PhotonExtendedNetworkedTransform", "class_cryptic_cabinet_1_1_photon_1_1_replication_1_1_photon_extended_networked_transform.html", "class_cryptic_cabinet_1_1_photon_1_1_replication_1_1_photon_extended_networked_transform" ]

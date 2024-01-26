@@ -39,12 +39,12 @@ var hierarchy =
       [ "CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger", "class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger.html", null ]
     ] ],
     [ "INetworkRunnerCallbacks", null, [
-      [ "CrypticCabinet.Colocation.ColocationDriverNetObj", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html", null ],
       [ "CrypticCabinet.Photon.PhotonConnector", "class_cryptic_cabinet_1_1_photon_1_1_photon_connector.html", null ]
     ] ],
     [ "INetworkStruct", null, [
       [ "CrypticCabinet.Photon.Colocation.PhotonNetAnchor", "struct_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_net_anchor.html", null ],
-      [ "CrypticCabinet.Photon.Colocation.PhotonNetPlayer", "struct_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_net_player.html", null ]
+      [ "CrypticCabinet.Photon.Colocation.PhotonNetPlayer", "struct_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_net_player.html", null ],
+      [ "CrypticCabinet.Photon.Colocation.PhotonShareAndLocalizeParams", "struct_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_share_and_localize_params.html", null ]
     ] ],
     [ "IPostGenerateGradleAndroidProject", null, [
       [ "CrypticCabinet.Editor.RemovedPermissionsBuildStep", "class_cryptic_cabinet_1_1_editor_1_1_removed_permissions_build_step.html", null ]
@@ -81,6 +81,7 @@ var hierarchy =
       [ "CrypticCabinet.Audio.MiniGeneratorAudio", "class_cryptic_cabinet_1_1_audio_1_1_mini_generator_audio.html", null ],
       [ "CrypticCabinet.Audio.PlayAudioDelayed", "class_cryptic_cabinet_1_1_audio_1_1_play_audio_delayed.html", null ],
       [ "CrypticCabinet.Audio.ShutterAudio", "class_cryptic_cabinet_1_1_audio_1_1_shutter_audio.html", null ],
+      [ "CrypticCabinet.Colocation.AlignCameraToAnchorManager", "class_cryptic_cabinet_1_1_colocation_1_1_align_camera_to_anchor_manager.html", null ],
       [ "CrypticCabinet.Colocation.ColocationManager", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_manager.html", null ],
       [ "CrypticCabinet.Debugging.NetworkDebugSpawner", "class_cryptic_cabinet_1_1_debugging_1_1_network_debug_spawner.html", null ],
       [ "CrypticCabinet.GameManagement.ActThreeStarter", "class_cryptic_cabinet_1_1_game_management_1_1_act_three_starter.html", null ],
@@ -176,7 +177,6 @@ var hierarchy =
       [ "CrypticCabinet.IntroOutro.ActThreeMultiUserManager", "class_cryptic_cabinet_1_1_intro_outro_1_1_act_three_multi_user_manager.html", null ],
       [ "CrypticCabinet.Passthrough.PassthroughConfigurator", "class_cryptic_cabinet_1_1_passthrough_1_1_passthrough_configurator.html", null ],
       [ "CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger", "class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger.html", null ],
-      [ "CrypticCabinet.Photon.Colocation.PhotonPlayerIDDictionary", "class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_player_i_d_dictionary.html", null ],
       [ "CrypticCabinet.Player.NetworkPlayerBehaviour< T >", "class_cryptic_cabinet_1_1_player_1_1_network_player_behaviour.html", null ],
       [ "CrypticCabinet.Puzzles.AtlasPuzzle.AtlasStatue", "class_cryptic_cabinet_1_1_puzzles_1_1_atlas_puzzle_1_1_atlas_statue.html", null ],
       [ "CrypticCabinet.Puzzles.Cabinet", "class_cryptic_cabinet_1_1_puzzles_1_1_cabinet.html", null ],

@@ -1,27 +1,9 @@
 var class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj =
 [
-    [ "OnConnectedToServer", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a3972cf62ab9a1b252754b381be088b47", null ],
-    [ "OnConnectFailed", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a6d2579f0f8d33657e2ab3550eb5402aa", null ],
-    [ "OnConnectRequest", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#aab569fec624ab9ba53db080dcac64b09", null ],
-    [ "OnCustomAuthenticationResponse", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a67c413a8632079d5ac850c2d1fa591d8", null ],
-    [ "OnDisconnectedFromServer", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a8822649b7026a024982405915f1a46fa", null ],
-    [ "OnHostMigration", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a662ed90bd8e7e36c50186a0aad9c1d2b", null ],
-    [ "OnInput", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a005e89e235b163298cdb998189ebfafe", null ],
-    [ "OnInputMissing", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a774749558469a50989a0d1b23fb8f75c", null ],
-    [ "OnPlayerJoined", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a00c63cdbdea6ab0a68a678feb3548fcd", null ],
-    [ "OnPlayerLeft", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#ad2e4e02017db81845fd5c3e541bb2b4b", null ],
-    [ "OnReliableDataReceived", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a1273cf7526358f632cdda11d1e553b29", null ],
-    [ "OnSceneLoadDone", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#ad06cf5534c577c17fc7c0121fc37960a", null ],
-    [ "OnSceneLoadStart", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a07a7b30fd6c2e8208286554f10d66f69", null ],
-    [ "OnSessionListUpdated", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#aff8c9adbe869d09225b8255ecf0c0441", null ],
-    [ "OnShutdown", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a0cf71f8ca5e7693327c38c10ff838444", null ],
-    [ "OnUserSimulationMessage", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a06d47609ff4fb7d1c9e7affacd2b5fd3", null ],
     [ "RetryColocation", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#af6ba79be179b78e5954b2cc74c913bd5", null ],
-    [ "SetPlayerIdDictionary", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a85ca51288a317ac7cc25936e5ca4806a", null ],
     [ "Spawned", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a84705ea7c6e95c7b54c4dc186507d291", null ],
     [ "OnColocationCompletedCallback", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#af8c300fc904076de023e9d4f33d7c952", null ],
     [ "OnColocationSkippedCallback", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a4a8e523caa58a554be43232c972ff9cd", null ],
     [ "SkipColocation", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a1693add51cce1638e2fd735e71469b27", null ],
-    [ "Instance", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a2e797a7e84ae4e91b40c447c1fcb498c", null ],
-    [ "PlayerIDDictionary", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#aa4fdd8699be650edf34426f0a21fe727", null ]
+    [ "Instance", "class_cryptic_cabinet_1_1_colocation_1_1_colocation_driver_net_obj.html#a2e797a7e84ae4e91b40c447c1fcb498c", null ]
 ];

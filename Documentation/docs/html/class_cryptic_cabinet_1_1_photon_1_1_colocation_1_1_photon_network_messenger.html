@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('class_cryptic_cabinet_1_1_photon_1_1_c
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#events">Events</a> &#124;
 <a href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger Class Reference</div></div>
 </div><!--header-->
@@ -108,223 +109,58 @@ Inheritance diagram for CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger:
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad7b195e6b835fd8a5d30232e335bd143" id="r_ad7b195e6b835fd8a5d30232e335bd143"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger.html#ad7b195e6b835fd8a5d30232e335bd143">SendMessageUsingOculusId</a> (byte eventCode, ulong oculusId, object messageData=null)</td></tr>
-<tr class="separator:ad7b195e6b835fd8a5d30232e335bd143"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a829c0a9c3f9dad02283273ac4e1f44cd" id="r_a829c0a9c3f9dad02283273ac4e1f44cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger.html#a829c0a9c3f9dad02283273ac4e1f44cd">SendMessageUsingHeadsetId</a> (byte eventCode, Guid headsetId, object messageData=null)</td></tr>
-<tr class="separator:a829c0a9c3f9dad02283273ac4e1f44cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a115078e17407d862e0e4cce58a87faff" id="r_a115078e17407d862e0e4cce58a87faff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger.html#a115078e17407d862e0e4cce58a87faff">SendMessageUsingNetworkId</a> (byte eventCode, int networkId, object messageData=null)</td></tr>
-<tr class="separator:a115078e17407d862e0e4cce58a87faff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafd073c5ba7be1192dbd43f2d16fadc0" id="r_aafd073c5ba7be1192dbd43f2d16fadc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger.html#aafd073c5ba7be1192dbd43f2d16fadc0">SendMessageToAll</a> (byte eventCode, object messageData=null)</td></tr>
-<tr class="separator:aafd073c5ba7be1192dbd43f2d16fadc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adac7efe5514277316de5d0041b4fd89b" id="r_adac7efe5514277316de5d0041b4fd89b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger.html#adac7efe5514277316de5d0041b4fd89b">RegisterEventCallback</a> (byte eventCode, Action&lt; object &gt; callback)</td></tr>
-<tr class="separator:adac7efe5514277316de5d0041b4fd89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc6d165c355430ff486caa9627460c79" id="r_acc6d165c355430ff486caa9627460c79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger.html#acc6d165c355430ff486caa9627460c79">UnregisterEventCallback</a> (byte eventCode)</td></tr>
-<tr class="separator:acc6d165c355430ff486caa9627460c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9921962fbe3cb08b7cec72ded183527b" id="r_a9921962fbe3cb08b7cec72ded183527b"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger.html#a9921962fbe3cb08b7cec72ded183527b">Spawned</a> ()</td></tr>
-<tr class="separator:a9921962fbe3cb08b7cec72ded183527b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a884bc51d2a9786a92fdc3cfec335b62a" id="r_a884bc51d2a9786a92fdc3cfec335b62a"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger.html#a884bc51d2a9786a92fdc3cfec335b62a">Despawned</a> (NetworkRunner runner, bool hasState)</td></tr>
-<tr class="separator:a884bc51d2a9786a92fdc3cfec335b62a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d9a53c3bcec0bdd0b31d0fbe9fa8198" id="r_a8d9a53c3bcec0bdd0b31d0fbe9fa8198"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger.html#a8d9a53c3bcec0bdd0b31d0fbe9fa8198">Init</a> (<a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_player_i_d_dictionary.html">PhotonPlayerIDDictionary</a> idDictionary)</td></tr>
-<tr class="separator:a8d9a53c3bcec0bdd0b31d0fbe9fa8198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d72d2288f42a5b72da3885cbc76277d" id="r_a0d72d2288f42a5b72da3885cbc76277d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger.html#a0d72d2288f42a5b72da3885cbc76277d">RegisterLocalPlayer</a> (ulong localPlayerId)</td></tr>
+<tr class="separator:a0d72d2288f42a5b72da3885cbc76277d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36f5aa62d2b7d08bc71f541b234ff216" id="r_a36f5aa62d2b7d08bc71f541b234ff216"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger.html#a36f5aa62d2b7d08bc71f541b234ff216">SendAnchorShareRequest</a> (ulong targetPlayerId, ShareAndLocalizeParams shareAndLocalizeParams)</td></tr>
+<tr class="separator:a36f5aa62d2b7d08bc71f541b234ff216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7451aace5f04473c5f79f0663df69e6" id="r_ab7451aace5f04473c5f79f0663df69e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger.html#ab7451aace5f04473c5f79f0663df69e6">SendAnchorShareCompleted</a> (ulong targetPlayerId, ShareAndLocalizeParams shareAndLocalizeParams)</td></tr>
+<tr class="separator:ab7451aace5f04473c5f79f0663df69e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="events" name="events"></a>
+Events</h2></td></tr>
+<tr class="memitem:a74db4e013273fc43842d4d4654fdb79d" id="r_a74db4e013273fc43842d4d4654fdb79d"><td class="memItemLeft" align="right" valign="top">Action&lt; ShareAndLocalizeParams &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger.html#a74db4e013273fc43842d4d4654fdb79d">AnchorShareRequestReceived</a></td></tr>
+<tr class="separator:a74db4e013273fc43842d4d4654fdb79d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf5c4eb13059a171c89bd5046e26e0fa" id="r_adf5c4eb13059a171c89bd5046e26e0fa"><td class="memItemLeft" align="right" valign="top">Action&lt; ShareAndLocalizeParams &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_network_messenger.html#adf5c4eb13059a171c89bd5046e26e0fa">AnchorShareRequestCompleted</a></td></tr>
+<tr class="separator:adf5c4eb13059a171c89bd5046e26e0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides a mean to send network messages among all connected users. It holds the dictionary of all connected users, who can be included into the messaging system. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a884bc51d2a9786a92fdc3cfec335b62a" name="a884bc51d2a9786a92fdc3cfec335b62a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a884bc51d2a9786a92fdc3cfec335b62a">&#9670;&#160;</a></span>Despawned()</h2>
+<a id="a0d72d2288f42a5b72da3885cbc76277d" name="a0d72d2288f42a5b72da3885cbc76277d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d72d2288f42a5b72da3885cbc76277d">&#9670;&#160;</a></span>RegisterLocalPlayer()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">override void CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger.Despawned </td>
+          <td class="memname">void CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger.RegisterLocalPlayer </td>
           <td>(</td>
-          <td class="paramtype">NetworkRunner&#160;</td>
-          <td class="paramname"><em>runner</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>hasState</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8d9a53c3bcec0bdd0b31d0fbe9fa8198" name="a8d9a53c3bcec0bdd0b31d0fbe9fa8198"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d9a53c3bcec0bdd0b31d0fbe9fa8198">&#9670;&#160;</a></span>Init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger.Init </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_player_i_d_dictionary.html">PhotonPlayerIDDictionary</a>&#160;</td>
-          <td class="paramname"><em>idDictionary</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="adac7efe5514277316de5d0041b4fd89b" name="adac7efe5514277316de5d0041b4fd89b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adac7efe5514277316de5d0041b4fd89b">&#9670;&#160;</a></span>RegisterEventCallback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger.RegisterEventCallback </td>
-          <td>(</td>
-          <td class="paramtype">byte&#160;</td>
-          <td class="paramname"><em>eventCode</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Action&lt; object &gt;&#160;</td>
-          <td class="paramname"><em>callback</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aafd073c5ba7be1192dbd43f2d16fadc0" name="aafd073c5ba7be1192dbd43f2d16fadc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafd073c5ba7be1192dbd43f2d16fadc0">&#9670;&#160;</a></span>SendMessageToAll()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger.SendMessageToAll </td>
-          <td>(</td>
-          <td class="paramtype">byte&#160;</td>
-          <td class="paramname"><em>eventCode</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">object&#160;</td>
-          <td class="paramname"><em>messageData</em> = <code>null</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a829c0a9c3f9dad02283273ac4e1f44cd" name="a829c0a9c3f9dad02283273ac4e1f44cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a829c0a9c3f9dad02283273ac4e1f44cd">&#9670;&#160;</a></span>SendMessageUsingHeadsetId()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger.SendMessageUsingHeadsetId </td>
-          <td>(</td>
-          <td class="paramtype">byte&#160;</td>
-          <td class="paramname"><em>eventCode</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Guid&#160;</td>
-          <td class="paramname"><em>headsetId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">object&#160;</td>
-          <td class="paramname"><em>messageData</em> = <code>null</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_player_i_d_dictionary.html#a93fa5bd77e0a34fb2e5a703d05d28761">CrypticCabinet.Photon.Colocation.PhotonPlayerIDDictionary.GetNetworkId()</a>.</p>
-
-</div>
-</div>
-<a id="a115078e17407d862e0e4cce58a87faff" name="a115078e17407d862e0e4cce58a87faff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a115078e17407d862e0e4cce58a87faff">&#9670;&#160;</a></span>SendMessageUsingNetworkId()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger.SendMessageUsingNetworkId </td>
-          <td>(</td>
-          <td class="paramtype">byte&#160;</td>
-          <td class="paramname"><em>eventCode</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>networkId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">object&#160;</td>
-          <td class="paramname"><em>messageData</em> = <code>null</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad7b195e6b835fd8a5d30232e335bd143" name="ad7b195e6b835fd8a5d30232e335bd143"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7b195e6b835fd8a5d30232e335bd143">&#9670;&#160;</a></span>SendMessageUsingOculusId()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger.SendMessageUsingOculusId </td>
-          <td>(</td>
-          <td class="paramtype">byte&#160;</td>
-          <td class="paramname"><em>eventCode</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">ulong&#160;</td>
-          <td class="paramname"><em>oculusId</em>, </td>
+          <td class="paramname"><em>localPlayerId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab7451aace5f04473c5f79f0663df69e6" name="ab7451aace5f04473c5f79f0663df69e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7451aace5f04473c5f79f0663df69e6">&#9670;&#160;</a></span>SendAnchorShareCompleted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger.SendAnchorShareCompleted </td>
+          <td>(</td>
+          <td class="paramtype">ulong&#160;</td>
+          <td class="paramname"><em>targetPlayerId</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">object&#160;</td>
-          <td class="paramname"><em>messageData</em> = <code>null</code>&#160;</td>
+          <td class="paramtype">ShareAndLocalizeParams&#160;</td>
+          <td class="paramname"><em>shareAndLocalizeParams</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -334,39 +170,59 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="class_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_player_i_d_dictionary.html#a93fa5bd77e0a34fb2e5a703d05d28761">CrypticCabinet.Photon.Colocation.PhotonPlayerIDDictionary.GetNetworkId()</a>.</p>
-
 </div>
 </div>
-<a id="a9921962fbe3cb08b7cec72ded183527b" name="a9921962fbe3cb08b7cec72ded183527b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9921962fbe3cb08b7cec72ded183527b">&#9670;&#160;</a></span>Spawned()</h2>
+<a id="a36f5aa62d2b7d08bc71f541b234ff216" name="a36f5aa62d2b7d08bc71f541b234ff216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36f5aa62d2b7d08bc71f541b234ff216">&#9670;&#160;</a></span>SendAnchorShareRequest()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">override void CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger.Spawned </td>
+          <td class="memname">void CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger.SendAnchorShareRequest </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">ulong&#160;</td>
+          <td class="paramname"><em>targetPlayerId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">ShareAndLocalizeParams&#160;</td>
+          <td class="paramname"><em>shareAndLocalizeParams</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="acc6d165c355430ff486caa9627460c79" name="acc6d165c355430ff486caa9627460c79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc6d165c355430ff486caa9627460c79">&#9670;&#160;</a></span>UnregisterEventCallback()</h2>
+<h2 class="groupheader">Event Documentation</h2>
+<a id="adf5c4eb13059a171c89bd5046e26e0fa" name="adf5c4eb13059a171c89bd5046e26e0fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf5c4eb13059a171c89bd5046e26e0fa">&#9670;&#160;</a></span>AnchorShareRequestCompleted</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger.UnregisterEventCallback </td>
-          <td>(</td>
-          <td class="paramtype">byte&#160;</td>
-          <td class="paramname"><em>eventCode</em></td><td>)</td>
-          <td></td>
+          <td class="memname">Action&lt;ShareAndLocalizeParams&gt; CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger.AnchorShareRequestCompleted</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74db4e013273fc43842d4d4654fdb79d" name="a74db4e013273fc43842d4d4654fdb79d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74db4e013273fc43842d4d4654fdb79d">&#9670;&#160;</a></span>AnchorShareRequestReceived</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action&lt;ShareAndLocalizeParams&gt; CrypticCabinet.Photon.Colocation.PhotonNetworkMessenger.AnchorShareRequestReceived</td>
         </tr>
       </table>
 </div><div class="memdoc">
