@@ -42,6 +42,12 @@ namespace CrypticCabinet.SceneManagement
         private bool m_isSetUp;
 
         /// <summary>
+        /// The root transform that has all child cells game objects
+        /// </summary>
+        private Transform m_cellsRootTransform;
+
+
+        /// <summary>
         /// Struct describing the cell of the distance field.
         /// </summary>
         private struct Cell
@@ -94,6 +100,11 @@ namespace CrypticCabinet.SceneManagement
                 {
                     Destroy(cell.CellDebugRoot.gameObject);
                 }
+            }
+
+            if (m_cellsRootTransform != null)
+            {
+                Destroy(m_cellsRootTransform.gameObject);
             }
         }
 
@@ -326,6 +337,11 @@ namespace CrypticCabinet.SceneManagement
         /// <param name="debugMaterial"></param>
         public void GenerateDeskCells(Material debugMaterial)
         {
+            if (m_cellsRootTransform == null)
+            {
+                m_cellsRootTransform = new GameObject("DeskCells").transform;
+                m_cellsRootTransform.SetParent(transform, false);
+            }
             // Calculate how many cells will make up the length of the desk by dividing the length by the the target 
             // cell size, then round down. Dividing the length by the cell count will ensure the cells will fit the desk perfectly. 
             // This method results in cells that are evenly over sized to fit the desk.
@@ -397,7 +413,7 @@ namespace CrypticCabinet.SceneManagement
             // set rotation to match this object.
             visualiserTransform.localRotation = thisTransform.rotation;
 
-            visualiserTransform.SetParent(thisTransform, true);
+            visualiserTransform.SetParent(m_cellsRootTransform, true);
 
             return visualiserTransform;
         }

@@ -35,6 +35,18 @@ namespace CrypticCabinet.SceneManagement
         {
             m_sceneAnchor = GetComponent<OVRSceneAnchor>();
             m_classification = GetComponent<OVRSemanticClassification>();
+            Debug.Assert(m_sceneAnchor != null, "SceneAnchor is null");
+            Debug.Assert(m_classification != null, "Classification is null");
+
+            if (TryGetComponent<OVRScenePlane>(out var scenePlane))
+            {
+                scenePlane.ScaleChildren = false;
+            }
+            if (TryGetComponent<OVRSceneVolume>(out var sceneVolume))
+            {
+                sceneVolume.ScaleChildren = false;
+            }
+
             m_sceneUnderstandingLocationPlacer = placer;
 
             LogObject();

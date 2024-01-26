@@ -39,7 +39,7 @@ namespace CrypticCabinet.Utils
 
         private void OnDestroy()
         {
-            if (m_hasValidGameObject)
+            if (m_hasValidGameObject && GameManager.Instance)
             {
                 GameManager.Instance.OnGamePhaseChanged -= OnGamePhaseChanged;
             }

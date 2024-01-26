@@ -53,6 +53,11 @@ namespace CrypticCabinet.SceneManagement
         /// </summary>
         private readonly List<(Matrix4x4 transform, Vector3 size)> m_volumeCache = new();
 
+        /// <summary>
+        /// The root transform that has all child cells game objects
+        /// </summary>
+        private Transform m_cellsRootTransform;
+
         public Vector3 FloorCenterPosition { get; private set; }
 
         private bool m_debugViewEnabled;
@@ -100,6 +105,11 @@ namespace CrypticCabinet.SceneManagement
             foreach (var cell in m_cells.SelectMany(column => column))
             {
                 Destroy(cell.CellDebugRoot.gameObject);
+            }
+
+            if (m_cellsRootTransform != null)
+            {
+                Destroy(m_cellsRootTransform.gameObject);
             }
         }
 
@@ -276,6 +286,11 @@ namespace CrypticCabinet.SceneManagement
         /// </summary>
         public void GenerateCells()
         {
+            if (m_cellsRootTransform == null)
+            {
+                m_cellsRootTransform = new GameObject("FloorCells").transform;
+                m_cellsRootTransform.SetParent(transform, false);
+            }
             var floorPlaneDimensions = m_floorPlane.Dimensions;
 
             // this is the same spacing system that is used for the walls and desk cell grids.
@@ -428,7 +443,7 @@ namespace CrypticCabinet.SceneManagement
             var thisTransform = transform;
             visualiserTransform.localRotation = thisTransform.rotation;
 
-            visualiserTransform.SetParent(thisTransform, true);
+            visualiserTransform.SetParent(m_cellsRootTransform, true);
 
             return visualiserTransform;
         }
