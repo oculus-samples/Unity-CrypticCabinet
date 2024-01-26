@@ -1,0 +1,35 @@
+var class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager =
+[
+    [ "SceneObject", "struct_cryptic_cabinet_1_1_utils_1_1_object_placement_manager_1_1_scene_object.html", "struct_cryptic_cabinet_1_1_utils_1_1_object_placement_manager_1_1_scene_object" ],
+    [ "LoadableSceneObjects", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0", [
+      [ "ORRERY", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0ab19ce45064e0401ffbc42ff0b10353aa", null ],
+      [ "CABINET", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0a03ced008490ad43800a158317535c1a4", null ],
+      [ "SAND_SHOOT", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0a5192fcbb370151f5d04c9eff2e1da769", null ],
+      [ "WINDOW_PULLY", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0a3db6e5e7bc65b22b5d007e100ef7724f", null ],
+      [ "LIGHT_PLATE", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0a77dada226415559c1e7aca37e8ca4078", null ],
+      [ "BUCKET", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0af86b537c5694cf4156bb6d8d940bad1b", null ],
+      [ "MINI_GENERATOR_SMALL", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0ae6bed53c443949b3bc5d67ef50d0c07d", null ],
+      [ "MAIN_GENERATOR", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0ab60a258fbbe573e80fc934dec5c475c9", null ],
+      [ "MAIN_GENERATOR_COIL", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0a441c025a124be6027ca9a4ccadb74ce5", null ],
+      [ "GENERATOR_SCHEMATIC1", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0a48313f4f298fc999ca6bece7ae5065e8", null ],
+      [ "DIRECTIONAL_APPARATUS", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0a1f6836a4cff1427192090fd2dd67a59e", null ],
+      [ "MINI_GENERATOR_MEDIUM", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0aa152da5b66d1ea1e352a11f2de83f04a", null ],
+      [ "MINI_GENERATOR_LARGE", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0a212f5fbf57601c21a42eef5799be648f", null ],
+      [ "ATLAS_STATUE", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0a306fe8ff59d91990db392c5dbe4d3ea6", null ],
+      [ "LIGHT_BULB_UV_MACHINE", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0a75788af3de313c2532e9dbe8e013e042", null ],
+      [ "UV_SIGN_CLUE", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0a0b18ae77c6e2fd91a6f75fbd63d30bad", null ],
+      [ "UV_SIGN_TEXT1", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0ae72deeac5f2ba78185d2704515a6cd25", null ],
+      [ "UV_SIGN_TEXT2", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0a33114538f1202375c9ca040580641d7b", null ],
+      [ "UV_SIGN_TEXT3", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0aff5de457ba8939694abccda0fe27c449", null ],
+      [ "SAFE_PUZZLE", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0ab6d93ac13925cb74a4e50f8341994955", null ],
+      [ "GENERATOR_SCHEMATIC2", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a900b9942c417f20bc8fddd18bd57eca0a460cf0022ed0bcc2534e126c31ea8119", null ]
+    ] ],
+    [ "ObjectPlacementManager", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a280990ca25b588d1b9589e238e710540", null ],
+    [ "CleanUp", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#aedefa9c874b686ad9cc855cfa15195e2", null ],
+    [ "ConfirmObjectPlacements", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#aa6a3d10ff535f7919f859f31cff11855", null ],
+    [ "InternalAwake", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#aa75ecd6e78f9f9dcbdcf61fcab6a6dfc", null ],
+    [ "RequestObjects", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#ac859ec577f94985849d27de74ac67a57", null ],
+    [ "ShufflePlacements", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#ad766db59d241938766d44a93267ecbee", null ],
+    [ "UpdatePlacedObject", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#acb52c776c0d8f4a850e47939eaf777e3", null ],
+    [ "ConfirmObjectPlacementsCallback", "class_cryptic_cabinet_1_1_utils_1_1_object_placement_manager.html#a7d4f11f3fd4a47c4404739012175fc4e", null ]
+];

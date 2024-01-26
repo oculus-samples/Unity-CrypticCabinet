@@ -1,0 +1,14 @@
+var namespace_cryptic_cabinet_1_1_photon =
+[
+    [ "Colocation", "namespace_cryptic_cabinet_1_1_photon_1_1_colocation.html", "namespace_cryptic_cabinet_1_1_photon_1_1_colocation" ],
+    [ "Replication", "namespace_cryptic_cabinet_1_1_photon_1_1_replication.html", "namespace_cryptic_cabinet_1_1_photon_1_1_replication" ],
+    [ "Utils", "namespace_cryptic_cabinet_1_1_photon_1_1_utils.html", "namespace_cryptic_cabinet_1_1_photon_1_1_utils" ],
+    [ "PhotonConnector", "class_cryptic_cabinet_1_1_photon_1_1_photon_connector.html", "class_cryptic_cabinet_1_1_photon_1_1_photon_connector" ],
+    [ "PhotonInstantiator", "class_cryptic_cabinet_1_1_photon_1_1_photon_instantiator.html", "class_cryptic_cabinet_1_1_photon_1_1_photon_instantiator" ],
+    [ "GameSessionStatus", "namespace_cryptic_cabinet_1_1_photon.html#abcd39eebc66af9806284db3f5b34368e", [
+      [ "WAITING_HOST_SETUP_TO_BE_COMPLETED", "namespace_cryptic_cabinet_1_1_photon.html#abcd39eebc66af9806284db3f5b34368eae39cabc8a6eaf3c69c3a91460f7a3183", null ],
+      [ "ALLOW_GUESTS_TO_JOIN", "namespace_cryptic_cabinet_1_1_photon.html#abcd39eebc66af9806284db3f5b34368ea3734f96bb027fe058b917951b1283cac", null ],
+      [ "FORBID_NEW_GUESTS_FROM_JOINING", "namespace_cryptic_cabinet_1_1_photon.html#abcd39eebc66af9806284db3f5b34368ea0fb1e74f4afdfe923f21d28340073120", null ],
+      [ "DISCONNECT_ALL_GUESTS", "namespace_cryptic_cabinet_1_1_photon.html#abcd39eebc66af9806284db3f5b34368ea98deabe8ff40f025bd6565805453afb9", null ]
+    ] ]
+];

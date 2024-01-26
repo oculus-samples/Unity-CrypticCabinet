@@ -1,0 +1,5 @@
+var class_cryptic_cabinet_1_1_interactions_1_1_one_grab_toggle_rotate_transformer_1_1_one_grab_rotate_constraints =
+[
+    [ "MaxAngle", "class_cryptic_cabinet_1_1_interactions_1_1_one_grab_toggle_rotate_transformer_1_1_one_grab_rotate_constraints.html#a4cd7950d38d654dca20bcc9b16e2d975", null ],
+    [ "MinAngle", "class_cryptic_cabinet_1_1_interactions_1_1_one_grab_toggle_rotate_transformer_1_1_one_grab_rotate_constraints.html#a72b5e0e7ddb841a13463de0996350c91", null ]
+];
