@@ -1,6 +1,5 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-using CrypticCabinet.Colocation;
 using CrypticCabinet.Photon;
 using CrypticCabinet.Photon.Colocation;
 using CrypticCabinet.Utils;
@@ -29,6 +28,8 @@ namespace CrypticCabinet.Player
 
         [Networked(OnChanged = nameof(OnPlayerNameChanged))]
         private string PlayerName { get; set; }
+
+        private ulong PlayerUid { get; set; }
 
         [Networked(OnChanged = nameof(OnIsMasterClientChanged))]
         private NetworkBool IsMasterClient { get; set; }
@@ -118,20 +119,12 @@ namespace CrypticCabinet.Player
                 // Handle Colocation
                 await UniTask.WaitUntil(
                     () =>
-                        ColocationDriverNetObj.Instance != null &&
-                        ColocationDriverNetObj.Instance.PlayerIDDictionary != null &&
-                        ColocationDriverNetObj.Instance.PlayerIDDictionary.GetOculusId(Runner.LocalPlayer.PlayerId) !=
-                        null);
-
-                var userId = ColocationDriverNetObj.Instance.PlayerIDDictionary.GetOculusId(Runner.LocalPlayer.PlayerId);
-                if (userId is { } id)
-                {
-                    // Handle Network Data
-                    await UniTask.WaitUntil(
-                        () => PhotonNetworkData.Instance.GetPlayer(id) != null,
-                        cancellationToken: PhotonNetworkData.Instance.GetCancellationTokenOnDestroy());
-                    ColocationGroupId = PhotonNetworkData.Instance.GetPlayer(id)?.colocationGroupId ?? uint.MaxValue;
-                }
+                        PlayerUid != 0);
+                // Handle Network Data
+                await UniTask.WaitUntil(
+                    () => PhotonNetworkData.Instance.GetPlayerWithPlayerId(PlayerUid) != null,
+                    cancellationToken: PhotonNetworkData.Instance.GetCancellationTokenOnDestroy());
+                ColocationGroupId = PhotonNetworkData.Instance.GetPlayerWithPlayerId(PlayerUid)?.colocationGroupId ?? uint.MaxValue;
             }
 
             UpdateVisibility();

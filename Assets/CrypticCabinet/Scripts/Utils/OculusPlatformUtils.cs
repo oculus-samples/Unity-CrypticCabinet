@@ -24,6 +24,8 @@ namespace CrypticCabinet.Utils
         /// </summary>
         private static User s_loggedInUser;
 
+        private static ulong? s_userDeviceGeneratedUid;
+
         /// <summary>
         ///     Initializes the Oculus Core, checks entitlements, retrieves logged user.
         /// </summary>
@@ -71,6 +73,17 @@ namespace CrypticCabinet.Utils
             }
 
             return s_loggedInUser;
+        }
+
+        /// <summary>
+        /// Get the generated unique id of the user device. This will change on every session.
+        /// </summary>
+        /// <returns>generated unique id as a ulong</returns>
+        public static ulong GetUserDeviceGeneratedUid()
+        {
+            s_userDeviceGeneratedUid ??= (ulong)Guid.NewGuid().GetHashCode();
+
+            return s_userDeviceGeneratedUid.Value;
         }
 
         /// <summary>

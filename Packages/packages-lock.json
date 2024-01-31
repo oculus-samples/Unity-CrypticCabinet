@@ -14,6 +14,13 @@
       "dependencies": {},
       "hash": "7f1c2ff16db9cd21beaa578f9aeb1d2d46814277"
     },
+    "com.meta.xr.colocation": {
+      "version": "https://github.com/oculus-samples/Unity-LocalMultiplayerMR.git?path=colocation-package#075b8f0e1641bc6cacef05a57f25e82b985cb4bb",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "075b8f0e1641bc6cacef05a57f25e82b985cb4bb"
+    },
     "com.meta.xr.sdk.core": {
       "version": "60.0.0",
       "depth": 0,
@@ -110,12 +117,13 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collections": {
-      "version": "1.2.4",
-      "depth": 1,
+      "version": "2.1.4",
+      "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.burst": "1.6.6",
-        "com.unity.test-framework": "1.1.31"
+        "com.unity.burst": "1.8.4",
+        "com.unity.modules.unityanalytics": "1.0.0",
+        "com.unity.nuget.mono-cecil": "1.11.4"
       },
       "url": "https://packages.unity.com"
     },
@@ -318,16 +326,6 @@
         "com.unity.xr.management": "4.4.0"
       },
       "url": "https://packages.unity.com"
-    },
-    "meta.xr.sdk.colocation": {
-      "version": "file:com.meta.xr.sdk.colocation",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {
-        "com.unity.collections": "1.2.4",
-        "com.meta.xr.sdk.core": "",
-        "com.cysharp.unitask": "2.3.3"
-      }
     },
     "unity-dependencies-hunter": {
       "version": "https://github.com/AlexeyPerov/Unity-Dependencies-Hunter.git#upm",

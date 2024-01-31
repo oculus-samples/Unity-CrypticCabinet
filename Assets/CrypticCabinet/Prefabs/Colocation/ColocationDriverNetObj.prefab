@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1696930657895935280}
   - component: {fileID: 7841362794573239410}
   - component: {fileID: 7527839999650989016}
+  - component: {fileID: 4095862183855480866}
+  - component: {fileID: 2468694667139968491}
   m_Layer: 0
   m_Name: ColocationDriverNetObj
   m_TagString: Untagged
@@ -46,11 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  m_networkDataPrefab: {fileID: 1702291606268661727, guid: 15d5c880dc853104689e83eed7816502, type: 3}
-  m_networkDictionaryPrefab: {fileID: 9125036187163603134, guid: c5c0b05dafa9d5f43b791822c0743fab, type: 3}
-  m_networkMessengerPrefab: {fileID: 4889185810466029953, guid: 7a11abe6b817bab49bbad11f5a959acb, type: 3}
+  m_networkData: {fileID: 4095862183855480866}
+  m_networkMessenger: {fileID: 2468694667139968491}
   m_anchorPrefab: {fileID: 8694328912018099862, guid: 0e16f6aa27a88854487f9437b4cff37b, type: 3}
-  m_alignmentAnchorManagerPrefab: {fileID: 3227507989931022053, guid: 1c100b64b3bc44869bfd88abbd320b57, type: 3}
 --- !u!114 &7527839999650989016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,4 +74,32 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 7841362794573239410}
+  - {fileID: 4095862183855480866}
+  - {fileID: 2468694667139968491}
   SimulationBehaviours: []
+--- !u!114 &4095862183855480866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161947664929811797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b66f0e67eee9024f88588a5a000152f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+--- !u!114 &2468694667139968491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161947664929811797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb8aa6deda218c4eb94b65c0e839a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0

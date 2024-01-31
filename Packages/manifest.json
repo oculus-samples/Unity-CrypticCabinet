@@ -1,8 +1,8 @@
 {
   "dependencies": {
-	"unity-dependencies-hunter": "https://github.com/AlexeyPerov/Unity-Dependencies-Hunter.git#upm",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.meta.utilities": "https://github.com/oculus-samples/Unity-Discover.git?path=Packages/com.meta.utilities",
+    "com.meta.xr.colocation": "https://github.com/oculus-samples/Unity-LocalMultiplayerMR.git?path=colocation-package#075b8f0e1641bc6cacef05a57f25e82b985cb4bb",
     "com.meta.xr.sdk.core": "60.0.0",
     "com.meta.xr.sdk.interaction": "60.0.0",
     "com.meta.xr.sdk.interaction.ovr": "60.0.0",
@@ -12,6 +12,7 @@
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ai.navigation": "1.1.5",
     "com.unity.collab-proxy": "2.2.0",
+    "com.unity.collections": "2.1.4",
     "com.unity.ide.rider": "3.0.27",
     "com.unity.ide.visualstudio": "2.0.22",
     "com.unity.ide.vscode": "1.2.5",
@@ -26,6 +27,7 @@
     "com.unity.visualeffectgraph": "14.0.9",
     "com.unity.visualscripting": "1.9.1",
     "com.unity.xr.oculus": "4.1.2",
+    "unity-dependencies-hunter": "https://github.com/AlexeyPerov/Unity-Dependencies-Hunter.git#upm",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",

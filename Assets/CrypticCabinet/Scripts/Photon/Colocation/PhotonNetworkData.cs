@@ -1,11 +1,9 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System.Collections.Generic;
-using ColocationPackage;
+using com.meta.xr.colocation;
 using CrypticCabinet.Utils;
 using Fusion;
-using Unity.Collections;
-using UnityEngine;
 
 namespace CrypticCabinet.Photon.Colocation
 {
@@ -15,65 +13,74 @@ namespace CrypticCabinet.Photon.Colocation
     public class PhotonNetworkData : NetworkSingleton<PhotonNetworkData>, INetworkData
     {
         [Networked] private uint ColocationGroupCount { get; set; }
+        [Networked, Capacity(10)] private NetworkLinkedList<PhotonNetAnchor> AnchorList { get; }
 
-        [Networked]
-        [Capacity(10)]
-        private NetworkLinkedList<PhotonNetAnchor> AnchorList { get; }
+        [Networked, Capacity(10)] private NetworkLinkedList<PhotonNetPlayer> PlayerList { get; }
 
-        [Networked][Capacity(10)] private NetworkLinkedList<PhotonNetPlayer> PlayerList { get; }
-
-        public void AddPlayer(ColocationPackage.Player player) => AddNetPlayer(new PhotonNetPlayer(player));
-
-        public void RemovePlayer(ColocationPackage.Player player) => RemoveNetPlayer(new PhotonNetPlayer(player));
-
-        public ColocationPackage.Player? GetPlayer(ulong oculusId)
+        public void AddPlayer(com.meta.xr.colocation.Player player)
         {
-            foreach (var photonPlayer in PlayerList)
+            AddFusionPlayer(new PhotonNetPlayer(player));
+        }
+
+        public void RemovePlayer(com.meta.xr.colocation.Player player)
+        {
+            RemoveFusionPlayer(new PhotonNetPlayer(player));
+        }
+
+        public com.meta.xr.colocation.Player? GetPlayerWithPlayerId(ulong playerId)
+        {
+            foreach (var fusionPlayer in PlayerList)
             {
-                if (photonPlayer.OculusId == oculusId)
+                if (fusionPlayer.GetPlayer().playerId == playerId)
                 {
-                    return photonPlayer.Player;
+                    return fusionPlayer.GetPlayer();
                 }
             }
 
             return null;
         }
 
-        public List<ColocationPackage.Player> GetAllPlayers()
+        public com.meta.xr.colocation.Player? GetPlayerWithOculusId(ulong oculusId)
         {
-            var allPlayers = new List<ColocationPackage.Player>();
-            foreach (var photonPlayer in PlayerList)
+            foreach (var fusionPlayer in PlayerList)
             {
-                allPlayers.Add(photonPlayer.Player);
+                if (fusionPlayer.GetPlayer().oculusId == oculusId)
+                {
+                    return fusionPlayer.GetPlayer();
+                }
+            }
+
+            return null;
+        }
+
+        public List<com.meta.xr.colocation.Player> GetAllPlayers()
+        {
+            var allPlayers = new List<com.meta.xr.colocation.Player>();
+            foreach (var fusionPlayer in PlayerList)
+            {
+                allPlayers.Add(fusionPlayer.GetPlayer());
             }
 
             return allPlayers;
         }
 
-        public ColocationPackage.Player? GetFirstPlayerInColocationGroup(uint colocationGroup)
+        public void AddAnchor(Anchor anchor)
         {
-            foreach (var photonPlayer in PlayerList)
-            {
-                if (photonPlayer.ColocationGroupId == colocationGroup)
-                {
-                    return photonPlayer.Player;
-                }
-            }
-
-            return null;
+            AnchorList.Add(new PhotonNetAnchor(anchor));
         }
 
-        public void AddAnchor(Anchor anchor) => AnchorList.Add(new PhotonNetAnchor(anchor));
-
-        public void RemoveAnchor(Anchor anchor) => _ = AnchorList.Remove(new PhotonNetAnchor(anchor));
-
-        public Anchor? GetAnchor(FixedString64Bytes uuid)
+        public void RemoveAnchor(Anchor anchor)
         {
-            foreach (var photonAnchor in AnchorList)
+            _ = AnchorList.Remove(new PhotonNetAnchor(anchor));
+        }
+
+        public Anchor? GetAnchor(ulong ownerOculusId)
+        {
+            foreach (var fusionAnchor in AnchorList)
             {
-                if (photonAnchor.Anchor.uuid.Equals(uuid))
+                if (fusionAnchor.GetAnchor().ownerOculusId == ownerOculusId)
                 {
-                    return photonAnchor.Anchor;
+                    return fusionAnchor.GetAnchor();
                 }
             }
 
@@ -83,9 +90,9 @@ namespace CrypticCabinet.Photon.Colocation
         public List<Anchor> GetAllAnchors()
         {
             var anchors = new List<Anchor>();
-            foreach (var photonAnchor in AnchorList)
+            foreach (var fusionAnchor in AnchorList)
             {
-                anchors.Add(photonAnchor.Anchor);
+                anchors.Add(fusionAnchor.GetAnchor());
             }
 
             return anchors;
@@ -93,7 +100,6 @@ namespace CrypticCabinet.Photon.Colocation
 
         public uint GetColocationGroupCount()
         {
-            Debug.Log($"GetColocationGroupCount: {ColocationGroupCount}");
             return ColocationGroupCount;
         }
 
@@ -109,17 +115,7 @@ namespace CrypticCabinet.Photon.Colocation
             }
         }
 
-        public override void Spawned() => NetworkAdapter.NetworkData = this;
-
-        public override void Despawned(NetworkRunner runner, bool hasState)
-        {
-            if (ReferenceEquals(NetworkAdapter.NetworkData, this))
-            {
-                NetworkAdapter.NetworkData = null;
-            }
-        }
-
-        private void AddNetPlayer(PhotonNetPlayer player)
+        private void AddFusionPlayer(PhotonNetPlayer player)
         {
             if (HasStateAuthority)
             {
@@ -131,7 +127,7 @@ namespace CrypticCabinet.Photon.Colocation
             }
         }
 
-        private void RemoveNetPlayer(PhotonNetPlayer player)
+        private void RemoveFusionPlayer(PhotonNetPlayer player)
         {
             if (HasStateAuthority)
             {
@@ -143,7 +139,7 @@ namespace CrypticCabinet.Photon.Colocation
             }
         }
 
-        private void AddNetAnchor(PhotonNetAnchor anchor)
+        private void AddFusionAnchor(PhotonNetAnchor anchor)
         {
             if (HasStateAuthority)
             {
@@ -155,7 +151,7 @@ namespace CrypticCabinet.Photon.Colocation
             }
         }
 
-        private void RemoveNetAnchor(PhotonNetAnchor anchor)
+        private void RemoveFusionAnchor(PhotonNetAnchor anchor)
         {
             if (HasStateAuthority)
             {
@@ -170,19 +166,34 @@ namespace CrypticCabinet.Photon.Colocation
         #region Rpcs
 
         [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
-        private void AddPlayerRpc(PhotonNetPlayer player) => AddNetPlayer(player);
+        private void AddPlayerRpc(PhotonNetPlayer player)
+        {
+            AddFusionPlayer(player);
+        }
 
         [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
-        private void RemovePlayerRpc(PhotonNetPlayer player) => RemoveNetPlayer(player);
+        private void RemovePlayerRpc(PhotonNetPlayer player)
+        {
+            RemoveFusionPlayer(player);
+        }
 
         [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
-        private void AddAnchorRpc(PhotonNetAnchor anchor) => AddNetAnchor(anchor);
+        private void AddAnchorRpc(PhotonNetAnchor anchor)
+        {
+            AddFusionAnchor(anchor);
+        }
 
         [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
-        private void RemoveAnchorRpc(PhotonNetAnchor anchor) => RemoveNetAnchor(anchor);
+        private void RemoveAnchorRpc(PhotonNetAnchor anchor)
+        {
+            RemoveFusionAnchor(anchor);
+        }
 
         [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
-        private void IncrementColocationGroupCountRpc() => IncrementColocationGroupCount();
+        private void IncrementColocationGroupCountRpc()
+        {
+            IncrementColocationGroupCount();
+        }
 
         #endregion
     }

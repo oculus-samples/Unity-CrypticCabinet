@@ -10,25 +10,25 @@ namespace CrypticCabinet.Photon.Colocation
     /// </summary>
     public struct PhotonNetPlayer : INetworkStruct, IEquatable<PhotonNetPlayer>
     {
+        public ulong PlayerId;
         public ulong OculusId;
         public uint ColocationGroupId;
 
-
-        public ColocationPackage.Player Player => new(OculusId, ColocationGroupId);
-
-        public PhotonNetPlayer(ColocationPackage.Player player)
+        public PhotonNetPlayer(com.meta.xr.colocation.Player player)
         {
+            PlayerId = player.playerId;
             OculusId = player.oculusId;
             ColocationGroupId = player.colocationGroupId;
         }
 
-        public PhotonNetPlayer(ulong oculusId, uint colocationGroupId)
+        public com.meta.xr.colocation.Player GetPlayer()
         {
-            OculusId = oculusId;
-            ColocationGroupId = colocationGroupId;
+            return new com.meta.xr.colocation.Player(PlayerId, OculusId, ColocationGroupId);
         }
 
-        public bool Equals(PhotonNetPlayer other) =>
-            OculusId == other.OculusId && ColocationGroupId == other.ColocationGroupId;
+        public bool Equals(PhotonNetPlayer other)
+        {
+            return GetPlayer().Equals(other.GetPlayer());
+        }
     }
 }
