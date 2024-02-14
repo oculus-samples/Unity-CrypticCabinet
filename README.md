@@ -5,8 +5,9 @@ Cryptic Cabinet is a short Mixed Reality experience designed for Meta Quest 2, Q
 
 It demonstrates the possibilities of MR using the Meta SDK packages for Unity, and implements multiplayer scenarios using Photon Fusion in combination with Meta's shared spatial anchors APIs. This project adapts to your physical room (big or small) to create a unique experience for everyone.
 
-This codebase is available both as a reference and as a template for MR projects. The [Oculus License](LICENSE) applies to the SDK and supporting material. The MIT License applies to only certain, clearly marked documents. If an individual file does not indicate which license it is subject to, then the Oculus License applies.
-This project comes with Photon Fusion and the License can be found [here](./Assets/Photon/LICENSE).
+This codebase is available both as a reference and as a template for MR projects.
+
+The majority of Cryptic Cabinet is licensed under [MIT LICENSE](./LICENSE), however files from [Text Mesh Pro](http://www.unity3d.com/legal/licenses/Unity_Companion_License), and [Photon SDK](./Assets/Photon/LICENSE), are licensed under their respective licensing terms.
 
 See the [CONTRIBUTING](./CONTRIBUTING.md) file for how to help out.
 
