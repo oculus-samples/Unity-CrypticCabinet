@@ -12,7 +12,7 @@ See the [CONTRIBUTING](./CONTRIBUTING.md) file for how to help out.
 
 This project was built using the [Unity engine](https://unity.com/) with [Photon Fusion](https://doc.photonengine.com/fusion/current/getting-started/fusion-intro).
 
-You will be able to test the game out **SOON** on _AppLab - Cryptic Cabinet_.
+Test the game on [AppLab - Cryptic Cabinet](https://www.meta.com/experiences/6858450927578454/).
 
 ## How to run the project in Unity
 
