@@ -97,7 +97,7 @@ git lfs install
 Then, clone this repo using the "Code" button above, or this command:
 
 ```sh
-git clone https://github.com/oculus-samples/Unity-Cryptic-Cabinet.git
+git clone https://github.com/oculus-samples/Unity-CrypticCabinet.git
 ```
 
 
