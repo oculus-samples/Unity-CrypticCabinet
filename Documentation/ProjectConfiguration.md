@@ -56,3 +56,15 @@ Open your unity project and paste your Fusion App ID in [Assets/Photon/Fusion/Re
 
 The Photon Realtime transport should now work. You can check the dashboard in your Photon account to verify there is network traffic.
 
+## Upload to release channel
+In order to have colocation working using the shared spatial anchors, you will first need to upload an initial build to a release channel.
+For instructions you can go to the [developer center](https://developer.oculus.com/resources/publish-release-channels-upload/). Then to be able to test with other users you will need to add them to the channel, more information in the [Add Users to Release Channel](https://developer.oculus.com/resources/publish-release-channels-add-users/) topic.
+
+Once the initial build is uploaded you will be able to use any development build with the same application Id, no need to upload every build to test local changes.
+
+## Headset permissions
+When you first launch the application a permission popup will ask to share point cloud, you must say yes if you want to use colocation.
+If you answered no, from this application or another application using shared point cloud data, you can go on device to
+**Settings > Privacy > Device Permissions > Share Point Cloud Data**. It must be enabled.
+
+The application should also have Spatial Data permission enabled, this can be verified on device here: **Settings -> Apps -> Permissions -> Spatial Data**
