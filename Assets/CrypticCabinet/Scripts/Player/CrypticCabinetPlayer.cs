@@ -29,6 +29,7 @@ namespace CrypticCabinet.Player
         [Networked(OnChanged = nameof(OnPlayerNameChanged))]
         private string PlayerName { get; set; }
 
+        [Networked]
         private ulong PlayerUid { get; set; }
 
         [Networked(OnChanged = nameof(OnIsMasterClientChanged))]
@@ -118,7 +119,7 @@ namespace CrypticCabinet.Player
 
                 // Handle Colocation
                 await UniTask.WaitUntil(
-                    () =>
+                    () => PhotonNetworkData.Instance != null &&
                         PlayerUid != 0);
                 // Handle Network Data
                 await UniTask.WaitUntil(
@@ -140,6 +141,7 @@ namespace CrypticCabinet.Player
                     return;
                 }
                 PlayerName = user.OculusID;
+                PlayerUid = OculusPlatformUtils.GetUserDeviceGeneratedUid();
                 await UniTask.Yield();
             } while (this != null && string.IsNullOrWhiteSpace(PlayerName));
         }
