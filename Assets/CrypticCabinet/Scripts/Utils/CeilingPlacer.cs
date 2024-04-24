@@ -23,12 +23,7 @@ namespace CrypticCabinet.Utils
         public void PlaceOnCeiling()
         {
             var ceilingHeightDetector = FindObjectOfType<CeilingHeightDetector>();
-            if (ceilingHeightDetector != null)
-            {
-                var position = transform.position;
-                position.y = ceilingHeightDetector.GetCeilingHeight();
-                transform.position = position;
-            }
+            CeilingPlacementUtils.SetYPositionToCeiling(transform, ceilingHeightDetector);
         }
     }
 }
