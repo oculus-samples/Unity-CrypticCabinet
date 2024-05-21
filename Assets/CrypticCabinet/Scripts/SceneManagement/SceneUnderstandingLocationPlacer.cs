@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,8 @@ namespace CrypticCabinet.SceneManagement
         /// Debug material passed to <see cref="WallSpaceFinder"/>
         /// </summary>
         public Material DebugMaterial;
+
+        public Action OnSceneLoadingFailed;
 
         /// <summary>
         /// System that calculates the safe locations of objects 
@@ -123,8 +126,9 @@ namespace CrypticCabinet.SceneManagement
         /// <summary>
         /// Callback if the scene fails to load and sets text color to red
         /// </summary>
-        private static void NoSceneModelToLoad()
+        private void NoSceneModelToLoad()
         {
+            OnSceneLoadingFailed.Invoke();
         }
 
         /// <summary>

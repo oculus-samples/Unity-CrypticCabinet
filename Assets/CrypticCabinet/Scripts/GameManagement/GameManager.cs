@@ -52,6 +52,20 @@ namespace CrypticCabinet.GameManagement
 
             // No game phase is initially performed. To start the gameplay we call StartGameplay().
             m_currentGamePhaseIndex = -1;
+            m_objectPlacer.OnSceneLoadingFailed += OnSceneLoadingFailed;
+        }
+
+        /// <summary>
+        /// Remove any callback when the object is destroyed.
+        /// </summary>
+        protected override void OnDestroy()
+        {
+            if (m_objectPlacer != null)
+            {
+                m_objectPlacer.OnSceneLoadingFailed -= OnSceneLoadingFailed;
+            }
+
+            base.OnDestroy();
         }
 
         /// <summary>
@@ -67,12 +81,12 @@ namespace CrypticCabinet.GameManagement
 
             UISystem.Instance.ShowMessage("Analyzing the room.\nPlease wait...", null, -1);
             m_sceneUnderstanding.SetActive(true);
-            m_objectPlacer.gameObject.SetActive(true);
             if (m_waitForSceneUnderstandingCoroutine != null)
             {
                 StopCoroutine(m_waitForSceneUnderstandingCoroutine);
             }
             m_waitForSceneUnderstandingCoroutine = StartCoroutine(nameof(WaitForSceneUnderstanding));
+            m_objectPlacer.gameObject.SetActive(true);
 
             if (PassthroughChanger.Instance == null && m_passthroughConfiguratorPrefab)
             {
@@ -131,6 +145,21 @@ namespace CrypticCabinet.GameManagement
             }
 
             NextGameplayPhase();
+        }
+
+        /// <summary>
+        /// Callback when the Scene fails too load. We cancel the coroutine for scene understanding, show an error
+        /// message and restart the game.
+        /// </summary>
+        private void OnSceneLoadingFailed()
+        {
+            if (m_waitForSceneUnderstandingCoroutine != null)
+            {
+                StopCoroutine(m_waitForSceneUnderstandingCoroutine);
+                m_waitForSceneUnderstandingCoroutine = null;
+            }
+            
+            UISystem.Instance.ShowMessage("No room found.\nReturning to main menu...", RestartGameplay, 3);
         }
 
         /// <summary>
