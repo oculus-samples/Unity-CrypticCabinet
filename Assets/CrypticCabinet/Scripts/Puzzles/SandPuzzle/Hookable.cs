@@ -28,12 +28,15 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
         [SerializeField] private Transform m_hookTargetLocation;
         [SerializeField] private float m_forceSnapDistance = 0.5f;
         private List<Collider> m_collisionColliders = new();
+        private Rigidbody m_rigidBody;
 
         private void Start()
         {
             var handGrabInteractable = GetComponent<PointableUnityEventWrapper>();
             handGrabInteractable.WhenSelect.AddListener(ObjectGrabbed);
             handGrabInteractable.WhenUnselect.AddListener(ObjectReleased);
+
+            m_rigidBody = GetComponent<Rigidbody>();
 
             var colliders = GetComponents<Collider>();
             foreach (var colliderIt in colliders)
@@ -115,7 +118,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
             if (m_isHookInTriggerZone && m_hook != null)
             {
                 var rigidbodyFollower = m_hook.GetComponent<RigidbodyFollower>();
-                rigidbodyFollower.JumpToLocation(m_hookTargetLocation.position, m_hookTargetLocation.rotation);
+                rigidbodyFollower.JumpToLocation(m_hookTargetLocation.position);
 
                 var hookRb = m_hook.GetComponent<Rigidbody>();
                 m_hookableHinge = GetComponent<HingeJoint>();
@@ -125,14 +128,22 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
                     m_hookableHinge = gameObject.AddComponent<HingeJoint>();
                 }
 
+                // Rotate hinge angle so that the bucket handle is perpendicular to hook
+                m_hookableHinge.transform.localEulerAngles = new Vector3(0.0f, 90.0f, 0.0f);
                 m_hookableHinge.autoConfigureConnectedAnchor = false;
                 m_hookableHinge.axis = m_hingeAxis;
                 m_hookableHinge.anchor = m_anchorPosition;
+                m_hookableHinge.useLimits = true;
+                m_hookableHinge.extendedLimits = true;
+                var jointLimits = m_hookableHinge.limits;
+                jointLimits.min = -20.0f;
+                jointLimits.max = 20.0f;
+                m_hookableHinge.limits = jointLimits;
                 m_hookableHinge.connectedAnchor = m_hook.transform.position;
                 m_hookableHinge.useSpring = true;
                 var hookableHingeSpring = m_hookableHinge.spring;
-                hookableHingeSpring.spring = 25;
-                hookableHingeSpring.targetPosition = 180;
+                hookableHingeSpring.spring = 10;
+                hookableHingeSpring.targetPosition = 0.0f;
                 m_hookableHinge.spring = hookableHingeSpring;
 
                 _ = StartCoroutine(WaitForFixedUpdate(hookRb));

@@ -24,21 +24,19 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
             if (m_lerpTime > 0)
             {
                 var pos = Vector3.Lerp(m_target.position, m_thisBody.position, m_lerpTime);
-                var rot = Quaternion.Slerp(m_target.rotation, m_thisBody.rotation, m_lerpTime);
-                m_thisBody.Move(pos, rot);
+                m_thisBody.MovePosition(pos);
                 m_lerpTime -= Time.fixedDeltaTime * 0.5f;
             }
             else
             {
-                m_thisBody.Move(m_target.position, m_target.rotation);
+                m_thisBody.MovePosition(m_target.position);
             }
         }
 
-        public void JumpToLocation(Vector3 position, Quaternion rotation)
+        public void JumpToLocation(Vector3 position)
         {
             m_lerpTime = 1.0f;
-            m_thisBody.Move(position, rotation);
-            m_thisBody.transform.SetPositionAndRotation(position, rotation);
+            m_thisBody.MovePosition(position);
         }
     }
 }
