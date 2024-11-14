@@ -135,6 +135,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a638964ad0e4301d3d6cc95d028203706" id="r_a638964ad0e4301d3d6cc95d028203706"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cryptic_cabinet_1_1_game_management_1_1_game_manager.html#a638964ad0e4301d3d6cc95d028203706">InternalAwake</a> ()</td></tr>
 <tr class="memdesc:a638964ad0e4301d3d6cc95d028203706"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performed on Awake to ensure that the initial configuration is valid.  <br /></td></tr>
 <tr class="separator:a638964ad0e4301d3d6cc95d028203706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb180b0a3e76a8d1f524e76d8993858f" id="r_abb180b0a3e76a8d1f524e76d8993858f"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cryptic_cabinet_1_1_game_management_1_1_game_manager.html#abb180b0a3e76a8d1f524e76d8993858f">OnDestroy</a> ()</td></tr>
+<tr class="memdesc:abb180b0a3e76a8d1f524e76d8993858f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove any callback when the object is destroyed.  <br /></td></tr>
+<tr class="separator:abb180b0a3e76a8d1f524e76d8993858f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class manages the game phases dynamically. This is a singleton for convenience, so that from any part of the game anything can request to proceed to the next phase of the gameplay if desired. </p>
@@ -206,6 +209,33 @@ Protected Member Functions</h2></td></tr>
 <p>Jumps to the next gameplay phase. If no more phases are available, the end of gameplay is reached and nothing happens. </p>
 
 <p class="reference">Referenced by <a class="el" href="class_cryptic_cabinet_1_1_game_management_1_1_room_setup_1_1_object_spawning_logic_phase.html#a0f3008845842c5645829a55b99395749">CrypticCabinet.GameManagement.RoomSetup.ObjectSpawningLogicPhase.InitializeInternal()</a>, <a class="el" href="class_cryptic_cabinet_1_1_game_management_1_1_timeline_1_1_timeline_game_phase.html#a25df7240c937fc4b5c1c5d15ca23e9be">CrypticCabinet.GameManagement.Timeline.TimelineGamePhase.InitializeInternal()</a>, <a class="el" href="class_cryptic_cabinet_1_1_game_management_1_1_wait_for_guests_1_1_wait_for_guests_phase.html#ad952e36894cd930e039cf5121065ebce">CrypticCabinet.GameManagement.WaitForGuests.WaitForGuestsPhase.InitializeInternal()</a>, and <a class="el" href="class_cryptic_cabinet_1_1_game_management_1_1_skip_game_phase.html#a761f0edeabf952bc800ab25154601969">CrypticCabinet.GameManagement.SkipGamePhase.Update()</a>.</p>
+
+</div>
+</div>
+<a id="abb180b0a3e76a8d1f524e76d8993858f" name="abb180b0a3e76a8d1f524e76d8993858f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb180b0a3e76a8d1f524e76d8993858f">&#9670;&#160;</a></span>OnDestroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void CrypticCabinet.GameManagement.GameManager.OnDestroy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove any callback when the object is destroyed. </p>
 
 </div>
 </div>

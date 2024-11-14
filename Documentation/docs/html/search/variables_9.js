@@ -24,7 +24,8 @@ var searchData=
   ['onoculuscoreinitializationfailed_21',['OnOculusCoreInitializationFailed',['../class_cryptic_cabinet_1_1_utils_1_1_oculus_platform_utils.html#a2aa73263af22cd95683ce870e54f1cf6',1,'CrypticCabinet::Utils::OculusPlatformUtils']]],
   ['onoculusplatformsdkinitialized_22',['OnOculusPlatformSDKInitialized',['../class_cryptic_cabinet_1_1_utils_1_1_oculus_platform_utils.html#a7b1ba5b7bd81fd2bceb5efcf58ae2864',1,'CrypticCabinet::Utils::OculusPlatformUtils']]],
   ['onoculususerloginsuccess_23',['OnOculusUserLoginSuccess',['../class_cryptic_cabinet_1_1_utils_1_1_oculus_platform_utils.html#a45dd90f0913a866248463c65d0c8ee83',1,'CrypticCabinet::Utils::OculusPlatformUtils']]],
-  ['onsingleplayerpressedaction_24',['OnSinglePlayerPressedAction',['../class_cryptic_cabinet_1_1_u_i_1_1_modal_1_1_main_menu.html#a4b972f94da85bac55ae39643478e476a',1,'CrypticCabinet::UI::Modal::MainMenu']]],
-  ['onstartgame_25',['OnStartGame',['../class_cryptic_cabinet_1_1_game_management_1_1_wait_for_guests_1_1_start_game_trigger.html#a8f21047367235b65906250f9703c657a',1,'CrypticCabinet::GameManagement::WaitForGuests::StartGameTrigger']]],
-  ['owneroculusid_26',['OwnerOculusId',['../struct_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_net_anchor.html#a0b699e218b515e86f678dcedf93c9c99',1,'CrypticCabinet::Photon::Colocation::PhotonNetAnchor']]]
+  ['onsceneloadingfailed_24',['OnSceneLoadingFailed',['../class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#a156611e26da3b92c7c216ad3f8ef9179',1,'CrypticCabinet::SceneManagement::SceneUnderstandingLocationPlacer']]],
+  ['onsingleplayerpressedaction_25',['OnSinglePlayerPressedAction',['../class_cryptic_cabinet_1_1_u_i_1_1_modal_1_1_main_menu.html#a4b972f94da85bac55ae39643478e476a',1,'CrypticCabinet::UI::Modal::MainMenu']]],
+  ['onstartgame_26',['OnStartGame',['../class_cryptic_cabinet_1_1_game_management_1_1_wait_for_guests_1_1_start_game_trigger.html#a8f21047367235b65906250f9703c657a',1,'CrypticCabinet::GameManagement::WaitForGuests::StartGameTrigger']]],
+  ['owneroculusid_27',['OwnerOculusId',['../struct_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_net_anchor.html#a0b699e218b515e86f678dcedf93c9c99',1,'CrypticCabinet::Photon::Colocation::PhotonNetAnchor']]]
 ];

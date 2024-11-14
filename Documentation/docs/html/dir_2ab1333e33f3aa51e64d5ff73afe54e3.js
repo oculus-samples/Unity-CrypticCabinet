@@ -5,6 +5,7 @@ var dir_2ab1333e33f3aa51e64d5ff73afe54e3 =
     [ "Transformers", "dir_a385408ed44c21a9fd06bf8f77c26c77.html", "dir_a385408ed44c21a9fd06bf8f77c26c77" ],
     [ "BlackoutVolume.cs", "_blackout_volume_8cs.html", "_blackout_volume_8cs" ],
     [ "BlobShadowRunner.cs", "_blob_shadow_runner_8cs.html", "_blob_shadow_runner_8cs" ],
+    [ "CeilingPlacementUtils.cs", "_ceiling_placement_utils_8cs.html", "_ceiling_placement_utils_8cs" ],
     [ "CeilingPlacer.cs", "_ceiling_placer_8cs.html", "_ceiling_placer_8cs" ],
     [ "DisplayVersionNumber.cs", "_display_version_number_8cs.html", "_display_version_number_8cs" ],
     [ "EnableForGamePhase.cs", "_enable_for_game_phase_8cs.html", "_enable_for_game_phase_8cs" ],

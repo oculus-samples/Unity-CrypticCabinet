@@ -4,6 +4,7 @@ var namespace_cryptic_cabinet_1_1_scene_management =
     [ "DeskSpaceFinder", "class_cryptic_cabinet_1_1_scene_management_1_1_desk_space_finder.html", "class_cryptic_cabinet_1_1_scene_management_1_1_desk_space_finder" ],
     [ "FloorSpaceFinder", "class_cryptic_cabinet_1_1_scene_management_1_1_floor_space_finder.html", "class_cryptic_cabinet_1_1_scene_management_1_1_floor_space_finder" ],
     [ "ISpaceFinder", "interface_cryptic_cabinet_1_1_scene_management_1_1_i_space_finder.html", "interface_cryptic_cabinet_1_1_scene_management_1_1_i_space_finder" ],
+    [ "MRUKPlaneMeshFilter", "class_cryptic_cabinet_1_1_scene_management_1_1_m_r_u_k_plane_mesh_filter.html", null ],
     [ "RequestRoomSetup", "class_cryptic_cabinet_1_1_scene_management_1_1_request_room_setup.html", "class_cryptic_cabinet_1_1_scene_management_1_1_request_room_setup" ],
     [ "SceneRoomObject", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_room_object.html", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_room_object" ],
     [ "SceneSetupValidation", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_setup_validation.html", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_setup_validation" ],

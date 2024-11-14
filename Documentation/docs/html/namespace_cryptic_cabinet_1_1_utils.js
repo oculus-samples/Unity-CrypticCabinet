@@ -5,6 +5,7 @@ var namespace_cryptic_cabinet_1_1_utils =
     [ "Transformers", "namespace_cryptic_cabinet_1_1_utils_1_1_transformers.html", "namespace_cryptic_cabinet_1_1_utils_1_1_transformers" ],
     [ "BlackoutVolume", "class_cryptic_cabinet_1_1_utils_1_1_blackout_volume.html", null ],
     [ "BlobShadowRunner", "class_cryptic_cabinet_1_1_utils_1_1_blob_shadow_runner.html", null ],
+    [ "CeilingPlacementUtils", "class_cryptic_cabinet_1_1_utils_1_1_ceiling_placement_utils.html", "class_cryptic_cabinet_1_1_utils_1_1_ceiling_placement_utils" ],
     [ "CeilingPlacer", "class_cryptic_cabinet_1_1_utils_1_1_ceiling_placer.html", "class_cryptic_cabinet_1_1_utils_1_1_ceiling_placer" ],
     [ "DisplayVersionNumber", "class_cryptic_cabinet_1_1_utils_1_1_display_version_number.html", null ],
     [ "EnableForGamePhase", "class_cryptic_cabinet_1_1_utils_1_1_enable_for_game_phase.html", null ],

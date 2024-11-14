@@ -58,9 +58,6 @@ var annotated_dup =
         [ "SetObjectEnabledState", "class_cryptic_cabinet_1_1_intro_outro_1_1_set_object_enabled_state.html", "class_cryptic_cabinet_1_1_intro_outro_1_1_set_object_enabled_state" ],
         [ "SweepFade", "class_cryptic_cabinet_1_1_intro_outro_1_1_sweep_fade.html", "class_cryptic_cabinet_1_1_intro_outro_1_1_sweep_fade" ]
       ] ],
-      [ "OVR", "namespace_cryptic_cabinet_1_1_o_v_r.html", [
-        [ "GrabbableFixed", "class_cryptic_cabinet_1_1_o_v_r_1_1_grabbable_fixed.html", "class_cryptic_cabinet_1_1_o_v_r_1_1_grabbable_fixed" ]
-      ] ],
       [ "Passthrough", "namespace_cryptic_cabinet_1_1_passthrough.html", [
         [ "PassthroughChanger", "class_cryptic_cabinet_1_1_passthrough_1_1_passthrough_changer.html", "class_cryptic_cabinet_1_1_passthrough_1_1_passthrough_changer" ],
         [ "PassthroughConfigurator", "class_cryptic_cabinet_1_1_passthrough_1_1_passthrough_configurator.html", "class_cryptic_cabinet_1_1_passthrough_1_1_passthrough_configurator" ]
@@ -155,6 +152,7 @@ var annotated_dup =
         [ "DeskSpaceFinder", "class_cryptic_cabinet_1_1_scene_management_1_1_desk_space_finder.html", "class_cryptic_cabinet_1_1_scene_management_1_1_desk_space_finder" ],
         [ "FloorSpaceFinder", "class_cryptic_cabinet_1_1_scene_management_1_1_floor_space_finder.html", "class_cryptic_cabinet_1_1_scene_management_1_1_floor_space_finder" ],
         [ "ISpaceFinder", "interface_cryptic_cabinet_1_1_scene_management_1_1_i_space_finder.html", "interface_cryptic_cabinet_1_1_scene_management_1_1_i_space_finder" ],
+        [ "MRUKPlaneMeshFilter", "class_cryptic_cabinet_1_1_scene_management_1_1_m_r_u_k_plane_mesh_filter.html", null ],
         [ "RequestRoomSetup", "class_cryptic_cabinet_1_1_scene_management_1_1_request_room_setup.html", "class_cryptic_cabinet_1_1_scene_management_1_1_request_room_setup" ],
         [ "SceneRoomObject", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_room_object.html", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_room_object" ],
         [ "SceneSetupValidation", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_setup_validation.html", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_setup_validation" ],
@@ -195,6 +193,7 @@ var annotated_dup =
         ] ],
         [ "BlackoutVolume", "class_cryptic_cabinet_1_1_utils_1_1_blackout_volume.html", null ],
         [ "BlobShadowRunner", "class_cryptic_cabinet_1_1_utils_1_1_blob_shadow_runner.html", null ],
+        [ "CeilingPlacementUtils", "class_cryptic_cabinet_1_1_utils_1_1_ceiling_placement_utils.html", "class_cryptic_cabinet_1_1_utils_1_1_ceiling_placement_utils" ],
         [ "CeilingPlacer", "class_cryptic_cabinet_1_1_utils_1_1_ceiling_placer.html", "class_cryptic_cabinet_1_1_utils_1_1_ceiling_placer" ],
         [ "DisplayVersionNumber", "class_cryptic_cabinet_1_1_utils_1_1_display_version_number.html", null ],
         [ "EnableForGamePhase", "class_cryptic_cabinet_1_1_utils_1_1_enable_for_game_phase.html", null ],

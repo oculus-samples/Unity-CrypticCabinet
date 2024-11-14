@@ -1,11 +1,11 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using CrypticCabinet.Utils;
+using Meta.XR.MRUtilityKit;
 using UnityEngine;
 using static CrypticCabinet.Utils.MathsUtils;
 using Random = UnityEngine.Random;
@@ -15,13 +15,13 @@ namespace CrypticCabinet.SceneManagement
     /// <summary>
     ///     System for finding the space on a floor including functionality to place relative to the wall.
     /// </summary>
-    [RequireComponent(typeof(OVRScenePlaneMeshFilter))]
+    [RequireComponent(typeof(MRUKPlaneMeshFilter))]
     public class FloorSpaceFinder : MonoBehaviour, ISpaceFinder
     {
         /// <summary>
         /// Plane that describes the floor. 
         /// </summary>
-        private OVRScenePlane m_floorPlane;
+        private MRUKAnchor m_floorPlane;
 
         /// <summary>
         /// Size of the cells on the floor.
@@ -115,7 +115,10 @@ namespace CrypticCabinet.SceneManagement
 
         public void GetFinderTransform(out Matrix4x4 localToWorldMatrix) => localToWorldMatrix = transform.localToWorldMatrix;
 
-        public void GetFinderSize(out Vector3 worldSize) => worldSize = m_floorPlane.Dimensions;
+        public void GetFinderSize(out Vector3 worldSize)
+        {
+            worldSize = m_floorPlane.PlaneRect.HasValue ? (Vector3)m_floorPlane.PlaneRect.Value.size : Vector3.zero;
+        }
 
         private Collider[] m_nonAllocColliders = new Collider[1000];
 
@@ -247,7 +250,7 @@ namespace CrypticCabinet.SceneManagement
         private IEnumerator Start()
         {
             IsReadyToGenerate = false;
-            m_floorPlane = GetComponent<OVRScenePlane>();
+            m_floorPlane = GetComponent<MRUKAnchor>();
             var meshFilter = GetComponent<MeshFilter>();
             m_meshCollider = gameObject.AddComponent<MeshCollider>();
             var colliderMesh = meshFilter.sharedMesh;
@@ -291,7 +294,8 @@ namespace CrypticCabinet.SceneManagement
                 m_cellsRootTransform = new GameObject("FloorCells").transform;
                 m_cellsRootTransform.SetParent(transform, false);
             }
-            var floorPlaneDimensions = m_floorPlane.Dimensions;
+
+            var floorPlaneDimensions = m_floorPlane.PlaneRect?.size ?? Vector2.zero;
 
             // this is the same spacing system that is used for the walls and desk cell grids.
             var xCellCount = Mathf.FloorToInt(floorPlaneDimensions.x / m_cellSize);
@@ -456,21 +460,23 @@ namespace CrypticCabinet.SceneManagement
         /// <returns>The nearest distance to an edge.</returns>
         private float DistanceToNearestEdge(Vector2 point)
         {
-            if (m_floorPlane.Boundary.Count < 2)
+            if (m_floorPlane.PlaneBoundary2D.Count < 2)
             {
                 return -1;
             }
-
             // iterates over the pairs of points tracking the shortest distance.
             var currentDist = float.MaxValue;
-            for (var i = 1; i < m_floorPlane.Boundary.Count; i++)
+
+            IReadOnlyList<Vector2> boundary = m_floorPlane.PlaneBoundary2D;
+
+            for (var i = 1; i < boundary.Count; i++)
             {
-                var dist = Mathf.Sqrt(DistanceToLineSegmentSquared(point, m_floorPlane.Boundary[i - 1], m_floorPlane.Boundary[i]));
+                var dist = Mathf.Sqrt(DistanceToLineSegmentSquared(point, boundary[i - 1], boundary[i]));
                 currentDist = Mathf.Min(dist, currentDist);
             }
 
             // Checks the first and last point that closes the loop
-            var lastDist = Mathf.Sqrt(DistanceToLineSegmentSquared(point, m_floorPlane.Boundary[0], m_floorPlane.Boundary[^1]));
+            var lastDist = Mathf.Sqrt(DistanceToLineSegmentSquared(point, boundary[0], boundary[^1]));
             currentDist = Mathf.Min(lastDist, currentDist);
 
             return currentDist;

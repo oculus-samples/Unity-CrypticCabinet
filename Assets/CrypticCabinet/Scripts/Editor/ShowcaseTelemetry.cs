@@ -19,7 +19,7 @@ namespace CrypticCabinet.Editor
 
         static ShowcaseTelemetry() => Collect();
 
-        [MenuItem("Oculus/Telemetry Settings")]
+        [MenuItem("Meta/Telemetry Settings")]
         private static void TelemetrySettings()
         {
             Collect(true);

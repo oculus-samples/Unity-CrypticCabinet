@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-using System.Collections;
 using CrypticCabinet.UI;
+using Meta.XR.MRUtilityKit;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,9 +12,6 @@ namespace CrypticCabinet.SceneManagement
     /// </summary>
     public sealed class SceneSetupValidation : MonoBehaviour
     {
-        [SerializeField] private OVRSceneManager m_sceneManagerPrefab;
-        private OVRSceneManager m_sceneManager;
-
         public UnityEvent OnIsValid;
         public UnityEvent OnIsInvalid;
 
@@ -24,32 +21,28 @@ namespace CrypticCabinet.SceneManagement
 
         public void StartValidateSceneSetUp()
         {
-            if (m_sceneManager == null)
-            {
-                m_sceneManager = Instantiate(m_sceneManagerPrefab);
-#if !UNITY_EDITOR
-                m_sceneCaptureRequested = false;
-#endif
-                m_sceneManager.SceneModelLoadedSuccessfully += SceneModelLoadedSuccessfully;
-                m_sceneManager.NewSceneModelAvailable += NewSceneModelAvailable;
-                m_sceneManager.NoSceneModelToLoad += NoSceneModelToLoad;
-                m_sceneManager.SceneCaptureReturnedWithoutError += SceneCaptureReturnedWithoutError;
-                m_sceneManager.UnexpectedErrorWithSceneCapture += UnexpectedErrorWithSceneCapture;
-            }
-
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN || (UNITY_ANDROID && !UNITY_EDITOR)
-            StartCoroutine(nameof(AttemptToLoadSceneModel));
-#endif
-        }
-
-        private IEnumerator AttemptToLoadSceneModel()
-        {
             UISystem.Instance.HideNetworkSelectionMenu();
             UISystem.Instance.ShowMessage("Attempting to load your room, please wait...");
-            do
+
+            MRUK.Instance.LoadSceneFromDevice().ContinueWith(task =>
             {
-                yield return null;
-            } while (!m_sceneManager.LoadSceneModel());
+                switch (task.Result)
+                {
+                    case MRUK.LoadDeviceResult.Success:
+                        SceneModelLoadedSuccessfully();
+                        break;
+                    case MRUK.LoadDeviceResult.NoScenePermission:
+                        break;
+                    case MRUK.LoadDeviceResult.NoRoomsFound:
+                        NoSceneModelToLoad();
+                        break;
+                    default:
+                        Debug.LogError("Load local scene failed with Result: " + task.Result);
+                        break;
+                }
+            });
+#endif
         }
 
         private void UnexpectedErrorWithSceneCapture()
@@ -83,19 +76,6 @@ namespace CrypticCabinet.SceneManagement
 
         private void CleanUp()
         {
-            var anchors = FindObjectsOfType<OVRSceneAnchor>();
-            foreach (var anchor in anchors)
-            {
-                Destroy(anchor.gameObject);
-            }
-
-            m_sceneManager.SceneModelLoadedSuccessfully -= SceneModelLoadedSuccessfully;
-            m_sceneManager.NewSceneModelAvailable -= NewSceneModelAvailable;
-            m_sceneManager.NoSceneModelToLoad -= NoSceneModelToLoad;
-            m_sceneManager.SceneCaptureReturnedWithoutError -= SceneCaptureReturnedWithoutError;
-            m_sceneManager.UnexpectedErrorWithSceneCapture -= UnexpectedErrorWithSceneCapture;
-
-            Destroy(m_sceneManager.gameObject);
         }
 
         private void OnNoSceneModelToLoad()
@@ -107,11 +87,6 @@ namespace CrypticCabinet.SceneManagement
                 "\n\n" +
                 "If a scene model has already been captured, make sure the HMD is connected via Link and that is is donned.",
                 "Ok");
-#else
-            if (!m_sceneCaptureRequested)
-            {
-                m_sceneCaptureRequested = m_sceneManager.RequestSceneCapture();
-            }
 #endif
         }
     }

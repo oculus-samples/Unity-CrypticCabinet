@@ -12,6 +12,7 @@ var hierarchy =
       [ "CrypticCabinet.SceneManagement.FloorSpaceFinder", "class_cryptic_cabinet_1_1_scene_management_1_1_floor_space_finder.html", null ]
     ] ],
     [ "CrypticCabinet.SceneManagement.WallSpaceFinder", "class_cryptic_cabinet_1_1_scene_management_1_1_wall_space_finder.html", null ],
+    [ "CrypticCabinet.Utils.CeilingPlacementUtils", "class_cryptic_cabinet_1_1_utils_1_1_ceiling_placement_utils.html", null ],
     [ "CrypticCabinet.Utils.ForceSnap.SnapPair", "struct_cryptic_cabinet_1_1_utils_1_1_force_snap_1_1_snap_pair.html", null ],
     [ "CrypticCabinet.Utils.MathsUtils", "class_cryptic_cabinet_1_1_utils_1_1_maths_utils.html", null ],
     [ "CrypticCabinet.Utils.ObjectPlacementManager.SceneObject", "struct_cryptic_cabinet_1_1_utils_1_1_object_placement_manager_1_1_scene_object.html", null ],
@@ -22,9 +23,6 @@ var hierarchy =
     [ "IEquatable", null, [
       [ "CrypticCabinet.Photon.Colocation.PhotonNetAnchor", "struct_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_net_anchor.html", null ],
       [ "CrypticCabinet.Photon.Colocation.PhotonNetPlayer", "struct_cryptic_cabinet_1_1_photon_1_1_colocation_1_1_photon_net_player.html", null ]
-    ] ],
-    [ "IGrabbable", null, [
-      [ "CrypticCabinet.OVR.GrabbableFixed", "class_cryptic_cabinet_1_1_o_v_r_1_1_grabbable_fixed.html", null ]
     ] ],
     [ "IMovement", null, [
       [ "CrypticCabinet.IntroOutro.DistanceStickToSurface", "class_cryptic_cabinet_1_1_intro_outro_1_1_distance_stick_to_surface.html", null ]
@@ -131,6 +129,7 @@ var hierarchy =
       [ "CrypticCabinet.SceneManagement.CeilingHeightDetector", "class_cryptic_cabinet_1_1_scene_management_1_1_ceiling_height_detector.html", null ],
       [ "CrypticCabinet.SceneManagement.DeskSpaceFinder", "class_cryptic_cabinet_1_1_scene_management_1_1_desk_space_finder.html", null ],
       [ "CrypticCabinet.SceneManagement.FloorSpaceFinder", "class_cryptic_cabinet_1_1_scene_management_1_1_floor_space_finder.html", null ],
+      [ "CrypticCabinet.SceneManagement.MRUKPlaneMeshFilter", "class_cryptic_cabinet_1_1_scene_management_1_1_m_r_u_k_plane_mesh_filter.html", null ],
       [ "CrypticCabinet.SceneManagement.RequestRoomSetup", "class_cryptic_cabinet_1_1_scene_management_1_1_request_room_setup.html", null ],
       [ "CrypticCabinet.SceneManagement.SceneRoomObject", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_room_object.html", null ],
       [ "CrypticCabinet.SceneManagement.SceneSetupValidation", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_setup_validation.html", null ],
@@ -219,9 +218,6 @@ var hierarchy =
     [ "PlayableBehaviour", null, [
       [ "CrypticCabinet.TimelineExtensions.LerpTimelineBehaviour", "class_cryptic_cabinet_1_1_timeline_extensions_1_1_lerp_timeline_behaviour.html", null ],
       [ "CrypticCabinet.TimelineExtensions.LoopBehaviour", "class_cryptic_cabinet_1_1_timeline_extensions_1_1_loop_behaviour.html", null ]
-    ] ],
-    [ "PointableElement", null, [
-      [ "CrypticCabinet.OVR.GrabbableFixed", "class_cryptic_cabinet_1_1_o_v_r_1_1_grabbable_fixed.html", null ]
     ] ],
     [ "ScriptableObject", null, [
       [ "CrypticCabinet.GameManagement.GamePhase", "class_cryptic_cabinet_1_1_game_management_1_1_game_phase.html", [

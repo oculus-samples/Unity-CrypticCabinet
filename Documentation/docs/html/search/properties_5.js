@@ -13,7 +13,6 @@ var searchData=
   ['getwallobjectheight_10',['GetWallObjectHeight',['../class_cryptic_cabinet_1_1_utils_1_1_object_placement_visualiser.html#ad538d3f1591f4757a5a2d832dcf6f6ec',1,'CrypticCabinet::Utils::ObjectPlacementVisualiser']]],
   ['getwallobjectverticalsize_11',['GetWallObjectVerticalSize',['../class_cryptic_cabinet_1_1_utils_1_1_object_placement_visualiser.html#a8840802074212d2b73f4cf1865b86724',1,'CrypticCabinet::Utils::ObjectPlacementVisualiser']]],
   ['getwallobjectwidth_12',['GetWallObjectWidth',['../class_cryptic_cabinet_1_1_utils_1_1_object_placement_visualiser.html#a0fdfe728ad1763a50fd0bb03f60ee91a',1,'CrypticCabinet::Utils::ObjectPlacementVisualiser']]],
-  ['grabpoints_13',['GrabPoints',['../class_cryptic_cabinet_1_1_o_v_r_1_1_grabbable_fixed.html#af228c1b1c8912a53f30795cd332bed75',1,'CrypticCabinet::OVR::GrabbableFixed']]],
-  ['guidebottomposition_14',['GuideBottomPosition',['../class_cryptic_cabinet_1_1_interactions_1_1_screw_snap_zone.html#a6444f2b3320f1c2b3bf4fa0800088dea',1,'CrypticCabinet::Interactions::ScrewSnapZone']]],
-  ['guidetopposition_15',['GuideTopPosition',['../class_cryptic_cabinet_1_1_interactions_1_1_screw_snap_zone.html#aed16f4f865fd2df6b69d47853a494789',1,'CrypticCabinet::Interactions::ScrewSnapZone']]]
+  ['guidebottomposition_13',['GuideBottomPosition',['../class_cryptic_cabinet_1_1_interactions_1_1_screw_snap_zone.html#a6444f2b3320f1c2b3bf4fa0800088dea',1,'CrypticCabinet::Interactions::ScrewSnapZone']]],
+  ['guidetopposition_14',['GuideTopPosition',['../class_cryptic_cabinet_1_1_interactions_1_1_screw_snap_zone.html#aed16f4f865fd2df6b69d47853a494789',1,'CrypticCabinet::Interactions::ScrewSnapZone']]]
 ];

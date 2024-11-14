@@ -7,7 +7,6 @@ var namespace_cryptic_cabinet =
     [ "GameManagement", "namespace_cryptic_cabinet_1_1_game_management.html", "namespace_cryptic_cabinet_1_1_game_management" ],
     [ "Interactions", "namespace_cryptic_cabinet_1_1_interactions.html", "namespace_cryptic_cabinet_1_1_interactions" ],
     [ "IntroOutro", "namespace_cryptic_cabinet_1_1_intro_outro.html", "namespace_cryptic_cabinet_1_1_intro_outro" ],
-    [ "OVR", "namespace_cryptic_cabinet_1_1_o_v_r.html", "namespace_cryptic_cabinet_1_1_o_v_r" ],
     [ "Passthrough", "namespace_cryptic_cabinet_1_1_passthrough.html", "namespace_cryptic_cabinet_1_1_passthrough" ],
     [ "Photon", "namespace_cryptic_cabinet_1_1_photon.html", "namespace_cryptic_cabinet_1_1_photon" ],
     [ "Player", "namespace_cryptic_cabinet_1_1_player.html", "namespace_cryptic_cabinet_1_1_player" ],

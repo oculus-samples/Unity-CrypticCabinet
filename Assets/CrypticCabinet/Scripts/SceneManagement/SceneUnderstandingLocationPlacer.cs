@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Meta.Utilities;
+using Meta.XR.MRUtilityKit;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -15,20 +16,13 @@ namespace CrypticCabinet.SceneManagement
     ///     and passed the relevant information to the space finding mangers.
     ///     Once set up also handles moving the debug visual props to the appropriate locations.
     /// </summary>
-    [RequireComponent(typeof(OVRSceneManager))]
     public class SceneUnderstandingLocationPlacer : Singleton<SceneUnderstandingLocationPlacer>
     {
-        /// <summary>
-        /// Interface to the underlying scene system. 
-        /// </summary>
-        private OVRSceneManager m_sceneManager;
-
         /// List of wall, openings and objects created by the scene manger.
-        private readonly List<OVRScenePlane> m_openings = new();
-        private readonly List<OVRScenePlane> m_walls = new();
-        private readonly List<OVRSceneVolume> m_objects = new();
-        private readonly List<OVRScenePlane> m_blockingPlanes = new();
-
+        private readonly List<MRUKAnchor> m_openings = new();
+        private readonly List<MRUKAnchor> m_walls = new();
+        private readonly List<MRUKAnchor> m_objects = new();
+        private readonly List<MRUKAnchor> m_blockingPlanes = new();
         private readonly List<DeskSpaceFinder> m_deskSpaceFinders = new();
         private readonly List<FloorSpaceFinder> m_floorSpaceFinders = new();
         // horizontal includes desks and floor
@@ -55,30 +49,20 @@ namespace CrypticCabinet.SceneManagement
 
         private bool m_sceneManagerAlreadyLoaded;
 
+        private bool m_initialized = false;
+
+        private void Start()
+        {
+            Init();
+        }
+
         /// <summary>
-        /// Set up the scene manager and register callbacks.
+        /// Set up the MRUK and load scene data.
         /// </summary>
         protected override void OnEnable()
         {
             base.OnEnable();
-            m_sceneManager = GetComponent<OVRSceneManager>();
-            m_sceneManager.SceneModelLoadedSuccessfully += SceneModelLoadedSuccessfully;
-            m_sceneManager.NoSceneModelToLoad += NoSceneModelToLoad;
-            m_sceneManager.gameObject.SetActive(true);
-
-            if (!m_sceneManagerAlreadyLoaded)
-            {
-                // The Awake will automatically trigger the LoadSceneModel.
-                m_sceneManagerAlreadyLoaded = true;
-            }
-            else
-            {
-                // Manually trigger a load scene model, otherwise we would need to destroy and respawn the scene
-                // manager to trigger the same result.
-                _ = m_sceneManager.LoadSceneModel();
-            }
-
-            m_sceneLoadingComplete = false;
+            Init();
         }
 
         /// <summary>
@@ -86,10 +70,21 @@ namespace CrypticCabinet.SceneManagement
         /// </summary>
         private void OnDisable()
         {
-            m_sceneManager.SceneModelLoadedSuccessfully -= SceneModelLoadedSuccessfully;
-            m_sceneManager.NoSceneModelToLoad -= NoSceneModelToLoad;
-            m_sceneManager.gameObject.SetActive(false);
+            MRUK.Instance.SceneLoadedEvent.RemoveListener(SceneModelLoadedSuccessfully);
             m_sceneLoadingComplete = false;
+            m_initialized = false;
+        }
+
+        private void Init()
+        {
+            if (m_initialized || MRUK.Instance == null)
+            {
+                return;
+            }
+            
+            MRUK.Instance.SceneLoadedEvent.AddListener(SceneModelLoadedSuccessfully);
+            m_sceneLoadingComplete = false;
+            m_initialized = true;
         }
 
         /// <summary>
@@ -124,18 +119,12 @@ namespace CrypticCabinet.SceneManagement
         }
 
         /// <summary>
-        /// Callback if the scene fails to load and sets text color to red
-        /// </summary>
-        private void NoSceneModelToLoad()
-        {
-            OnSceneLoadingFailed.Invoke();
-        }
-
-        /// <summary>
         /// Finds all SceneRoomObjects and loads them into the space finding calculator.
         /// </summary>
         private IEnumerator LoadSpaceFindingSystem()
         {
+            //need to yield for 1 frame after SceneLoaded callback so anchors have time to populate
+            yield return null;
             m_sceneLoadingComplete = false;
 
             m_wallSpaceFinder?.CleanUp();
@@ -167,23 +156,36 @@ namespace CrypticCabinet.SceneManagement
 
             foreach (var wall in m_walls)
             {
-                m_wallSpaceFinder.AddWall(wall.transform, wall.Dimensions);
+                if (wall.PlaneRect.HasValue)
+                {
+                    m_wallSpaceFinder.AddWall(wall.transform, wall.PlaneRect.Value.size);
+                }
+
                 yield return null;
             }
 
             foreach (var opening in m_openings)
             {
-                m_wallSpaceFinder.AddPlaneObject(opening.transform.localToWorldMatrix, opening.Dimensions);
+                if (opening.PlaneRect.HasValue)
+                {
+                    m_wallSpaceFinder.AddPlaneObject(opening.transform.localToWorldMatrix, opening.PlaneRect.Value.size);
+                }
             }
             yield return null;
 
             foreach (var objectVolume in m_objects)
             {
-                m_wallSpaceFinder.AddVolumeObject(objectVolume.transform.localToWorldMatrix, objectVolume.Dimensions);
+                if (objectVolume.VolumeBounds.HasValue)
+                {
+                    m_wallSpaceFinder.AddVolumeObject(objectVolume.transform.localToWorldMatrix, objectVolume.VolumeBounds.Value.size);
+                }
 
                 foreach (var surface in m_horizontalSurfaces)
                 {
-                    surface.CalculateBlockedArea(objectVolume.transform.localToWorldMatrix, objectVolume.Dimensions);
+                    if (objectVolume.VolumeBounds.HasValue)
+                    {
+                        surface.CalculateBlockedArea(objectVolume.transform.localToWorldMatrix, objectVolume.VolumeBounds.Value.size);
+                    }
                 }
             }
             yield return null;
@@ -199,11 +201,11 @@ namespace CrypticCabinet.SceneManagement
             }
             yield return null;
 
-            foreach (var ovrScenePlane in m_blockingPlanes)
+            foreach (var plane in m_blockingPlanes)
             {
                 foreach (var floor in m_floorSpaceFinders)
                 {
-                    floor.CalculateBlockedArea(ovrScenePlane.transform.localToWorldMatrix, ovrScenePlane.Dimensions);
+                    floor.CalculateBlockedArea(plane.transform.localToWorldMatrix, plane.PlaneRect?.size ?? Vector2.zero);
                 }
             }
             yield return null;
@@ -363,7 +365,7 @@ namespace CrypticCabinet.SceneManagement
         /// Adds wall plane to the wall list.
         /// </summary>
         /// <param name="plane">Plane that describes a wall.</param>
-        public void AddWall(OVRScenePlane plane)
+        public void AddWall(MRUKAnchor plane)
         {
             m_walls.Add(plane);
         }
@@ -372,7 +374,7 @@ namespace CrypticCabinet.SceneManagement
         /// Adds a doors and windows to the openings list.
         /// </summary>
         /// <param name="doorPlane">Plane that describes a door or window.</param>
-        public void AddOpening(OVRScenePlane doorPlane)
+        public void AddOpening(MRUKAnchor doorPlane)
         {
             m_openings.Add(doorPlane);
         }
@@ -381,7 +383,7 @@ namespace CrypticCabinet.SceneManagement
         /// Adds any object described with a volume such as storage screens and plants.
         /// </summary>
         /// <param name="objectVolume">Object's volume.</param>
-        public void AddVolumeObject(OVRSceneVolume objectVolume)
+        public void AddVolumeObject(MRUKAnchor objectVolume)
         {
             m_objects.Add(objectVolume);
         }
@@ -390,10 +392,10 @@ namespace CrypticCabinet.SceneManagement
         /// Adds a desk to the general manager, adds a <see cref="DeskSpaceFinder"/> to the object.
         /// </summary>
         /// <param name="plane">Plane that describes a desk.</param>
-        public void AddDesk(OVRScenePlane plane)
+        public void AddDesk(MRUKAnchor deskAnchor)
         {
-            var deskSpaceFinder = plane.gameObject.AddComponent<DeskSpaceFinder>();
-            deskSpaceFinder.DeskSize = plane.Dimensions;
+            var deskSpaceFinder = deskAnchor.gameObject.AddComponent<DeskSpaceFinder>();
+            deskSpaceFinder.DeskSize = deskAnchor.PlaneRect?.size ?? deskAnchor.VolumeBounds?.size ?? Vector2.zero;
             m_deskSpaceFinders.Add(deskSpaceFinder);
             m_horizontalSurfaces.Add(deskSpaceFinder);
         }
@@ -402,7 +404,7 @@ namespace CrypticCabinet.SceneManagement
         /// Stores couch planes to pass to space managers.
         /// </summary>
         /// <param name="plane">Plane that describes a couch</param>
-        public void AddCouch(OVRScenePlane plane)
+        public void AddCouch(MRUKAnchor plane)
         {
             m_blockingPlanes.Add(plane);
         }

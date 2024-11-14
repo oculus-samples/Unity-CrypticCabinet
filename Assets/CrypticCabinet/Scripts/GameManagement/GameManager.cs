@@ -9,6 +9,7 @@ using CrypticCabinet.SceneManagement;
 using CrypticCabinet.UI;
 using Fusion;
 using Meta.Utilities;
+using Meta.XR.MRUtilityKit;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -81,6 +82,7 @@ namespace CrypticCabinet.GameManagement
 
             UISystem.Instance.ShowMessage("Analyzing the room.\nPlease wait...", null, -1);
             m_sceneUnderstanding.SetActive(true);
+            _ = MRUK.Instance.LoadSceneFromDevice().ConfigureAwait(true);
             if (m_waitForSceneUnderstandingCoroutine != null)
             {
                 StopCoroutine(m_waitForSceneUnderstandingCoroutine);
@@ -158,7 +160,7 @@ namespace CrypticCabinet.GameManagement
                 StopCoroutine(m_waitForSceneUnderstandingCoroutine);
                 m_waitForSceneUnderstandingCoroutine = null;
             }
-            
+
             UISystem.Instance.ShowMessage("No room found.\nReturning to main menu...", RestartGameplay, 3);
         }
 

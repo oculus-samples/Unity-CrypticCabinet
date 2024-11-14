@@ -12,10 +12,7 @@ namespace CrypticCabinet.SceneManagement
     {
         public float GetCeilingHeight()
         {
-            // Note: the owning GameObject is supposed to be the child of
-            // Photon's instantiator, so the real height is provided by the
-            // instantiator, which is the parent.
-            return transform.parent.transform.position.y;
+            return transform.position.y;
         }
     }
 }

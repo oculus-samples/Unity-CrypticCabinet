@@ -1,7 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System.Collections;
-using CrypticCabinet.OVR;
 using Meta.Utilities;
 using Oculus.Interaction;
 using UnityEngine;
@@ -25,7 +24,7 @@ namespace CrypticCabinet.Utils
         [SerializeField] private float m_wallObjectWidth;
         [SerializeField] private float m_wallObjectVerticalSize;
         [SerializeField] private ObjectPlacementManager.LoadableSceneObjects m_objectType;
-        [SerializeField] private GrabbableFixed m_grabbable;
+        [SerializeField] private Grabbable m_grabbable;
         [SerializeField] private LayerMask m_userWarningLayers;
         [SerializeField] private LayerMask m_physicsEnvironmentLayers;
         [SerializeField] private float m_placementEaseTime = 3;

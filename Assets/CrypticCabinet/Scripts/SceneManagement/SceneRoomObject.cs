@@ -1,27 +1,26 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.MRUtilityKit;
 using UnityEngine;
 
 namespace CrypticCabinet.SceneManagement
 {
     /// <summary>
-    ///     This is added to the prefab that the <see cref="OVRSceneManager"/> spawns that describes a Scene object.
+    ///     This is added to the prefab that the <see cref="MRUK"/> spawns that describes a Scene object.
     ///     Once loaded passes the details of the loaded object to the <see cref="SceneUnderstandingLocationPlacer"/>.
     /// </summary>
-    [RequireComponent(typeof(OVRSceneAnchor))]
+
     [DefaultExecutionOrder(30)]
     public class SceneRoomObject : MonoBehaviour
     {
         /// <summary>
         /// The anchor on this object.
         /// </summary>
-        private OVRSceneAnchor m_sceneAnchor;
-
+        private MRUKAnchor m_sceneAnchor;
         /// <summary>
         /// The classification of this object.
         /// </summary>
-        private OVRSemanticClassification m_classification;
-
+        private MRUKAnchor.SceneLabels m_classification;
         /// <summary>
         /// The main scene space finding manger.
         /// </summary>
@@ -33,19 +32,9 @@ namespace CrypticCabinet.SceneManagement
         /// </summary>
         public void SetUpObject(SceneUnderstandingLocationPlacer placer)
         {
-            m_sceneAnchor = GetComponent<OVRSceneAnchor>();
-            m_classification = GetComponent<OVRSemanticClassification>();
-            Debug.Assert(m_sceneAnchor != null, "SceneAnchor is null");
-            Debug.Assert(m_classification != null, "Classification is null");
-
-            if (TryGetComponent<OVRScenePlane>(out var scenePlane))
-            {
-                scenePlane.ScaleChildren = false;
-            }
-            if (TryGetComponent<OVRSceneVolume>(out var sceneVolume))
-            {
-                sceneVolume.ScaleChildren = false;
-            }
+            m_sceneAnchor = transform.parent.GetComponent<MRUKAnchor>();
+            m_classification = m_sceneAnchor.Label;
+            Debug.Assert(m_sceneAnchor is not null, "SceneAnchor is null");
 
             m_sceneUnderstandingLocationPlacer = placer;
 
@@ -58,66 +47,33 @@ namespace CrypticCabinet.SceneManagement
         /// </summary>
         private void LogObject()
         {
-            if (m_classification.Contains(OVRSceneManager.Classification.WallFace))
+            switch (m_classification)
             {
-                var plane = m_sceneAnchor.GetComponent<OVRScenePlane>();
-                if (plane != null)
-                {
-                    m_sceneUnderstandingLocationPlacer.AddWall(plane);
-                }
-            }
-
-            if (m_classification.Contains(OVRSceneManager.Classification.Floor))
-            {
-                var plane = m_sceneAnchor.GetComponent<OVRScenePlane>();
-
-                var floorSpaceFinder = plane.gameObject.AddComponent<FloorSpaceFinder>();
-                if (floorSpaceFinder != null)
-                {
+                case MRUKAnchor.SceneLabels.WALL_FACE:
+                    m_sceneUnderstandingLocationPlacer.AddWall(m_sceneAnchor);
+                    break;
+                case MRUKAnchor.SceneLabels.FLOOR:
+                    var floorSpaceFinder = m_sceneAnchor.gameObject.AddComponent<FloorSpaceFinder>();
                     m_sceneUnderstandingLocationPlacer.AddFloor(floorSpaceFinder);
-                }
-            }
-
-            if (m_classification.Contains(OVRSceneManager.Classification.DoorFrame) ||
-                m_classification.Contains(OVRSceneManager.Classification.WindowFrame))
-            {
-                var plane = m_sceneAnchor.GetComponent<OVRScenePlane>();
-                if (plane != null)
-                {
-                    m_sceneUnderstandingLocationPlacer.AddOpening(plane);
-                }
-            }
-
-            if (m_classification.Contains(OVRSceneManager.Classification.Couch))
-            {
-                var plane = m_sceneAnchor.GetComponent<OVRScenePlane>();
-                if (plane != null)
-                {
-                    m_sceneUnderstandingLocationPlacer.AddCouch(plane);
-                }
-            }
-
-            if (m_classification.Contains(OVRSceneManager.Classification.Table))
-            {
-                var plane = m_sceneAnchor.GetComponent<OVRScenePlane>();
-                if (plane != null)
-                {
-                    m_sceneUnderstandingLocationPlacer.AddDesk(plane);
-                }
-            }
-
-            if (m_classification.Contains(OVRSceneManager.Classification.Other) ||
-                m_classification.Contains(OVRSceneManager.Classification.Storage) ||
-                m_classification.Contains(OVRSceneManager.Classification.Bed) ||
-                m_classification.Contains(OVRSceneManager.Classification.Screen) ||
-                m_classification.Contains(OVRSceneManager.Classification.Lamp) ||
-                m_classification.Contains(OVRSceneManager.Classification.Plant))
-            {
-                var volume = m_sceneAnchor.GetComponent<OVRSceneVolume>();
-                if (volume != null)
-                {
-                    m_sceneUnderstandingLocationPlacer.AddVolumeObject(volume);
-                }
+                    break;
+                case MRUKAnchor.SceneLabels.WINDOW_FRAME:
+                    m_sceneUnderstandingLocationPlacer.AddOpening(m_sceneAnchor);
+                    break;
+                case MRUKAnchor.SceneLabels.DOOR_FRAME:
+                    m_sceneUnderstandingLocationPlacer.AddOpening(m_sceneAnchor);
+                    break;
+                case MRUKAnchor.SceneLabels.COUCH:
+                    m_sceneUnderstandingLocationPlacer.AddCouch(m_sceneAnchor);
+                    break;
+                case MRUKAnchor.SceneLabels.TABLE:
+                    m_sceneUnderstandingLocationPlacer.AddDesk(m_sceneAnchor);
+                    break;
+                default:
+                    if (m_sceneAnchor.VolumeBounds.HasValue)
+                    {
+                        m_sceneUnderstandingLocationPlacer.AddVolumeObject(m_sceneAnchor);
+                    }
+                    break;
             }
         }
     }

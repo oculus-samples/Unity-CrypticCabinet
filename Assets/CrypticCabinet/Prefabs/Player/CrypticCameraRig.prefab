@@ -484,7 +484,7 @@ MonoBehaviour:
   _hand: {fileID: 4801180738723829953}
   _offset: {x: -0.1, y: -0.035, z: 0}
   _rotation: {x: 0.105225, y: -0.6678412, z: 0.013933297, w: 0.7366965}
-  _mirrorLeftRotation: 1
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &88635744342450340
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,7 +807,7 @@ MonoBehaviour:
   _hand: {fileID: 4801180738723829953}
   _offset: {x: -0.11, y: -0.075, z: -0.02}
   _rotation: {x: 0.105225, y: -0.6678412, z: 0.013933297, w: 0.7366965}
-  _mirrorLeftRotation: 1
+  _mirrorOffsetsForLeftHand: 1
 --- !u!136 &6441356985262235671
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2870,6 +2870,7 @@ MonoBehaviour:
   _cameraRigRef: {fileID: 8220036326509728556}
   _processLateUpdates: 0
   _handedness: 1
+  _ovrHand: {fileID: 0}
   _trackingToWorldTransformer: {fileID: 6086510741975307094}
   _handSkeletonProvider: {fileID: 1643347650460770544}
 --- !u!1 &795847266183116055
@@ -3114,9 +3115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _handGrabInteractor: {fileID: 3707162656649880147}
+  _handVisual: {fileID: 7060868606372941878}
   _handRenderer: {fileID: 4947343234708599679}
   _materialEditor: {fileID: 6682860666182539236}
-  _handVisual: {fileID: 7060868606372941878}
   _glowColorGrabing: {r: 1, g: 1, b: 1, a: 0}
   _glowColorHover: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 0}
   _colorChangeSpeed: 0.5
@@ -3724,6 +3725,9 @@ MonoBehaviour:
   _hand: {fileID: 4801180738723829953}
   _handGrabApi: {fileID: 5167274550810947070}
   _collider: {fileID: 6441356985262235671}
+  _localPositionOffset: {x: 0, y: 0, z: 0}
+  _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &1032545403201599766
 GameObject:
   m_ObjectHideFlags: 0
@@ -4134,6 +4138,9 @@ MonoBehaviour:
   _hand: {fileID: 5571373894886968076}
   _handGrabApi: {fileID: 8566037118958733022}
   _collider: {fileID: 7697045921460591647}
+  _localPositionOffset: {x: 0, y: 0, z: 0}
+  _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &1210030331820121562
 GameObject:
   m_ObjectHideFlags: 0
@@ -5150,7 +5157,7 @@ MonoBehaviour:
   _hand: {fileID: 6576180074501220537}
   _offset: {x: -0.11, y: -0.075, z: -0.02}
   _rotation: {x: 0.105225, y: -0.6678412, z: 0.013933297, w: 0.7366965}
-  _mirrorLeftRotation: 1
+  _mirrorOffsetsForLeftHand: 1
 --- !u!136 &1977827133528451701
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6932,9 +6939,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _handGrabInteractor: {fileID: 7982881548883259887}
+  _handVisual: {fileID: 8566977091613844372}
   _handRenderer: {fileID: 6977659636628603006}
   _materialEditor: {fileID: 7735834262493681954}
-  _handVisual: {fileID: 8566977091613844372}
   _glowColorGrabing: {r: 1, g: 1, b: 1, a: 0}
   _glowColorHover: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 0}
   _colorChangeSpeed: 0.5
@@ -7631,6 +7638,7 @@ MonoBehaviour:
   _handJointId: 15
   _localPositionOffset: {x: 0, y: 0, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &2265289519383783691
 GameObject:
   m_ObjectHideFlags: 0
@@ -7941,6 +7949,9 @@ MonoBehaviour:
   _hand: {fileID: 4654998498071589051}
   _handGrabApi: {fileID: 4200103154834188154}
   _collider: {fileID: 6282795896909390599}
+  _localPositionOffset: {x: 0, y: 0, z: 0}
+  _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &2374411027353838975
 GameObject:
   m_ObjectHideFlags: 0
@@ -9111,9 +9122,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hand: {fileID: 8022382216315136991}
-  _skinnedMeshRenderer: {fileID: 4947343234708599679}
   _updateRootPose: 1
   _updateRootScale: 1
+  _updateVisibility: 1
+  _skinnedMeshRenderer: {fileID: 4947343234708599679}
   _root: {fileID: 0}
   _handMaterialPropertyBlockEditor: {fileID: 6682860666182539236}
   _jointTransforms:
@@ -9513,6 +9525,7 @@ MonoBehaviour:
   m_controller: 0
   m_showState: 1
   showWhenHandsArePoweredByNaturalControllerPoses: 0
+  RayHelper: {fileID: 0}
 --- !u!1 &2889651133829631320
 GameObject:
   m_ObjectHideFlags: 0
@@ -11863,6 +11876,7 @@ MonoBehaviour:
   _selectColor: {r: 0, g: 0.40784317, b: 0.7803922, a: 1}
   _outlineColor: {r: 0, g: 0, b: 0, a: 1}
   _offsetAlongNormal: 0.005
+  _playerHead: {fileID: 0}
 --- !u!1 &3426221732598180289
 GameObject:
   m_ObjectHideFlags: 0
@@ -12680,6 +12694,7 @@ MonoBehaviour:
   _selectColor: {r: 0, g: 0.40784317, b: 0.7803922, a: 1}
   _outlineColor: {r: 0, g: 0, b: 0, a: 1}
   _offsetAlongNormal: 0.005
+  _playerHead: {fileID: 0}
 --- !u!1 &3679981342842446693
 GameObject:
   m_ObjectHideFlags: 0
@@ -12976,6 +12991,7 @@ MonoBehaviour:
   _handJointId: 15
   _localPositionOffset: {x: 0, y: 0, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &3750115179268282379
 GameObject:
   m_ObjectHideFlags: 0
@@ -14422,6 +14438,7 @@ MonoBehaviour:
   _cameraRigRef: {fileID: 8220036326509728556}
   _processLateUpdates: 0
   _handedness: 0
+  _ovrHand: {fileID: 0}
   _trackingToWorldTransformer: {fileID: 6086510741975307094}
   _handSkeletonProvider: {fileID: 6881077117774444471}
 --- !u!1 &4218412195077329456
@@ -14677,6 +14694,7 @@ MonoBehaviour:
   _selectColor: {r: 0, g: 0.40784317, b: 0.7803922, a: 1}
   _outlineColor: {r: 0, g: 0, b: 0, a: 1}
   _offsetAlongNormal: 0.005
+  _playerHead: {fileID: 0}
 --- !u!1 &4267790500706708846
 GameObject:
   m_ObjectHideFlags: 0
@@ -14760,6 +14778,7 @@ MonoBehaviour:
   HandType: 0
   _pointerPoseRoot: {fileID: 0}
   m_showState: 3
+  RayHelper: {fileID: 0}
 --- !u!114 &445737789018038467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14826,6 +14845,7 @@ MonoBehaviour:
   _cameraRigRef: {fileID: 8220036326509728556}
   _processLateUpdates: 0
   _handedness: 1
+  _ovrHand: {fileID: 0}
   _trackingToWorldTransformer: {fileID: 6086510741975307094}
   _handSkeletonProvider: {fileID: 6881077117774444471}
 --- !u!1 &4279533894427459983
@@ -15855,6 +15875,7 @@ MonoBehaviour:
   _handJointId: 8
   _localPositionOffset: {x: 0.017, y: 0, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &4711395675603962052
 GameObject:
   m_ObjectHideFlags: 0
@@ -16507,6 +16528,9 @@ MonoBehaviour:
   _hand: {fileID: 6576180074501220537}
   _handGrabApi: {fileID: 1718108118316405415}
   _collider: {fileID: 1977827133528451701}
+  _localPositionOffset: {x: 0, y: 0, z: 0}
+  _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &4868806905137716256
 GameObject:
   m_ObjectHideFlags: 0
@@ -16650,6 +16674,7 @@ MonoBehaviour:
   _handJointId: 0
   _localPositionOffset: {x: 0.08, y: -0.02, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &4939102600744858534
 GameObject:
   m_ObjectHideFlags: 0
@@ -16861,6 +16886,7 @@ MonoBehaviour:
   _cameraRigRef: {fileID: 8220036326509728556}
   _processLateUpdates: 0
   _handedness: 0
+  _ovrHand: {fileID: 0}
   _trackingToWorldTransformer: {fileID: 6086510741975307094}
   _handSkeletonProvider: {fileID: 6278547288545626659}
 --- !u!1 &4970220273862634026
@@ -17075,6 +17101,7 @@ MonoBehaviour:
   _handJointId: 8
   _localPositionOffset: {x: 0.017, y: 0, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &5011615554651025138
 GameObject:
   m_ObjectHideFlags: 0
@@ -17902,7 +17929,7 @@ MonoBehaviour:
   _hand: {fileID: 5571373894886968076}
   _offset: {x: 0, y: 0, z: 0}
   _rotation: {x: 0, y: 0, z: 0, w: 1}
-  _mirrorLeftRotation: 0
+  _mirrorOffsetsForLeftHand: 0
 --- !u!1 &5245670445418095349
 GameObject:
   m_ObjectHideFlags: 0
@@ -18153,6 +18180,7 @@ MonoBehaviour:
   _handJointId: 8
   _localPositionOffset: {x: 0.017, y: 0, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &5298009979295048375
 GameObject:
   m_ObjectHideFlags: 0
@@ -18319,6 +18347,7 @@ MonoBehaviour:
   _handJointId: 15
   _localPositionOffset: {x: 0, y: 0, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &5318142490496348664
 GameObject:
   m_ObjectHideFlags: 0
@@ -18402,6 +18431,7 @@ MonoBehaviour:
   _handJointId: 15
   _localPositionOffset: {x: 0, y: 0, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &5360277338592448833
 GameObject:
   m_ObjectHideFlags: 0
@@ -18642,6 +18672,7 @@ MonoBehaviour:
   _selectColor: {r: 0, g: 0.40784317, b: 0.7803922, a: 1}
   _outlineColor: {r: 0, g: 0, b: 0, a: 1}
   _offsetAlongNormal: 0.005
+  _playerHead: {fileID: 0}
 --- !u!1 &5399826092052609935
 GameObject:
   m_ObjectHideFlags: 0
@@ -18909,6 +18940,7 @@ MonoBehaviour:
   HandType: 1
   _pointerPoseRoot: {fileID: 0}
   m_showState: 3
+  RayHelper: {fileID: 0}
 --- !u!114 &8955536933714054707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19132,7 +19164,7 @@ MonoBehaviour:
   _hand: {fileID: 5571373894886968076}
   _offset: {x: -0.1, y: -0.035, z: 0}
   _rotation: {x: 0.105225, y: -0.6678412, z: 0.013933297, w: 0.7366965}
-  _mirrorLeftRotation: 1
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &5539870086285437605
 GameObject:
   m_ObjectHideFlags: 0
@@ -20065,6 +20097,7 @@ MonoBehaviour:
   _handJointId: 8
   _localPositionOffset: {x: 0.017, y: 0, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &5749131184367159148
 GameObject:
   m_ObjectHideFlags: 0
@@ -22648,7 +22681,7 @@ MonoBehaviour:
   _hand: {fileID: 6576180074501220537}
   _offset: {x: -0.1, y: -0.035, z: 0}
   _rotation: {x: 0.105225, y: -0.6678412, z: 0.013933297, w: 0.7366965}
-  _mirrorLeftRotation: 1
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &6388249059539532614
 GameObject:
   m_ObjectHideFlags: 0
@@ -23003,8 +23036,9 @@ MonoBehaviour:
   virtualGreenScreenApplyDepthCulling: 0
   virtualGreenScreenDepthTolerance: 0.2
   mrcActivationMode: 0
-  launchMultimodalHandsControllersOnStartup: 0
+  launchSimultaneousHandsControllersOnStartup: 0
   isInsightPassthroughEnabled: 1
+  shouldBoundaryVisibilityBeSuppressed: 1
   requestBodyTrackingPermissionOnStartup: 0
   requestFaceTrackingPermissionOnStartup: 0
   requestEyeTrackingPermissionOnStartup: 1
@@ -23020,6 +23054,9 @@ MonoBehaviour:
   LateControllerUpdate: 1
   LateLatching: 1
   controllerDrivenHandPosesType: 0
+  SimultaneousHandsAndControllersEnabled: 0
+  _readOnlyWideMotionModeHandPosesEnabled: 0
+  wideMotionModeHandPosesEnabled: 0
 --- !u!114 &5193772985551192757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23056,6 +23093,9 @@ MonoBehaviour:
   overridePerLayerColorScaleAndOffset: 0
   colorScale: {x: 1, y: 1, z: 1, w: 1}
   colorOffset: {x: 0, y: 0, z: 0, w: 0}
+  passthroughLayerResumed:
+    m_PersistentCalls:
+      m_Calls: []
   colorMapEditorType_: 5
   colorMapEditorGradient:
     serializedVersion: 2
@@ -24942,6 +24982,7 @@ MonoBehaviour:
   _handJointId: 0
   _localPositionOffset: {x: 0.08, y: -0.02, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &6860683008932300276
 GameObject:
   m_ObjectHideFlags: 0
@@ -24993,6 +25034,7 @@ MonoBehaviour:
   _selectColor: {r: 0, g: 0.40784317, b: 0.7803922, a: 1}
   _outlineColor: {r: 0, g: 0, b: 0, a: 1}
   _offsetAlongNormal: 0.005
+  _playerHead: {fileID: 0}
 --- !u!1 &6883575814861707109
 GameObject:
   m_ObjectHideFlags: 0
@@ -25954,7 +25996,7 @@ MonoBehaviour:
   _hand: {fileID: 6576180074501220537}
   _offset: {x: 0, y: 0, z: 0}
   _rotation: {x: 0, y: 0, z: 0, w: 1}
-  _mirrorLeftRotation: 0
+  _mirrorOffsetsForLeftHand: 0
 --- !u!1 &7107026689653803275
 GameObject:
   m_ObjectHideFlags: 0
@@ -26387,9 +26429,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hand: {fileID: 7251893598832216820}
-  _skinnedMeshRenderer: {fileID: 6977659636628603006}
   _updateRootPose: 1
   _updateRootScale: 1
+  _updateVisibility: 1
+  _skinnedMeshRenderer: {fileID: 6977659636628603006}
   _root: {fileID: 0}
   _handMaterialPropertyBlockEditor: {fileID: 7735834262493681954}
   _jointTransforms:
@@ -27974,7 +28017,7 @@ MonoBehaviour:
   _hand: {fileID: 4801180738723829953}
   _offset: {x: 0, y: 0, z: 0}
   _rotation: {x: 0, y: 0, z: 0, w: 1}
-  _mirrorLeftRotation: 0
+  _mirrorOffsetsForLeftHand: 0
 --- !u!1 &7578854366254082179
 GameObject:
   m_ObjectHideFlags: 0
@@ -28858,6 +28901,7 @@ MonoBehaviour:
   _handJointId: 0
   _localPositionOffset: {x: 0.08, y: -0.02, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &7776595210119033535
 GameObject:
   m_ObjectHideFlags: 0
@@ -29085,7 +29129,7 @@ MonoBehaviour:
   _hand: {fileID: 5571373894886968076}
   _offset: {x: -0.11, y: -0.075, z: -0.02}
   _rotation: {x: 0.105225, y: -0.6678412, z: 0.013933297, w: 0.7366965}
-  _mirrorLeftRotation: 1
+  _mirrorOffsetsForLeftHand: 1
 --- !u!136 &7697045921460591647
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -29708,7 +29752,7 @@ MonoBehaviour:
   _hand: {fileID: 4654998498071589051}
   _offset: {x: 0, y: 0, z: 0}
   _rotation: {x: 0, y: 0, z: 0, w: 1}
-  _mirrorLeftRotation: 0
+  _mirrorOffsetsForLeftHand: 0
 --- !u!1 &8033530795597952026
 GameObject:
   m_ObjectHideFlags: 0
@@ -30086,6 +30130,7 @@ MonoBehaviour:
   m_controller: 0
   m_showState: 1
   showWhenHandsArePoweredByNaturalControllerPoses: 0
+  RayHelper: {fileID: 0}
 --- !u!1 &8097943749127487764
 GameObject:
   m_ObjectHideFlags: 0
@@ -31019,9 +31064,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hand: {fileID: 4121191899931492802}
-  _skinnedMeshRenderer: {fileID: 1914316882399766862}
   _updateRootPose: 1
   _updateRootScale: 1
+  _updateVisibility: 1
+  _skinnedMeshRenderer: {fileID: 1914316882399766862}
   _root: {fileID: 0}
   _handMaterialPropertyBlockEditor: {fileID: 4555137590847724779}
   _jointTransforms:
@@ -31334,9 +31380,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _handGrabInteractor: {fileID: 7779855806609753005}
+  _handVisual: {fileID: 3121064385149113857}
   _handRenderer: {fileID: 1914316882399766862}
   _materialEditor: {fileID: 4555137590847724779}
-  _handVisual: {fileID: 3121064385149113857}
   _glowColorGrabing: {r: 1, g: 1, b: 1, a: 0}
   _glowColorHover: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 0}
   _colorChangeSpeed: 0.5
@@ -32575,7 +32621,7 @@ MonoBehaviour:
   _hand: {fileID: 4654998498071589051}
   _offset: {x: -0.1, y: -0.035, z: 0}
   _rotation: {x: 0.105225, y: -0.6678412, z: 0.013933297, w: 0.7366965}
-  _mirrorLeftRotation: 1
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &8641265176558272607
 GameObject:
   m_ObjectHideFlags: 0
@@ -33307,6 +33353,7 @@ MonoBehaviour:
   _handJointId: 0
   _localPositionOffset: {x: 0.08, y: -0.02, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _mirrorOffsetsForLeftHand: 1
 --- !u!1 &8796100358935390299
 GameObject:
   m_ObjectHideFlags: 0
@@ -33911,9 +33958,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _handGrabInteractor: {fileID: 2524422164825732169}
+  _handVisual: {fileID: 5271980424127986443}
   _handRenderer: {fileID: 3502216143599767759}
   _materialEditor: {fileID: 6465515643175789323}
-  _handVisual: {fileID: 5271980424127986443}
   _glowColorGrabing: {r: 1, g: 1, b: 1, a: 0}
   _glowColorHover: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 0}
   _colorChangeSpeed: 0.5
@@ -33999,9 +34046,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hand: {fileID: 4673816237754147887}
-  _skinnedMeshRenderer: {fileID: 3502216143599767759}
   _updateRootPose: 1
   _updateRootScale: 1
+  _updateVisibility: 1
+  _skinnedMeshRenderer: {fileID: 3502216143599767759}
   _root: {fileID: 0}
   _handMaterialPropertyBlockEditor: {fileID: 6465515643175789323}
   _jointTransforms:
@@ -34244,7 +34292,7 @@ MonoBehaviour:
   _hand: {fileID: 4654998498071589051}
   _offset: {x: -0.11, y: -0.075, z: -0.02}
   _rotation: {x: 0.105225, y: -0.6678412, z: 0.013933297, w: 0.7366965}
-  _mirrorLeftRotation: 1
+  _mirrorOffsetsForLeftHand: 1
 --- !u!136 &6282795896909390599
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -34543,6 +34591,7 @@ MonoBehaviour:
   _selectColor: {r: 0, g: 0.40784317, b: 0.7803922, a: 1}
   _outlineColor: {r: 0, g: 0, b: 0, a: 1}
   _offsetAlongNormal: 0.005
+  _playerHead: {fileID: 0}
 --- !u!1 &9044625317330113207
 GameObject:
   m_ObjectHideFlags: 0
@@ -35281,7 +35330,7 @@ MonoBehaviour:
   _controller: 2
   _animator: {fileID: 669457184583071436}
   _allowThumbUp: 2
-  _animFlexhGain: 35
+  _animFlexGain: 35
   _animPinchGain: 35
   _animPointAndThumbsUpGain: 20
 --- !u!4 &669457184592943288 stripped
@@ -35421,6 +35470,10 @@ PrefabInstance:
       propertyPath: _mirrorLeftRotation
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 333833538, guid: 8b13b070429a7684eb2c1ae2367ad765, type: 3}
+      propertyPath: _mirrorOffsetsForLeftHand
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1138048477665785354, guid: 8b13b070429a7684eb2c1ae2367ad765, type: 3}
       propertyPath: _hmd
       value: 
@@ -35443,6 +35496,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5972292634215972463, guid: 8b13b070429a7684eb2c1ae2367ad765, type: 3}
       propertyPath: _mirrorLeftRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972292634215972463, guid: 8b13b070429a7684eb2c1ae2367ad765, type: 3}
+      propertyPath: _mirrorOffsetsForLeftHand
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6625889528795620376, guid: 8b13b070429a7684eb2c1ae2367ad765, type: 3}
@@ -35507,6 +35564,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7590733698742639279, guid: 8b13b070429a7684eb2c1ae2367ad765, type: 3}
       propertyPath: _mirrorLeftRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590733698742639279, guid: 8b13b070429a7684eb2c1ae2367ad765, type: 3}
+      propertyPath: _mirrorOffsetsForLeftHand
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8280551871082835050, guid: 8b13b070429a7684eb2c1ae2367ad765, type: 3}
@@ -35839,6 +35900,10 @@ PrefabInstance:
       objectReference: {fileID: 4121191899931492802}
     - target: {fileID: 3693003488529933272, guid: 8b13b070429a7684eb2c1ae2367ad765, type: 3}
       propertyPath: _mirrorLeftRotation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3693003488529933272, guid: 8b13b070429a7684eb2c1ae2367ad765, type: 3}
+      propertyPath: _mirrorOffsetsForLeftHand
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4479476189240411809, guid: 8b13b070429a7684eb2c1ae2367ad765, type: 3}
@@ -36198,7 +36263,7 @@ MonoBehaviour:
   _controller: 1
   _animator: {fileID: 3660683900304355295}
   _allowThumbUp: 2
-  _animFlexhGain: 35
+  _animFlexGain: 35
   _animPinchGain: 35
   _animPointAndThumbsUpGain: 20
 --- !u!4 &3660683900297347081 stripped

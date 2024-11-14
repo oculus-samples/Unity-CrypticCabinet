@@ -465,21 +465,23 @@ namespace CrypticCabinet.SceneManagement
 
         public void PickRandomWallCell(float minHeight, out Vector3 position, out Quaternion rotation)
         {
-            if (m_testableWalls is { Count: > 0 })
+            if (m_testableWalls.Count > 0)
             {
                 var wallIndex = Random.Range(0, m_testableWalls.Count);
                 var wall = m_testableWalls[wallIndex];
                 var columnIndex = Random.Range(0, wall.WallColumnCells.Count);
-                var cells = wall.WallColumnCells[columnIndex].Where(cell => cell.Transform.position.y > minHeight).
-                    ToList();
-                if (cells.Any())
+                if (wall.WallColumnCells.Count > 0)
                 {
-                    var cell = cells[Random.Range(0, cells.Count)];
-                    if (cell.Transform != null)
+                    var cells = wall.WallColumnCells[columnIndex].Where(cell => cell.Transform.position.y > minHeight).ToList();
+                    if (cells.Any())
                     {
-                        position = cell.Transform.position;
-                        rotation = cell.Transform.rotation;
-                        return;
+                        var cell = cells[Random.Range(0, cells.Count)];
+                        if (cell.Transform != null)
+                        {
+                            position = cell.Transform.position;
+                            rotation = cell.Transform.rotation;
+                            return;
+                        }
                     }
                 }
             }

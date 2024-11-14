@@ -1,11 +1,11 @@
 var class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer =
 [
-    [ "AddCouch", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#ad676dbe7dfdc9d55e2b60999e8de7768", null ],
-    [ "AddDesk", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#a4d9e6711a31908306c456b0d32e3a428", null ],
+    [ "AddCouch", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#aa27b4b58f6401a957ae47bedf765f38f", null ],
+    [ "AddDesk", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#a1232cd469893191d5f9d6cda9d3280a0", null ],
     [ "AddFloor", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#a99c451e6a74bba5ace1635970a1301fd", null ],
-    [ "AddOpening", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#a2c93d9cd391c6cb4a5d5f21fdfdc04f3", null ],
-    [ "AddVolumeObject", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#a8e3831af621e16fe13794b0d3f640646", null ],
-    [ "AddWall", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#a752550d9c1902f988781721e42f3754b", null ],
+    [ "AddOpening", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#a8a389afcf49806787eb0dc7593998144", null ],
+    [ "AddVolumeObject", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#a5f22e11ba1ac540c0a590e627a4375f3", null ],
+    [ "AddWall", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#a9d9e25dd68ac4d32bfc41748af186413", null ],
     [ "CleanUp", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#a68e6303437d14b5eeb32f0a7e9dc0453", null ],
     [ "HasLoadingCompleted", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#a0c2281e91466c2a20861fa7f64f3009d", null ],
     [ "OnEnable", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#a11d219c0ab2a0af583e0f2435e49011f", null ],
@@ -22,5 +22,6 @@ var class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_
     [ "ResetHorizontalBlockedAreas", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#aeb48071e044f5816648bc7ed11fcbd9a", null ],
     [ "ResetSceneUnderstanding", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#a0034fb1f6637613369b2d331543ac4d4", null ],
     [ "ToggleDebugView", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#a26dd117e9be304a124f23158ec173848", null ],
-    [ "DebugMaterial", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#aaafeb46f0a6734df71436bfb762ca12f", null ]
+    [ "DebugMaterial", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#aaafeb46f0a6734df71436bfb762ca12f", null ],
+    [ "OnSceneLoadingFailed", "class_cryptic_cabinet_1_1_scene_management_1_1_scene_understanding_location_placer.html#a156611e26da3b92c7c216ad3f8ef9179", null ]
 ];

@@ -9,20 +9,13 @@ namespace CrypticCabinet.SceneManagement
     /// </summary>
     public class RequestRoomSetup : MonoBehaviour
     {
-        [SerializeField] private OVRSceneManager m_sceneManager;
 
         /// <summary>
         /// Triggers the Room Setup workflow, even if a room setup is already in place.
         /// </summary>
         public void InitiateRoomSetup()
         {
-            if (!m_sceneManager)
-            {
-                Debug.LogError("Scene manager not set, cannot initiate room setup!");
-                return;
-            }
-
-            _ = m_sceneManager.RequestSceneCapture();
+            _ = OVRScene.RequestSpaceSetup();
         }
     }
 }

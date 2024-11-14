@@ -28,15 +28,12 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
         [SerializeField] private Transform m_hookTargetLocation;
         [SerializeField] private float m_forceSnapDistance = 0.5f;
         private List<Collider> m_collisionColliders = new();
-        private Rigidbody m_rigidBody;
 
         private void Start()
         {
             var handGrabInteractable = GetComponent<PointableUnityEventWrapper>();
             handGrabInteractable.WhenSelect.AddListener(ObjectGrabbed);
             handGrabInteractable.WhenUnselect.AddListener(ObjectReleased);
-
-            m_rigidBody = GetComponent<Rigidbody>();
 
             var colliders = GetComponents<Collider>();
             foreach (var colliderIt in colliders)
