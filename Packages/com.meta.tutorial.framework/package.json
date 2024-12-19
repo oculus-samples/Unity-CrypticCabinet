@@ -1,0 +1,7 @@
+{
+    "name": "com.meta.tutorial.framework",
+    "version": "1.0.0",
+    "displayName": "Meta Tutorial Framework",
+    "description": "Core components for creating in-editor tutorials and documentation.",
+    "hideInEditor": false
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Meta.Tutorial.Framework.Editor",
+    "rootNamespace": "",
+    "references": [
+        "Meta.Tutorial.Framework.Runtime",
+        "Meta.XR.Guides.Editor",
+        "Oculus.VR"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

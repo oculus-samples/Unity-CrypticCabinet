@@ -7,6 +7,12 @@
       "dependencies": {},
       "hash": "f2773f585e762480c835ac718b82b87cb111e500"
     },
+    "com.meta.tutorial.framework": {
+      "version": "file:com.meta.tutorial.framework",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.meta.utilities": {
       "version": "https://github.com/oculus-samples/Unity-Discover.git?path=Packages/com.meta.utilities",
       "depth": 0,
