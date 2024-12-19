@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee262462c8042e840a3146c602914c9a, type: 3}
+  m_Name: MainSceneContext
+  m_EditorClassIdentifier: 
+  m_title: Main Scene Walkthrough
+  m_priority: 1010
+  m_tutorialConfig: {fileID: 11400000, guid: 55ef062a309ba3744aa98a9367203495, type: 2}
+  m_showBanner: 0
+  m_references:
+  - Header: Main Scene
+    Description: 'The Main Scene is where we handle all the game logic for Cryptic
+      Cabinet.
+
+      Open the scene and discover for yourself.'
+    Reference:
+      m_referenceType: 0
+      m_obj: {fileID: 102900000, guid: 3af85a4315372864497ae03e9e1478a6, type: 3}
+      m_classType: 
+      m_scene: {fileID: 0}
+      m_name: 
+      m_path: Assets/CrypticCabinet/Scenes/MainScene.unity
+      m_guid: 
+      m_instanceID: 0
+  - Header: ColocationManager
+    Description: Responsible for colocating multiple players within the same room,
+      and to keep a single player aligned to the real room throughout the gameplay.
+      For more information, check the documentation inside the ColocationManager
+      script.
+    Reference:
+      m_referenceType: 5
+      m_obj: {fileID: 0}
+      m_classType: 
+      m_scene: {fileID: 102900000, guid: 3af85a4315372864497ae03e9e1478a6, type: 3}
+      m_name: CrypticCabinetLogic/ColocationManager
+      m_path: 
+      m_guid: 
+      m_instanceID: 0
+  - Header: ConnectionManager
+    Description: Handles the Photon Fusion connection workflows for single and multiplayer
+      sessions. The PhotonConnector logic showcases how a shared multiplayer session
+      is handled via Photon Fusion, how the creation of shared rooms and lobbies
+      work, and how the connection states can be handled accordingly.
+    Reference:
+      m_referenceType: 5
+      m_obj: {fileID: 0}
+      m_classType: 
+      m_scene: {fileID: 102900000, guid: 3af85a4315372864497ae03e9e1478a6, type: 3}
+      m_name: CrypticCabinetLogic/ConnectionManager
+      m_path: 
+      m_guid: 
+      m_instanceID: 0
+  - Header: PassthroughManager
+    Description: Responsible for the Color LUT effects applied to the passthrough
+      of the supported Quest headsets. During the gameplay, this feature is showcased
+      when interacting with the UV machine puzzle and the light beam hitting the
+      glass globe in the Orrery puzzle. Additional functions are implemented inside
+      the PassthroughConfigurator and PassthroughChanger as an example of customized
+      effects using Meta's Color LUT APIs from the SDK.
+    Reference:
+      m_referenceType: 5
+      m_obj: {fileID: 0}
+      m_classType: 
+      m_scene: {fileID: 102900000, guid: 3af85a4315372864497ae03e9e1478a6, type: 3}
+      m_name: CrypticCabinetLogic/PassthroughManager
+      m_path: 
+      m_guid: 
+      m_instanceID: 0
+  - Header: SceneManagement
+    Description: Holds the logic to use the Scene Understanding API from the SDK
+      to configure the virtual objects placements around the real room of the player,
+      allowing their tweaking when desired.
+    Reference:
+      m_referenceType: 5
+      m_obj: {fileID: 0}
+      m_classType: 
+      m_scene: {fileID: 102900000, guid: 3af85a4315372864497ae03e9e1478a6, type: 3}
+      m_name: CrypticCabinetLogic/SceneManagement
+      m_path: 
+      m_guid: 
+      m_instanceID: 0
+  - Header: GameManager
+    Description: Controls the game phases flow of the gameplay.
+    Reference:
+      m_referenceType: 5
+      m_obj: {fileID: 0}
+      m_classType: 
+      m_scene: {fileID: 102900000, guid: 3af85a4315372864497ae03e9e1478a6, type: 3}
+      m_name: CrypticCabinetLogic/GameManagement/GameManager
+      m_path: 
+      m_guid: 
+      m_instanceID: 0
+  - Header: Player
+    Description: Holds the logic for all the interactions a player can perform across
+      the whole experience. This showcases how the Meta Interaction SDK can be used
+      to simplify usability for XR scenarios.
+    Reference:
+      m_referenceType: 5
+      m_obj: {fileID: 0}
+      m_classType: 
+      m_scene: {fileID: 102900000, guid: 3af85a4315372864497ae03e9e1478a6, type: 3}
+      m_name: Player
+      m_path: 
+      m_guid: 
+      m_instanceID: 0

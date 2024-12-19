@@ -1,6 +1,10 @@
 ﻿# Changelog
 All notable changes to this project will be documented in this file.
 
+## 12/19/2024
+### Add
+Integrate in Editor Tutorial. Learn how to use this project directly from the editor.
+
 ## 11/13/2024
 ### Update
 * Update to Unity 2022.3.36

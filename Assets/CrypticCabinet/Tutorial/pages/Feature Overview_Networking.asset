@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4510294d23d964fe59443526f1ca7c4b, type: 3}
+  m_Name: Feature Overview_Networking
+  m_EditorClassIdentifier: 
+  m_displayName: Networking
+  m_hierarchyName: Feature Overview/Networking
+  m_context: {fileID: 11400000, guid: b05aea44e20f2b44f92707a0633fa98f, type: 2}
+  m_markdownFile: {fileID: 0}
+  m_priority: 1001
+  m_overrideMarkdownText: "# Networking\nMultiplayer is connected and managed via
+    <a href=\"https://doc.photonengine.com/realtime/current/getting-started/quick-start\">Photon
+    Fusion</a>, given the app is designed for colocation it\u2019s not necessary
+    to have a lobby screen. When the host creates a new game they are presented with
+    a room code that they then share with their guests. This is handled within <a
+    href=\"./Assets/CrypticCabinet/Scripts/Photon/PhotonConnector.cs\">PhotonConnector</a>.
+    Also colocation events are triggered from here as well. A deep dive can be found
+    <a href=\"https://developer.oculus.com/documentation/unity/unity-colocation-deep-dive/\">here</a>
+    and called from within <a href=\"./Assets/CrypticCabinet/Scripts/Colocation/ColocationDriverNetObj.cs\">ColocationDriverNetObj</a>.\n\n\n###
+    Relevant Files\n- <a href=\"./Assets/CrypticCabinet/Scripts/Utils/GrabPassOwnership.cs\">GrabPassOwnership.cs</a>\n-
+    <a href=\"./Assets/CrypticCabinet/Scripts/Utils/NetworkedSnapHandler.cs\">NetworkedSnapHandler.cs</a>\n-
+    <a href=\"./Assets/CrypticCabinet/Scripts/Utils/NetworkedSnappedObject.cs\">NetworkedSnappedObject.cs</a>\n\n"
+  m_overrideMarkdownRoot: .\Documentation/

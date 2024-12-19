@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4510294d23d964fe59443526f1ca7c4b, type: 3}
+  m_Name: Feature Overview_Safe Dials
+  m_EditorClassIdentifier: 
+  m_displayName: Safe Dials
+  m_hierarchyName: Feature Overview/Safe Dials
+  m_context: {fileID: 11400000, guid: b05aea44e20f2b44f92707a0633fa98f, type: 2}
+  m_markdownFile: {fileID: 0}
+  m_priority: 1001
+  m_overrideMarkdownText: '# Safe Dials
+
+    ![alt text](../Documentation/Images/Safe.gif){style="width:50%;height:50%"}
+
+
+    There
+    is no off the shelf solution that would allow for a single finger to be used
+    to swipe up and down to scroll through the numbers on the safe in a natural way.
+    The <a href="./Assets/CrypticCabinet/Scripts/Puzzles/Safe/SwipeDetector.cs">final
+    implementation</a> simply puts a trigger collider on the index finger of the
+    user''s hands and then detects if they start in the middle of the dial and swipe
+    up or down. When a swipe has been detected the number carousel is animated up
+    or down and once all dials read the correct values the safe door animates open.
+
+
+    ![alt
+    text](../Documentation/Images/DialColliders.png){style="width:50%;height:50%"}
+
+
+
+    ###
+    Relevant Files
+
+    - <a href="./Assets/CrypticCabinet/Scripts/Puzzles/Safe/SafeLockChecker.cs">SafeLockChecker.cs</a>
+
+    -
+    <a href="./Assets/CrypticCabinet/Scripts/Puzzles/Safe/SwipeDetector.cs">SwipeDetector.cs</a>
+
+    -
+    <a href="./Assets/CrypticCabinet/Scripts/Puzzles/Safe/SafeStateMachine.cs">SafeStateMachine.cs</a>
+
+
+'
+  m_overrideMarkdownRoot: .\Documentation/

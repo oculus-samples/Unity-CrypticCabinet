@@ -81,7 +81,7 @@ namespace CrypticCabinet.SceneManagement
             {
                 return;
             }
-            
+
             MRUK.Instance.SceneLoadedEvent.AddListener(SceneModelLoadedSuccessfully);
             m_sceneLoadingComplete = false;
             m_initialized = true;

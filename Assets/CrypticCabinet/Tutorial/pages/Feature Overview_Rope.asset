@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4510294d23d964fe59443526f1ca7c4b, type: 3}
+  m_Name: Feature Overview_Rope
+  m_EditorClassIdentifier: 
+  m_displayName: Rope
+  m_hierarchyName: Feature Overview/Rope
+  m_context: {fileID: 11400000, guid: b05aea44e20f2b44f92707a0633fa98f, type: 2}
+  m_markdownFile: {fileID: 0}
+  m_priority: 1001
+  m_overrideMarkdownText: "# Rope\n![alt text](../Documentation/Images/Rope.gif){style=\"width:40%;height:40%\"}\n\nAfter
+    an initial prototype based on a chain of physics colliders, it was decided to
+    opt for a Verlet rope implementation instead, heavily based on <a href=\"https://github.com/GaryMcWhorter/Verlet-Chain-Unity\">this
+    open source example</a>. The issue with the first prototype was that the result
+    looked like the rope was made up of sticks and was quite difficult to tune, while
+    the second approach gave much more realistic results. \nIt took a few iterations
+    to fine tune the correct amount of bones for the skeleton of the final asset,
+    to make sure it looked fluid without affecting performance. \nAnother aspect
+    to improve its look and feel was to avoid making it feel elastic: that\u2019s
+    why, when pulling, it was preferred to make it come out of the ceiling instead
+    of stretching it.\nIn terms of interaction, the rope can be grabbed from any
+    point along its length, using one or two hands. This is implemented by placing
+    a Grabbable on the rope following the user's hand, once the user grabs the Grabbable
+    it locks to the nearest node in the rope and that node then follows the user's
+    hand. This is duplicated with a second Grabbable for the other hand. These grabbed
+    positions are synchronized with the other users over the network so remote users
+    can see the active player grabbing the rope.\nAnother important element to make
+    the rope feel more real was to ensure that it collided correctly with walls and
+    other objects in the scene. Collisions are calculated using <a href=\"https://docs.unity3d.com/ScriptReference/Physics.OverlapSphereNonAlloc.html\">Physics.OverlapSphereNonAlloc</a>
+    and <a href=\"https://docs.unity3d.com/ScriptReference/Physics.ComputePenetration.html\">Physics.ComputePenetration</a>
+    to push rope nodes away from each other and from scene objects. In terms of multiplayer,each
+    client calculates their own rope updates, but they share some fixed locations
+    when the rope is being held by a user.\n\n\n### Relevant Files\n- <a href=\"./Assets/CrypticCabinet/Scripts/Puzzles/SandPuzzle/Rope.cs\">Rope.cs</a>\n\n"
+  m_overrideMarkdownRoot: .\Documentation/

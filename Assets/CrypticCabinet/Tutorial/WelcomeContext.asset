@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6406cf99f3eda9543b76052362849a20, type: 3}
+  m_Name: WelcomeContext
+  m_EditorClassIdentifier: 
+  m_title: Welcome
+  m_priority: 1000
+  m_tutorialConfig: {fileID: 11400000, guid: 55ef062a309ba3744aa98a9367203495, type: 2}
+  m_showBanner: 1
+  m_markdownPath: ./README.md
+  m_reduceTitleLevelBy1: 0
+  m_pageConfigs:
+  - SectionTitle: Header
+    ShowSectionInContext: 0
+    ShowSectionAsChild: 0
+    HideTitle: 0
+  - SectionTitle: Cryptic Cabinet
+    ShowSectionInContext: 1
+    ShowSectionAsChild: 0
+    HideTitle: 1
+  - SectionTitle: Before you get started
+    ShowSectionInContext: 1
+    ShowSectionAsChild: 0
+    HideTitle: 0
+  - SectionTitle: Learn
+    ShowSectionInContext: 1
+    ShowSectionAsChild: 0
+    HideTitle: 0
+  - SectionTitle: Mechanics and Features
+    ShowSectionInContext: 1
+    ShowSectionAsChild: 0
+    HideTitle: 0
+  - SectionTitle: How to run the project in Unity
+    ShowSectionInContext: 0
+    ShowSectionAsChild: 0
+    HideTitle: 0
+  - SectionTitle: Project Structure
+    ShowSectionInContext: 1
+    ShowSectionAsChild: 0
+    HideTitle: 0
+  - SectionTitle: Gameplay Phases
+    ShowSectionInContext: 1
+    ShowSectionAsChild: 0
+    HideTitle: 0
+  - SectionTitle: UI System
+    ShowSectionInContext: 1
+    ShowSectionAsChild: 0
+    HideTitle: 0
+  - SectionTitle: Getting the code
+    ShowSectionInContext: 0
+    ShowSectionAsChild: 0
+    HideTitle: 0
+  - SectionTitle: Dependencies
+    ShowSectionInContext: 1
+    ShowSectionAsChild: 0
+    HideTitle: 0
+  - SectionTitle: License
+    ShowSectionInContext: 0
+    ShowSectionAsChild: 0
+    HideTitle: 0
+  - SectionTitle: Contribution
+    ShowSectionInContext: 0
+    ShowSectionAsChild: 0
+    HideTitle: 0

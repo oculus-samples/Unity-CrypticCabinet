@@ -40,8 +40,8 @@ After this, the user can confirm the layout and start the experience.  Object po
 - [WallSpaceFinder.cs](../Assets/CrypticCabinet/Scripts/SceneManagement/WallSpaceFinder.cs)
 - [DeskSpaceFinder.cs](../Assets/CrypticCabinet/Scripts/SceneManagement/DeskSpaceFinder.cs)
 
-# Networking:
-Multiplayer is connected and managed via [Photon Fusion](https://doc.photonengine.com/realtime/current/getting-started/quick-start), given the app is designed for colocation it’s not necessary to have a lobby screen. When the host creates a new game they are presented with a room code that they then share with their guests. This is handled within [PhotonConnector](../Assets/CrypticCabinet/Scripts/Photon/PhotonConnector.cs). Also colocation events are triggered from here as well. A deep dive can be found [here](https://developer.oculus.com/documentation/unity/unity-colocation-deep-dive/) and called from within [ColocationDriverNetObj](../Assets/Scripts/Colocation/ColocationDriverNetObj.cs).
+# Networking
+Multiplayer is connected and managed via [Photon Fusion](https://doc.photonengine.com/realtime/current/getting-started/quick-start), given the app is designed for colocation it’s not necessary to have a lobby screen. When the host creates a new game they are presented with a room code that they then share with their guests. This is handled within [PhotonConnector](../Assets/CrypticCabinet/Scripts/Photon/PhotonConnector.cs). Also colocation events are triggered from here as well. A deep dive can be found [here](https://developer.oculus.com/documentation/unity/unity-colocation-deep-dive/) and called from within [ColocationDriverNetObj](../Assets/CrypticCabinet/Scripts/Colocation/ColocationDriverNetObj.cs).
 
 ### Relevant Files
 - [GrabPassOwnership.cs](../Assets/CrypticCabinet/Scripts/Utils/GrabPassOwnership.cs)

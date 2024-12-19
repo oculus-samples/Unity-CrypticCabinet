@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4510294d23d964fe59443526f1ca7c4b, type: 3}
+  m_Name: Feature Overview_Clock
+  m_EditorClassIdentifier: 
+  m_displayName: Clock
+  m_hierarchyName: Feature Overview/Clock
+  m_context: {fileID: 11400000, guid: b05aea44e20f2b44f92707a0633fa98f, type: 2}
+  m_markdownFile: {fileID: 0}
+  m_priority: 1001
+  m_overrideMarkdownText: "# Clock\n![alt text](../Documentation/Images/Clock.gif){style=\"width:50%;height:50%\"}\n\nThe
+    clock time selection feature is enabled by the <a href=\"https://developer.oculus.com/documentation/unity/unity-isdk-grabbable/#one-grab-transformers\">OneGrabRotateTransformer</a>
+    feature of the Meta Quest API. The local rotation of the handle is then used
+    to drive the rotation of the clock hands, which are used to detect when the user
+    has selected the correct time. The use of a specific \u201Cclick\u201D sound
+    helps the user understand when the clock hands are in the correct position. At
+    that point, the clock door animates open.\n\n\n### Relevant Files\n- <a href=\"./Assets/CrypticCabinet/Scripts/Puzzles/Clock/ClockSpinner.cs\">ClockSpinner.cs</a>\n-
+    <a href=\"./Assets/CrypticCabinet/Scripts/Puzzles/Clock/ClockHandMover.cs\">ClockHandMover.cs</a>\n\n\n"
+  m_overrideMarkdownRoot: .\Documentation/
