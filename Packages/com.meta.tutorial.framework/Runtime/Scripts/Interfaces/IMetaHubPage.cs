@@ -14,6 +14,7 @@ namespace Meta.Tutorial.Framework.Hub.Interfaces
         /// </summary>
         void OnGUI();
 
+#if UNITY_EDITOR
         /// <summary>
         /// Register the window It's associated to.
         /// </summary>
@@ -25,5 +26,6 @@ namespace Meta.Tutorial.Framework.Hub.Interfaces
         /// </summary>
         /// <param name="window">Editor window</param>
         void UnregisterWindow(EditorWindow window);
+#endif
     }
 }

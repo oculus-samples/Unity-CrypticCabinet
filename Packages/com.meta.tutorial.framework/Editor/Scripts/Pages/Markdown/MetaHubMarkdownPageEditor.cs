@@ -46,8 +46,9 @@ namespace Meta.Tutorial.Framework.Hub.Pages.Markdown
 
         // private readonly Regex m_imageRegex = new(@"!\[(.*?)\]\((.*?)\)", RegexOptions.Compiled);
         // private readonly Regex m_splitRegex = new(@"(!\[.*?\]\(.*?\))|(https?://[^\s]+)", RegexOptions.Compiled);
-        private readonly Regex m_orderedContent = new(@"^(?:(\d+\.)|[-•*]) (.*)", RegexOptions.Compiled | RegexOptions.Multiline);
-        private readonly Regex m_blockRegex = new(@"^>\s*(.*)", RegexOptions.Compiled | RegexOptions.Multiline);
+        private readonly Regex m_orderedContent = new(@"^(\s*)(?:(\d+(?:\.\d*)+)|[-•*]) (.*)", RegexOptions.Compiled | RegexOptions.Multiline);
+        private readonly Regex m_orderedCount = new(@"(\d)+", RegexOptions.Compiled | RegexOptions.Multiline);
+        private readonly Regex m_blockRegex = new(@"^(\s*)>\s*(.*)", RegexOptions.Compiled | RegexOptions.Multiline);
 
         private const float PADDING = Styles.Markdown.PADDING;
 
@@ -390,21 +391,25 @@ namespace Meta.Tutorial.Framework.Hub.Pages.Markdown
             {
                 Draw(() =>
                 {
+                    GUILayout.Space(Styles.Markdown.SPACING);
                     GUILayout.BeginHorizontal(GUILayout.MaxWidth(RenderedWindowWidth));
                     GUILayout.Space(Styles.Markdown.SPACING);
                     GUILayout.BeginVertical();
                     GUILayout.BeginVertical(Styles.Markdown.Box.Style);
+                    GUILayout.Space(Styles.Markdown.BOX_SPACING);
                 });
 
-                var markdown = MarkdownUtils.ParseMarkdown(block.Groups[1].Value);
+                var markdown = MarkdownUtils.ParseMarkdown(block.Groups[2].Value);
                 DrawText(markdown);
 
                 Draw(() =>
                 {
+                    GUILayout.Space(Styles.Markdown.BOX_SPACING);
                     GUILayout.EndVertical();
                     GUILayout.EndVertical();
                     GUILayout.Space(Styles.Markdown.SPACING);
                     GUILayout.EndHorizontal();
+                    GUILayout.Space(Styles.Markdown.SPACING);
                 });
             }
         }
@@ -450,15 +455,32 @@ namespace Meta.Tutorial.Framework.Hub.Pages.Markdown
 
                     m_listStarted = true;
                 }
+                
+                var point = orderedContentMatch.Groups[2].Value;
+                if (string.IsNullOrEmpty(point))
+                {
+                    point = "•";
+                }
+                var indentation = 0;
+
+                var spaces = orderedContentMatch.Groups[1].Value.TrimStart('\n');
+                var matches = m_orderedCount.Matches(point);
+                if (matches.Count > 0)
+                {
+                    indentation = matches.Count - 1;
+                }
+                else if (!string.IsNullOrEmpty(spaces))
+                {
+                    indentation = Mathf.CeilToInt(spaces.Length / 2f);
+                }
+                
                 Draw(() =>
                 {
-                    GUILayout.Space(Styles.Markdown.LIST_SPACING);
+                    GUILayout.Space(indentation > 0 ? Styles.Markdown.LIST_SPACING_HALF : Styles.Markdown.LIST_SPACING);
                     GUILayout.BeginHorizontal(GUILayout.MaxWidth(RenderedWindowWidth));
-
-                    var point = orderedContentMatch.Groups[1].Value;
-                    if (string.IsNullOrEmpty(point))
+                    if (indentation > 0)
                     {
-                        point = "•";
+                        GUILayout.Space(Styles.Markdown.INDENT_SPACE * indentation);
                     }
 
                     Styles.Markdown.Text.DrawHorizontalTextArea(point);
@@ -466,13 +488,13 @@ namespace Meta.Tutorial.Framework.Hub.Pages.Markdown
 
                 var style = new GUIStyle(m_normalTextStyle);
                 style.padding.left = 0;
-                DrawText(orderedContentMatch.Groups[2].Value, style);
+                DrawText(orderedContentMatch.Groups[3].Value, style);
 
                 Draw(() =>
                 {
                     GUILayout.Space(Styles.Markdown.SPACING);
                     GUILayout.EndHorizontal();
-                    GUILayout.Space(Styles.Markdown.LIST_SPACING);
+                    GUILayout.Space(indentation > 0 ? Styles.Markdown.LIST_SPACING_HALF : Styles.Markdown.LIST_SPACING);
                 });
             }
         }
@@ -486,12 +508,13 @@ namespace Meta.Tutorial.Framework.Hub.Pages.Markdown
         /// before the match, the second parameter is the match itself.</param>
         private void ProcessSections(string input, Regex regex, Action<string, Match> onProcessSection)
         {
-            var normalizedInput = regex.Replace(input, match =>
+            var normalizedInput = regex == m_orderedContent ? regex.Replace(input, match =>
             {
-                var prefix = match.Groups[1].Value; // Captured number or empty for bullets
+                var space = match.Groups[1].Value; // Captured number or empty for bullets
+                var prefix = match.Groups[2].Value; // Captured number or empty for bullets
                 var bullet = string.IsNullOrEmpty(prefix) ? "•" : prefix; // Normalize '-' and '*' to '•'
-                return $"{bullet} {match.Groups[2].Value}"; // Reconstruct the line
-            });
+                return $"{space}{bullet} {match.Groups[3].Value}"; // Reconstruct the line
+            }) : input;
 
             var matches = regex.Matches(normalizedInput);
 

@@ -548,6 +548,8 @@ namespace Meta.Tutorial.Framework.Hub.UIComponents
             public const float INDENT_SPACE = 15;
             public const int SPACING = 16;
             public const int LIST_SPACING = 2;
+            public const int BOX_SPACING = 8;
+            public const int LIST_SPACING_HALF = 1;
 
             public static readonly TextStyle Text = new(
                 padding: new RectOffset(SPACING, 0, 0, 0),
