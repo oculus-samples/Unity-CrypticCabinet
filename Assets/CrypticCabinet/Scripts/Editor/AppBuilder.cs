@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using System;
 using System.IO;
 using System.Linq;
 using UnityEditor;
@@ -34,7 +35,16 @@ namespace CrypticCabinet.Editor
                 target = BuildTarget.Android,
             };
 
-            Build(options);
+            var savedValue = PlayerSettings.Android.useCustomKeystore;
+            try
+            {
+                PlayerSettings.Android.useCustomKeystore = true;
+                Build(options);
+            }
+            finally
+            {
+                PlayerSettings.Android.useCustomKeystore = savedValue;
+            }
         }
 
         /// <summary>
@@ -57,7 +67,16 @@ namespace CrypticCabinet.Editor
                 target = BuildTarget.Android,
             };
 
-            Build(options);
+            var savedValue = PlayerSettings.Android.useCustomKeystore;
+            try
+            {
+                PlayerSettings.Android.useCustomKeystore = true;
+                Build(options);
+            }
+            finally
+            {
+                PlayerSettings.Android.useCustomKeystore = savedValue;
+            }
         }
 
         /// <summary>
