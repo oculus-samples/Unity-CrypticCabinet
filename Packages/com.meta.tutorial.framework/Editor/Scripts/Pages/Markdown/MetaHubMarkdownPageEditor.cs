@@ -339,6 +339,17 @@ namespace Meta.Tutorial.Framework.Hub.Pages.Markdown
             }
             #endregion
 
+            // if the last element is an image we need to end the layout
+            if (prevIsImage)
+            {
+                Draw(() =>
+                {
+                    GUILayout.FlexibleSpace();
+                    EditorGUILayout.EndHorizontal();
+                });
+                prevIsImage = false;
+            }
+
             Draw(() =>
             {
                 GUILayout.Space(Styles.Markdown.PADDING);
