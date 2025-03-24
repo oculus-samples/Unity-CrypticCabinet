@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace CrypticCabinet.Utils
     /// <summary>
     /// Used to assist in selecting UI when distance grab interactors are present
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class UIRaycastUtility : MonoBehaviour
     {
         [SerializeField] private RayInteractor m_rayInteractor;

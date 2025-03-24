@@ -6,6 +6,7 @@ using CrypticCabinet.GameManagement;
 using CrypticCabinet.UI.Modal;
 using CrypticCabinet.Utils;
 using Meta.Utilities;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.UI
@@ -13,6 +14,7 @@ namespace CrypticCabinet.UI
     /// <summary>
     ///     Singleton to control the menus and windows for the game UI.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class UISystem : Singleton<UISystem>
     {
         [SerializeField] private GameObject m_uiModal;

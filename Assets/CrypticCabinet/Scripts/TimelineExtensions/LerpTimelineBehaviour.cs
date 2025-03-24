@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -10,6 +11,7 @@ namespace CrypticCabinet.TimelineExtensions
     ///     Specifically, this is a bridge between the LerpTimelineClip set up in a timeline and the LerpTimelineEvent
     ///     to report the percentage through the LerpTimelineClip.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class LerpTimelineBehaviour : PlayableBehaviour
     {
         public LerpTimelineEvent UpdateEvent;

@@ -1,9 +1,11 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.Clock
 {
+    [MetaCodeSample("CrypticCabinet")]
     public class FollowTarget : MonoBehaviour
     {
         [SerializeField] private Transform m_target;

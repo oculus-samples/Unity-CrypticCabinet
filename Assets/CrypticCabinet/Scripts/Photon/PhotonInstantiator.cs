@@ -3,6 +3,7 @@
 using System.Linq;
 using Fusion;
 using Meta.Utilities;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Photon
@@ -13,6 +14,7 @@ namespace CrypticCabinet.Photon
     ///     The spawned network object will automatically be child of the parent of this script.
     ///     Note: This is a Multiton, which keeps track of all the instantiated instances.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class PhotonInstantiator : Multiton<PhotonInstantiator>
     {
         [SerializeField] private NetworkObject m_networkObject;

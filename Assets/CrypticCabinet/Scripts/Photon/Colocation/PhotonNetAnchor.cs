@@ -3,12 +3,14 @@
 using System;
 using com.meta.xr.colocation;
 using Fusion;
+using Meta.XR.Samples;
 
 namespace CrypticCabinet.Photon.Colocation
 {
     /// <summary>
     ///     Represents a replicated spatial anchor via Photon network.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public struct PhotonNetAnchor : INetworkStruct, IEquatable<PhotonNetAnchor>
     {
         public NetworkBool IsAutomaticAnchor;

@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +10,7 @@ namespace CrypticCabinet.Puzzles.Orrery
     ///     Represents a planet of the orrery puzzle.
     ///     It defines the snapping status (correct or incorrect), and the grab interactions.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class OrreryPlanet : MonoBehaviour
     {
         [SerializeField] private OrreryControl.Planets m_planet;

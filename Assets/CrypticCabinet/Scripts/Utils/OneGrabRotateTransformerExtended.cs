@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Utils
     ///     A copy of OneGrabRotateTransformer but with a function exposed to allow the resetting of the
     ///     _constrainedRelativeAngle value after force resetting the switch.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class OneGrabRotateTransformerExtended : MonoBehaviour, ITransformer
     {
         public enum Axis

@@ -5,6 +5,7 @@ using CrypticCabinet.Photon.Colocation;
 using CrypticCabinet.Utils;
 using Cysharp.Threading.Tasks;
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,6 +15,7 @@ namespace CrypticCabinet.Player
     ///     Represents the main player. It controls the way the user can interact with all aspects of the game,
     ///     the interaction with virtual objects and UI, and the player's identification for other players.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class CrypticCabinetPlayer : NetworkPlayerBehaviour<CrypticCabinetPlayer>
     {
         [SerializeField] private UnityEvent<string> m_onPlayerNameChanged = new();

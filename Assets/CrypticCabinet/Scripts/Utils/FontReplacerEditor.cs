@@ -2,6 +2,7 @@
 
 #if UNITY_EDITOR
 
+using Meta.XR.Samples;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace CrypticCabinet.Utils
     /// <summary>
     ///     Utility Editor class to quickly replace fonts within the game.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class FontReplacerEditor : Editor
     {
         [MenuItem("CrypticCabinet/Utils/Replace Fonts")]

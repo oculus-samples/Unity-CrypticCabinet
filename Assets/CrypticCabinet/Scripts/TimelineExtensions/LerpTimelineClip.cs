@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
@@ -9,6 +10,7 @@ namespace CrypticCabinet.TimelineExtensions
     /// <summary>
     ///     Custom implementation for a lerp timeline clip.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class LerpTimelineClip : PlayableAsset, ITimelineClipAsset
     {
         public ClipCaps clipCaps => ClipCaps.None;

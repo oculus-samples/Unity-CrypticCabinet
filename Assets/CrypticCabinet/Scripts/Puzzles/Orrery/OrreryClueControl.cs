@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System.Collections;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.Orrery
@@ -8,6 +9,7 @@ namespace CrypticCabinet.Puzzles.Orrery
     /// <summary>
     ///     Controls the clue that is shown to the user when the light beam hit the glass orb in the orrery.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class OrreryClueControl : MonoBehaviour
     {
         private const string ANIMATION_PARAMETER_FLOAT_NAME = "MotionTime";

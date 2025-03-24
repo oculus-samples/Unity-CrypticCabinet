@@ -2,11 +2,13 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.SandPuzzle
 {
+    [MetaCodeSample("CrypticCabinet")]
     public class DistanceChecker : MonoBehaviour
     {
         [SerializeField] private Transform m_ropeRoot;

@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Utils
@@ -7,6 +8,7 @@ namespace CrypticCabinet.Utils
     /// <summary>
     ///     Represents a cone volume for VFX.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class VFXCone : MonoBehaviour
     {
         public float BaseRadius;

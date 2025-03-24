@@ -2,6 +2,7 @@
 
 using System;
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Puzzles.Clock
     /// <summary>
     ///     Represents the control of the clock hands for the clock puzzle.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class ClockHandMover : NetworkBehaviour
     {
         [SerializeField] private Transform m_hourHand;

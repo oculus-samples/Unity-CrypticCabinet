@@ -1,9 +1,11 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.Clock
 {
+    [MetaCodeSample("CrypticCabinet")]
     public class IgnoreCollisionsSetUp : MonoBehaviour
     {
         [SerializeField] private GameObject m_body;

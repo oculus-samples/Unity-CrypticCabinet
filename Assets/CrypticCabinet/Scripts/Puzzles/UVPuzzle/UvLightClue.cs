@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.UVPuzzle
@@ -8,6 +9,7 @@ namespace CrypticCabinet.Puzzles.UVPuzzle
     ///     Represents the UV clue that appears on the wall when the working UV light bulb is into the
     ///     UV machine and is turned on.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class UvLightClue : MonoBehaviour
     {
         [SerializeField] private GameObject m_clueObject;

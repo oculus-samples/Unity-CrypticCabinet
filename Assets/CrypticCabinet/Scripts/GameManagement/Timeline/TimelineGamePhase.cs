@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using CrypticCabinet.Photon;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.GameManagement.Timeline
@@ -9,6 +10,7 @@ namespace CrypticCabinet.GameManagement.Timeline
     ///     Represents a game phase where a timeline animation is played.
     ///     This will be used by the intro animation (Act1) and outro animation (Act3).
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [CreateAssetMenu(fileName = "New CrypticCabinet Timeline Phase", menuName = "CrypticCabinet/Timeline GamePhase")]
     public class TimelineGamePhase : GamePhase
     {

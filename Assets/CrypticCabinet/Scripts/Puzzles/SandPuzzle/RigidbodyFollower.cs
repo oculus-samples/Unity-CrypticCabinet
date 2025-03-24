@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.SandPuzzle
@@ -7,6 +8,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
     /// <summary>
     ///     Used to follow a rigidbody. We use this for the rope and the hook to stay connected.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(Rigidbody))]
     public class RigidbodyFollower : MonoBehaviour
     {

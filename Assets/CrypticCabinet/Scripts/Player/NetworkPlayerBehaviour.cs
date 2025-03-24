@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using Fusion;
+using Meta.XR.Samples;
 
 namespace CrypticCabinet.Player
 {
@@ -9,6 +10,7 @@ namespace CrypticCabinet.Player
     ///     Represents a player with replicated values through Photon Fusion.
     /// </summary>
     /// <typeparam name="T">The class of the player.</typeparam>
+    [MetaCodeSample("CrypticCabinet")]
     public class NetworkPlayerBehaviour<T> : NetworkBehaviour
         where T : NetworkPlayerBehaviour<T>
     {

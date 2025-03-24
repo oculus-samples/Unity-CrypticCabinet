@@ -2,6 +2,7 @@
 
 using System.IO;
 using System.Linq;
+using Meta.XR.Samples;
 using UnityEditor.Android;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Editor
     /// <summary>
     /// Callback between the Unity export and the Gradle build to removed unnecessary permissions in the AndroidManifest.xml
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class RemovedPermissionsBuildStep : IPostGenerateGradleAndroidProject
     {
         /// <summary>

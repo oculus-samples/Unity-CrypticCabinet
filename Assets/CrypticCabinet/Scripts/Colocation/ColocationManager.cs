@@ -2,6 +2,7 @@
 
 using CrypticCabinet.Photon;
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Events;
 using Assert = UnityEngine.Assertions.Assert;
@@ -11,6 +12,7 @@ namespace CrypticCabinet.Colocation
     /// <summary>
     ///     Handles the colocation process, and offers functions to emulate colocation completed or failed in Editor.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class ColocationManager : MonoBehaviour
     {
         [SerializeField] private ColocationDriverNetObj m_colocationPrefab;

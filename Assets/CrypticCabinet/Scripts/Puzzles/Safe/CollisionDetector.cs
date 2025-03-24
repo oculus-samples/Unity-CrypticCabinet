@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.Safe
@@ -7,6 +8,7 @@ namespace CrypticCabinet.Puzzles.Safe
     /// <summary>
     ///     Detects collisions with the colliders tagged with m_tagName, and performs callbacks on trigger enter or exit.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class CollisionDetector : MonoBehaviour
     {
         public delegate void TriggerDelegate(Collider otherCollider);

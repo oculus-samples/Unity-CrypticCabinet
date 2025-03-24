@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.VFX;
 using UnityEngine.VFX.Utility;
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Utils
     ///     Binder class for ConeInformation for the visual effect graph.
     ///     Adapted from package script: UnityEngine.VFX.Utility.VFXPlaneBinder
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [VFXBinder("Transform/Cone")]
     public class VFXConeBinder : VFXBinderBase
     {

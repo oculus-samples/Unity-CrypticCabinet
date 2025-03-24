@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using CrypticCabinet.Utils;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -9,6 +10,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
     /// <summary>
     ///     Defines the interactions of the sand bucket, including the particles for the sand into it.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(SkinnedMeshRenderer), typeof(Rigidbody), typeof(RepositionWhenFarAway))]
     public class SandBucket : MonoBehaviour
     {

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using CrypticCabinet.GameManagement;
 using CrypticCabinet.Passthrough;
 using CrypticCabinet.Photon;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.UI.Modal
@@ -11,6 +12,7 @@ namespace CrypticCabinet.UI.Modal
     /// <summary>
     ///     An in-game menu that can be used to exit the game play.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class InGameMenu : MonoBehaviour
     {
         [SerializeField] private List<GamePhase> m_allowedGamePhases;

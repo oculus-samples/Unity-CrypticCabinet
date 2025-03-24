@@ -6,6 +6,7 @@ using System.Linq;
 using CrypticCabinet.SceneManagement;
 using CrypticCabinet.UI;
 using Cysharp.Threading.Tasks;
+using Meta.XR.Samples;
 using Oculus.Interaction.Input;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ namespace CrypticCabinet.Utils
     /// <summary>
     ///     The manager responsible for the object placements in the room during scene setup.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class ObjectPlacementManager : Meta.Utilities.Singleton<ObjectPlacementManager>
     {
 #if UNITY_EDITOR

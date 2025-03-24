@@ -2,6 +2,7 @@
 
 using System.Collections;
 using CrypticCabinet.Audio;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Puzzles.Clock
     /// <summary>
     ///     Represents the clock spinner the user can interact with to update the clock hands' positions.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class ClockSpinner : MonoBehaviour
     {
         [SerializeField] private Transform m_handleRoot;

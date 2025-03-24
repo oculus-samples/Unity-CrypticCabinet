@@ -2,6 +2,7 @@
 
 using System.Collections;
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Utils.InteractiveObjects
     /// <summary>
     ///     Represents an interactive button switch.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class MeshButtonSwitch : NetworkBehaviour
     {
         [SerializeField] private UnityEvent m_onSwitchedOn;

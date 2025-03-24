@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using Fusion;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Interactions
     /// <summary>
     ///     Simulates the motion of a screwable object onto a screw snap zone.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(OneGrabToggleRotateTransformer))]
     public class ScrewableObject : NetworkBehaviour
     {

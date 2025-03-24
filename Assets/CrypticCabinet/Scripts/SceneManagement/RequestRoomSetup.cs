@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.SceneManagement
@@ -7,6 +8,7 @@ namespace CrypticCabinet.SceneManagement
     /// <summary>
     ///     This is a convenient script to initiate / re-calibrate the Room Setup when needed.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class RequestRoomSetup : MonoBehaviour
     {
 

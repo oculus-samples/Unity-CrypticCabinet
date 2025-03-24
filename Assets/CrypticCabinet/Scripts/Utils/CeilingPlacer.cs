@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using CrypticCabinet.SceneManagement;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Utils
@@ -8,6 +9,7 @@ namespace CrypticCabinet.Utils
     /// <summary>
     ///     Moves an object to ceiling height if the <see cref="CeilingHeightDetector"/> is spawned.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class CeilingPlacer : MonoBehaviour
     {
         [SerializeField] private bool m_placeOnStart;

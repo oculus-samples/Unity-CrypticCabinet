@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using Meta.Utilities;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Utils
@@ -8,6 +9,7 @@ namespace CrypticCabinet.Utils
     /// <summary>
     ///     Singleton validator for the placement of all objects in the real room during scene setup.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class ObjectPlacementValidator : Singleton<ObjectPlacementValidator>
     {
         [SerializeField] private GameObject m_validationVisualCubePrefab;

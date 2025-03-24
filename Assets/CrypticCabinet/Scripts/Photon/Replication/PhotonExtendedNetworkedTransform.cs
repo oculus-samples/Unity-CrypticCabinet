@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Photon.Replication
@@ -9,6 +10,7 @@ namespace CrypticCabinet.Photon.Replication
     ///     The NetworkTransform of Photon Fusion by default only replicates position and rotation.
     ///     This class instead replicates the scale vector3 as well.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class PhotonExtendedNetworkedTransform : NetworkTransform
     {
         [Networked]

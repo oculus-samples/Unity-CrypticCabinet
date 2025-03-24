@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using Meta.XR.Samples;
 
 namespace CrypticCabinet.Utils
 {
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Utils
     ///     Provides functionality to shuffle a IList.
     ///     Based on post here: https://stackoverflow.com/a/1262619
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     internal static class ListShuffle
     {
         public static void Shuffle<T>(this IList<T> list)
@@ -27,6 +29,7 @@ namespace CrypticCabinet.Utils
     /// <summary>
     ///     A thread safe source of random.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public static class ThreadSafeRandom
     {
         [ThreadStatic] private static Random s_local;

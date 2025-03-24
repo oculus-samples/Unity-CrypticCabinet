@@ -7,6 +7,7 @@ using System.Linq;
 using CrypticCabinet.Utils;
 using Cysharp.Threading.Tasks;
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.Orrery
@@ -14,6 +15,7 @@ namespace CrypticCabinet.Puzzles.Orrery
     /// <summary>
     ///     Defines the controls for the orrery puzzle.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class OrreryControl : NetworkBehaviour
     {
         [SerializeField] private PhysicsToggleSwitch m_reset;

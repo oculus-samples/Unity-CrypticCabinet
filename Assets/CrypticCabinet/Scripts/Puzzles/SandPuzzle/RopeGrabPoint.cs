@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.SandPuzzle
@@ -7,6 +8,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
     /// <summary>
     ///     Represents a point of the rope that can be grabbed by the user.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class RopeGrabPoint : MonoBehaviour
     {
         [SerializeField] private Rope m_rope;

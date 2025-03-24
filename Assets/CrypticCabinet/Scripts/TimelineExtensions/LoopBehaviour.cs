@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System;
+using Meta.XR.Samples;
 using UnityEngine.Playables;
 
 namespace CrypticCabinet.TimelineExtensions
@@ -8,6 +9,7 @@ namespace CrypticCabinet.TimelineExtensions
     /// <summary>
     ///     Custom playable behaviour for a loop.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [Serializable]
     public class LoopBehaviour : PlayableBehaviour
     {

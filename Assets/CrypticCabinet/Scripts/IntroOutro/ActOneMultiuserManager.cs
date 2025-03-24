@@ -2,6 +2,7 @@
 
 using CrypticCabinet.TimelineExtensions;
 using Fusion;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace CrypticCabinet.IntroOutro
     ///     Script for the Intro timeline animation control (Act1).
     ///     Triggers the next timeline phase for all users in a session when the note has been grabbed.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class ActOneMultiuserManager : NetworkBehaviour
     {
         [SerializeField] private WaitTimeline m_waitTimeline;

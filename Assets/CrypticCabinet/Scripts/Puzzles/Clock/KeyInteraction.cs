@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System.Collections;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,6 +12,7 @@ namespace CrypticCabinet.Puzzles.Clock
     ///     Defines the interactions the user can perform on the key of the clock puzzle.
     ///     It also controls the trigger for the drawer that unlocks and open for the Tesla puzzle.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(SnapInteractable))]
     public class KeyInteraction : MonoBehaviour
     {

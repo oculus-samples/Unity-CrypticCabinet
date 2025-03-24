@@ -2,6 +2,7 @@
 
 using System.Collections;
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +12,7 @@ namespace CrypticCabinet.Utils
     ///     Convenient class to reposition objects when they are too far away from their original position.
     ///     This is used for example as a backup if any object would fall under the floor.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(Rigidbody))]
     public class RepositionWhenFarAway : NetworkBehaviour, IStateAuthorityChanged
     {

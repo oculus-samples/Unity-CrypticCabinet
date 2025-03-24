@@ -2,12 +2,14 @@
 
 using System;
 using Fusion;
+using Meta.XR.Samples;
 
 namespace CrypticCabinet.Photon.Colocation
 {
     /// <summary>
     ///     Represents a connected user, identified by Oculus ID and Colocation group ID.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public struct PhotonNetPlayer : INetworkStruct, IEquatable<PhotonNetPlayer>
     {
         public ulong PlayerId;

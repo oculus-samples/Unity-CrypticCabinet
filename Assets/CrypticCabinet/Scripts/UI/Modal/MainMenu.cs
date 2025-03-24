@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using CrypticCabinet.Photon;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +10,7 @@ namespace CrypticCabinet.UI.Modal
     /// <summary>
     ///     Handles the logic for the Main Menu UI.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class MainMenu : MonoBehaviour
     {
         public UnityEvent OnSinglePlayerPressedAction;

@@ -2,6 +2,7 @@
 
 using System;
 using Meta.XR.MRUtilityKit;
+using Meta.XR.Samples;
 using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
@@ -15,6 +16,7 @@ namespace CrypticCabinet.SceneManagement
     /// When added to a GameObject that represents a scene entity, such as a floor, ceiling, or desk, this component
     /// generates a mesh from its boundary vertices.
     /// </remarks>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(MeshFilter))]
     public class MRUKPlaneMeshFilter : MonoBehaviour
     {

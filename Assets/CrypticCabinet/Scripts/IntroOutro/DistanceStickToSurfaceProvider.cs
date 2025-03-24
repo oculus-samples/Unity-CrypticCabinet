@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace CrypticCabinet.IntroOutro
     /// <summary>
     ///     Provides a visual DistanceStickToSurface object configured for the specified ObjectPlacementType.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class DistanceStickToSurfaceProvider : MonoBehaviour, IMovementProvider
     {
         [SerializeField] private LayerMask m_layerMaskWall;
@@ -42,6 +44,7 @@ namespace CrypticCabinet.IntroOutro
     /// <summary>
     ///     A ray that sticks to the specified surface depending on the layer mask and ObjectPlacementType.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class DistanceStickToSurface : IMovement
     {
         public Pose Pose => m_current;

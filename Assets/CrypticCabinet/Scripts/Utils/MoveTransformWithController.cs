@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Utils
     ///     Moves the transform of this object following the trajectory of the desired Quest controller.
     ///     Stops the move when the desired trigger is pressed.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class MoveTransformWithController : MonoBehaviour
     {
         /// <summary>

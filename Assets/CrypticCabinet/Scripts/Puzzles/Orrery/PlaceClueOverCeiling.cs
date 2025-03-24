@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using CrypticCabinet.SceneManagement;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.Orrery
@@ -9,6 +10,7 @@ namespace CrypticCabinet.Puzzles.Orrery
     ///     This script moves its GameObject to the same height
     ///     of the ceiling of the room.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class PlaceClueOverCeiling : MonoBehaviour
     {
         [SerializeField] private CeilingHeightDetector m_ceilingDetector;

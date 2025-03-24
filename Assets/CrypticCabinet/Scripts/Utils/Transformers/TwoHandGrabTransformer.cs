@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace CrypticCabinet.Utils.Transformers
     ///     - Calculate rotation defined by the angle made between the first grab and
     ///       the second grab positions.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class TwoHandGrabTransformer : MonoBehaviour, ITransformer
     {
         private IGrabbable m_grabbable;

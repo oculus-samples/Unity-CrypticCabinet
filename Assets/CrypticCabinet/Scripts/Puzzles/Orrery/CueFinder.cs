@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.Orrery
@@ -7,6 +8,7 @@ namespace CrypticCabinet.Puzzles.Orrery
     /// <summary>
     ///     Retrieves the OrreryClueControl and update the cue state over it.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class CueFinder : MonoBehaviour
     {
         private OrreryClueControl m_orreryClueControl;

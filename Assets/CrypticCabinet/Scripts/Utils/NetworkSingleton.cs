@@ -2,6 +2,7 @@
 
 using System;
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Utils
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Utils
     ///     Ensures that a specified network object only exists uniquely, following the singleton pattern.
     /// </summary>
     /// <typeparam name="T">The type of the singleton object</typeparam>
+    [MetaCodeSample("CrypticCabinet")]
     public class NetworkSingleton<T> : NetworkBehaviour where T : NetworkSingleton<T>
     {
         private static Action<T> s_onAwake;

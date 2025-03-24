@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System;
+using Meta.XR.Samples;
 using TMPro;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace CrypticCabinet.GameManagement.WaitForGuests
     /// <summary>
     ///     Trigger to start the game during a multiplayer session.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class StartGameTrigger : MonoBehaviour
     {
         [SerializeField] private TMP_Text m_messageLabel;

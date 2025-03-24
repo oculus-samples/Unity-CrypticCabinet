@@ -4,10 +4,12 @@ using System.Collections;
 using System.Linq;
 using CrypticCabinet.Photon;
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.GameManagement.Puzzles
 {
+    [MetaCodeSample("CrypticCabinet")]
     [CreateAssetMenu(fileName = "New CrypticCabinet Game Phase", menuName = "CrypticCabinet/Sand Puzzle GamePhase")]
     public class SandPuzzleGamePhase : GamePhase
     {

@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.IntroOutro
@@ -7,6 +8,7 @@ namespace CrypticCabinet.IntroOutro
     /// <summary>
     ///     Controls the enable state of a list of objects to enable or disable.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class EnabledStateTarget : MonoBehaviour
     {
         [SerializeField] private GameObject[] m_objectToEnable;

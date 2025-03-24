@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using CrypticCabinet.Utils;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.SandPuzzle
@@ -8,6 +9,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
     /// <summary>
     ///     Defines the sand chute volume killer for the sand puzzle.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class SandChuteVolumeKiller : MonoBehaviour
     {
         [SerializeField] private Transform m_pivot;

@@ -3,6 +3,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using Meta.XR.Samples;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace CrypticCabinet.Editor
     /// Small class for build the application.
     /// Currently depends on the correct scenes being in the build settings.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public static class AppBuilder
     {
         /// <summary>

@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Utils
@@ -7,6 +8,7 @@ namespace CrypticCabinet.Utils
     /// <summary>
     ///     Utility script to make UI follow the user's gaze, so that it can stay within the field of view of the camera.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class FollowUserGaze : MonoBehaviour
     {
         [SerializeField] private Transform m_uiElement;

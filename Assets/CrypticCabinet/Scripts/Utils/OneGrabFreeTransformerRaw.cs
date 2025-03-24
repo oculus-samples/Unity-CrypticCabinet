@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace CrypticCabinet.Utils
     ///     A Transformer that moves the target in a 1-1 fashion with the GrabPoint.
     ///     Simplified to place exactly where the grab point is calculated to be.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class OneGrabFreeTransformerRaw : MonoBehaviour, ITransformer
     {
         private IGrabbable m_grabbable;

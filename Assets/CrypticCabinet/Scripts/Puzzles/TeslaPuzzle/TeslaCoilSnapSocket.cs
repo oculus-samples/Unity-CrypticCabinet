@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,6 +10,7 @@ namespace CrypticCabinet.Puzzles.TeslaPuzzle
     /// <summary>
     ///     Represents the snapping area for a Tesla coil snappable.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class TeslaCoilSnapSocket : MonoBehaviour
     {
         public bool IsTeslaCoilSnapped { get; private set; }

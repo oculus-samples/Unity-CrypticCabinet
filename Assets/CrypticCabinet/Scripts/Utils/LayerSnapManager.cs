@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using Fusion;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace CrypticCabinet.Utils
     ///     Defines the rules to allow the snapping of objects belonging to the expected snap layer.
     ///     This is to only allow the snap of snappable objects to the expected snap areas.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(Rigidbody))]
     public class LayerSnapManager : MonoBehaviour
     {

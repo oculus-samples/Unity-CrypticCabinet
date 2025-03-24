@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.SandPuzzle
@@ -9,6 +10,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
     /// <summary>
     ///     Represents the source of a light beam, from which the light beam is generated.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(LineRenderer))]
     public class LightBeamEmitter : MonoBehaviour
     {

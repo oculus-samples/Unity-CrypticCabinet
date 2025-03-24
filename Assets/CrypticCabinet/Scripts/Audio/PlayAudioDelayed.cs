@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System.Collections;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Audio
@@ -8,6 +9,7 @@ namespace CrypticCabinet.Audio
     /// <summary>
     ///     Plays the specified audio source after the desired m_delayAmount.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class PlayAudioDelayed : MonoBehaviour
     {
         /// <summary>

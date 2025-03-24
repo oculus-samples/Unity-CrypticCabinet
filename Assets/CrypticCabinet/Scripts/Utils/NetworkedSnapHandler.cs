@@ -3,6 +3,7 @@
 using System;
 using System.Linq;
 using Fusion;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace CrypticCabinet.Utils
     /// <summary>
     ///     A networked handler for snap actions in multiplayer session.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class NetworkedSnapHandler : NetworkBehaviour
     {
         [SerializeField] private SnapInteractable m_snapper;

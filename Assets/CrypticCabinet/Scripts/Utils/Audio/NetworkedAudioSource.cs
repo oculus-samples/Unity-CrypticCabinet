@@ -2,6 +2,7 @@
 
 using Fusion;
 using Fusion.Editor;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEditor;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace CrypticCabinet.Utils.Audio
     ///     Replicates loop and play state of AudioSource.
     ///     Note: call Play and Stop on this instead of the AudioSource, otherwise replication will not work!
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [ExecuteInEditMode]
     [RequireComponent(typeof(AudioSource))]
     public class NetworkedAudioSource : NetworkBehaviour, IStateAuthorityChanged

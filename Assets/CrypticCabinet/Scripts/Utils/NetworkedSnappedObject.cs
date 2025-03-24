@@ -2,6 +2,7 @@
 
 using System;
 using Fusion;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Utils
     /// <summary>
     ///     Describes a networked snappable object for all users in a session.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class NetworkedSnappedObject : NetworkBehaviour
     {
         [Networked] public Guid SnapId { get; set; }

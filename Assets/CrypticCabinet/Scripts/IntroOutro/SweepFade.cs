@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using CrypticCabinet.Utils;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.IntroOutro
@@ -9,6 +10,7 @@ namespace CrypticCabinet.IntroOutro
     /// <summary>
     ///     Controls the sweep fade effect for the specified fade targets.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class SweepFade : MonoBehaviour
     {
         [SerializeField, Range(0, 1)] private float m_sweepTime;

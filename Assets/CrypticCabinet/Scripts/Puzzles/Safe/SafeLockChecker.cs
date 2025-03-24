@@ -2,6 +2,7 @@
 
 using CrypticCabinet.Utils;
 using Fusion;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,6 +13,7 @@ namespace CrypticCabinet.Puzzles.Safe
     ///     Checks the current values for the <see cref="SafeLockDialer"/>, and triggers the relative events on correct or
     ///     wrong combination.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class SafeLockChecker : NetworkBehaviour, IStateAuthorityChanged
     {
         [SerializeField] private SafeLockDialer m_safeLockDialer1;

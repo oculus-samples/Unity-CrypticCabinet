@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Audio
@@ -7,6 +8,7 @@ namespace CrypticCabinet.Audio
     /// <summary>
     ///     Controls the audios for the mini generators.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class MiniGeneratorAudio : MonoBehaviour
     {
         /// <summary>

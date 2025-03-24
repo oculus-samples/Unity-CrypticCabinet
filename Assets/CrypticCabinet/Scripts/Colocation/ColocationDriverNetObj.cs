@@ -10,6 +10,7 @@ using CrypticCabinet.UI;
 using CrypticCabinet.Utils;
 using Cysharp.Threading.Tasks;
 using Fusion;
+using Meta.XR.Samples;
 using Oculus.Platform.Models;
 using UnityEngine;
 
@@ -19,6 +20,7 @@ namespace CrypticCabinet.Colocation
     ///     Manages the complete workflow to ensure that all existing and new users will be colocated correctly
     ///     into the room.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class ColocationDriverNetObj : NetworkBehaviour
     {
         /// <summary>

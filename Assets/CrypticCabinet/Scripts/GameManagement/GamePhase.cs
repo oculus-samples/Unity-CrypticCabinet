@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.GameManagement
@@ -7,6 +8,7 @@ namespace CrypticCabinet.GameManagement
     /// <summary>
     ///     Represents a game phase for the gameplay.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [CreateAssetMenu(fileName = "New CrypticCabinet Game Phase", menuName = "CrypticCabinet/Game Phase")]
     public class GamePhase : ScriptableObject
     {

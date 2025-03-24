@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.GameManagement
@@ -8,6 +9,7 @@ namespace CrypticCabinet.GameManagement
     ///     Utility script that triggers the next game phase by pressing the P of the keyboard, or by pressing both
     ///     joysticks of the Quest controllers. Only meant for debugging purposes.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class SkipGamePhase : MonoBehaviour
     {
         public void Update()

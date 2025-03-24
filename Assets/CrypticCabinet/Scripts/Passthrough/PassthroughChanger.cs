@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using Meta.Utilities;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Passthrough
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Passthrough
     ///     to apply changes to the passthrough dynamically in terms of brightness, contrast,
     ///     opacity and saturation.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class PassthroughChanger : Singleton<PassthroughChanger>
     {
 

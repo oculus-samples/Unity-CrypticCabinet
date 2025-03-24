@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using com.meta.xr.colocation;
 using CrypticCabinet.Utils;
 using Fusion;
+using Meta.XR.Samples;
 
 namespace CrypticCabinet.Photon.Colocation
 {
     /// <summary>
     ///     Holds the count for all colocation groups, the anchors list, and players list.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class PhotonNetworkData : NetworkSingleton<PhotonNetworkData>, INetworkData
     {
         [Networked] private uint ColocationGroupCount { get; set; }

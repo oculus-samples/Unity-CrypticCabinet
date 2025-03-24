@@ -3,6 +3,7 @@
 using System;
 using CrypticCabinet.Utils;
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.SandPuzzle
@@ -11,6 +12,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
     ///     Describes the rope for the sand puzzle.
     ///     Based on: https://github.com/GaryMcWhorter/Verlet-Chain-Unity
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class Rope : NetworkBehaviour
     {
         [Header("Verlet Parameters")]

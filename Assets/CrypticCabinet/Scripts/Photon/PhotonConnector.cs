@@ -12,6 +12,7 @@ using Fusion;
 using Fusion.Photon.Realtime;
 using Fusion.Sockets;
 using Meta.Utilities;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -21,6 +22,7 @@ namespace CrypticCabinet.Photon
     /// <summary>
     ///     Represents different game session states relevant to the Photon workflow.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public enum GameSessionStatus
     {
         /// <summary>
@@ -49,6 +51,7 @@ namespace CrypticCabinet.Photon
     ///     When in a multiplayer session, it is possible to connect as the main player responsible for the scene
     ///     configuration (Host), or as guest with colocation (Join).
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class PhotonConnector : Singleton<PhotonConnector>, INetworkRunnerCallbacks
     {
         private const string GAME_SESSION_STATUS = "game_session_status";

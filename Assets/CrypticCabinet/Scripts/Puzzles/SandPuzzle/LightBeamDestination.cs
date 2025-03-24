@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using CrypticCabinet.Passthrough;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +12,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
     ///     Attach this to the intended object that needs to be hit by the light beam last to trigger an event.
     ///     Requiring Rigidbody to ensure it can receive a raycast.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(Rigidbody))]
     public class LightBeamDestination : MonoBehaviour
     {

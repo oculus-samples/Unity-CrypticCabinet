@@ -10,6 +10,7 @@ using CrypticCabinet.UI;
 using Fusion;
 using Meta.Utilities;
 using Meta.XR.MRUtilityKit;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,6 +21,7 @@ namespace CrypticCabinet.GameManagement
     ///     This is a singleton for convenience, so that from any part of the game anything can request
     ///     to proceed to the next phase of the gameplay if desired.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class GameManager : Singleton<GameManager>
     {
         /// <summary>

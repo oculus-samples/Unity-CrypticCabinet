@@ -3,6 +3,7 @@
 using System;
 using CrypticCabinet.Photon;
 using CrypticCabinet.Photon.Utils;
+using Meta.XR.Samples;
 using TMPro;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace CrypticCabinet.UI.Modal
     /// <summary>
     ///     Handles the logic for a generic Multiplayer Menu UI.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class MultiplayerMenu : MonoBehaviour
     {
         [SerializeField] private TMP_InputField m_roomNameForGuest;

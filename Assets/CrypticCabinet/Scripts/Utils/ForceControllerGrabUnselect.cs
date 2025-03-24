@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace CrypticCabinet.Utils
     ///     Utility class to force unselect when no mask button is, and disable select until at least one
     ///     mask button is pressed on the controller.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class ForceControllerGrabUnselect : MonoBehaviour
     {
         [SerializeField] private TouchHandGrabInteractor m_touchHandGrab;

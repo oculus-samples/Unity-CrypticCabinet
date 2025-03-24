@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using CrypticCabinet.GameManagement;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Utils
@@ -9,6 +10,7 @@ namespace CrypticCabinet.Utils
     /// <summary>
     ///     Enables or disables the desired game objects only if we are in the specified game phase.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class EnableForGamePhase : MonoBehaviour
     {
         /// <summary>

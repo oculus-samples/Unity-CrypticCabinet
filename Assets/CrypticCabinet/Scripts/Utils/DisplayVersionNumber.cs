@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using TMPro;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace CrypticCabinet.Utils
     /// <summary>
     ///     Responsible for showing the version number for the app.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class DisplayVersionNumber : MonoBehaviour
     {

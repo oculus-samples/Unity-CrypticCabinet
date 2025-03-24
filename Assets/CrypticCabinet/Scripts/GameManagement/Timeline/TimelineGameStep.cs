@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine.Events;
 using UnityEngine.Playables;
 
@@ -10,6 +11,7 @@ namespace CrypticCabinet.GameManagement.Timeline
     ///     Used to trigger an action when the timeline animation completes / stops.
     ///     We use this to proceed to the next game phase when the timeline game phase completes.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class TimelineGameStep : NetworkBehaviour
     {
         public UnityEvent TimelineCompleteCallback;

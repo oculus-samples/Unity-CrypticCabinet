@@ -1,12 +1,14 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using UnityEngine;
+using Meta.XR.Samples;
 
 namespace CrypticCabinet.Audio
 {
     /// <summary>
     ///     Controls the audio for the intro animation timeline (Act1).
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class Act1CabinetAudio : MonoBehaviour
     {
         [SerializeField] private Transform m_cabinetDoorTransform;

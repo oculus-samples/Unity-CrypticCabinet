@@ -2,6 +2,7 @@
 
 using CrypticCabinet.Photon;
 using CrypticCabinet.UI;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.GameManagement.WaitForGuests
@@ -11,6 +12,7 @@ namespace CrypticCabinet.GameManagement.WaitForGuests
     ///     that will force all new future guests to be forbidden from joining the game.
     ///     When the "start game" button is pressed, the game officially starts for all joined players.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [CreateAssetMenu(fileName = "New Wait For Guests Game Phase", menuName = "CrypticCabinet/Wait For Guests Game Phase")]
     public class WaitForGuestsPhase : GamePhase
     {

@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using CrypticCabinet.Interactions;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -9,6 +10,7 @@ namespace CrypticCabinet.Puzzles.UVPuzzle
     /// <summary>
     ///     Defines the UV light bulb for the UV machine puzzle.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(ScrewableObject))]
     public class UvLightBulb : MonoBehaviour
     {

@@ -6,6 +6,7 @@ using System.Globalization;
 using System.Linq;
 using CrypticCabinet.Utils;
 using Meta.Utilities;
+using Meta.XR.Samples;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -14,6 +15,7 @@ namespace CrypticCabinet.SceneManagement
     /// <summary>
     ///     Used to detect empty spaces on a wall for the object placement queries.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class WallSpaceFinder
     {
         /// <summary>

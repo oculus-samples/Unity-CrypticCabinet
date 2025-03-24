@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.IntroOutro
@@ -8,6 +9,7 @@ namespace CrypticCabinet.IntroOutro
     ///     Retrieves all EnabledStateTarget components and triggers on them the new enabled state according to
     ///     the desired new state.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class SetObjectEnabledState : MonoBehaviour
     {
         /// <summary>

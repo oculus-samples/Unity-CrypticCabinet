@@ -2,6 +2,7 @@
 
 using com.meta.xr.colocation;
 using Cysharp.Threading.Tasks;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Colocation
@@ -9,6 +10,7 @@ namespace CrypticCabinet.Colocation
     /// <summary>
     ///     Manages the AlignCameraToAnchor to realign when user recenter
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class AlignCameraToAnchorManager : MonoBehaviour
     {
         public AlignCameraToAnchor CameraAlignmentBehaviour { get; set; }

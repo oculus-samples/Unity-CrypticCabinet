@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
     ///     Component giving the object the ability to bounce the light beam
     ///     Requiring Rigid body to ensure it can receive a raycast
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(Rigidbody))]
     public class LightBeamBouncer : MonoBehaviour
     {

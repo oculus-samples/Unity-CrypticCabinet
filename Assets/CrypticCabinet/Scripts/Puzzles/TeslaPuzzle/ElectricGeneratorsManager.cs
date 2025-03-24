@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System.Collections.Generic;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.TeslaPuzzle
@@ -8,6 +9,7 @@ namespace CrypticCabinet.Puzzles.TeslaPuzzle
     /// <summary>
     ///     Handles the list of generators present in the scene for the Tesla puzzle.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class ElectricGeneratorsManager : MonoBehaviour
     {
         /// <summary>

@@ -3,6 +3,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace CrypticCabinet.Utils
     /// <summary>
     ///     Force the snapping of a specified object onto a target snap zone.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class ForceSnap : MonoBehaviour
     {
         [Serializable]

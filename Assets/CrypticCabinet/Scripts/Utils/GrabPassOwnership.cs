@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using Fusion;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace CrypticCabinet.Utils
     ///     When another player tries to grab an object, the state authority change is requested before allowing
     ///     the grab of the object for that other player.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(Grabbable))]
     public class GrabPassOwnership : NetworkBehaviour, IStateAuthorityChanged
     {

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Fusion;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
     ///     Limitation: Every hookable work only with one hook in the same "trigger zone"
     ///     If two hooks are in the same trigger zone of the hookable, the behavior is undefined.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(Collider), typeof(PointableUnityEventWrapper), typeof(Rigidbody))]
     public class Hookable : NetworkBehaviour
     {

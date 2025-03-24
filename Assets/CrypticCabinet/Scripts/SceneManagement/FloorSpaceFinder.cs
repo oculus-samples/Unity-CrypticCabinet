@@ -6,6 +6,7 @@ using System.Globalization;
 using System.Linq;
 using CrypticCabinet.Utils;
 using Meta.XR.MRUtilityKit;
+using Meta.XR.Samples;
 using UnityEngine;
 using static CrypticCabinet.Utils.MathsUtils;
 using Random = UnityEngine.Random;
@@ -15,6 +16,7 @@ namespace CrypticCabinet.SceneManagement
     /// <summary>
     ///     System for finding the space on a floor including functionality to place relative to the wall.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(MRUKPlaneMeshFilter))]
     public class FloorSpaceFinder : MonoBehaviour, ISpaceFinder
     {

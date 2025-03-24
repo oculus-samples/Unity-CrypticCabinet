@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using CrypticCabinet.SceneManagement;
 using CrypticCabinet.Utils;
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,6 +15,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
     /// <summary>
     ///     Defines the mechanism that opens the window of the sand puzzle.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class WindowOpener : NetworkBehaviour, IStateAuthorityChanged
     {
         private const string ANIMATION_PARAMETER_FLOAT_NAME = "MotionTime";

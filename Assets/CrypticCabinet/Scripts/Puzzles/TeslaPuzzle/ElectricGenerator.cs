@@ -3,6 +3,7 @@
 using CrypticCabinet.Audio;
 using CrypticCabinet.Utils.InteractiveObjects;
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -26,6 +27,7 @@ namespace CrypticCabinet.Puzzles.TeslaPuzzle
     ///     less than the m_electricMaxRadius.
     ///     When the generator's electricity is disabled, no electricity arc will be shown.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class ElectricGenerator : NetworkBehaviour
     {
         private const string VISUAL_EFFECT_CONNECT_NAME = "Connect?";

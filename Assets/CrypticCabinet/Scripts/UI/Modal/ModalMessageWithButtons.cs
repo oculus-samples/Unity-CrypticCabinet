@@ -2,6 +2,7 @@
 
 using System;
 using Meta.Utilities;
+using Meta.XR.Samples;
 using TMPro;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace CrypticCabinet.UI.Modal
     ///     A convenient modal window with two customizable buttons that can show
     ///     a text message to the user and provide actions on button press.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class ModalMessageWithButtons : ModalMessage
     {
         [SerializeField] private GameObject m_button1;

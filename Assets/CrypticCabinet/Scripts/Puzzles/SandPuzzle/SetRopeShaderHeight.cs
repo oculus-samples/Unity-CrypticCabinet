@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System.Collections;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.SandPuzzle
@@ -9,6 +10,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
     ///     Used for setting the vertical position the rope should be clipped at using the shader:
     ///     S_Master_IntroOutro_unlit_HeightClip.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class SetRopeShaderHeight : MonoBehaviour
     {
         [SerializeField] private Renderer m_dummyRopeRenderer;

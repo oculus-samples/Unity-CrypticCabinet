@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using CrypticCabinet.Utils;
+using Meta.XR.Samples;
 using UnityEngine;
 using static CrypticCabinet.Utils.MathsUtils;
 using Random = UnityEngine.Random;
@@ -15,6 +16,7 @@ namespace CrypticCabinet.SceneManagement
     ///     Generates a distance field on plane accounting for blocking objects.
     ///     Includes functionality to return a position on the plane for a given radius.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class DeskSpaceFinder : MonoBehaviour, ISpaceFinder
     {
         /// <summary>

@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.TimelineExtensions
@@ -7,6 +8,7 @@ namespace CrypticCabinet.TimelineExtensions
     /// <summary>
     ///     Defines a timeline with a trigger to wait for.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class WaitTimeline : MonoBehaviour
     {
         private bool m_trigger;

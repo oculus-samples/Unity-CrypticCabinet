@@ -2,6 +2,7 @@
 
 using System.Collections;
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Puzzles.TeslaPuzzle
     /// <summary>
     ///     Describes the behaviour for the Main electric generator of the Tesla puzzle.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class MainGenerator : NetworkBehaviour
     {
         private const string VISUAL_EFFECT_CONNECT_NAME = "Connect?";

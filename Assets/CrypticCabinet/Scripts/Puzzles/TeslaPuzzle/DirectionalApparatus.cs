@@ -3,6 +3,7 @@
 using System.Collections;
 using CrypticCabinet.Utils;
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.VFX;
@@ -12,6 +13,7 @@ namespace CrypticCabinet.Puzzles.TeslaPuzzle
     /// <summary>
     ///     Describes the behaviour for the directional apparatus for the Tesla puzzle.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class DirectionalApparatus : MonoBehaviour
     {
         [SerializeField] private float m_energyThresholdForActivation = 9999f;

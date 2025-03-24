@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using CrypticCabinet.Utils;
+using Meta.XR.Samples;
 using Oculus.Platform.Models;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,6 +13,7 @@ namespace CrypticCabinet
     ///     starting the application successfully.
     ///     This should be placed into the main scene.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class AppStartup : MonoBehaviour
     {
         /// <summary>

@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,6 +9,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
     /// <summary>
     ///     Used to trigger actions when an object is attached or removed from the hook of the sand puzzle.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class Hook : MonoBehaviour
     {
         /// <summary>

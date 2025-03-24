@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Puzzles.Orrery
     ///     It holds information related to the correct planet to snap into this socket, and the currently
     ///     snapped planet into this socket.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(SnapInteractable))]
     public class OrreryPlanetSocket : MonoBehaviour
     {

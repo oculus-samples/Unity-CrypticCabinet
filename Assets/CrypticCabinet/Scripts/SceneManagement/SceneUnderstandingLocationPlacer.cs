@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Meta.Utilities;
 using Meta.XR.MRUtilityKit;
+using Meta.XR.Samples;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -16,6 +17,7 @@ namespace CrypticCabinet.SceneManagement
     ///     and passed the relevant information to the space finding mangers.
     ///     Once set up also handles moving the debug visual props to the appropriate locations.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class SceneUnderstandingLocationPlacer : Singleton<SceneUnderstandingLocationPlacer>
     {
         /// List of wall, openings and objects created by the scene manger.

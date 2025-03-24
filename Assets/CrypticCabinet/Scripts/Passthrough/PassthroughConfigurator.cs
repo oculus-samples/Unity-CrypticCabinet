@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Passthrough
@@ -19,6 +20,7 @@ namespace CrypticCabinet.Passthrough
     ///     Allows to change settings of a specified passthrough layer on demand.
     ///     It can propagate the change to all players using RPC.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class PassthroughConfigurator : NetworkBehaviour
     {
         [SerializeField] private OVRPassthroughLayer m_passthroughLayer;

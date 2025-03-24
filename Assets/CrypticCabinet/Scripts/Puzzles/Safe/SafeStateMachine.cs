@@ -2,6 +2,7 @@
 
 using CrypticCabinet.Utils;
 using Fusion;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,6 +12,7 @@ namespace CrypticCabinet.Puzzles.Safe
     /// <summary>
     ///     Represents the state machine for the safe puzzle.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(Animator))]
     public class SafeStateMachine : NetworkBehaviour, IStateAuthorityChanged
     {

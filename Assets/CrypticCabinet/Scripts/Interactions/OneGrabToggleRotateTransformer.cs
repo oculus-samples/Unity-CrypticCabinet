@@ -2,6 +2,7 @@
 
 using System;
 using Fusion;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace CrypticCabinet.Interactions
     ///     There's added functionality to allow toggling between a free movement and rotation transformation.
     ///     Furthermore, there's a "break snap" feature to pull from rotation to free movement.  
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class OneGrabToggleRotateTransformer : NetworkBehaviour, ITransformer
     {
         public enum Axis

@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System.Collections.Generic;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.IntroOutro
@@ -8,6 +9,7 @@ namespace CrypticCabinet.IntroOutro
     /// <summary>
     ///     Manages the fading effect of multiple fade targets, optionally using an offset for the start of the fading effect.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class RandomFade : MonoBehaviour
     {
         private struct FadeTargetData

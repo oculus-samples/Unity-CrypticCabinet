@@ -2,6 +2,7 @@
 
 using CrypticCabinet.Utils;
 using Fusion;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,6 +13,7 @@ namespace CrypticCabinet.Puzzles.Safe
     ///     Defines the behavior for the lock dialer of the safe.
     ///     It controls the way it spins, the values it can assume, and the mesh rotation for the currently chosen number.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public sealed class SafeLockDialer : NetworkBehaviour, IStateAuthorityChanged
     {
         [SerializeField] private int m_initialNumber = 1;

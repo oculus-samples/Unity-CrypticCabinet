@@ -3,6 +3,7 @@
 using System.Collections;
 using CrypticCabinet.Interactions;
 using CrypticCabinet.Utils;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,6 +13,7 @@ namespace CrypticCabinet.Puzzles.Clock
     /// <summary>
     ///     Defines the interactable for the key inside the clock puzzle.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class KeyInteractable : MonoBehaviour
     {
         [SerializeField] private float m_unlockAngle = 90;

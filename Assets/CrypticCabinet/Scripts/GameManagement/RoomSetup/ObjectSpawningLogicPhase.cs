@@ -3,6 +3,7 @@
 using CrypticCabinet.Photon;
 using CrypticCabinet.UI;
 using CrypticCabinet.Utils;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.GameManagement.RoomSetup
@@ -10,6 +11,7 @@ namespace CrypticCabinet.GameManagement.RoomSetup
     /// <summary>
     ///     Represent the game phase that configures the placement of the virtual objects into the real room.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [CreateAssetMenu(fileName = "New Object Spawn Phase", menuName = "CrypticCabinet/Object Spawn Game Phase")]
     public class ObjectSpawningLogicPhase : GamePhase
     {

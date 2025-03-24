@@ -4,6 +4,7 @@ using CrypticCabinet.Interactions;
 using CrypticCabinet.Passthrough;
 using CrypticCabinet.Utils;
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.UVPuzzle
@@ -11,6 +12,7 @@ namespace CrypticCabinet.Puzzles.UVPuzzle
     /// <summary>
     ///     Describes the behaviour for the UV machine of the UV puzzle.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class UvLightMachine : NetworkBehaviour
     {
         [SerializeField] private AudioSource m_audioSource;

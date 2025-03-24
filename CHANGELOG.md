@@ -1,6 +1,11 @@
 ﻿# Changelog
 All notable changes to this project will be documented in this file.
 
+## 03/24/2025
+### Update
+* Update to SDK v74
+* Update app version to 2.0.1
+
 ## 12/19/2024
 ### Add
 Integrate in Editor Tutorial. Learn how to use this project directly from the editor.

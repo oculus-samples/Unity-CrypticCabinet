@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System.Text;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Photon.Utils
@@ -8,6 +9,7 @@ namespace CrypticCabinet.Photon.Utils
     /// <summary>
     ///     Utility class to generate a random room name using numeric digits.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public static class RoomNameGenerator
     {
         private const string DATA_SOURCE = "0123456789";

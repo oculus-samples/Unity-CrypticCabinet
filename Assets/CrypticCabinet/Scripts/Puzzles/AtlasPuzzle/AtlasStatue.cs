@@ -2,6 +2,7 @@
 
 using System.Collections;
 using Fusion;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,6 +12,7 @@ namespace CrypticCabinet.Puzzles.AtlasPuzzle
     /// <summary>
     ///     Controls the behavior of the Atlas statue.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(SnapInteractable))]
     public class AtlasStatue : NetworkBehaviour
     {

@@ -2,6 +2,7 @@
 
 using CrypticCabinet.Photon;
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Debugging
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Debugging
     ///     Programmatically spawns a specific network object every second when enabled.
     ///     We can use this to assess multiplayer sessions.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class NetworkDebugSpawner : MonoBehaviour
     {
         [SerializeField] private NetworkObject m_objectToSpawn;

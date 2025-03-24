@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System.Collections.Generic;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Utils
     ///     Establishes where a specific object should be placed into the real room depending on the
     ///     object type, and on whether it should be placed on a wall or at ground level.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class SimpleSceneObjectPlacer : MonoBehaviour
     {
         [SerializeField] private ObjectPlacementManager.LoadableSceneObjects m_objectType;

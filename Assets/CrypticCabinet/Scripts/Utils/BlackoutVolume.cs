@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -9,6 +10,7 @@ namespace CrypticCabinet.Utils
     ///     A volume that triggers a blackout effect for the player.
     ///     Used to hide the inside of the main puzzle objects during the gameplay.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class BlackoutVolume : MonoBehaviour
     {
         private Camera m_mainCamera;

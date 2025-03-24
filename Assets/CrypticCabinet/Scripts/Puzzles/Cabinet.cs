@@ -2,6 +2,7 @@
 
 using CrypticCabinet.Photon;
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles
@@ -9,6 +10,7 @@ namespace CrypticCabinet.Puzzles
     /// <summary>
     ///     Spawns the objects inside of the cabinet that the user interacts with.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class Cabinet : NetworkBehaviour
     {
         [SerializeField] private GameObject m_cabinetPuzzleObjects;

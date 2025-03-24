@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System.Collections.Generic;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Utils
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Utils
     ///     It offers a mechanism to perform an action immediately if it can be executed, or to
     ///     delay its execution to a future time once it can be executed.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class PendingTasksHandler
     {
         /// <summary>

@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using CrypticCabinet.Utils;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.SandPuzzle
@@ -9,6 +10,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
     /// <summary>
     ///     Describes how the particles for the sand chute behave.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class SandChuteParticleKiller : MonoBehaviour
     {
         [SerializeField] private List<VFXCone> m_volumeConeDescriptors = new();

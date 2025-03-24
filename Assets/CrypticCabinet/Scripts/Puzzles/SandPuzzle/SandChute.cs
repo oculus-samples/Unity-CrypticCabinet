@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using CrypticCabinet.Utils;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.SandPuzzle
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
     ///     Defines the behaviour for the sand chute of the sand puzzle.
     ///     Limitation: Only one sand bucket in the scene, and only one sand bucket can be filled at a time.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class SandChute : MonoBehaviour
     {
         [SerializeField] private float m_sandVolumePerSec = 20f;

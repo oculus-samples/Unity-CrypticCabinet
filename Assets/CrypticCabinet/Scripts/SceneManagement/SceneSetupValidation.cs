@@ -2,6 +2,7 @@
 
 using CrypticCabinet.UI;
 using Meta.XR.MRUtilityKit;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +11,7 @@ namespace CrypticCabinet.SceneManagement
     /// <summary>
     ///     Check if the scene setup is valid, and triggers the relative events to notify its state.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public sealed class SceneSetupValidation : MonoBehaviour
     {
         public UnityEvent OnIsValid;

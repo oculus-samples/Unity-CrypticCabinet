@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using Meta.XR.MRUtilityKit;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.SceneManagement
@@ -9,7 +10,7 @@ namespace CrypticCabinet.SceneManagement
     ///     This is added to the prefab that the <see cref="MRUK"/> spawns that describes a Scene object.
     ///     Once loaded passes the details of the loaded object to the <see cref="SceneUnderstandingLocationPlacer"/>.
     /// </summary>
-
+    [MetaCodeSample("CrypticCabinet")]
     [DefaultExecutionOrder(30)]
     public class SceneRoomObject : MonoBehaviour
     {

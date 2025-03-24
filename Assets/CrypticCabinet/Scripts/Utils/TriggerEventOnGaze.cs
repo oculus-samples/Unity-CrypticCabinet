@@ -1,11 +1,13 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using Fusion;
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace CrypticCabinet.Utils
 {
+    [MetaCodeSample("CrypticCabinet")]
     public class TriggerEventOnGaze : NetworkBehaviour
     {
         [SerializeField] private Transform m_usersHead;

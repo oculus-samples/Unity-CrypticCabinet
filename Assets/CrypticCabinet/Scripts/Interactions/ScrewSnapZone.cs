@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,6 +9,7 @@ namespace CrypticCabinet.Interactions
     /// <summary>
     ///     Defines a snap zone onto which a screwable object can snap via a screwing-in motion.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(Rigidbody))]
     public class ScrewSnapZone : MonoBehaviour
     {

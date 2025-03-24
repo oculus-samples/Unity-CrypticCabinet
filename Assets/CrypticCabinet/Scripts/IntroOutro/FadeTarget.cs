@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,6 +9,7 @@ namespace CrypticCabinet.IntroOutro
     /// <summary>
     ///     Controls the fading of a specified target.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class FadeTarget : MonoBehaviour
     {
         [SerializeField] private Transform m_transform;

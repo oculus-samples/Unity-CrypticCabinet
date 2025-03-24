@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Audio
@@ -7,6 +8,7 @@ namespace CrypticCabinet.Audio
     /// <summary>
     ///     Triggers the audio for the creak and chimes SFX of the Window on the sand puzzle.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class ShutterAudio : MonoBehaviour
     {
         /// <summary>

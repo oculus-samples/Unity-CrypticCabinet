@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System.Collections;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Audio
@@ -8,6 +9,7 @@ namespace CrypticCabinet.Audio
     /// <summary>
     /// Allows a signal emitter to trigger an audio fade via a timeline
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(AudioSource))]
     public class AudioFade : MonoBehaviour
     {

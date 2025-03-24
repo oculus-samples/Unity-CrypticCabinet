@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.SceneManagement
@@ -7,6 +8,7 @@ namespace CrypticCabinet.SceneManagement
     /// <summary>
     ///     Interface defining the core functions for a space finder object.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public interface ISpaceFinder
     {
         public bool HasSetUpCompleted();

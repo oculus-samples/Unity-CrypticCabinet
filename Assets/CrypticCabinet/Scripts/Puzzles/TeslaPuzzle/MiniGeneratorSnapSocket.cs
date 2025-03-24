@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,6 +10,7 @@ namespace CrypticCabinet.Puzzles.TeslaPuzzle
     /// <summary>
     ///     Represents the snapping area for a a mini generator snappable.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class MiniGeneratorSnapSocket : MonoBehaviour
     {
         private const int NUMBER_OF_MINI_GENERATORS = 3;

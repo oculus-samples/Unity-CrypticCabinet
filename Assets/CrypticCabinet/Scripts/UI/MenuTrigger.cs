@@ -2,6 +2,7 @@
 
 using CrypticCabinet.Photon;
 using CrypticCabinet.UI.Modal;
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.UI
@@ -9,6 +10,7 @@ namespace CrypticCabinet.UI
     /// <summary>
     ///     Controls the trigger to open the in-game menu.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class MenuTrigger : MonoBehaviour
     {
         [SerializeField] private InGameMenu m_inGameMenu;

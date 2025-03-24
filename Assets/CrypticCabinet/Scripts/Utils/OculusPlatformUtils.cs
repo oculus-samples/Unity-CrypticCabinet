@@ -2,6 +2,7 @@
 
 using System;
 using System.Threading.Tasks;
+using Meta.XR.Samples;
 using Oculus.Platform;
 using Oculus.Platform.Models;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace CrypticCabinet.Utils
     /// <summary>
     ///     Utility class to configure the Oculus platform.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class OculusPlatformUtils : MonoBehaviour
     {
         public static UnityEvent OnOculusPlatformSDKInitialized = new();

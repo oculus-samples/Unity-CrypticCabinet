@@ -5,6 +5,7 @@ using CrypticCabinet.Photon;
 using CrypticCabinet.TimelineExtensions;
 using CrypticCabinet.UI;
 using Fusion;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ namespace CrypticCabinet.IntroOutro
     ///     Triggers the next timeline phase for all users in a session when the note has been grabbed.
     ///     On outro timeline completed, it disconnects all guest users, shows credits, and restarts the gameplay.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class ActThreeMultiUserManager : NetworkBehaviour
     {
         [SerializeField] private WaitTimeline m_waitTimeline;

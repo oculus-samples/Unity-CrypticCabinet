@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,6 +12,7 @@ namespace CrypticCabinet.Puzzles.Safe
     ///     This is used for the dial interactions. The mechanism uses three colliders, to detect swipe up or
     ///     swipe down actions with the user finger.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class SwipeDetector : MonoBehaviour
     {
         [SerializeField] private CollisionDetector m_topCollisionDetector;

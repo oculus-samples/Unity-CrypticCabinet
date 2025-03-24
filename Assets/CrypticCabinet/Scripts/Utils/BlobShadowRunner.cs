@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Utils
@@ -7,6 +8,7 @@ namespace CrypticCabinet.Utils
     /// <summary>
     ///     Runs placing a blob shadow on a surface below the target object. 
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class BlobShadowRunner : MonoBehaviour
     {
         [SerializeField] private Transform m_targetObject;

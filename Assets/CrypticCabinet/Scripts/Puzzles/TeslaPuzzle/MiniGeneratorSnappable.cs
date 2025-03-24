@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Puzzles.TeslaPuzzle
@@ -7,6 +8,7 @@ namespace CrypticCabinet.Puzzles.TeslaPuzzle
     /// <summary>
     ///     Represents a snappable mini generator.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class MiniGeneratorSnappable : MonoBehaviour
     {
         public ElectricGenerator ElectricGenerator => m_electricGenerator;

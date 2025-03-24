@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEditor;
 
 namespace CrypticCabinet.Editor
@@ -7,6 +8,7 @@ namespace CrypticCabinet.Editor
     /// <summary>
     /// This class helps us track the usage of this showcase
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [InitializeOnLoad]
     public static class ShowcaseTelemetry
     {

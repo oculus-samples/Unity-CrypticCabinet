@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using System;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace CrypticCabinet.Utils
     /// Toggles the <see cref="TouchHandGrabInteractorVisual"/> enable state so it can only
     /// override the hand pose state when touches are active.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(TouchHandGrabInteractor),
         typeof(TouchHandGrabInteractorVisual))]
     public class EnableTouchVisualOnHover : MonoBehaviour

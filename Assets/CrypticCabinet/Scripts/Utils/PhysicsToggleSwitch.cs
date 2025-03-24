@@ -1,6 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 using Fusion;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace CrypticCabinet.Utils
     /// <summary>
     ///     Controls when to enable or disable the physics programmatically in a multiplayer session.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class PhysicsToggleSwitch : NetworkBehaviour
     {
         [SerializeField] private Grabbable m_grabbable;

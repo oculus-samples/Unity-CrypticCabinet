@@ -1,5 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+using Meta.XR.Samples;
 using UnityEngine;
 
 namespace CrypticCabinet.Utils
@@ -8,6 +9,7 @@ namespace CrypticCabinet.Utils
     ///     Updates the transform of the object it is attached to, following the one of the specified primary camera.
     ///     Position, rotation, and local scale are used from the followed user camera.
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     public class FollowUserCamera : MonoBehaviour
     {
         [SerializeField] private Camera m_activeCamera;

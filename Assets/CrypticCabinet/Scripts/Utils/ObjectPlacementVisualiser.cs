@@ -2,6 +2,7 @@
 
 using System.Collections;
 using Meta.Utilities;
+using Meta.XR.Samples;
 using Oculus.Interaction;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace CrypticCabinet.Utils
     ///     A visualizer to help with the object placement during scene setup.
     ///     Note: Rigid body necessary to detect trigger events on enter and exit
     /// </summary>
+    [MetaCodeSample("CrypticCabinet")]
     [RequireComponent(typeof(BoxCollider), typeof(Rigidbody))]
     public class ObjectPlacementVisualiser : MonoBehaviour
     {
