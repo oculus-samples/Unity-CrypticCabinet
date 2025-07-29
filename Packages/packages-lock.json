@@ -18,7 +18,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "7f1c2ff16db9cd21beaa578f9aeb1d2d46814277"
+      "hash": "ce71948149fd4c4b53883ea8177f3983ce40cce3"
     },
     "com.meta.xr.colocation": {
       "version": "https://github.com/oculus-samples/Unity-LocalMultiplayerMR.git?path=colocation-package#075b8f0e1641bc6cacef05a57f25e82b985cb4bb",
@@ -48,7 +48,7 @@
     },
     "com.meta.xr.sdk.interaction": {
       "version": "74.0.2",
-      "depth": 0,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.ugui": "1.0.0",
@@ -165,6 +165,15 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.inputsystem": {
+      "version": "1.7.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.mathematics": {
@@ -314,9 +323,18 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.xr.core-utils": {
+      "version": "2.3.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.xr": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.xr.legacyinputhelpers": {
       "version": "2.1.10",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.vr": "1.0.0",
@@ -336,12 +354,15 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.xr.oculus": {
-      "version": "4.2.0",
+    "com.unity.xr.openxr": {
+      "version": "1.11.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.xr.management": "4.4.0"
+        "com.unity.inputsystem": "1.6.3",
+        "com.unity.xr.core-utils": "2.1.1",
+        "com.unity.xr.management": "4.4.0",
+        "com.unity.xr.legacyinputhelpers": "2.1.2"
       },
       "url": "https://packages.unity.com"
     },

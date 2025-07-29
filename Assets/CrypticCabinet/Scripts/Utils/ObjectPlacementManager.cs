@@ -9,6 +9,7 @@ using Cysharp.Threading.Tasks;
 using Meta.XR.Samples;
 using Oculus.Interaction.Input;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace CrypticCabinet.Utils
 {
@@ -21,7 +22,7 @@ namespace CrypticCabinet.Utils
 #if UNITY_EDITOR
         private void Update()
         {
-            if (gameObject.activeInHierarchy && Input.GetKeyDown(KeyCode.Alpha1))
+            if (gameObject.activeInHierarchy && Keyboard.current.digit1Key.wasPressedThisFrame)
             {
                 ShufflePlacements();
             }

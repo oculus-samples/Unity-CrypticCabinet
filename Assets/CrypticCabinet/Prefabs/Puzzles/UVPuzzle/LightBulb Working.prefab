@@ -816,6 +816,9 @@ MonoBehaviour:
   _twoGrabTransformer: {fileID: 0}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: -1
+  _rigidbody: {fileID: 0}
+  _kinematicWhileSelected: 1
+  _throwWhenUnselected: 1
 --- !u!54 &5652020683995409199
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1085,7 +1088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bedaac29a943f844a7074b53c8bdf9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _grabbable: {fileID: 660535516026341763}
+  _pointable: {fileID: 660535516026341763}
   _rigidbody: {fileID: 5652020683995409199}
   _scaleMassWithSize: 1
 --- !u!1 &7497308971282249413

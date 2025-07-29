@@ -1,6 +1,12 @@
 ﻿# Changelog
 All notable changes to this project will be documented in this file.
 
+## 05/30/2025
+### Update
+* Update to OpenXR from Unity
+* Update ISDK to OpenXR
+* Update app version to 2.0.2
+
 ## 03/24/2025
 ### Update
 * Update to SDK v74
