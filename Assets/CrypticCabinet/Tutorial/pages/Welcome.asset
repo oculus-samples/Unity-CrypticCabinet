@@ -133,8 +133,8 @@ MonoBehaviour:
     **PuzzleLoadingGamePhase** spawns the interactive objects around the room after
     the intro animation has finished playing;\n- **Act3TimelinePhase** starts the
     outro animation once the gameplay completes and all puzzles are resolved.\n\n\n\n#
-    UI System\n\nThe main UI for the application is defined through the <a href=\".\\Assets\\CrypticCabinet\\UI\\UIModalWindow.prefab\">**UIModalWindow**</a>
-    prefab, which is controlled by the <a href=\".\\Assets\\CrypticCabinet\\Scripts\\UI\\UISystem.cs\">UISystem
+    UI System\n\nThe main UI for the application is defined through the <a href=\"./Assets\\CrypticCabinet\\UI\\UIModalWindow.prefab\">**UIModalWindow**</a>
+    prefab, which is controlled by the <a href=\"./Assets\\CrypticCabinet\\Scripts\\UI\\UISystem.cs\">UISystem
     script</a>.\n\nThis script conveniently defines a singleton object that any class
     in the game can interact with to trigger UI messages and callbacks.\n\n\n\n#
     Dependencies\nThis project was built using the <a href=\"https://unity.com/\">Unity

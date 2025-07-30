@@ -16,7 +16,7 @@ MonoBehaviour:
   m_hierarchyName: Feature Overview/Networking
   m_context: {fileID: 11400000, guid: b05aea44e20f2b44f92707a0633fa98f, type: 2}
   m_markdownFile: {fileID: 0}
-  m_priority: 1001
+  m_priority: 1002
   m_overrideMarkdownText: "# Networking\nMultiplayer is connected and managed via
     <a href=\"https://doc.photonengine.com/realtime/current/getting-started/quick-start\">Photon
     Fusion</a>, given the app is designed for colocation it\u2019s not necessary

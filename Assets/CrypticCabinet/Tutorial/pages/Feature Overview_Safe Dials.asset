@@ -16,7 +16,7 @@ MonoBehaviour:
   m_hierarchyName: Feature Overview/Safe Dials
   m_context: {fileID: 11400000, guid: b05aea44e20f2b44f92707a0633fa98f, type: 2}
   m_markdownFile: {fileID: 0}
-  m_priority: 1001
+  m_priority: 1006
   m_overrideMarkdownText: '# Safe Dials
 
     ![alt text](../Documentation/Images/Safe.gif){style="width:50%;height:50%"}

@@ -8,10 +8,11 @@
       "hash": "f2773f585e762480c835ac718b82b87cb111e500"
     },
     "com.meta.tutorial.framework": {
-      "version": "file:com.meta.tutorial.framework",
+      "version": "https://github.com/meta-quest/Unity-UtilityPackages.git?path=com.meta.tutorial.framework#com.meta.tutorial.framework-1.0.2",
       "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "3dd9868902b0da1cd7700c9da725aa9fb1ea5da5"
     },
     "com.meta.utilities": {
       "version": "https://github.com/oculus-samples/Unity-Discover.git?path=Packages/com.meta.utilities",

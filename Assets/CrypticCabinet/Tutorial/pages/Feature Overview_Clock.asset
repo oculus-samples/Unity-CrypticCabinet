@@ -16,7 +16,7 @@ MonoBehaviour:
   m_hierarchyName: Feature Overview/Clock
   m_context: {fileID: 11400000, guid: b05aea44e20f2b44f92707a0633fa98f, type: 2}
   m_markdownFile: {fileID: 0}
-  m_priority: 1001
+  m_priority: 1007
   m_overrideMarkdownText: "# Clock\n![alt text](../Documentation/Images/Clock.gif){style=\"width:50%;height:50%\"}\n\nThe
     clock time selection feature is enabled by the <a href=\"https://developer.oculus.com/documentation/unity/unity-isdk-grabbable/#one-grab-transformers\">OneGrabRotateTransformer</a>
     feature of the Meta Quest API. The local rotation of the handle is then used
