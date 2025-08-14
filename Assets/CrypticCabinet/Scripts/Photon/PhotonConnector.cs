@@ -241,10 +241,10 @@ namespace CrypticCabinet.Photon
                     "Connecting to Photon, please wait..." :
                     "Preparing single player session, please wait...");
 
-            ColocationDriverNetObj.OnColocationCompletedCallback += OnColocationReady;
-            ColocationDriverNetObj.OnColocationSkippedCallback += OnColocationSkipped;
-            // We colocate even if in single player, to keep aligned with the room.
-            ColocationDriverNetObj.SkipColocation = false;
+            ColocationDriverNetObj.WhenInstantiated(colo =>
+            {
+                colo.OnColocationCompletedCallback += OnColocationReady;
+            });
             await Task.Delay(1000); // delay before connecting to show the message
             await Connect(isHost);
         }
@@ -309,11 +309,6 @@ namespace CrypticCabinet.Photon
             {
                 UISystem.Instance.ShowMessage(success ? "Colocation Ready, please wait..." : "Colocation Failed!");
             }
-        }
-
-        private static void OnColocationSkipped()
-        {
-            Debug.Log("Colocation Skipped (OnColocationSkipped called)");
         }
 
         #endregion

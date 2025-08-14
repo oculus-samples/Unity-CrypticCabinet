@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## 07/14/2025
 ### Update
 * Update to SDK v76
+* Use Space Sharing API for multiplayer.
 * Update app version to 2.0.3
 
 ## 05/08/2025

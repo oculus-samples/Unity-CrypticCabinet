@@ -2,16 +2,16 @@
 
 using System;
 using System.Collections;
-using com.meta.xr.colocation;
+using System.Collections.Generic;
+using System.Linq;
 using CrypticCabinet.GameManagement;
-using CrypticCabinet.Photon;
-using CrypticCabinet.Photon.Colocation;
 using CrypticCabinet.UI;
 using CrypticCabinet.Utils;
-using Cysharp.Threading.Tasks;
 using Fusion;
 using Meta.XR.Samples;
 using Oculus.Platform.Models;
+using Meta.Utilities;
+using Meta.XR.MRUtilityKit;
 using UnityEngine;
 
 namespace CrypticCabinet.Colocation
@@ -21,165 +21,125 @@ namespace CrypticCabinet.Colocation
     ///     into the room.
     /// </summary>
     [MetaCodeSample("CrypticCabinet")]
-    public class ColocationDriverNetObj : NetworkBehaviour
+    public class ColocationDriverNetObj : NetworkSingleton<ColocationDriverNetObj>
     {
         /// <summary>
         ///     Callback for when the colocation process completes.
         ///     If succeeded, the callback will be passed a true, otherwise a false.
         /// </summary>
-        public static Action<bool> OnColocationCompletedCallback;
+        public Action<bool> OnColocationCompletedCallback;
 
-        /// <summary>
-        ///     If set to true, the colocation process will be skipped. False otherwise.
-        /// </summary>
-        public static bool SkipColocation;
-
-        /// <summary>
-        ///     Callback for when the colocation process is skipped.
-        /// </summary>
-        public static Action OnColocationSkippedCallback;
-
-        [SerializeField] private PhotonNetworkData m_networkData;
-        [SerializeField] private PhotonNetworkMessenger m_networkMessenger;
-        [SerializeField] private GameObject m_anchorPrefab;
-
-        private SharedAnchorManager m_sharedAnchorManager;
-        private AutomaticColocationLauncher m_colocationLauncher;
-        private ulong m_playerDeviceUid;
-        private User m_oculusUser;
-
-        private Transform m_ovrCameraRigTransform;
-        public static ColocationDriverNetObj Instance { get; private set; }
+        [SerializeField] private GameObject m_clientMRUK;
 
         private const int RETRY_ATTEMPTS_ALLOWED = 3;
         private int m_currentRetryAttempts;
         private bool m_colocationSuccessful;
 
-        private void Awake()
-        {
-            Debug.Assert(Instance == null, $"{nameof(ColocationDriverNetObj)} instance already exists");
-            Instance = this;
-        }
-
-        private void OnDestroy()
-        {
-            if (Instance == this)
-            {
-                Instance = null;
-            }
-        }
+        private readonly Guid m_groupUuid = Guid.NewGuid();
 
         public override void Spawned()
         {
-            Init();
-        }
-
-        private async void Init()
-        {
             // Initialize colocation regardless on single or multiplayer session.
             UISystem.Instance.ShowMessage("Waiting for colocation to be ready, please wait...", null, -1);
-            m_ovrCameraRigTransform = FindObjectOfType<OVRCameraRig>().transform;
-
-#if !UNITY_EDITOR
-            if (PhotonConnector.Instance.IsMultiplayerSession)
-            {
-                // Only get the logged in user if we are not in editor, and we are in multiplayer.
-                m_oculusUser = await OculusPlatformUtils.GetLoggedInUser();
-            }
-#else
-            await UniTask.Yield();
-#endif
-
-            OnColocationCompletedCallback += delegate (bool b)
-            {
-                m_colocationSuccessful = b;
-            };
-
-            m_playerDeviceUid = OculusPlatformUtils.GetUserDeviceGeneratedUid();
 
             SetupForColocation();
         }
 
-        private void SetupForColocation()
+        private async void SetupForColocation()
         {
-            Debug.Log("SetupForColocation: Initializing network messenger");
-            m_networkMessenger.RegisterLocalPlayer(m_playerDeviceUid);
-
-            // Instantiates the manager for the Oculus shared anchors, specifying the desired anchor prefab.
-            Debug.Log("SetupForColocation: Instantiating shared anchor manager");
-            m_sharedAnchorManager = new SharedAnchorManager { AnchorPrefab = m_anchorPrefab };
-
-            NetworkAdapter.SetConfig(m_networkData, m_networkMessenger);
-
             Debug.Log("SetupForColocation: Initializing Colocation for the player");
 
-            // Starts the colocation alignment process
-            m_colocationLauncher = new AutomaticColocationLauncher();
-            m_colocationLauncher.Init(
-                NetworkAdapter.NetworkData,
-                NetworkAdapter.NetworkMessenger,
-                m_sharedAnchorManager,
-                m_ovrCameraRigTransform.gameObject,
-                m_playerDeviceUid,
-                m_oculusUser?.ID ?? default
-            );
 
-            // Hooks the event to react to the colocation ready state
-            m_colocationLauncher.ColocationReady += OnColocationReady;
-            m_colocationLauncher.ColocationFailed += OnColocationFailed;
-
-            if (HasStateAuthority || !PhotonConnector.Instance.IsMultiplayerSession)
+            if (HasStateAuthority)
             {
-                // Being the state authority for the network or a single player, this user will
-                // create from scratch a new alignment anchor, which will be used by
-                // all other users to colocate in multiplayer, or by the single player.
-                m_colocationLauncher.CreateColocatedSpace();
+                Debug.Log($"[{nameof(ColocationDriverNetObj)}] hosting colocation", this);
+                OnColocationCompleted(MRUK.LoadDeviceResult.Success);
             }
             else
             {
-                // Don't try to colocate if we want to skip colocation
-                if (SkipColocation)
-                {
-                    OnColocationSkippedCallback?.Invoke();
-                }
-                else
-                {
-                    m_colocationLauncher.ColocateAutomatically();
-                }
+                var user = await OculusPlatformUtils.GetLoggedInUser();
+                Debug.Log($"[{nameof(ColocationDriverNetObj)}] requesting colocation for user '{user.ID}'", this);
+                ShareSceneServerRpc(user.ID);
             }
         }
 
-        private static void OnColocationReady()
+
+        [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
+        private async void ShareSceneServerRpc(ulong oculusUserId, RpcInfo info = default)
         {
-            Debug.Log("Colocation is Ready!");
+            foreach (var r in MRUK.Instance.Rooms)
+            {
+                if (!r.Anchor.TryGetComponent<OVRSharable>(out var sharableComponent)) {
+                    Debug.LogError("Anchor does not support sharing.");
+                    return;
+                }
 
-            // The AlignCameraToAnchor scripts updates on every frame which messes up Physics and create frame spikes.
-            // We need to disable it and add our own align manager that is applied only on recenter
-            var alignCamBehaviour = FindObjectOfType<AlignCameraToAnchor>();
-            alignCamBehaviour.enabled = false;
-            var alignmentGameObject = alignCamBehaviour.gameObject;
-            var alignManager = alignmentGameObject.AddComponent<AlignCameraToAnchorManager>();
-            alignManager.CameraAlignmentBehaviour = alignCamBehaviour;
-            alignManager.RealignToAnchor();
+                if (await sharableComponent.SetEnabledAsync(true)) {
+                    Debug.Log("Anchor is now sharable.");
+                } else {
+                    Debug.LogError("Unable to enable the sharable component.");
+                }
+            }
 
-            OnColocationCompletedCallback?.Invoke(true);
+            Debug.Log($"Sharing current room with {oculusUserId}", this);
+            if (!OVRSpaceUser.TryCreate(oculusUserId, out var spaceUser))
+            {
+                Debug.LogError($"Failed to create space user for oculus id {oculusUserId}", this);
+                return;
+            }
+
+            var result = await MRUK.Instance.ShareRoomsAsync(MRUK.Instance.Rooms, m_groupUuid);
+            if (!result.Success)
+            {
+                Debug.LogError($"Failed to share {MRUK.Instance.Rooms.Count} rooms with user '{oculusUserId}', result = {result}", this);
+                return;
+            }
+
+            var roomGuids = MRUK.Instance.Rooms.Select(room => room.Anchor.Uuid.ToString()).ToArray();
+            var floorAnchor = MRUK.Instance.GetCurrentRoom().FloorAnchor;
+
+            Debug.Log($"Sending shared scene guids = {roomGuids.ListToString()}", this);
+            ReceiveSharedSceneClientRpc(info.Source, roomGuids, m_groupUuid.ToString(), floorAnchor.transform.position.ToString(), floorAnchor.transform.rotation.ToString());
         }
 
-        private static void OnColocationFailed(ColocationFailedReason reason)
+        [Rpc(sources: RpcSources.StateAuthority, targets: RpcTargets.All)]
+        private async void ReceiveSharedSceneClientRpc([RpcTarget] PlayerRef player, string[] roomStrings, string groupString, string floorPositionString, string floorRotationString)
         {
-            Debug.Log($"Colocation failed! {reason}");
-            OnColocationCompletedCallback?.Invoke(false);
+            var roomGuids = roomStrings.Select(str => new Guid(str)).ToArray();
+            var roomGuidsString = roomGuids.ListToString();
+            var groupUuid = new Guid(groupString);
+
+            Debug.Log($"Received shared room guids = {roomGuidsString}; loading...", this);
+
+            Debug.Assert(MRUK.Instance == null, "There is an MRUK Instance already");
+            m_clientMRUK.SetActive(true);
+            var floorAnchorPose = new PoseSerializable
+            {
+                position = new Vector4Serializable(floorPositionString),
+                rotation = new Vector4Serializable(floorRotationString)
+            };
+            var result = await MRUK.Instance.LoadSceneFromSharedRooms(roomGuids, groupUuid, (alignmentRoomUuid: roomGuids[0], floorWorldPoseOnHost: floorAnchorPose.ToPose()));
+            OnColocationCompleted(result);
         }
 
-        private static void OnColocationSkipped()
+        private void OnColocationCompleted(MRUK.LoadDeviceResult result)
         {
-            Debug.Log("Colocation skipped");
-            OnColocationSkippedCallback?.Invoke();
+            if (result is MRUK.LoadDeviceResult.Success)
+            {
+                Debug.Log("Colocation is Ready!", this);
+                m_colocationSuccessful = true;
+                OnColocationCompletedCallback?.Invoke(true);
+            }
+            else
+            {
+                Debug.Log($"Colocation failed! {result}", this);
+                OnColocationCompletedCallback?.Invoke(false);
+            }
         }
-
 
         public IEnumerator RetryColocation()
         {
+            Debug.Log($"Retrying colocation (retry #{m_currentRetryAttempts})", this);
             yield return new WaitForSeconds(5f);
 
             if (m_colocationSuccessful)
@@ -195,7 +155,36 @@ namespace CrypticCabinet.Colocation
 
             m_currentRetryAttempts++;
 
-            m_colocationLauncher.ColocateAutomatically();
+            SetupForColocation();
+        }
+
+        [Serializable]
+        private struct Vector4Serializable
+        {
+            public float x, y, z, w;
+            public Vector4Serializable(Vector4 v) { x = v.x; y = v.y; z = v.z; w = v.w; }
+            public Vector4Serializable(Quaternion q) { x = q.x; y = q.y; z = q.z; w = q.w; }
+            public Vector4 ToVector4() => new Vector4(x, y, z, w);
+            public Vector3 ToVector3() => new Vector3(x, y, z);
+            public Quaternion ToQuaternion() => new Quaternion(x, y, z, w);
+
+            public Vector4Serializable(string str)
+            {
+                var components = str.Trim('(', ')').Split(',');
+                x = float.Parse(components[0].Trim());
+                y = float.Parse(components[1].Trim());
+                z = float.Parse(components[2].Trim());
+                w = components.Length == 4 ? float.Parse(components[3].Trim()) : 0;
+            }
+        }
+
+        [Serializable]
+        private struct PoseSerializable
+        {
+            public Vector4Serializable position;
+            public Vector4Serializable rotation;
+            public Pose ToPose() => new Pose(position.ToVector3(), rotation.ToQuaternion());
         }
     }
+
 }

@@ -29,9 +29,17 @@ namespace CrypticCabinet.Colocation
             Assert.IsNotNull(PhotonConnector.Instance);
             Assert.IsNotNull(runner);
 
-            // Fire OnColocationReady event
-            ColocationDriverNetObj.OnColocationCompletedCallback += HandleColocationCompleted;
-            ColocationDriverNetObj.OnColocationSkippedCallback += HandleColocationSkipped;
+            if (!PhotonConnector.Instance.IsMultiplayerSession)
+            {
+                Debug.Log("Single player session, skipping colocation...", this);
+                HandleColocationSkipped();
+                return;
+            }
+            // Register for event (use WhenInstantiated so it registers before the object initializes)
+            ColocationDriverNetObj.WhenInstantiated(colo =>
+            {
+                colo.OnColocationCompletedCallback += HandleColocationCompleted;
+            });
 
             Debug.Log("Spawn Colocation Prefab");
             _ = runner.Spawn(m_colocationPrefab);

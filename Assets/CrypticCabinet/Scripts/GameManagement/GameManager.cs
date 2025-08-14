@@ -85,6 +85,7 @@ namespace CrypticCabinet.GameManagement
             UISystem.Instance.ShowMessage("Analyzing the room.\nPlease wait...", null, -1);
             m_sceneUnderstanding.SetActive(true);
             _ = MRUK.Instance.LoadSceneFromDevice().ConfigureAwait(true);
+            
             if (m_waitForSceneUnderstandingCoroutine != null)
             {
                 StopCoroutine(m_waitForSceneUnderstandingCoroutine);
