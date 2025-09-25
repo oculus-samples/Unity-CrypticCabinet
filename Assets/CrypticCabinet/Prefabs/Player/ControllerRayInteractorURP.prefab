@@ -132,6 +132,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -227,6 +230,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -349,6 +355,7 @@ MonoBehaviour:
   _selectColor: {r: 0, g: 0.40784317, b: 0.7803922, a: 1}
   _outlineColor: {r: 0, g: 0, b: 0, a: 1}
   _offsetAlongNormal: 0.005
+  _playerHead: {fileID: 0}
 --- !u!1 &7341717827139765640
 GameObject:
   m_ObjectHideFlags: 0

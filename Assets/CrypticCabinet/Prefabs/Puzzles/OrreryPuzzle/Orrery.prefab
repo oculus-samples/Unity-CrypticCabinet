@@ -75,6 +75,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5a4e6ef543473f54ea101af46a020129, type: 3}
+  m_Resource: {fileID: 8300000, guid: 5a4e6ef543473f54ea101af46a020129, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -203,6 +204,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9325f7f366b7d6a478ce62dd82536ad9, type: 3}
+  m_Resource: {fileID: 8300000, guid: 9325f7f366b7d6a478ce62dd82536ad9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -406,6 +408,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 395b9248cfe9ff04e8c88fd459b7a521, type: 3}
+  m_Resource: {fileID: 8300000, guid: 395b9248cfe9ff04e8c88fd459b7a521, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -597,6 +600,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 0
   InterpolationTarget: {fileID: 0}
@@ -625,6 +630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669da723209bf2741ade5462212ca7cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_reset: {fileID: 8977262649986725656}
   m_motionCurve:
@@ -1888,7 +1895,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7006393429584304396, guid: a35617002a4389446b86c963acc7c717, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e48dbb3004672aa4b8ce98f675b10a01, type: 2}
     - target: {fileID: -3678125080940124610, guid: a35617002a4389446b86c963acc7c717, type: 3}
@@ -2017,6 +2024,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 1
   InterpolationTarget: {fileID: 0}
@@ -2055,6 +2064,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 1
   InterpolationTarget: {fileID: 0}
@@ -2093,6 +2104,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   InterpolationSpace: 1
   InterpolationTarget: {fileID: 0}
@@ -2147,6 +2160,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 1
   InterpolationTarget: {fileID: 0}
@@ -2180,6 +2195,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 1
   InterpolationTarget: {fileID: 0}
@@ -2213,6 +2230,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 1
   InterpolationTarget: {fileID: 0}
@@ -2271,6 +2290,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 1
   InterpolationTarget: {fileID: 0}
@@ -2294,7 +2315,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &7395749337110324611
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2308,6 +2329,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -2340,6 +2362,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 1
   InterpolationTarget: {fileID: 0}
@@ -2373,6 +2397,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 1
   InterpolationTarget: {fileID: 0}
@@ -2416,6 +2442,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 1
   InterpolationTarget: {fileID: 0}
@@ -2459,6 +2487,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 1
   InterpolationTarget: {fileID: 0}
@@ -2492,6 +2522,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 1
   InterpolationTarget: {fileID: 0}
@@ -2535,6 +2567,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 1
   InterpolationTarget: {fileID: 0}
@@ -3627,11 +3661,11 @@ PrefabInstance:
       value: 134145
       objectReference: {fileID: 0}
     - target: {fileID: 643514311328072632, guid: 2c55046bdf87a7f4094fad916ebaf319, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[0]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[0]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 643514311328072632, guid: 2c55046bdf87a7f4094fad916ebaf319, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[1]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[1]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3687430582318472098, guid: 2c55046bdf87a7f4094fad916ebaf319, type: 3}
@@ -3970,15 +4004,15 @@ PrefabInstance:
     m_TransformParent: {fileID: 5395682397864530637}
     m_Modifications:
     - target: {fileID: 363942511535881440, guid: 39d6151f8c25f304a8246c9fb97f1a29, type: 3}
-      propertyPath: _interactables.Array.data[0]
+      propertyPath: '_interactables.Array.data[0]'
       value: 
       objectReference: {fileID: 5884785471399354640}
     - target: {fileID: 363942511535881440, guid: 39d6151f8c25f304a8246c9fb97f1a29, type: 3}
-      propertyPath: _interactables.Array.data[1]
+      propertyPath: '_interactables.Array.data[1]'
       value: 
       objectReference: {fileID: 5884785471399354640}
     - target: {fileID: 363942511535881440, guid: 39d6151f8c25f304a8246c9fb97f1a29, type: 3}
-      propertyPath: _interactables.Array.data[2]
+      propertyPath: '_interactables.Array.data[2]'
       value: 
       objectReference: {fileID: 8469142585315031537}
     - target: {fileID: 2370362228481105941, guid: 39d6151f8c25f304a8246c9fb97f1a29, type: 3}
@@ -4034,11 +4068,11 @@ PrefabInstance:
       value: 3073
       objectReference: {fileID: 0}
     - target: {fileID: 4614785799406369379, guid: 39d6151f8c25f304a8246c9fb97f1a29, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[0]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[0]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4614785799406369379, guid: 39d6151f8c25f304a8246c9fb97f1a29, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[1]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[1]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5276901183165871803, guid: 39d6151f8c25f304a8246c9fb97f1a29, type: 3}
@@ -4066,11 +4100,11 @@ PrefabInstance:
       value: 3073
       objectReference: {fileID: 0}
     - target: {fileID: 5460698661360903315, guid: 39d6151f8c25f304a8246c9fb97f1a29, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[0]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[0]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5460698661360903315, guid: 39d6151f8c25f304a8246c9fb97f1a29, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[1]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[1]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6543023810481099239, guid: 39d6151f8c25f304a8246c9fb97f1a29, type: 3}
@@ -4094,11 +4128,11 @@ PrefabInstance:
       value: 3073
       objectReference: {fileID: 0}
     - target: {fileID: 8964949149342857744, guid: 39d6151f8c25f304a8246c9fb97f1a29, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[0]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[0]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8964949149342857744, guid: 39d6151f8c25f304a8246c9fb97f1a29, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[1]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[1]'
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

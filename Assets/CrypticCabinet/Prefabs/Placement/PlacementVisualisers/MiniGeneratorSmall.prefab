@@ -392,6 +392,7 @@ MonoBehaviour:
   m_userInteractableObject: 1
   m_radius: 0.21525
   m_placeAgainstWall: 0
+  m_onTheWall: 0
   m_flipFaceDirection: 1
   m_forceToGroundLevel: 0
   m_wallObjectPlacementHeight: 0
@@ -406,6 +407,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 14336
   m_placementEaseTime: 3
+  m_distFromEdgeLeft: 0
+  m_distFromEdgeRight: 0
   m_boxCollider: {fileID: 7730145670195364257}
 --- !u!65 &7730145670195364257
 BoxCollider:
@@ -474,6 +477,9 @@ MonoBehaviour:
   _twoGrabTransformer: {fileID: 0}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: -1
+  _rigidbody: {fileID: 0}
+  _kinematicWhileSelected: 1
+  _throwWhenUnselected: 1
 --- !u!114 &-8229963947609801028
 MonoBehaviour:
   m_ObjectHideFlags: 0

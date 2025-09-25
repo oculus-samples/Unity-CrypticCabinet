@@ -149,6 +149,7 @@ Material:
     - _Vertical: -0.73
     - _WorkflowMode: 1
     - _WorldVertialCutoff: -1.41
+    - _WorldVerticalCutoff: 0
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

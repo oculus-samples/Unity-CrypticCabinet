@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14093a3cbf25c594cbffe368de002e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_clientMRUK: {fileID: 8693420292314457123}
 --- !u!114 &7527839999650989016
@@ -88,6 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b66f0e67eee9024f88588a5a000152f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
 --- !u!114 &2468694667139968491
 MonoBehaviour:
@@ -101,6 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb8aa6deda218c4eb94b65c0e839a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
 --- !u!1001 &8434146302245923098
 PrefabInstance:

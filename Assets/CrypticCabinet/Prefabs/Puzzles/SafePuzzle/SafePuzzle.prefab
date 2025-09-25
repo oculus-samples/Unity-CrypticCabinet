@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 0
   InterpolationTarget: {fileID: 0}
@@ -351,6 +353,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -488,6 +493,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270a658ae29d6ad408679eaef3fcafc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_snapper: {fileID: 8297520576016544650}
 --- !u!1 &1091553112251475059
@@ -603,6 +610,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -769,6 +779,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fca46250d9fab74ea2ae45dbc092cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_safeLockDialer1: {fileID: 1463285604631188547}
   m_safeLockDialer2: {fileID: 4938246480893364705}
@@ -1081,7 +1093,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &4482724711659622257
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1095,6 +1107,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -1112,6 +1125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0074309e325e5134bb995aab96671d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_mecanimAnimator: {fileID: 8138109781228319581}
   m_onDoorOpened:
@@ -1254,6 +1269,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 97743f758f4b56d4280235ae197b2403, type: 3}
+  m_Resource: {fileID: 8300000, guid: 97743f758f4b56d4280235ae197b2403, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1351,6 +1367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae3bee224746034e99f2a96b7dff83f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_audioSource: {fileID: 2946300809309109913}
 --- !u!114 &8138109781228319581
@@ -1365,6 +1383,8 @@ MonoBehaviour:
   m_Script: {fileID: 506319458, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   Animator: {fileID: 4482724711659622257}
   TotalWords: 1
@@ -1444,6 +1464,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1527,6 +1550,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1771,6 +1797,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1975,6 +2004,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270a658ae29d6ad408679eaef3fcafc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_snapper: {fileID: 2672262722282502192}
 --- !u!1 &4504685580260987918
@@ -2142,6 +2173,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2264,6 +2298,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2394,6 +2431,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2530,6 +2570,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ed15df56809cf4b8d7c9d89f5bbdba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_debugRenderer: {fileID: 6583704255735128659}
   m_changeColorForAuthority: 0
@@ -2550,6 +2592,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 1
   InterpolationTarget: {fileID: 0}
@@ -2624,6 +2668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4933a9d5da2820e4185fc735bbae7ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_onSpawnComplete:
     m_PersistentCalls:
@@ -2781,6 +2827,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270a658ae29d6ad408679eaef3fcafc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_snapper: {fileID: 1696851460197963556}
 --- !u!1 &5368867007024215087
@@ -3048,6 +3096,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3174,6 +3223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95758b1fdaa852047b3da510b549b4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_audioSource: {fileID: 870620087434281542}
   m_audioTrigger: {fileID: 1171091479730417074}
@@ -3237,6 +3288,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3322,6 +3376,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3857,6 +3914,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3985,6 +4043,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95758b1fdaa852047b3da510b549b4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_audioSource: {fileID: 7331454491029114767}
   m_audioTrigger: {fileID: 4509416593873522528}
@@ -4087,6 +4147,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4337,6 +4400,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4587,6 +4653,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4834,6 +4903,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5003,11 +5075,11 @@ PrefabInstance:
       value: 3073
       objectReference: {fileID: 0}
     - target: {fileID: 2282890188062325978, guid: 89035f46c9842a8479d719871e27d45e, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[0]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[0]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2282890188062325978, guid: 89035f46c9842a8479d719871e27d45e, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[1]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[1]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403666380265925379, guid: 89035f46c9842a8479d719871e27d45e, type: 3}
@@ -5015,11 +5087,11 @@ PrefabInstance:
       value: 3073
       objectReference: {fileID: 0}
     - target: {fileID: 2403666380265925379, guid: 89035f46c9842a8479d719871e27d45e, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[0]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[0]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403666380265925379, guid: 89035f46c9842a8479d719871e27d45e, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[1]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[1]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3131064032859581672, guid: 89035f46c9842a8479d719871e27d45e, type: 3}
@@ -5145,11 +5217,11 @@ PrefabInstance:
       value: 3073
       objectReference: {fileID: 0}
     - target: {fileID: 1837201213641754089, guid: bc0484c55be0d2f4e926d94ded65ed24, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[0]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[0]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1837201213641754089, guid: bc0484c55be0d2f4e926d94ded65ed24, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[1]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[1]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2022208327635031192, guid: bc0484c55be0d2f4e926d94ded65ed24, type: 3}
@@ -5177,11 +5249,11 @@ PrefabInstance:
       value: 3073
       objectReference: {fileID: 0}
     - target: {fileID: 7013347775681172935, guid: bc0484c55be0d2f4e926d94ded65ed24, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[0]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[0]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7013347775681172935, guid: bc0484c55be0d2f4e926d94ded65ed24, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[1]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[1]'
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5341,11 +5413,11 @@ PrefabInstance:
       value: 3073
       objectReference: {fileID: 0}
     - target: {fileID: -5877371445452239592, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[0]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[0]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5877371445452239592, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[1]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[1]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3205090649356624896, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
@@ -5421,11 +5493,11 @@ PrefabInstance:
       value: 0.97
       objectReference: {fileID: 0}
     - target: {fileID: 6891676263355087545, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
-      propertyPath: _audioClips.Array.data[0]
+      propertyPath: '_audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: 79886dc7473a6c0499ca19400531fcbb, type: 3}
     - target: {fileID: 6891676263355087545, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
-      propertyPath: _audioClips.Array.data[1]
+      propertyPath: '_audioClips.Array.data[1]'
       value: 
       objectReference: {fileID: 8300000, guid: 2a3d72474e9e6cc4e92c1522c6e6d194, type: 3}
     - target: {fileID: 6891676263355087545, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
@@ -5498,11 +5570,11 @@ PrefabInstance:
       value: 3073
       objectReference: {fileID: 0}
     - target: {fileID: -5877371445452239592, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[0]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[0]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5877371445452239592, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[1]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[1]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1699946488432304778, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
@@ -5570,11 +5642,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6891676263355087545, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
-      propertyPath: _audioClips.Array.data[0]
+      propertyPath: '_audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: 79886dc7473a6c0499ca19400531fcbb, type: 3}
     - target: {fileID: 6891676263355087545, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
-      propertyPath: _audioClips.Array.data[1]
+      propertyPath: '_audioClips.Array.data[1]'
       value: 
       objectReference: {fileID: 8300000, guid: 2a3d72474e9e6cc4e92c1522c6e6d194, type: 3}
     - target: {fileID: 7098936004336703623, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
@@ -5695,7 +5767,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2658723333773271763, guid: b3b9241ebac2afd43b69be5e6d3237b2, type: 3}
-      propertyPath: _audioClips.Array.data[0]
+      propertyPath: '_audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: 64512647113de52458963a8e5c03e5d2, type: 3}
     - target: {fileID: 3005977946809684472, guid: b3b9241ebac2afd43b69be5e6d3237b2, type: 3}
@@ -5715,7 +5787,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3654226859588017040, guid: b3b9241ebac2afd43b69be5e6d3237b2, type: 3}
-      propertyPath: _audioClips.Array.data[0]
+      propertyPath: '_audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: f5cfdbe949c9f2f4c8a40a51893a4168, type: 3}
     - target: {fileID: 6335899075440141663, guid: b3b9241ebac2afd43b69be5e6d3237b2, type: 3}
@@ -5796,6 +5868,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95758b1fdaa852047b3da510b549b4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_audioSource: {fileID: 568341021122379838}
   m_audioTrigger: {fileID: 7278195716292147361}
@@ -5834,6 +5908,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95758b1fdaa852047b3da510b549b4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_audioSource: {fileID: 414268336163523072}
   m_audioTrigger: {fileID: 8309877227708383714}
@@ -5863,11 +5939,11 @@ PrefabInstance:
       value: 3073
       objectReference: {fileID: 0}
     - target: {fileID: -5877371445452239592, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[0]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[0]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5877371445452239592, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[1]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[1]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1699946488432304778, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
@@ -5947,11 +6023,11 @@ PrefabInstance:
       value: 0.97
       objectReference: {fileID: 0}
     - target: {fileID: 6891676263355087545, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
-      propertyPath: _audioClips.Array.data[0]
+      propertyPath: '_audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: 79886dc7473a6c0499ca19400531fcbb, type: 3}
     - target: {fileID: 6891676263355087545, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
-      propertyPath: _audioClips.Array.data[1]
+      propertyPath: '_audioClips.Array.data[1]'
       value: 
       objectReference: {fileID: 8300000, guid: 2a3d72474e9e6cc4e92c1522c6e6d194, type: 3}
     - target: {fileID: 6891676263355087545, guid: dc8a33e74773b52468b6eb2538c442e0, type: 3}
@@ -6076,11 +6152,11 @@ PrefabInstance:
       value: 3073
       objectReference: {fileID: 0}
     - target: {fileID: 2051140696233445092, guid: 6f4fc6b9d85c8814f8915e5bc055ec6c, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[0]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[0]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2051140696233445092, guid: 6f4fc6b9d85c8814f8915e5bc055ec6c, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[1]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[1]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2301469754233530667, guid: 6f4fc6b9d85c8814f8915e5bc055ec6c, type: 3}
@@ -6108,11 +6184,11 @@ PrefabInstance:
       value: 3073
       objectReference: {fileID: 0}
     - target: {fileID: 8526737772214874786, guid: 6f4fc6b9d85c8814f8915e5bc055ec6c, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[0]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[0]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8526737772214874786, guid: 6f4fc6b9d85c8814f8915e5bc055ec6c, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[1]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[1]'
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -60,6 +60,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -232,6 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270a658ae29d6ad408679eaef3fcafc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_snapper: {fileID: 8991364336211860034}
 --- !u!114 &3055778877662525171
@@ -309,6 +314,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

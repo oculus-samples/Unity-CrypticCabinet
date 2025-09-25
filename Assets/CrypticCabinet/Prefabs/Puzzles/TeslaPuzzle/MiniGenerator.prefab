@@ -59,6 +59,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -162,6 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af1148a4d4343040930c000bcf26545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_voltage: 0
   m_electricGeneratorId: 0
@@ -358,6 +363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ed15df56809cf4b8d7c9d89f5bbdba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_debugRenderer: {fileID: 0}
   m_changeColorForAuthority: 0
@@ -442,6 +449,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 0
   InterpolationTarget: {fileID: 0}
@@ -508,6 +517,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -914,6 +926,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1230,6 +1245,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 452cab5cd4cc31a4bbda065fe1729e0d, type: 3}
+  m_Resource: {fileID: 8300000, guid: 452cab5cd4cc31a4bbda065fe1729e0d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1459,6 +1475,9 @@ VFXRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_StaticBatchInfo:
@@ -1510,6 +1529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Space: 0
   m_Property:
     m_Name: StartTransform
   Target: {fileID: 8352284173900837943}
@@ -1525,6 +1545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Space: 0
   m_Property:
     m_Name: EndTransform
   Target: {fileID: 8352159305689268683}
@@ -1587,6 +1608,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1786,6 +1810,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 80fbb8c0c68727f429e4d50ddadd683b, type: 3}
+  m_Resource: {fileID: 8300000, guid: 80fbb8c0c68727f429e4d50ddadd683b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2004,6 +2029,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57793c5d93e04ae9a9138462bbb0ad23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_snapInteractor: {fileID: 4879754822489942962}
 --- !u!1 &8483596752694114532

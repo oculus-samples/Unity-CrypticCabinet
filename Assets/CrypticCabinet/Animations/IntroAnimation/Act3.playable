@@ -1140,6 +1140,7 @@ MonoBehaviour:
   searchHierarchy: 0
   active: 1
   postPlayback: 2
+  directorOnClipEnd: 0
 --- !u!114 &-2442551112035018289
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1255,6 +1256,7 @@ MonoBehaviour:
   searchHierarchy: 0
   active: 1
   postPlayback: 2
+  directorOnClipEnd: 0
 --- !u!114 &-873391128374959021
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1791,6 +1793,7 @@ MonoBehaviour:
   searchHierarchy: 0
   active: 1
   postPlayback: 2
+  directorOnClipEnd: 0
 --- !u!114 &-493543387697184326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1814,6 +1817,7 @@ MonoBehaviour:
   searchHierarchy: 0
   active: 1
   postPlayback: 2
+  directorOnClipEnd: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2222,6 +2226,7 @@ MonoBehaviour:
   searchHierarchy: 0
   active: 1
   postPlayback: 2
+  directorOnClipEnd: 0
 --- !u!114 &1184316239214221541
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2927,6 +2932,7 @@ MonoBehaviour:
   searchHierarchy: 0
   active: 1
   postPlayback: 2
+  directorOnClipEnd: 0
 --- !u!114 &5338267738377314544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3628,6 +3634,7 @@ MonoBehaviour:
   searchHierarchy: 0
   active: 1
   postPlayback: 2
+  directorOnClipEnd: 0
 --- !u!114 &6479757150945748406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3651,6 +3658,7 @@ MonoBehaviour:
   searchHierarchy: 0
   active: 1
   postPlayback: 2
+  directorOnClipEnd: 0
 --- !u!114 &6845829267216744167
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3719,6 +3727,7 @@ MonoBehaviour:
   searchHierarchy: 0
   active: 1
   postPlayback: 2
+  directorOnClipEnd: 0
 --- !u!114 &8153925013738007159
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3776,6 +3785,7 @@ MonoBehaviour:
   searchHierarchy: 0
   active: 1
   postPlayback: 2
+  directorOnClipEnd: 0
 --- !u!114 &8657461082887332620
 MonoBehaviour:
   m_ObjectHideFlags: 1

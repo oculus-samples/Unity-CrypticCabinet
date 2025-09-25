@@ -511,6 +511,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57793c5d93e04ae9a9138462bbb0ad23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_snapInteractor: {fileID: 4115823522270857887}
 --- !u!1 &1690467960368010363
@@ -992,6 +994,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ed15df56809cf4b8d7c9d89f5bbdba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_debugRenderer: {fileID: 0}
   m_changeColorForAuthority: 0
@@ -1040,6 +1044,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f3be9fae0cb60b4ebc9d26351ad96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 0
   InterpolationTarget: {fileID: 0}
@@ -1128,6 +1134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4933a9d5da2820e4185fc735bbae7ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_onSpawnComplete:
     m_PersistentCalls:
@@ -1473,7 +1481,7 @@ PrefabInstance:
       value: 0.96
       objectReference: {fileID: 0}
     - target: {fileID: 7410389675181900697, guid: b47fbfedcfef5414580d99c9115e2b8a, type: 3}
-      propertyPath: _audioClips.Array.data[0]
+      propertyPath: '_audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: b3553d0dc7eaba8419843e0959d3adb5, type: 3}
     - target: {fileID: 7410389675181900697, guid: b47fbfedcfef5414580d99c9115e2b8a, type: 3}
@@ -1522,6 +1530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95758b1fdaa852047b3da510b549b4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_audioSource: {fileID: 8549808303770281201}
   m_audioTrigger: {fileID: 8754630726948125479}
@@ -1596,7 +1606,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 66cf10245e6bcf546b09d9d88809a2c8, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 81a7000ebcae4ca40ab5bdd7edb0d57a, type: 2}
     - target: {fileID: 919132149155446097, guid: 66cf10245e6bcf546b09d9d88809a2c8, type: 3}

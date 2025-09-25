@@ -91,6 +91,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -197,6 +200,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -280,6 +286,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -399,6 +408,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -570,6 +582,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -687,6 +702,9 @@ VFXRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_StaticBatchInfo:
@@ -800,6 +818,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -883,6 +904,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1065,6 +1089,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1148,6 +1175,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1238,7 +1268,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3864981303577251579, guid: a50ac959a70786643be154c6bce0f990, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: f4d555b4a057f104bb0534d72948c0a8, type: 2}
     - target: {fileID: 919132149155446097, guid: a50ac959a70786643be154c6bce0f990, type: 3}
@@ -1246,7 +1276,7 @@ PrefabInstance:
       value: Prefab_CabinetAnimation
       objectReference: {fileID: 0}
     - target: {fileID: 3824787665280607725, guid: a50ac959a70786643be154c6bce0f990, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 1f4c7a4ac9cc48f44a2731d173467cdb, type: 2}
     m_RemovedComponents: []
@@ -1285,13 +1315,14 @@ Animation:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4466974994491251102}
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Animation: {fileID: 7400000, guid: a899d4bd31ddbfe468caa3ad81105d7f, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: a899d4bd31ddbfe468caa3ad81105d7f, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
+  m_UpdateMode: 0
   m_CullingType: 0
 --- !u!1001 &8833475472200336209
 PrefabInstance:
@@ -1346,7 +1377,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 425508343642592397, guid: b7e6d6ce96997c24b93b1fbd19ea3fa9, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 1f4c7a4ac9cc48f44a2731d173467cdb, type: 2}
     - target: {fileID: 919132149155446097, guid: b7e6d6ce96997c24b93b1fbd19ea3fa9, type: 3}
@@ -1354,11 +1385,11 @@ PrefabInstance:
       value: openDoors_cabinet-anm
       objectReference: {fileID: 0}
     - target: {fileID: 6297975003276862677, guid: b7e6d6ce96997c24b93b1fbd19ea3fa9, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: f4d555b4a057f104bb0534d72948c0a8, type: 2}
     - target: {fileID: 6297975003276862677, guid: b7e6d6ce96997c24b93b1fbd19ea3fa9, type: 3}
-      propertyPath: m_Materials.Array.data[1]
+      propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: dcfa15ec95c88ad408569c7ffcc1664d, type: 2}
     m_RemovedComponents: []

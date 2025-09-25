@@ -140,13 +140,13 @@ HingeJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931105751814191819}
+  serializedVersion: 3
   m_ConnectedBody: {fileID: 180768988252083606}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: -0.51, z: 0}
-  serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -272,6 +272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283de63cdac389f499d950434cd61032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_nodeDistance: 0.035
   m_nodeColliderRadius: 0.02
@@ -312,6 +314,9 @@ LineRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -461,6 +466,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -569,6 +577,9 @@ MonoBehaviour:
   _twoGrabTransformer: {fileID: 0}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: -1
+  _rigidbody: {fileID: 0}
+  _kinematicWhileSelected: 1
+  _throwWhenUnselected: 1
 --- !u!1 &5577552077442205335
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,6 +675,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 0
   InterpolationTarget: {fileID: 0}
@@ -302,6 +304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270a658ae29d6ad408679eaef3fcafc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_snapper: {fileID: 2597103923509703257}
 --- !u!114 &6983261898770184076
@@ -385,6 +389,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270a658ae29d6ad408679eaef3fcafc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_snapper: {fileID: 1939851387754480962}
 --- !u!114 &2425931551827437615
@@ -635,6 +641,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -740,6 +749,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -939,6 +951,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1045,6 +1060,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1161,6 +1179,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1283,6 +1304,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1415,6 +1439,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1559,6 +1586,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f38abdfd6e5f15543b4475eb07fe2160, type: 3}
+  m_Resource: {fileID: 8300000, guid: f38abdfd6e5f15543b4475eb07fe2160, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1717,7 +1745,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -6088520856719428068, guid: d7efe611179214b4d9fda5da97265d7e, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5f1b771d3ff7f2c48bc23a4ed30251f6, type: 2}
     - target: {fileID: -5278453341601766485, guid: d7efe611179214b4d9fda5da97265d7e, type: 3}
@@ -1741,7 +1769,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1808264854275127991, guid: d7efe611179214b4d9fda5da97265d7e, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5f1b771d3ff7f2c48bc23a4ed30251f6, type: 2}
     - target: {fileID: 1996949644332423803, guid: d7efe611179214b4d9fda5da97265d7e, type: 3}
@@ -1749,7 +1777,7 @@ PrefabInstance:
       value: TableLeg_UL
       objectReference: {fileID: 0}
     - target: {fileID: 3816654056258493912, guid: d7efe611179214b4d9fda5da97265d7e, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5f1b771d3ff7f2c48bc23a4ed30251f6, type: 2}
     - target: {fileID: 4461601637721758917, guid: d7efe611179214b4d9fda5da97265d7e, type: 3}
@@ -1757,7 +1785,7 @@ PrefabInstance:
       value: TableLeg_BL
       objectReference: {fileID: 0}
     - target: {fileID: 5117269737276333718, guid: d7efe611179214b4d9fda5da97265d7e, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5f1b771d3ff7f2c48bc23a4ed30251f6, type: 2}
     - target: {fileID: 6159819195323411483, guid: d7efe611179214b4d9fda5da97265d7e, type: 3}
@@ -1769,15 +1797,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7619838968199346788, guid: d7efe611179214b4d9fda5da97265d7e, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5f1b771d3ff7f2c48bc23a4ed30251f6, type: 2}
     - target: {fileID: 8524823538139195233, guid: d7efe611179214b4d9fda5da97265d7e, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5f1b771d3ff7f2c48bc23a4ed30251f6, type: 2}
     - target: {fileID: 9185549887808798685, guid: d7efe611179214b4d9fda5da97265d7e, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5f1b771d3ff7f2c48bc23a4ed30251f6, type: 2}
     m_RemovedComponents: []
@@ -1807,27 +1835,27 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -5755510640905963905, guid: ae3d1df3122579242a32ed024f14e254, type: 3}
-      propertyPath: NetworkedBehaviours.Array.data[0]
+      propertyPath: 'NetworkedBehaviours.Array.data[0]'
       value: 
       objectReference: {fileID: 8372127360492806840}
     - target: {fileID: -5755510640905963905, guid: ae3d1df3122579242a32ed024f14e254, type: 3}
-      propertyPath: NetworkedBehaviours.Array.data[1]
+      propertyPath: 'NetworkedBehaviours.Array.data[1]'
       value: 
       objectReference: {fileID: 944631895926486668}
     - target: {fileID: -5755510640905963905, guid: ae3d1df3122579242a32ed024f14e254, type: 3}
-      propertyPath: NetworkedBehaviours.Array.data[2]
+      propertyPath: 'NetworkedBehaviours.Array.data[2]'
       value: 
       objectReference: {fileID: 7384007452582188353}
     - target: {fileID: -5755510640905963905, guid: ae3d1df3122579242a32ed024f14e254, type: 3}
-      propertyPath: NetworkedBehaviours.Array.data[3]
+      propertyPath: 'NetworkedBehaviours.Array.data[3]'
       value: 
       objectReference: {fileID: 8817494377022150508}
     - target: {fileID: -5755510640905963905, guid: ae3d1df3122579242a32ed024f14e254, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[0]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[0]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5755510640905963905, guid: ae3d1df3122579242a32ed024f14e254, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[1]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[1]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 958771757603541005, guid: ae3d1df3122579242a32ed024f14e254, type: 3}
@@ -1963,7 +1991,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3051922579887803403}
     - target: {fileID: 5841202438172232934, guid: ae3d1df3122579242a32ed024f14e254, type: 3}
-      propertyPath: _handGrabPoses.Array.data[1]
+      propertyPath: '_handGrabPoses.Array.data[1]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6579580914905060291, guid: ae3d1df3122579242a32ed024f14e254, type: 3}

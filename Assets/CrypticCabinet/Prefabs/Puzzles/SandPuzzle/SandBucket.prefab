@@ -102,6 +102,9 @@ MonoBehaviour:
   _twoGrabTransformer: {fileID: 0}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: -1
+  _rigidbody: {fileID: 0}
+  _kinematicWhileSelected: 1
+  _throwWhenUnselected: 1
 --- !u!114 &1292098091939618134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bedaac29a943f844a7074b53c8bdf9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _grabbable: {fileID: 6493751366705631872}
+  _pointable: {fileID: 6493751366705631872}
   _rigidbody: {fileID: 2237807092502454303}
   _scaleMassWithSize: 1
 --- !u!54 &2237807092502454303
@@ -214,6 +217,9 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -374,6 +380,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e5fb9f042e9031439c8b42dd6ff3fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_anchorPosition: {x: 0, y: 0.38, z: 0}
   m_hingeAxis: {x: 0, y: 0, z: 1}
@@ -392,6 +400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ed15df56809cf4b8d7c9d89f5bbdba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   m_debugRenderer: {fileID: 4056858585499740205}
   m_changeColorForAuthority: 1
@@ -412,6 +422,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee81ccad1b85c6843b481da191a85386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
 --- !u!114 &882954804721776401
 MonoBehaviour:
@@ -469,6 +481,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4933a9d5da2820e4185fc735bbae7ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_onSpawnComplete:
     m_PersistentCalls:
@@ -506,6 +520,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 0
   InterpolationTarget: {fileID: 0}
@@ -663,6 +679,9 @@ VFXRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_StaticBatchInfo:
@@ -856,7 +875,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 454197754920577475, guid: b3b9241ebac2afd43b69be5e6d3237b2, type: 3}
-      propertyPath: _audioClips.Array.data[0]
+      propertyPath: '_audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: 6ef408bf132326649800c2ae7a3b0f68, type: 3}
     - target: {fileID: 454197754920577475, guid: b3b9241ebac2afd43b69be5e6d3237b2, type: 3}
@@ -876,7 +895,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1867513991394285093, guid: b3b9241ebac2afd43b69be5e6d3237b2, type: 3}
-      propertyPath: _audioClips.Array.data[0]
+      propertyPath: '_audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: 6385bf8b706998b49997ee683f4d6fe1, type: 3}
     - target: {fileID: 1867513991394285093, guid: b3b9241ebac2afd43b69be5e6d3237b2, type: 3}
@@ -900,7 +919,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2658723333773271763, guid: b3b9241ebac2afd43b69be5e6d3237b2, type: 3}
-      propertyPath: _audioClips.Array.data[0]
+      propertyPath: '_audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: be2cab1b8dc77e74ca8e22af62afe5ca, type: 3}
     - target: {fileID: 6335899075440141663, guid: b3b9241ebac2afd43b69be5e6d3237b2, type: 3}

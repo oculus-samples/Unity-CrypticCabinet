@@ -73,6 +73,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   InterpolationSpace: 0
   InterpolationTarget: {fileID: 0}
@@ -110,15 +112,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 107745597921697815, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 107745597921697815, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 107745597921697815, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 107745597921697815, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -438,15 +440,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 128401342122940863, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 128401342122940863, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 128401342122940863, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 128401342122940863, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -770,15 +772,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 305763317035868303, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 305763317035868303, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 305763317035868303, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 305763317035868303, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -1114,15 +1116,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 844726739805285151, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 844726739805285151, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 844726739805285151, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 844726739805285151, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -1462,15 +1464,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 1237451682642967491, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1237451682642967491, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1237451682642967491, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1237451682642967491, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -1790,15 +1792,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 1567808531018145348, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1567808531018145348, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1567808531018145348, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1567808531018145348, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -2118,15 +2120,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 1686353248221939295, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1686353248221939295, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1686353248221939295, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1686353248221939295, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -2478,15 +2480,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2390901354625895742, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2390901354625895742, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2390901354625895742, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2390901354625895742, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -2870,15 +2872,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2711224187801024953, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2711224187801024953, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2711224187801024953, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2711224187801024953, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -3218,15 +3220,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 3093878232542066693, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3093878232542066693, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3093878232542066693, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3093878232542066693, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -3546,15 +3548,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 3143715721823451524, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3143715721823451524, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3143715721823451524, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3143715721823451524, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -3878,15 +3880,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 3287197677367529751, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3287197677367529751, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3287197677367529751, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3287197677367529751, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -4242,15 +4244,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 3665700649357547999, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3665700649357547999, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3665700649357547999, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3665700649357547999, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -4654,15 +4656,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4994384795659674418, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4994384795659674418, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4994384795659674418, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4994384795659674418, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -5058,15 +5060,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5332207362587774129, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5332207362587774129, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5332207362587774129, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5332207362587774129, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -5386,15 +5388,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5345818937105864230, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5345818937105864230, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5345818937105864230, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5345818937105864230, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -5718,15 +5720,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5413237625646159123, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5413237625646159123, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5413237625646159123, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5413237625646159123, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -6046,15 +6048,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5452761725854725423, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5452761725854725423, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5452761725854725423, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5452761725854725423, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -6422,15 +6424,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5753387673671915777, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5753387673671915777, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5753387673671915777, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5753387673671915777, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -6754,15 +6756,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5866231781890813870, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5866231781890813870, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5866231781890813870, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5866231781890813870, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -7086,15 +7088,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5897866430438588554, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5897866430438588554, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5897866430438588554, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5897866430438588554, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -7450,15 +7452,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6156301876631257063, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6156301876631257063, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6156301876631257063, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6156301876631257063, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -7778,15 +7780,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6169925573569498413, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6169925573569498413, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6169925573569498413, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6169925573569498413, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -8126,15 +8128,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6698634093975042767, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6698634093975042767, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6698634093975042767, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6698634093975042767, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -8458,15 +8460,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6725683597060909266, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6725683597060909266, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6725683597060909266, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6725683597060909266, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -8786,15 +8788,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6969972791602556576, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6969972791602556576, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6969972791602556576, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6969972791602556576, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -9178,15 +9180,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7497932161556940239, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7497932161556940239, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7497932161556940239, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7497932161556940239, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -9514,11 +9516,11 @@ PrefabInstance:
       value: 3073
       objectReference: {fileID: 0}
     - target: {fileID: 7642237835131140804, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[0]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[0]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7642237835131140804, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[1]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[1]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7738422303185645761, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -9538,15 +9540,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7738422303185645761, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7738422303185645761, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7738422303185645761, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7738422303185645761, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -9866,15 +9868,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7818928561671172664, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7818928561671172664, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7818928561671172664, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7818928561671172664, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -10210,15 +10212,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7863587657846483881, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7863587657846483881, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7863587657846483881, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7863587657846483881, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -10542,15 +10544,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7904051268989043639, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7904051268989043639, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7904051268989043639, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7904051268989043639, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -10874,15 +10876,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7983648804485770665, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7983648804485770665, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7983648804485770665, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7983648804485770665, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -11222,15 +11224,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8078464603222851419, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8078464603222851419, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8078464603222851419, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8078464603222851419, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -11586,15 +11588,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8320224283893956479, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8320224283893956479, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8320224283893956479, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8320224283893956479, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -11918,15 +11920,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8379974226414903796, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8379974226414903796, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8379974226414903796, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8379974226414903796, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -12266,15 +12268,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8707923556893755087, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8707923556893755087, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8707923556893755087, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8707923556893755087, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -12610,15 +12612,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 9002678722430644259, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9002678722430644259, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9002678722430644259, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9002678722430644259, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -12974,15 +12976,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 9162860196973327334, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9162860196973327334, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9162860196973327334, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9162860196973327334, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -13347,15 +13349,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 107745597921697815, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 107745597921697815, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 107745597921697815, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 107745597921697815, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -13675,15 +13677,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 128401342122940863, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 128401342122940863, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 128401342122940863, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 128401342122940863, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -14007,15 +14009,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 305763317035868303, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 305763317035868303, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 305763317035868303, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 305763317035868303, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -14351,15 +14353,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 844726739805285151, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 844726739805285151, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 844726739805285151, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 844726739805285151, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -14699,15 +14701,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 1237451682642967491, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1237451682642967491, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1237451682642967491, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1237451682642967491, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -15027,15 +15029,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 1567808531018145348, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1567808531018145348, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1567808531018145348, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1567808531018145348, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -15355,15 +15357,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 1686353248221939295, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1686353248221939295, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1686353248221939295, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1686353248221939295, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -15715,15 +15717,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2390901354625895742, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2390901354625895742, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2390901354625895742, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2390901354625895742, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -16107,15 +16109,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2711224187801024953, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2711224187801024953, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2711224187801024953, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2711224187801024953, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -16455,15 +16457,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 3093878232542066693, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3093878232542066693, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3093878232542066693, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3093878232542066693, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -16783,15 +16785,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 3143715721823451524, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3143715721823451524, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3143715721823451524, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3143715721823451524, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -17115,15 +17117,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 3287197677367529751, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3287197677367529751, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3287197677367529751, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3287197677367529751, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -17479,15 +17481,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 3665700649357547999, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3665700649357547999, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3665700649357547999, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3665700649357547999, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -17891,15 +17893,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4994384795659674418, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4994384795659674418, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4994384795659674418, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4994384795659674418, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -18295,15 +18297,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5332207362587774129, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5332207362587774129, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5332207362587774129, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5332207362587774129, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -18623,15 +18625,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5345818937105864230, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5345818937105864230, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5345818937105864230, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5345818937105864230, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -18955,15 +18957,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5413237625646159123, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5413237625646159123, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5413237625646159123, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5413237625646159123, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -19283,15 +19285,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5452761725854725423, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5452761725854725423, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5452761725854725423, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5452761725854725423, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -19659,15 +19661,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5753387673671915777, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5753387673671915777, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5753387673671915777, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5753387673671915777, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -19991,15 +19993,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5866231781890813870, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5866231781890813870, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5866231781890813870, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5866231781890813870, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -20323,15 +20325,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5897866430438588554, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5897866430438588554, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5897866430438588554, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5897866430438588554, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -20687,15 +20689,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6156301876631257063, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6156301876631257063, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6156301876631257063, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6156301876631257063, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -21015,15 +21017,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6169925573569498413, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6169925573569498413, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6169925573569498413, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6169925573569498413, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -21363,15 +21365,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6698634093975042767, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6698634093975042767, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6698634093975042767, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6698634093975042767, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -21695,15 +21697,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6725683597060909266, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6725683597060909266, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6725683597060909266, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6725683597060909266, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -22023,15 +22025,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6969972791602556576, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6969972791602556576, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6969972791602556576, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6969972791602556576, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -22415,15 +22417,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7497932161556940239, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7497932161556940239, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7497932161556940239, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7497932161556940239, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -22751,11 +22753,11 @@ PrefabInstance:
       value: 3073
       objectReference: {fileID: 0}
     - target: {fileID: 7642237835131140804, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[0]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[0]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7642237835131140804, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[1]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[1]'
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7738422303185645761, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -22775,15 +22777,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7738422303185645761, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7738422303185645761, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7738422303185645761, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7738422303185645761, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -23103,15 +23105,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7818928561671172664, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7818928561671172664, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7818928561671172664, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7818928561671172664, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -23447,15 +23449,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7863587657846483881, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7863587657846483881, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7863587657846483881, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7863587657846483881, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -23779,15 +23781,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7904051268989043639, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7904051268989043639, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7904051268989043639, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7904051268989043639, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -24111,15 +24113,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7983648804485770665, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7983648804485770665, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7983648804485770665, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7983648804485770665, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -24459,15 +24461,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8078464603222851419, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8078464603222851419, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8078464603222851419, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8078464603222851419, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -24823,15 +24825,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8320224283893956479, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8320224283893956479, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8320224283893956479, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8320224283893956479, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -25155,15 +25157,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8379974226414903796, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8379974226414903796, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8379974226414903796, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8379974226414903796, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -25503,15 +25505,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8707923556893755087, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8707923556893755087, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8707923556893755087, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8707923556893755087, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -25847,15 +25849,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 9002678722430644259, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9002678722430644259, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9002678722430644259, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9002678722430644259, guid: 8e282e1095094a543b05f51093197533, type: 3}
@@ -26211,15 +26213,15 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 9162860196973327334, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[2]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[2]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9162860196973327334, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[3]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[3]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9162860196973327334, guid: 8e282e1095094a543b05f51093197533, type: 3}
-      propertyPath: _targetHandPose._fingersFreedom.Array.data[4]
+      propertyPath: '_targetHandPose._fingersFreedom.Array.data[4]'
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9162860196973327334, guid: 8e282e1095094a543b05f51093197533, type: 3}

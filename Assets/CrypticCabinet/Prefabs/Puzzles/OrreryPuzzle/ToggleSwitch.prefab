@@ -131,6 +131,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -201,6 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e7d2b1770f79446931af1d666288b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_grabbable: {fileID: 871115157757368787}
   m_switchArm: {fileID: 8727419511438217451}
@@ -290,6 +295,9 @@ MonoBehaviour:
   _twoGrabTransformer: {fileID: 0}
   _targetTransform: {fileID: 8727419511438217451}
   _maxGrabPoints: 1
+  _rigidbody: {fileID: 0}
+  _kinematicWhileSelected: 1
+  _throwWhenUnselected: 1
 --- !u!114 &2513387246323122179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +375,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ed15df56809cf4b8d7c9d89f5bbdba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_debugRenderer: {fileID: 0}
   m_changeColorForAuthority: 0
@@ -511,11 +521,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2658723333773271763, guid: b3b9241ebac2afd43b69be5e6d3237b2, type: 3}
-      propertyPath: _audioClips.Array.data[0]
+      propertyPath: '_audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: 73e11ab7433d14c448aa40200187e337, type: 3}
     - target: {fileID: 2658723333773271763, guid: b3b9241ebac2afd43b69be5e6d3237b2, type: 3}
-      propertyPath: _audioClips.Array.data[1]
+      propertyPath: '_audioClips.Array.data[1]'
       value: 
       objectReference: {fileID: 8300000, guid: 4277ed2a113cc634194fbe98b2182845, type: 3}
     - target: {fileID: 6335899075440141663, guid: b3b9241ebac2afd43b69be5e6d3237b2, type: 3}

@@ -3,7 +3,7 @@ guid: 306d5b22aa1b4904a99a3de70746d472
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -67,7 +67,7 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -80,7 +80,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -93,7 +93,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -106,7 +106,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -119,8 +119,8 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -146,6 +146,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -167,6 +168,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -188,6 +190,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -209,6 +212,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -230,6 +234,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -251,6 +256,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -272,6 +278,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -293,6 +300,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -314,6 +322,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -361,6 +370,7 @@ TextureImporter:
       - {x: 50.37726, y: -40.64476}
       - {x: 123.36844, y: -40.64476}
       - {x: 123.36844, y: -120.71388}
+    customData: 
     physicsShape:
     - - {x: 106, y: -102}
       - {x: 109, y: -101}
@@ -1045,6 +1055,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
       SandParticles_0: -1883799787
       SandParticles_1: 1808229172

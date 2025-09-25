@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f3be9fae0cb60b4ebc9d26351ad96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   InterpolationSpace: 0
   InterpolationTarget: {fileID: 0}

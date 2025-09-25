@@ -1569,6 +1569,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2ce7bef13e591c94aaeb646c781475a3, type: 3}
+  m_Resource: {fileID: 8300000, guid: 2ce7bef13e591c94aaeb646c781475a3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2103,7 +2104,7 @@ PrefabInstance:
       value: MiniGenMedium
       objectReference: {fileID: 0}
     - target: {fileID: -4020352654541274698, guid: 542c78eb346fbc44ba27b970a033df26, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 152c91e48e0ccec47805b45bd0fdd7d2, type: 2}
     - target: {fileID: -3893212099537913886, guid: 542c78eb346fbc44ba27b970a033df26, type: 3}
@@ -2111,15 +2112,15 @@ PrefabInstance:
       value: RightBulb
       objectReference: {fileID: 0}
     - target: {fileID: -3838546463947569473, guid: 542c78eb346fbc44ba27b970a033df26, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7aadddcae30a6a146bc7c57d4d70ddda, type: 2}
     - target: {fileID: -3523337550486333850, guid: 542c78eb346fbc44ba27b970a033df26, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7aadddcae30a6a146bc7c57d4d70ddda, type: 2}
     - target: {fileID: -1358170699723264705, guid: 542c78eb346fbc44ba27b970a033df26, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7aadddcae30a6a146bc7c57d4d70ddda, type: 2}
     - target: {fileID: 919132149155446097, guid: 542c78eb346fbc44ba27b970a033df26, type: 3}
@@ -2127,7 +2128,7 @@ PrefabInstance:
       value: medium_generator
       objectReference: {fileID: 0}
     - target: {fileID: 4399677413453128917, guid: 542c78eb346fbc44ba27b970a033df26, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7aadddcae30a6a146bc7c57d4d70ddda, type: 2}
     - target: {fileID: 7620653168905280611, guid: 542c78eb346fbc44ba27b970a033df26, type: 3}
@@ -2135,7 +2136,7 @@ PrefabInstance:
       value: LeftBulb
       objectReference: {fileID: 0}
     - target: {fileID: 8423352251568012719, guid: 542c78eb346fbc44ba27b970a033df26, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 152c91e48e0ccec47805b45bd0fdd7d2, type: 2}
     m_RemovedComponents: []
@@ -2177,31 +2178,31 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 113279187717398112, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: NetworkedBehaviours.Array.data[1]
+      propertyPath: 'NetworkedBehaviours.Array.data[1]'
       value: 
       objectReference: {fileID: 1460407178200672749}
     - target: {fileID: 113279187717398112, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: NetworkedBehaviours.Array.data[2]
+      propertyPath: 'NetworkedBehaviours.Array.data[2]'
       value: 
       objectReference: {fileID: 8829143582762726089}
     - target: {fileID: 113279187717398112, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: NetworkedBehaviours.Array.data[3]
+      propertyPath: 'NetworkedBehaviours.Array.data[3]'
       value: 
       objectReference: {fileID: -1827778520670538515}
     - target: {fileID: 113279187717398112, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: NetworkedBehaviours.Array.data[4]
+      propertyPath: 'NetworkedBehaviours.Array.data[4]'
       value: 
       objectReference: {fileID: 3404788733282862319}
     - target: {fileID: 113279187717398112, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: NetworkedBehaviours.Array.data[5]
+      propertyPath: 'NetworkedBehaviours.Array.data[5]'
       value: 
       objectReference: {fileID: 8316113207951462365}
     - target: {fileID: 113279187717398112, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[0]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[0]'
       value: 4918918379709832887
       objectReference: {fileID: 0}
     - target: {fileID: 113279187717398112, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: NetworkGuid.RawGuidValue.Array.data[1]
+      propertyPath: 'NetworkGuid.RawGuidValue.Array.data[1]'
       value: 8004574645046165243
       objectReference: {fileID: 0}
     - target: {fileID: 628471008883059324, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
@@ -2217,43 +2218,43 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1137654234779186178, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: _interactables.Array.data[0]
+      propertyPath: '_interactables.Array.data[0]'
       value: 
       objectReference: {fileID: 1866112506518681983}
     - target: {fileID: 1137654234779186178, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: _interactables.Array.data[1]
+      propertyPath: '_interactables.Array.data[1]'
       value: 
       objectReference: {fileID: 7169918505372453479}
     - target: {fileID: 1137654234779186178, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: _interactables.Array.data[2]
+      propertyPath: '_interactables.Array.data[2]'
       value: 
       objectReference: {fileID: 4180098708061293603}
     - target: {fileID: 1137654234779186178, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: _interactables.Array.data[3]
+      propertyPath: '_interactables.Array.data[3]'
       value: 
       objectReference: {fileID: 7063580596674562099}
     - target: {fileID: 1137654234779186178, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: _interactables.Array.data[4]
+      propertyPath: '_interactables.Array.data[4]'
       value: 
       objectReference: {fileID: 2883471145635674454}
     - target: {fileID: 1137654234779186178, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: _interactables.Array.data[5]
+      propertyPath: '_interactables.Array.data[5]'
       value: 
       objectReference: {fileID: 8481296652128084751}
     - target: {fileID: 1137654234779186178, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: _interactables.Array.data[6]
+      propertyPath: '_interactables.Array.data[6]'
       value: 
       objectReference: {fileID: 953750610918817379}
     - target: {fileID: 1137654234779186178, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: _interactables.Array.data[7]
+      propertyPath: '_interactables.Array.data[7]'
       value: 
       objectReference: {fileID: 6821852799426754350}
     - target: {fileID: 1137654234779186178, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: _interactables.Array.data[8]
+      propertyPath: '_interactables.Array.data[8]'
       value: 
       objectReference: {fileID: 5017364617309096321}
     - target: {fileID: 1137654234779186178, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: _interactables.Array.data[9]
+      propertyPath: '_interactables.Array.data[9]'
       value: 
       objectReference: {fileID: 5105002398120854839}
     - target: {fileID: 2628503764739004222, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
@@ -2557,7 +2558,7 @@ PrefabInstance:
       value: 0.061
       objectReference: {fileID: 0}
     - target: {fileID: 9009760971195346570, guid: a844e960cf41c054fa2df2eb06871a62, type: 3}
-      propertyPath: _renderers.Array.data[0]
+      propertyPath: '_renderers.Array.data[0]'
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -2665,6 +2666,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4933a9d5da2820e4185fc735bbae7ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_onSpawnComplete:
     m_PersistentCalls:

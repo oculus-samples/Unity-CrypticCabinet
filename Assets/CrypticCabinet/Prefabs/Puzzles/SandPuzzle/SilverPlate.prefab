@@ -3302,6 +3302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ed15df56809cf4b8d7c9d89f5bbdba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   m_debugRenderer: {fileID: 8570063571799268389}
   m_changeColorForAuthority: 0
@@ -3327,6 +3329,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3425,6 +3430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f3be9fae0cb60b4ebc9d26351ad96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 0
   InterpolationTarget: {fileID: 0}
@@ -6940,7 +6947,7 @@ PrefabInstance:
       value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 2658723333773271763, guid: b3b9241ebac2afd43b69be5e6d3237b2, type: 3}
-      propertyPath: _audioClips.Array.data[0]
+      propertyPath: '_audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: 9a9c01059442e8d418c9f09f8d0105ce, type: 3}
     - target: {fileID: 2658723333773271763, guid: b3b9241ebac2afd43b69be5e6d3237b2, type: 3}

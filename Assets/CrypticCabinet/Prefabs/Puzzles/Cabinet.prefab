@@ -130,6 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 3
   InterpolationSpace: 0
   InterpolationTarget: {fileID: 0}
@@ -191,6 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384363074c5b130468b8c97583732709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
   _interpolationDataSource: 0
   m_cabinetPuzzleObjects: {fileID: 7791727690742878224, guid: 3d8d5a276c021e441aa1b1a310324eca, type: 3}
   m_crystalRenderer: {fileID: 6915992520538832525}
@@ -488,11 +492,11 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: -3864981303577251579, guid: a50ac959a70786643be154c6bce0f990, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d7743472971eb0f4e9e9ab2f6c628662, type: 2}
     - target: {fileID: -3864981303577251579, guid: a50ac959a70786643be154c6bce0f990, type: 3}
-      propertyPath: m_Materials.Array.data[1]
+      propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: e7d39374e1f816c409ef42de5bcdfb5d, type: 2}
     - target: {fileID: -2655513546121723064, guid: a50ac959a70786643be154c6bce0f990, type: 3}
@@ -536,7 +540,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3824787665280607725, guid: a50ac959a70786643be154c6bce0f990, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d7743472971eb0f4e9e9ab2f6c628662, type: 2}
     - target: {fileID: 4383877905140026833, guid: a50ac959a70786643be154c6bce0f990, type: 3}
@@ -708,7 +712,7 @@ PrefabInstance:
       value: -147.056
       objectReference: {fileID: 0}
     - target: {fileID: 425508343642592397, guid: b7e6d6ce96997c24b93b1fbd19ea3fa9, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 1f4c7a4ac9cc48f44a2731d173467cdb, type: 2}
     - target: {fileID: 919132149155446097, guid: b7e6d6ce96997c24b93b1fbd19ea3fa9, type: 3}
@@ -716,11 +720,11 @@ PrefabInstance:
       value: openDoors_cabinet-anm (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6297975003276862677, guid: b7e6d6ce96997c24b93b1fbd19ea3fa9, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 10c57d041b52ec640a2ff9767b085f79, type: 2}
     - target: {fileID: 6297975003276862677, guid: b7e6d6ce96997c24b93b1fbd19ea3fa9, type: 3}
-      propertyPath: m_Materials.Array.data[1]
+      propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: e847364490996c74bb7cff4383fda2e5, type: 2}
     - target: {fileID: 7544296381449673511, guid: b7e6d6ce96997c24b93b1fbd19ea3fa9, type: 3}

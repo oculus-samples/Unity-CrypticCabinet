@@ -780,7 +780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e933e81d3c20c74ea6fdc708a67e3a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useRecommendedMSAALevel: 1
   _monoscopic: 0
   _sharpenType: 0
   _enableDynamicResolution: 0
@@ -1956,7 +1955,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 648194600146278268}
     - target: {fileID: 4818507148424821740, guid: 1502f2e704f618645bddd194dd6a53fd, type: 3}
-      propertyPath: _interactors.Array.data[4]
+      propertyPath: '_interactors.Array.data[4]'
       value: 
       objectReference: {fileID: 9141936221404581767}
     - target: {fileID: 5380662624391414736, guid: 1502f2e704f618645bddd194dd6a53fd, type: 3}
@@ -1996,7 +1995,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4026611276124400748}
     - target: {fileID: 7792688604451212256, guid: 1502f2e704f618645bddd194dd6a53fd, type: 3}
-      propertyPath: _interactors.Array.data[4]
+      propertyPath: '_interactors.Array.data[4]'
       value: 
       objectReference: {fileID: 2841402468290030442}
     - target: {fileID: 8006600891298936073, guid: 1502f2e704f618645bddd194dd6a53fd, type: 3}

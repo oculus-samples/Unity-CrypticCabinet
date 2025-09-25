@@ -2,6 +2,13 @@ fileFormatVersion: 2
 guid: a70a8670a7e667b4fb1e7efa664d655e
 VisualEffectImporter:
   externalObjects: {}
+  serializedVersion: 1
+  template:
+    name: 
+    category: 
+    description: 
+    icon: {instanceID: 0}
+    thumbnail: {instanceID: 0}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

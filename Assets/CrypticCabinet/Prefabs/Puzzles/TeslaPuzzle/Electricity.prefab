@@ -118,6 +118,9 @@ VFXRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_StaticBatchInfo:
@@ -234,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Space: 0
   m_Property:
     m_Name: StartTransform
   Target: {fileID: 3062589398229813642}
@@ -249,6 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Space: 0
   m_Property:
     m_Name: EndTransform
   Target: {fileID: 3062749304540200054}
