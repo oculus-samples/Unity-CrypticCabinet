@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 04/09/2025
+### Update
+* Update to Unity6 (6000.0.50f1)
+* Update to SDK v78
+* Update app version to 2.0.4
+
 ## 07/14/2025
 ### Update
 * Update to SDK v76
