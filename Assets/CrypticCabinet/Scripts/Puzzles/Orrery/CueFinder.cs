@@ -15,7 +15,7 @@ namespace CrypticCabinet.Puzzles.Orrery
 
         private bool TryGetCueGO()
         {
-            m_orreryClueControl = FindObjectOfType<OrreryClueControl>(true);
+            m_orreryClueControl = FindFirstObjectByType<OrreryClueControl>();
             if (m_orreryClueControl == null)
             {
                 Debug.LogError("CueFinder could not find GO with CueMarker component");

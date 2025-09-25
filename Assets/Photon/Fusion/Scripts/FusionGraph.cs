@@ -499,6 +499,7 @@ public class FusionGraph : FusionGraphBase {
   void UpdateUiText(float min, float max, float avg, float last) {
 
     var decimals = StatSourceInfo.Decimals;
+    // TODO: At some point this label null checks should be removed
     if (LabelMin) { LabelMin.text = Math.Round(min, decimals).ToString(); }
     if (LabelMax) { LabelMax.text = Math.Round(max, decimals).ToString(); }
     if (LabelAvg) { LabelAvg.text = Math.Round(avg, decimals).ToString(); }
@@ -522,15 +523,16 @@ public class FusionGraph : FusionGraphBase {
     switch (CurrentPer) {
       case Stats.StatsPer.Second: {
           var oldestTimeRecord = data.GetSampleAtIndex(0).TimeValue;
-          var currentTime = (float)_fusionStats.Runner.Simulation.LatestServerState.Time;
-          var avg = sum / (currentTime - oldestTimeRecord);
+        var newestTickRecord = data.GetSampleAtIndex(data.Count - 1).TimeValue;
+        var avg = sum / (newestTickRecord - oldestTimeRecord);
           return avg;
         }
 
       case Stats.StatsPer.Tick: {
           var oldestTickRecord = data.GetSampleAtIndex(0).TickValue;
-          var currentTick = (float)_fusionStats.Runner.Simulation.LatestServerState.Tick;
-          var avg = sum / (currentTick - oldestTickRecord);
+        var newestTickRecord = data.GetSampleAtIndex(data.Count -1).TickValue;
+        //var   currentTick      = (float)_fusionStats.Runner.Simulation.LatestServerState.Tick;
+        var avg = sum / (newestTickRecord - oldestTickRecord);
           return avg;
         }
 
@@ -853,7 +855,8 @@ public class FusionGraph : FusionGraphBase {
 
     var titleRT = LabelTitle.rectTransform;
     var avgRT = LabelAvg.rectTransform;
-    
+
+    // TODO: Temporary - here to avoid breaking existing implementations. Can be removed. Added Dec 15 2021
     if (LabelPer == null) {
       var prt = avgRT.parent.CreateRectTransform("Per")
       .SetAnchors(0.3f, 0.7f, 0.0f, 0.125f)

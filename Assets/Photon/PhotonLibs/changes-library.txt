@@ -1,7 +1,95 @@
 
 Photon C# Client Library - Changelog
-Exit Games GmbH - www.photonengine.com - forum.photonengine.com
+www.photonengine.com  -  Join our Discord Server: https://dashboard.photonengine.com/account/profile
 
+
+
+Version 4.1.8.11 (17. October 2024 - rev7735)
+    Changed: Internal TryParseAddress method, which failed for URLs without a port. This did not work well with the Realtime API's AddressRewriter and URLs for Discord Activities (which typically use a scheme but not a port).
+    
+Version 4.1.8.10 (14. October 2024 - rev7732)
+    Internal: Preparation to support .Net Standard 2.1 builds.
+    Updated: WebSocket for WebGL exports (WebSocket\WebSocket.jslib) to support Unity's (experimental) option to "Enable Native C/C++ Multithreading".
+
+Version 4.1.8.9 (02. September 2024 - rev7660)
+    No notable changes.
+
+Version 4.1.8.8 (02. August 2024 - rev7638)
+    Fixed: TCP specific issue where RTT always goes up. This TCP RTT bug was first in v4.1.8.5 (13. May 2024 - rev7556).
+    Changed: SendPing handling for the fix. Pings are again directly sent right away - unless the peer was sending a regular, stand-alone init-request. Then waitForInitResponse is used to prevent sending a ping message early.
+    Changed: SendPing is now called even if the peer is not yet in "Connected" state to allow send pings in the WSS case where an init-response may have been lost (see waitForInitResponse ref doc).
+    Changed: SendPing will now check its own ping-interval.
+    Changed: FetchServerTimestamp to call SendPing with the ping-interval check, which means you can fetch the server timestamp only in ping-intervals, too. It was never the intention you could fetch it very frequently. In fact, fetching it should be done only if you are sure the time drifted significantly or RTT improved.
+
+Version 4.1.8.7 (05. July 2024 - rev7622)
+    Fixed: SendAcksOnly() for TCP and WS/WSS. It now sends a ping immediately to actually keep the connection up if SendOutgoingCommands() is not called for longer (e.g. when PUN IsMessageQueueRunning is false).
+    Note: The above issue was introduced in rev7553, 8. May 2024. So v4.1.8.5 and v4.1.8.6 would time out for TCP or WebSockets, if SendOutgoingCommands() was paused longer.
+    Changed: TPeer.SendPing() to have an optional parameter to send the ping immediately. This allows SendAcksOnly to send it without sending anything queued.
+    Changed: TPeer.Reset() to also update lastPingActivity.
+
+Version 4.1.8.6 (25. May 2024 - rev7571)
+    No notable changes. The Realtime API has fixes for non-Unity projects.
+
+Version 4.1.8.5 (13. May 2024 - rev7556)
+    Changed: TPeer.SendPing() will now enqueue the message instead of sending it immmediately. This makes sure a ping is never sent as first message (which has to be an Init).
+    Changed: To re-using a ParameterDictionary for pinging in WS / WSS.
+
+Version 4.1.8.4 (26. April 2024 - rev7530)
+    Changed: SendAcksOnly and SendOutgoingCommands logging (they only log successful re-sends).
+    Changed: In QueueSentCommand the reliableCommandsSent is increased only for commands that are sent the first time (not counting repeats anymore).
+
+Version 4.1.8.3 (24. April 2024 - rev7519)
+    Changed: Sending of reliable commands. There is now a "Send Window" which limits how many reliable commands are being sent, based off the lowest sent sequence number, only the next XY sequence numbers can be sent. This moves with incoming acknowledgements. This avoids spamming the server, which caused resends.
+    Note: Per channel, the Send Window indirectly affects unreliable and even unsequenced commands by ending the sending for a channel early. Use a separate channel (higher number) for larger chunks of data to avoid related lag.
+    Renamed: PhotonPeer.SequenceDeltaLimitSends to SendWindowSize.
+    Removed: PhotonPeer.SequenceDeltaLimitResends. If a reliable command needs re-sending, it is something the server is waiting for, so we just send.
+    Changed: Resending of commands (UDP). SendOutgoingCommands now makes sure to return true if any of the resends does not fit in the current datagram. Internally, the next check for resends is scheduled "immediately".
+
+Version 4.1.8.2 (25. March 2024 - rev7471)
+    Added: PhotonLibs\WebSocket\PhotonWebSocket.asmdef, which wraps up the code and dlls for WebGL exports. This is auto referenced.
+
+Version 4.1.8.1 (12. March 2024 - rev7444)
+    Fixed: SocketTcp which was reading the wrong TCP Header byte as "reliable" indicator. This meant, the TrafficStatsIncoming were wrong.
+
+Version 4.1.8.0 (31. January 2024 - rev7364)
+    No notable changes. The Realtime API has some breaking changes. Check that changelog.
+
+Version 4.1.7.4 (13. December 2023 - rev7284)
+    Fixed: PhotonPeer.BytesOut internal counting.
+
+Version 4.1.7.3 (07. December 2023 - rev7252)
+    No notable changes.
+
+Version 4.1.7.2 (20. September 2023 - rev7218)
+    Fixed: DisconnectTimeout is no longer capped. You can set any value client side. Server side timeouts can only be set for Self Hosted or Enterprise Server.
+
+Version 4.1.7.1 (06. September 2023 - rev7148)
+    Fixed: Internal state changes to report UDP based Client Timeouts to the server.
+
+Version 4.1.7.0 (18. August 2023 - rev7111)
+    Added: PhotonPeer.SocketErrorCode (int) to provide the low level error code (relevant when the connection gets lost).
+    Changed: SocketUdp to report WouldBlock exceptions as "busy". The handling code could use this to not try send anything else in this loop.
+    Added: Preserve attribute to SocketWebTcp constructor to keep Unity from stripping it from builds.
+
+Version 4.1.6.26 (09. August 2023 - rev7076)
+    Fixed: PhotonClientWebSocket.Send() waits up to 5ms after sending async to allow the message being written to the network layer.
+    Fixed: PhotonClientWebSocket.Send() now provides a distinct return code if the WebSocket did not yet finish sending the data. In that case, the memory which was used for it, is not returned to the pooling. This can cause allocations but fixes cases where messages were modified after they were considered sent.
+    Changed: PhotonClientWebSocket connecting to the server is cancelled after 7 second max (was: 5).
+    Changed: PhotonClientWebSocket AsyncConnectAndReceive will log to the debug callback instead of using Console.Writeline().
+    Changed: PhotonClientWebSocket error handling for readTask.Wait().
+
+Version 4.1.6.25 (05. June 2023 - rev6925)
+    Added: TPeer now measures longestSentCall in SendData().
+    Changed: TPeer.SendOutgoingCommands() to return false if the socket is still busy (which means "no need to call send again in this loop).
+
+Version 4.1.6.24 (15. May 2023 - rev6894)
+    Changed: PhotonClientWebSocket.Send() will now Wait up to 3ms for the Send-Task before it returns "busy". This allows the task to complete and the TPeer can send multiple messages until it send MTU bytes. That avoids increasing lag, if the game logic calls SendOutgoingCommands() sparingly.
+    Changed: PeerBase.Reset() will now also clear the ActionQueue.
+    Fixed: WebSocket connection issues where clients never get into a Connected state. This is a workaround for cases where a WebSocket bug skips the callback for the Init Response from the server. This is a rare issue which does not reproduce 100% of the time.
+    Changed: WebSocket connections will now send pings in one second intervals as long as the WebSocket is connected (and the peerConnectionState is not Disconnected).
+    Changed: If a ping result arrives while the peer is still Connecting, it is used as Init Response on WebSocket connections.
+    Changed: TPeer.FetchServerTimestamp() to only log something (INFO level) if the peer is not connected and initialized yet. FetchServerTimestamp can be repeated and does not need a SendError callback.
+    Changed: PhotonClientWebSocket.Disconnect() to call CloseAsync() if the WebSocket is already in state CloseReceived. This should just close the socket locally.
 
 Version 4.1.6.23 (15. March 2023 - rev6743)
     Fixed: Handling of unknown command types in Initialize(EnetPeer peer, byte[] inBuff, ref int readingOffset). Reading offset is set by Size value.

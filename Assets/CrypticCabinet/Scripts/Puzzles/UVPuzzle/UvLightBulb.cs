@@ -36,7 +36,7 @@ namespace CrypticCabinet.Puzzles.UVPuzzle
         /// <param name="lightOn">True to enable the light, false otherwise.</param>
         public void SetOn(bool lightOn)
         {
-            var uvLightClues = FindObjectsOfType<UvLightClue>();
+            var uvLightClues = FindObjectsByType<UvLightClue>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
             foreach (var clue in uvLightClues)
             {
                 clue.SetEnabled(lightOn && !m_isBroken);

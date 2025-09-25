@@ -240,6 +240,12 @@
         <member name="F:ExitGames.Client.Photon.EnetChannel.highestReceivedAck">
             <summary>To store the highest acknowledged sequence number (and get some impression what the server already received and stored).</summary>
         </member>
+        <member name="F:ExitGames.Client.Photon.EnetChannel.reliableCommandsInFlight">
+            <summary>Count of reliable commands sent and not yet acknowledged.</summary>
+        </member>
+        <member name="F:ExitGames.Client.Photon.EnetChannel.lowestUnacknowledgedSequenceNumber">
+            <summary>The lowest sequence number sent but not acknowledged yet. This defines the sequence delta "window" for sending subsequent reliable commands.</summary>
+        </member>
         <member name="M:ExitGames.Client.Photon.EnetChannel.QueueIncomingReliableUnsequenced(ExitGames.Client.Photon.NCommand)">
             <summary>Checks and queues incoming reliable unsequenced commands ("send" or "fragment"), if they haven't been received yet.</summary>
             <param name="command">The command to check and queue.</param>
@@ -250,6 +256,9 @@
         </member>
         <member name="F:ExitGames.Client.Photon.EnetPeer.sentReliableCommands">
             <summary>One list for all channels keeps sent commands (for re-sending).</summary>
+        </member>
+        <member name="P:ExitGames.Client.Photon.EnetPeer.sendWindowUpdateRequired">
+            <summary>Thread safe.</summary>
         </member>
         <member name="F:ExitGames.Client.Photon.EnetPeer.outgoingAcknowledgementsPool">
             <summary>One pool of ACK byte arrays ( 20 bytes each)  for all channels to keep acknowledgements.</summary>
@@ -289,6 +298,9 @@
             <summary>
             gathers commands from all (out)queues until udp-packet is full and sends it!
             </summary>
+        </member>
+        <member name="F:ExitGames.Client.Photon.EnetPeer.channelsToUpdateLowestSent">
+            <summary>Used to store temporary values in UpdateSendWindow().</summary>
         </member>
         <member name="M:ExitGames.Client.Photon.EnetPeer.EnqueuePhotonMessage(ExitGames.Client.Photon.StreamBuffer,ExitGames.Client.Photon.SendOptions)">
             <summary>
@@ -450,8 +462,17 @@
              </remarks>
              <param name="eventData">The event currently being dispatched.</param>
         </member>
+        <member name="F:ExitGames.Client.Photon.PhotonSocketError.Busy">
+            <summary>Data wasn't sent yet.</summary>
+        </member>
+        <member name="F:ExitGames.Client.Photon.PhotonSocketError.PendingSend">
+            <summary>Data is being sent async (still in use).</summary>
+        </member>
         <member name="F:ExitGames.Client.Photon.IPhotonSocket.Protocol">
             <summary>The protocol for this socket, defined in constructor.</summary>
+        </member>
+        <member name="P:ExitGames.Client.Photon.IPhotonSocket.SocketErrorCode">
+            <summary>Socket implementations should store the SocketErrorCode here, if anything happens.</summary>
         </member>
         <member name="F:ExitGames.Client.Photon.IPhotonSocket.ConnectAddress">
             <summary>Address, as defined via a Connect() call. Including protocol, port and or path.</summary>
@@ -482,11 +503,11 @@
         </member>
         <member name="M:ExitGames.Client.Photon.IPhotonSocket.TryParseAddress(System.String,System.String@,System.UInt16@,System.String@,System.String@)">
              <summary>
-             Separates the given address into address (host name or IP) and port. Port must be included after colon!
+             Separates the given address into host (name or IP), port, scheme and path. This is more about splitting the parts, than detecting invalid cases.
              </summary>
              <remarks>
-             This method expects any address to include a port. The final ':' in addressAndPort has to separate it.
-             IPv6 addresses have multiple colons and <b>must use brackets</b> to separate address from port.
+             The out scheme may be empty for IP addresses (UDP and TCP). For these protocols, the url should include a port.
+             IPv6 addresses <b>must use brackets</b> to separate address from port.
             
              Examples:
                  ns.exitgames.com:5058
@@ -1185,6 +1206,10 @@
             Use the SocketImplementationConfig to define which IPhotonSocket is used per ConnectionProtocol.
             </remarks>
         </member>
+        <member name="P:ExitGames.Client.Photon.PhotonPeer.SocketErrorCode">
+            <summary>Provides access to a SocketError code (if available) after a call to OnStatusChanged with a Socket-level exception.</summary>
+            <remarks>Useful for debugging send / receive error cases.</remarks>
+        </member>
         <member name="F:ExitGames.Client.Photon.PhotonPeer.DebugOut">
             <summary>
             Sets the level (and amount) of debug output provided by the library.
@@ -1240,7 +1265,12 @@
              Send either byte[], ArraySegment or use the ByteArraySlicePool to acquire ByteArraySlices to send.
              </remarks>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:ExitGames.Client.Photon.PhotonPeer.WrapIncomingStructs" -->
+        <member name="P:ExitGames.Client.Photon.PhotonPeer.WrapIncomingStructs">
+            <summary>
+            Incoming struct types are wrapped in a pooled IWrapperStruct, rather than being cast to object. This eliminated allocations and garbage collection from boxing,
+            however object that are wrapped structs will need to be cast to WrapperStruct&lt;T&gt; and their values extracted with (obj as WrapperStruct&lt;T&gt;).Value.
+            </summary>
+        </member>
         <member name="P:ExitGames.Client.Photon.PhotonPeer.ByteArraySlicePool">
              <summary>Instance of a ByteArraySlicePool. UseByteArraySlicePoolForEvents defines if this PhotonPeer is using the pool for deserialization of byte[] in Photon events.</summary>
              <remarks>
@@ -1256,21 +1286,15 @@
             This debug setting enables a new send-ordering for commands. Defaults to true and commands are sent in the order they are created. Set to false to use Enet ordering.
             </summary>
         </member>
-        <member name="F:ExitGames.Client.Photon.PhotonPeer.SequenceDeltaLimitResends">
-            <summary>Skips resending (individual) commands if their reliable sequence number is this amount larger than the highest acknowledged sequence number.</summary>
-            <remarks>
-            This puts focus on resending commands that are older and are needed on the receiver side to dispatch commands.
-            It queues more on the client side than on the server.
-            Affects only reliable UDP (based on enet).
-            </remarks>
-        </member>
-        <member name="F:ExitGames.Client.Photon.PhotonPeer.SequenceDeltaLimitSends">
-            <summary>Skips sending reliable and unreliable commands if their reliable sequence number is this amount larger than the highest acknowledged sequence number.</summary>
-            <remarks>
-            This puts focus on resending commands that are older and are needed on the receiver side to dispatch commands.
-            It queues more on the client side than on the server.
-            Affects only reliable UDP (based on enet).
-            </remarks>
+        <member name="F:ExitGames.Client.Photon.PhotonPeer.SendWindowSize">
+             <summary>Defines how far ahead the client can go sending commands (on UDP connections), compared to the acknowledged sequence number.</summary>
+             <remarks>
+             This avoids spamming the receiver and puts focus on resending commands that are older and are needed on the receiver side to dispatch commands.
+            
+             When acks arrive, the SendWindow will move forward and newer commands get sent.
+             This indirectly affects unreliable commands as they are by default sent in creation order.
+             It queues more on the client side than on the server.
+             </remarks>
         </member>
         <member name="P:ExitGames.Client.Photon.PhotonPeer.BytesIn">
             <summary>
@@ -1472,7 +1496,7 @@
              DisconnectTimeout and SentCountAllowance are competing settings: either might trigger a disconnect on the
              client first, depending on the values and Roundtrip Time.
             
-             Default: 10000 ms. Maximum setting: 65535.
+             Default: 10000 ms.
              Setting a negative value will apply the default timeout.
              </remarks>
         </member>
@@ -2631,9 +2655,27 @@
         <member name="F:ExitGames.Client.Photon.TPeer.ALL_HEADER_BYTES">
             <summary>TCP header combined: 9 bytes</summary>
         </member>
+        <member name="F:ExitGames.Client.Photon.TPeer.lastPingActivity">
+            <summary>Timestamp of last ping activity (updated when sending to avoid sending again immediately).</summary>
+        </member>
+        <member name="F:ExitGames.Client.Photon.TPeer.pingRequest">
+            <summary>Re-used binary message used in the TCP protocol (WSS uses a Ping Operation due to lack of framing).</summary>
+        </member>
+        <member name="F:ExitGames.Client.Photon.TPeer.pingParamDict">
+            <summary>Re-used ping-Operation parameter-dict used in the WS/WSS protocol (TCP uses pingRequest).</summary>
+        </member>
         <member name="F:ExitGames.Client.Photon.TPeer.DoFraming">
             <summary>Defines if the (TCP) socket implementation needs to do "framing".</summary>
             <remarks>The WebSocket protocol (e.g.) includes framing, so when that is used, we set DoFraming to false.</remarks>
+        </member>
+        <member name="F:ExitGames.Client.Photon.TPeer.waitForInitResponse">
+            <summary>
+            Helper value to track if this TPeer sends an init request and has to wait for the response. Defaults to true.
+            </summary>
+            <remarks>
+            For WebSockets, the init request is usually skipped (unless there is an init-token)
+            Setting this false allows WS/WSS to send pings even before the init-response is back. this fixes a bug in some platforms which do not provide the init-response message (for unknown reasons)
+            </remarks>
         </member>
         <member name="M:ExitGames.Client.Photon.TPeer.DispatchIncomingCommands">
             <summary>
@@ -2654,7 +2696,7 @@
             <summary>enqueues serialized operations to be sent as tcp stream / package</summary>
         </member>
         <member name="M:ExitGames.Client.Photon.TPeer.SendPing">
-            <summary>Sends a ping and modifies this.lastPingResult to avoid another ping for a while.</summary>
+            <summary>Checks conditions. Immediately sends a ping as operation or "message". Updates this.lastPingActivity to avoid another ping for a while.</summary>
         </member>
         <member name="M:ExitGames.Client.Photon.TPeer.ReceiveIncomingCommands(System.Byte[],System.Int32)">
             <summary>reads incoming tcp-packages to create and queue incoming commands*</summary>

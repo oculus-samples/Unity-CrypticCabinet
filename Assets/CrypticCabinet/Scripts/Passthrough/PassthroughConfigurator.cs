@@ -70,7 +70,7 @@ namespace CrypticCabinet.Passthrough
 
             if (m_passthroughLayer == null)
             {
-                m_passthroughLayer = FindObjectOfType<OVRPassthroughLayer>();
+                m_passthroughLayer = FindFirstObjectByType<OVRPassthroughLayer>();
             }
         }
 

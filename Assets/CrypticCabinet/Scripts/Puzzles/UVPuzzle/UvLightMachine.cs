@@ -38,7 +38,7 @@ namespace CrypticCabinet.Puzzles.UVPuzzle
             m_screwSnapZone.OnObjectStartUnscrew.AddListener(OnBulbUnscrew);
 
 
-            var uvLightClues = FindObjectsOfType<UvLightClue>();
+            var uvLightClues = FindObjectsByType<UvLightClue>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
             foreach (var clue in uvLightClues)
             {
                 clue.SetEnabled(false);

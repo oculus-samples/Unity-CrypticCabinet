@@ -1,3 +1,95 @@
+# 1.1.12
+
+## Stable
+
+### Build 883 (Dec 17, 2024)
+
+**Bug Fixes**
+
+- Fixed: Pausing with ec results in a large amount of snapshots being allocated
+- Fixed: RPC culling for NetworkObjects out of explicit interest
+
+# 1.1.11
+
+## Stable
+
+### Build 873 (Nov 19, 2024)
+
+**What's New**
+
+- NetworkRunner.CloudAddressRewriter (Support for Realtime AddressRewriter)
+
+**Changes**
+
+- Clamp Max Connections to 2048
+- Fragmented updates are sent reliably if Relayed Connection
+- Photon Realtime SDK to 4.1.8.11
+
+**Bug Fixes**
+
+- Fixed: TaskManager Delay for WebGL Builds
+- Fixed: SimulationInput leak after client reset prediction state
+
+# 1.1.10
+
+## Stable
+
+### Build 848 (Aug 05, 2024)
+
+**What's New**
+
+- NetworkRunner.IsInSession
+- NetworkRunner.CloudConnectionLost
+- Support to quick Reconnect and Rejoin Session
+- Ability to use cached best region summary to speed up runner startup
+- Support for multiple Custom STUN Servers
+
+**Changes**
+
+- Photon Realtime SDK to 4.1.8.8
+- Review Realtime Disconnect Timeout
+- Photon Cloud Ping Interval to 200ms
+- Incompatible Configuration Message Review
+- Extra Info when Disconnect Player from Session
+
+**Bug Fixes**
+
+- Fixed: Remove not found NetworkBehavior
+- Fixed: NetworkMecanimAnimator triggers syncing inconsistently
+- Fixed: Out of Range on NetworkBehaviour.NetworkDeserialize
+- Fixed: Sending Request to only single STUN Server
+- Fixed: Some types that fail to load do not prevent Fusion from registering discovered `SimulationBehaviours` and `NetworkInputs`
+- Fixed: Fix for too aggressive sequencing bounds check
+
+# 1.1.9
+
+## F
+
+### Build 829 (May 09, 2024)
+
+**Changes**
+
+- Photon Realtime SDK to 4.1.8.3
+- Max payload size for RPC to 512 bytes
+- RPCs are culled if payload size is over `RpcAttribute.MaxPayloadSize` bytes
+- Implementeed packet throttling to 2 packets/second when client vanishes
+- Made IAfterPhysicsSyncTransforms callbacks public and Made NRB.CopyRigidbodyFromBufferToEngine() protected
+
+**Bug Fixes**
+
+- Fixed: NetAddress.CreateFromIpPort should ignore IPv6 Scope ID
+- Fixed: Single STUN Server Handling
+- Fixed: Fusion stats displaying snapshot size in bits instead of bytes in shared mode
+- Fixed: `GetDrawerTypeForTypeDelegate` error in Unity 2022.3.23 or newer
+- Fixed: Client stops receiving updates after connection freeze
+- Fixed: Typo in `RpcLocalInvokeResult.TargetPlayerIsNotLocal` (was: `RpcLocalInvokeResult.TagetPlayerIsNotLocal`)
+- Fixed: Occasional `NullReferenceException` when multiple objects are spawned and immediately despawned
+- Fixed: `NetworkPrefabTable` not auto-refreshing when importing prefabs that already have `FusionPrefab` label (e.g. incoming from version control)
+- Fixed: Unity introduced change in newer versions where AddComponent<UI.Text> at runtime results in a null font. This is now checked for and default font is applied as needed
+- Fixed: Editor freezing on prefab rename
+- Fixed: FusionStats Average Per Second handling in Shared Mode corrected to use correct time range. Previously was showing smaller than correct averages due to Shared Clients mixing of Local and Remote times
+- Fixed: NetworkDebugStart will now correctly start in Shared Mode when set to Automatic
+
 # 1.1.8
 
 ## F

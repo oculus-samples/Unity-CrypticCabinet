@@ -132,7 +132,7 @@ namespace CrypticCabinet.SceneManagement
             m_wallSpaceFinder?.CleanUp();
             m_wallSpaceFinder = new WallSpaceFinder(DebugMaterial) { TargetCellSize = m_targetWallCellSize };
 
-            var sceneRoomObjects = FindObjectsOfType<SceneRoomObject>();
+            var sceneRoomObjects = FindObjectsByType<SceneRoomObject>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
             foreach (var roomObject in sceneRoomObjects)
             {
                 roomObject.SetUpObject(this);

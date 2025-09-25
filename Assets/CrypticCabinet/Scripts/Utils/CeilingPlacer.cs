@@ -24,7 +24,7 @@ namespace CrypticCabinet.Utils
 
         public void PlaceOnCeiling()
         {
-            var ceilingHeightDetector = FindObjectOfType<CeilingHeightDetector>();
+            var ceilingHeightDetector = FindFirstObjectByType<CeilingHeightDetector>();
             CeilingPlacementUtils.SetYPositionToCeiling(transform, ceilingHeightDetector);
         }
     }

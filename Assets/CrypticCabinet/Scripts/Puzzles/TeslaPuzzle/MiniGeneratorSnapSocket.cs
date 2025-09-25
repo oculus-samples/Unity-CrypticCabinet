@@ -176,7 +176,7 @@ namespace CrypticCabinet.Puzzles.TeslaPuzzle
 
             if (m_miniGenerators == null)
             {
-                var miniGeneratorsSnappables = FindObjectsOfType<MiniGeneratorSnappable>();
+                var miniGeneratorsSnappables = FindObjectsByType<MiniGeneratorSnappable>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
                 if (miniGeneratorsSnappables.Length == NUMBER_OF_MINI_GENERATORS)
                 {
                     m_miniGenerators = miniGeneratorsSnappables;

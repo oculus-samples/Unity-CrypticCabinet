@@ -310,7 +310,8 @@ public class NetworkDebugStartGUI : Fusion.Behaviour {
     }
     nds.StartMultipleSharedClients(count);
   }
-  
+
+  // TODO Move to a utility
   public static Dictionary<T, string> ConvertEnumToNicifiedNameLookup<T>(string prefix = null, Dictionary<T, string> nonalloc = null) where T : System.Enum {
 
     System.Text.StringBuilder sb = new System.Text.StringBuilder();

@@ -28,7 +28,7 @@ namespace CrypticCabinet.IntroOutro
         private void Start()
         {
             m_targets.Clear();
-            var fadeTargets = FindObjectsOfType<FadeTarget>();
+            var fadeTargets = FindObjectsByType<FadeTarget>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
             var random = new System.Random(87248752);
             foreach (var fadeTarget in fadeTargets)
             {

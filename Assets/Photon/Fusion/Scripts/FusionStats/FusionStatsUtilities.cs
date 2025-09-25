@@ -237,6 +237,15 @@ namespace Fusion.StatsInternal {
 
     public static UI.Text AddText(this RectTransform rt, string label, TextAnchor anchor, Color FontColor) {
       var text = rt.gameObject.AddComponent<UI.Text>();
+      // Unity introduced a bug where adding Text at runtime via code results in a null Font.
+      if (text.font == null) {
+        try {
+          text.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+        } catch {
+          text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+        }
+      }
+
       text.text          = label;
       text.color         = FontColor;
       text.alignment     = anchor;

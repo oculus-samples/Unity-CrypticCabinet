@@ -39,7 +39,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
             m_lineRenderer = GetComponent<LineRenderer>();
             m_lastBeamDestinationHit = null;
 
-            m_cameraRig = FindObjectOfType<OVRCameraRig>();
+            m_cameraRig = FindFirstObjectByType<OVRCameraRig>();
             if (m_cameraRig == null)
             {
                 Debug.LogError("Couldn't find OVRCameraRig");

@@ -631,6 +631,8 @@ namespace Fusion.Editor {
       var style = groupBoxType.HasValue ? groupBoxType.Value.GetStyle() : ((FusionGUIStyles.GroupBoxType)msgtype).GetStyle();
       EditorGUILayout.BeginHorizontal(style/*, GUILayout.ExpandHeight(true)*/);
       {
+
+        // TODO: Cache these icons in a utility
         if (msgtype != MessageType.None) {
           Texture icon =
             msgtype == MessageType.Warning ? FusionGUIStyles.WarnIcon :
@@ -2129,7 +2131,7 @@ namespace Fusion.Editor {
 
           var fieldAttribute = fieldAttributes[i];
 
-          var attributeDrawerType = UnityInternal.ScriptAttributeUtility.GetDrawerTypeForType(fieldAttribute.GetType());
+          var attributeDrawerType = UnityInternal.ScriptAttributeUtility.GetDrawerTypeForType(fieldAttribute.GetType(), false);
           if (attributeDrawerType == null) {
             TraceField($"No drawer for {attributeDrawerType}");
             continue;
@@ -2184,7 +2186,7 @@ namespace Fusion.Editor {
 
       if (_nextDrawer == null && (needsManualChaining || isLastDrawer) && fieldInfo != null) {
         // try creating type drawer instead
-        var typeDrawerType = UnityInternal.ScriptAttributeUtility.GetDrawerTypeForType(fieldInfo.FieldType);
+        var typeDrawerType = UnityInternal.ScriptAttributeUtility.GetDrawerTypeForType(fieldInfo.FieldType, false);
         if (typeDrawerType != null) {
           var drawer = (PropertyDrawer)Activator.CreateInstance(typeDrawerType);
           UnityInternal.PropertyDrawer.SetFieldInfo(drawer, fieldInfo);
@@ -2206,6 +2208,7 @@ namespace Fusion.Editor {
         forwardingDrawer._nextDrawer = null;
         FusionEditorGUI.InsertPropertyDrawerByAttributeOrder(_subDrawers, forwardingDrawer);
       } else {
+        // TODO: add order checks
         _nextDrawer = drawer;
       }
     }
@@ -4419,7 +4422,7 @@ namespace Fusion.Editor {
         val;
     }
 
-    // Makes the label field draggable
+    // Makes the label field draggable - TODO: doesn't handle dragging out of window
     private static float DrawLabelDrag(Rect rect) {
 
       rect.width = EditorGUIUtility.labelWidth;
@@ -4614,6 +4617,8 @@ namespace Fusion.Editor {
       var lineRect = new Rect(boxRect) { height = LINE_SPACING };
 
       var labelRect = new Rect(r) { height = LINE_SPACING };
+
+       // TODO: Cache most of this in dictionaries to reduce GC
       var nameArray = GetStringNames(property, FirstIsZero);
 
       if (attr.AlwaysExpanded || (useFoldout && property.isExpanded)) {
@@ -6889,7 +6894,7 @@ namespace Fusion.Editor {
 
   [CustomEditor(typeof(NetworkMecanimAnimator))]
 
-  public class NetworkMecanimAnimatorEditor : BehaviourEditor {
+  public class NetworkMecanimAnimatorEditor : NetworkBehaviourEditor {
     public override void OnInspectorGUI() {
 
       var na = target as NetworkMecanimAnimator;
@@ -7303,8 +7308,9 @@ namespace Fusion.Editor {
 
     int IOrderedCallback.callbackOrder => 0;
 
-    private static HashSet<string> _pendingPrefabImports = new HashSet<string>();
-    private static string _prefabBeingBaked = null;
+    private static HashSet<string> _pendingPrefabImports  = new HashSet<string>();
+    private static HashSet<string> _knownSpawnablePrefabs = new HashSet<string>();
+    private static string          _prefabBeingBaked      = null;
 
     static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths) {
       FusionEditorLog.TraceImport($"Postprocessing imported assets [{importedAssets.Length}]:\n{string.Join("\n", importedAssets)}");
@@ -7315,6 +7321,14 @@ namespace Fusion.Editor {
         if (!path.EndsWith(".prefab")) {
           continue;
         }
+        
+#if UNITY_2023_1_OR_NEWER || UNITY_2022_3_OR_NEWER
+        if (Array.IndexOf(movedAssets, path) >= 0) {
+          // attempting to bake a prefab that has been moved would hang the editor
+          // https://issuetracker.unity3d.com/issues/editor-freezes-when-prefabutility-dot-loadprefabcontents-is-called-in-assetpostprocessor-dot-onpostprocessallassets-for-a-moved-prefab
+          continue;
+        }
+#endif
 
         Debug.Assert(path != _prefabBeingBaked);
         if (!_pendingPrefabImports.Remove(path)) {
@@ -7346,11 +7360,19 @@ namespace Fusion.Editor {
           }
 
           var isSpawnable = no && no.Flags.IsIgnored() == false;
+          var isNewSpawnablePrefab = isSpawnable && _knownSpawnablePrefabs.Add(path);
+          
           if (AssetDatabaseUtils.SetLabel(go, NetworkProjectConfigImporter.FusionPrefabTag, isSpawnable)) {
-              configPossiblyDirty = true;
-              AssetDatabase.ImportAsset(path);
-              FusionEditorLog.TraceImport(path, "Labels dirty, going to reimport the config, too");
+            configPossiblyDirty = true;
+            AssetDatabase.ImportAsset(path);
+            FusionEditorLog.TraceImport(path, "Labels dirty, going to reimport the config, too");
           } else if (no) {
+            if (isNewSpawnablePrefab) {
+              // it may happen that an incoming prefab already has a label and config would not be updated
+              // this only needs to be done once per prefab, because the config, once imported, sets up
+              // dependencies
+              configPossiblyDirty = true;
+            }
             FusionEditorLog.TraceImport(path, "Labels up to date");
           }
         } finally {
@@ -7376,8 +7398,7 @@ namespace Fusion.Editor {
         _pendingPrefabImports.Add(assetPath);
       }
     }
-
-
+    
     static bool BakePrefab(string prefabPath, out GameObject root) {
 
       root = null;
@@ -8157,6 +8178,11 @@ namespace Fusion.Editor {
   }
 
   public static class AnimatorControllerTools {
+    /// <summary>
+    /// To ensure triggers are synced consistently, 1 bit is used for true/false and 3 more are used
+    /// to differentiate the state (these are incremented with every change to the underlying bool).
+    /// </summary>
+    const int BITS_PER_BOOL = 4;
 
     //// Attach methods to Fusion.Runtime NetworkedAnimator
     //[InitializeOnLoadMethod]
@@ -8391,7 +8417,7 @@ namespace Fusion.Editor {
       int syncedLayerCount    = includeLyrs ? layerCount : 1;
       int stateWordCount      = includeStat ? 2 * syncedLayerCount : 0;
       int weightWordCount     = (includeWght && layerCount > 0) ? (layerCount - 1) : 0;
-      int paramBoolsWordCount = (paramBoolCount                               + 31) >> 5;
+      int paramBoolsWordCount = (paramBoolCount * BITS_PER_BOOL + 31) >> 5;
       int words               = param32Count + paramBoolsWordCount + stateWordCount + weightWordCount;
 
       return (param32Count, paramBoolCount, layerCount, words);
@@ -10518,17 +10544,23 @@ namespace Fusion.Editor {
       }
     }
 
-    public static T CreateMethodDelegate<T>(this Type type, string methodName, BindingFlags flags, Type delegateType, params DelegateSwizzle[] fallbackSwizzles) where T : Delegate {
+    internal static T CreateMethodDelegate<T>(this Type type, string methodName, BindingFlags flags, Type delegateType, params DelegateSwizzle[] fallbackSwizzles) where T : Delegate {
       try {
-        MethodInfo method = GetMethodOrThrow(type, methodName, flags, delegateType, fallbackSwizzles, out var swizzle);
+        delegateType ??= typeof(T);
+        
+        var method = GetMethodOrThrow(type, methodName, flags, delegateType, fallbackSwizzles, out var swizzle);
+        if (swizzle == null && typeof(T) == delegateType) {
+          return (T)Delegate.CreateDelegate(typeof(T), method);
+        }
 
         var delegateParameters = typeof(T).GetMethod("Invoke").GetParameters();
-        var parameters = new List<ParameterExpression>();
+        var parameters         = new List<ParameterExpression>();
 
-        for (int i = 0; i < delegateParameters.Length; ++i) {
+        for (var i = 0; i < delegateParameters.Length; ++i) {
           parameters.Add(Expression.Parameter(delegateParameters[i].ParameterType, $"param_{i}"));
         }
 
+        
         var convertedParameters = new List<Expression>();
         {
           var methodParameters = method.GetParameters();
@@ -10537,13 +10569,13 @@ namespace Fusion.Editor {
               convertedParameters.Add(Expression.Convert(parameters[j], methodParameters[i].ParameterType));
             }
           } else {
-            var swizzledParameters = swizzle.Swizzle(parameters.ToArray());
-            for (int i = 0, j = method.IsStatic ? 0 : 1; i < methodParameters.Length; ++i, ++j) {
-              convertedParameters.Add(Expression.Convert(swizzledParameters[j], methodParameters[i].ParameterType));
+            foreach (var converter in swizzle.Converters) {
+              convertedParameters.Add(Expression.Invoke(converter, parameters));
             }
           }
         }
-
+        
+        
         MethodCallExpression callExpression;
         if (method.IsStatic) {
           callExpression = Expression.Call(method, convertedParameters);
@@ -10552,49 +10584,14 @@ namespace Fusion.Editor {
           callExpression = Expression.Call(instance, method, convertedParameters);
         }
 
-        var l = Expression.Lambda(typeof(T), callExpression, parameters);
+        var l   = Expression.Lambda(typeof(T), callExpression, parameters);
         var del = l.Compile();
         return (T)del;
       } catch (Exception ex) {
         throw new InvalidOperationException(CreateMethodExceptionMessage<T>(type.Assembly, type.FullName, methodName, flags), ex);
       }
     }
-
-    public static T CreateConstructorDelegate<T>(this Type type, BindingFlags flags, Type delegateType, params DelegateSwizzle[] fallbackSwizzles) where T : Delegate {
-      try {
-        var constructor = GetConstructorOrThrow(type, flags, delegateType, fallbackSwizzles, out var swizzle);
-
-        var delegateParameters = typeof(T).GetMethod("Invoke").GetParameters();
-        var parameters = new List<ParameterExpression>();
-
-        for (int i = 0; i < delegateParameters.Length; ++i) {
-          parameters.Add(Expression.Parameter(delegateParameters[i].ParameterType, $"param_{i}"));
-        }
-
-        var convertedParameters = new List<Expression>();
-        {
-          var constructorParameters = constructor.GetParameters();
-          if (swizzle == null) {
-            for (int i = 0, j = 0; i < constructorParameters.Length; ++i, ++j) {
-              convertedParameters.Add(Expression.Convert(parameters[j], constructorParameters[i].ParameterType));
-            }
-          } else {
-            var swizzledParameters = swizzle.Swizzle(parameters.ToArray());
-            for (int i = 0, j = 0; i < constructorParameters.Length; ++i, ++j) {
-              convertedParameters.Add(Expression.Convert(swizzledParameters[j], constructorParameters[i].ParameterType));
-            }
-          }
-        }
-
-        NewExpression newExpression = Expression.New(constructor, convertedParameters);
-        var l = Expression.Lambda(typeof(T), newExpression, parameters);
-        var del = l.Compile();
-        return (T)del;
-      } catch (Exception ex) {
-        throw new InvalidOperationException(CreateConstructorExceptionMessage(type.Assembly, type.FullName, flags), ex);
-      }
-    }
-
+    
     /// <summary>
     /// Returns the first found member of the given name. Includes private members.
     /// </summary>
@@ -10777,36 +10774,6 @@ namespace Fusion.Editor {
       return method;
     }
 
-    private static ConstructorInfo GetConstructorOrThrow(Type type, BindingFlags flags, Type delegateType, DelegateSwizzle[] swizzles, out DelegateSwizzle firstMatchingSwizzle) {
-      var delegateMethod = delegateType.GetMethod("Invoke");
-
-      var allDelegateParameters = delegateMethod.GetParameters().Select(x => x.ParameterType).ToArray();
-
-      var constructor = type.GetConstructor(flags, null, allDelegateParameters, null);
-      if (constructor != null) {
-        firstMatchingSwizzle = null;
-        return constructor;
-      }
-
-      if (swizzles != null) {
-        foreach (var swizzle in swizzles) {
-          Type[] swizzled = swizzle.Swizzle(allDelegateParameters);
-          constructor = type.GetConstructor(flags, null, swizzled, null);
-          if (constructor != null) {
-            firstMatchingSwizzle = swizzle;
-            return constructor;
-          }
-        }
-      }
-
-      var constructors = type.GetConstructors(flags);
-      throw new ArgumentOutOfRangeException(nameof(delegateType), $"No matching constructor found for {type}, " +
-        $"signature \"{delegateType}\", " +
-        $"flags \"{flags}\" and " +
-        $"params: {string.Join(", ", allDelegateParameters.Select(x => x.FullName))}" +
-        $", candidates are\n: {(string.Join("\n", constructors.Select(x => x.ToString())))}");
-    }
-
     private static MethodInfo GetMethodOrThrow(Type type, string name, BindingFlags flags, Type delegateType, DelegateSwizzle[] swizzles, out DelegateSwizzle firstMatchingSwizzle) {
       var delegateMethod = delegateType.GetMethod("Invoke");
 
@@ -10820,10 +10787,11 @@ namespace Fusion.Editor {
 
       if (swizzles != null) {
         foreach (var swizzle in swizzles) {
-          Type[] swizzled = swizzle.Swizzle(allDelegateParameters);
+          var swizzled = swizzle.Types;
           if (!flags.HasFlag(BindingFlags.Static) && swizzled[0] != type) {
             throw new InvalidOperationException();
           }
+
           method = FindMethod(type, name, flags, delegateMethod.ReturnType, flags.HasFlag(BindingFlags.Static) ? swizzled : swizzled.Skip(1).ToArray());
           if (method != null) {
             firstMatchingSwizzle = swizzle;
@@ -10837,7 +10805,7 @@ namespace Fusion.Editor {
         $"signature \"{delegateType}\", " +
         $"flags \"{flags}\" and " +
         $"params: {string.Join(", ", allDelegateParameters.Select(x => x.FullName))}" +
-        $", candidates are\n: {(string.Join("\n", methods.Select(x => x.ToString())))}");
+        $", candidates are\n: {string.Join("\n", methods.Select(x => x.ToString()))}");
     }
 
     public static bool IsArrayOrList(this Type listType) {
@@ -10983,24 +10951,28 @@ namespace Fusion.Editor {
       public Action<TValue> SetValue;
     }
 
-    public class DelegateSwizzle {
-      private int[] _args;
+    internal static class DelegateSwizzle<In0, In1> {
+      public static DelegateSwizzle Make<Out0>(Expression<Func<In0, In1, Out0>> out0) {
+        return new DelegateSwizzle(new Expression[] { out0 }, new [] { typeof(Out0)});
+      }
+      
+      public static DelegateSwizzle Make<Out0, Out1>(Expression<Func<In0, In1, Out0>> out0, Expression<Func<In0, In1, Out1>> out1) {
+        return new DelegateSwizzle(new Expression[] { out0, out1 }, new [] { typeof(Out0), typeof(Out1)});
+      }
+      
+      public static DelegateSwizzle Make<Out0, Out1, Out3>(Expression<Func<In0, In1, Out0>> out0, Expression<Func<In0, In1, Out1>> out1, Expression<Func<In0, In1, Out3>> out3) {
+        return new DelegateSwizzle(new Expression[] { out0, out1, out3 }, new [] { typeof(Out0), typeof(Out1), typeof(Out3)});
+      }
+    }
 
-      public int Count => _args.Length;
-
-      public DelegateSwizzle(params int[] args) {
-        _args = args;
+    internal class DelegateSwizzle {
+      public DelegateSwizzle(Expression[] converters, Type[] types) {
+        Converters = converters;
+        Types = types;
       }
 
-      public T[] Swizzle<T>(T[] inputTypes) {
-        T[] result = new T[_args.Length];
-
-        for (int i = 0; i < _args.Length; ++i) {
-          result[i] = inputTypes[_args[i]];
-        }
-
-        return result;
-      }
+      public Expression[] Converters { get; }
+      public Type[] Types { get; }
     }
   }
 }
@@ -11642,17 +11614,15 @@ namespace Fusion.Editor {
         "GetFieldInfoFromProperty",
         BindingFlags.Static | BindingFlags.NonPublic);
 
-#if UNITY_2022_3_OR_NEWER && !(UNITY_2022_3_1 || UNITY_2022_3_2 || UNITY_2022_3_3 || UNITY_2022_3_4 || UNITY_2022_3_5 || UNITY_2022_3_6 || UNITY_2022_3_7 || UNITY_2022_3_8 || UNITY_2022_3_9 || UNITY_2022_3_10 || UNITY_2022_3_11 || UNITY_2022_3_12 || UNITY_2022_3_13 || UNITY_2022_3_14 || UNITY_2022_3_15 || UNITY_2022_3_16 || UNITY_2022_3_17 || UNITY_2022_3_18 || UNITY_2022_3_19 || UNITY_2022_3_20 || UNITY_2022_3_21 || UNITY_2022_3_22)
-      // https://github.com/oculus-samples/Unity-Discover/issues/21, https://tinyurl.com/3d2ykpaf
-      public delegate Type GetDrawerTypeForTypeDelegate(Type type, bool isPropertyTypeAManagedReference = false);
-#else
-      public delegate Type GetDrawerTypeForTypeDelegate(Type type);
-#endif
+      public delegate Type GetDrawerTypeForTypeDelegate(Type type, bool isManagedReference);
       public static readonly GetDrawerTypeForTypeDelegate GetDrawerTypeForType =
-        CreateEditorMethodDelegate<GetDrawerTypeForTypeDelegate>(
-        "UnityEditor.ScriptAttributeUtility",
-        "GetDrawerTypeForType",
-        BindingFlags.Static | BindingFlags.NonPublic);
+        InternalType.CreateMethodDelegate<GetDrawerTypeForTypeDelegate>(
+          "GetDrawerTypeForType",
+          BindingFlags.Static | BindingFlags.NonPublic,
+          null,
+          DelegateSwizzle<Type, bool>.Make((t, b) => t), // post 2023.3
+          DelegateSwizzle<Type, bool>.Make((t, b) => t, (t, b) => (Type[])null, (t, b) => b) // pre 2023.3.23
+        );
 
       private delegate object GetHandlerDelegate(UnityEditor.SerializedProperty property);
       private static readonly GetHandlerDelegate _GetHandler = InternalType.CreateMethodDelegate<GetHandlerDelegate>("GetHandler", BindingFlags.NonPublic | BindingFlags.Static,

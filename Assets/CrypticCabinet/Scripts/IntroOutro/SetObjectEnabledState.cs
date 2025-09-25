@@ -17,7 +17,7 @@ namespace CrypticCabinet.IntroOutro
         /// </summary>
         public void SetObjectStates()
         {
-            var stateTargets = FindObjectsOfType<EnabledStateTarget>();
+            var stateTargets = FindObjectsByType<EnabledStateTarget>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
             foreach (var stateTarget in stateTargets)
             {
                 if (stateTarget != null)
@@ -32,7 +32,7 @@ namespace CrypticCabinet.IntroOutro
         /// </summary>
         public void ResetObjectStates()
         {
-            var stateTargets = FindObjectsOfType<EnabledStateTarget>();
+            var stateTargets = FindObjectsByType<EnabledStateTarget>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
             foreach (var stateTarget in stateTargets)
             {
                 if (stateTarget != null)

@@ -350,14 +350,6 @@
             MaximumTransferUnit bits. (ipv6 header: 40 bytes, udp header: 8 bytes)
             </summary>
         </member>
-        <member name="M:Fusion.Sockets.NetPeerGroup.LostEnvelope(Fusion.Sockets.NetSendEnvelope,Fusion.Sockets.INetPeerGroupCallbacks,Fusion.Sockets.NetConnection*)">
-            <summary>
-            Treat an envolpe as lost
-            </summary>
-            <param name="envelope">Lost envelope</param>
-            <param name="cb">Callback to be fired</param>
-            <param name="c">To which this envolopes relates to</param>
-        </member>
         <member name="M:Fusion.Sockets.NetSequencer.Distance(System.UInt64,System.UInt64)">
             <summary>
             if from is LARGER than to, result is positive
@@ -423,15 +415,15 @@
             <summary>
             This class implements STUN Client. Defined in RFC 8489
             
-            <see cref="!:https://datatracker.ietf.org/doc/html/rfc8489"/> Session Traversal Utilities for NAT (STUN)
-            <see cref="!:https://datatracker.ietf.org/doc/html/rfc8656"/> Traversal Using Relays around NAT (TURN): Relay Extensions to Session Traversal Utilities for NAT(STUN)
-            <see cref="!:https://datatracker.ietf.org/doc/html/rfc8305"/> Happy Eyeballs Version 2: Better Connectivity Using Concurrency
-            <see cref="!:https://datatracker.ietf.org/doc/html/rfc5128"/> State of Peer-to-Peer (P2P) Communication across Network Address Translators(NATs)
-            <see cref="!:https://www.netmanias.com/en/post/techdocs/6067/nat-network-protocol/nat-behavior-discovery-using-stun-rfc-5780"/>
-            <see cref="!:https://www.voip-info.org/stun/"/>
-            <see cref="!:https://tailscale.com/blog/how-nat-traversal-works/"/>
-            <see cref="!:https://serverfault.com/questions/782627/udp-hole-punching-still-required-in-ipv6-even-without-nat"/>
-            <see cref="!:https://serverfault.com/questions/184524/switching-to-ipv6-implies-dropping-nat-is-that-a-good-thing"/>
+            <see href="https://datatracker.ietf.org/doc/html/rfc8489"/> Session Traversal Utilities for NAT (STUN)
+            <see href="https://datatracker.ietf.org/doc/html/rfc8656"/> Traversal Using Relays around NAT (TURN): Relay Extensions to Session Traversal Utilities for NAT(STUN)
+            <see href="https://datatracker.ietf.org/doc/html/rfc8305"/> Happy Eyeballs Version 2: Better Connectivity Using Concurrency
+            <see href="https://datatracker.ietf.org/doc/html/rfc5128"/> State of Peer-to-Peer (P2P) Communication across Network Address Translators(NATs)
+            <see href="https://www.netmanias.com/en/post/techdocs/6067/nat-network-protocol/nat-behavior-discovery-using-stun-rfc-5780"/>
+            <see href="https://www.voip-info.org/stun/"/>
+            <see href="https://tailscale.com/blog/how-nat-traversal-works/"/>
+            <see href="https://serverfault.com/questions/782627/udp-hole-punching-still-required-in-ipv6-even-without-nat"/>
+            <see href="https://serverfault.com/questions/184524/switching-to-ipv6-implies-dropping-nat-is-that-a-good-thing"/>
             </summary>
         </member>
         <member name="T:Fusion.Sockets.Stun.StunClient.TestIPs">
@@ -439,7 +431,7 @@
             List of public DNS Servers
             </summary>
         </member>
-        <member name="M:Fusion.Sockets.Stun.StunClient.QueryPublicAddress(Fusion.Sockets.NetPeer*,Fusion.Sockets.INetSocket,System.Net.Sockets.AddressFamily,System.Guid@)">
+        <member name="M:Fusion.Sockets.Stun.StunClient.QueryPublicAddress(Fusion.Sockets.NetPeer*,Fusion.Sockets.INetSocket,System.Net.Sockets.AddressFamily,System.Guid@,System.Boolean@)">
             <summary>
             Run a STUN Binding Request against the Public STUN Server in order to discover peer reflexive addresses
             </summary>
@@ -545,6 +537,7 @@
             Parses STUN message from raw data packet.
             </summary>
             <param name="data">Raw STUN message.</param>
+            <param name="length">STUN Message length</param>
         </member>
         <member name="M:Fusion.Sockets.Stun.StunMessage.Serialize">
             <summary>
@@ -559,7 +552,7 @@
             <param name="data">SIP message data.</param>
             <param name="offset">Offset in data.</param>
         </member>
-        <member name="M:Fusion.Sockets.Stun.StunMessage.ParseEndPoint(System.Byte[],System.Int32@)">
+        <member name="M:Fusion.Sockets.Stun.StunMessage.ParseEndPoint(System.Byte*,System.Int32@)">
             <summary>
             Pasrses IP endpoint attribute.
             </summary>
@@ -608,23 +601,41 @@
         </member>
         <member name="M:Fusion.Sockets.Stun.StunResult.#ctor(Fusion.Sockets.NetAddress,Fusion.Sockets.NetAddress)">
             <summary>
-            Default constructor.
+            Initializes a new instance of the <see cref="T:Fusion.Sockets.Stun.StunResult"/> class.
             </summary>
-            <param name="netType">Specifies UDP network type.</param>
-            <param name="publicEndPoint">Public IP end point.</param>
+            <param name="publicEndPoint">The public IP endpoint. Defaults to an unspecified IPv4 address.</param>
+            <param name="privateEndPoint">The private IP endpoint. Defaults to an unspecified IPv4 address.</param>
         </member>
         <member name="T:Fusion.Sockets.Stun.StunServers">
             <summary>
             List of public STUN Servers
             </summary>
         </member>
-        <member name="M:Fusion.Sockets.Stun.StunServers.BuildIP(System.String)">
+        <member name="T:Fusion.Sockets.Stun.StunServers.StunServer">
             <summary>
-            
-            <see cref="!:https://datatracker.ietf.org/doc/html/rfc5952#section-6"/>
+            Stores Addresses of a STUN Server
             </summary>
-            <param name="stunServer"></param>
-            <returns></returns>
+        </member>
+        <member name="M:Fusion.Sockets.Stun.StunServers.GetStunServer(System.Boolean)">
+            <summary>
+            Build a list of STUN Servers
+            </summary>
+            <param name="IPv6Support">Filter STUN Servers with IPv6 Support</param>
+            <returns>List of valid STUN Servers</returns>
+        </member>
+        <member name="M:Fusion.Sockets.Stun.StunServers.SetupStunServers(System.String)">
+            <summary>
+            Pre-Build the list of all STUN Servers
+            </summary>
+            <param name="customStunServer">Optional Custom STUN Server to ping</param>
+        </member>
+        <member name="M:Fusion.Sockets.Stun.StunServers.ResolveStunServerInfo(System.String)">
+            <summary>
+            Build the STUN Server Info by checking its valid IPs
+            <see href="https://datatracker.ietf.org/doc/html/rfc5952#section-6"/>
+            </summary>
+            <param name="stunServerAddress">STUN Server Address</param>
+            <returns><see cref="T:Fusion.Sockets.Stun.StunServers.StunServer"/> reference </returns>
         </member>
         <member name="P:Fusion.Protocol.BitStream.Size">
             <summary>
@@ -725,6 +736,7 @@
             Created a new Message with a certain version
             </summary>
             <param name="protocolMessage">Protocol Message Version</param>
+            <param name="serializationVersion">Fusion Serialization Version</param>
         </member>
         <member name="M:Fusion.Protocol.Message.Serialize(Fusion.Protocol.BitStream)">
             <summary>
@@ -738,13 +750,13 @@
             </summary>
             <param name="serializer">Buffer to read from or write into the data of the Message</param>
         </member>
-        <member name="M:Fusion.Protocol.Message.CheckCompability(Fusion.Protocol.ProtocolMessageVersion,System.Version,System.Boolean)">
+        <member name="M:Fusion.Protocol.Message.CheckCompability(Fusion.Protocol.ProtocolMessageVersion,System.Version,System.Version)">
             <summary>
             Check if this Message is compatible with target versions
             </summary>
-            <param name="targetProtocolVersion">Target Protocol Message Version</param>
-            <param name="pluginSerializationVersion">Target Fusion Serialization Version</param>
-            <param name="enableSerializationVersionCheck">Enable the Serialization Version Check</param>
+            <param name="pluginProtocolVersion">Target Protocol Message Version</param>
+            <param name="pluginVersion">Plugin Version</param>
+            <param name="sessionSerializationVersion">Target Fusion Serialization Version</param>
             <returns>True if message is compatible with versions</returns>
         </member>
         <member name="T:Fusion.Protocol.Disconnect">
@@ -809,6 +821,21 @@
         <member name="F:Fusion.Protocol.DisconnectReason.Error">
             <summary>
             An error occured on the Plugin
+            </summary>
+        </member>
+        <member name="P:Fusion.Protocol.DummyTrafficSync.SendInterval">
+            <summary>
+            Dummy Traffic Send Interval
+            </summary>
+        </member>
+        <member name="P:Fusion.Protocol.DummyTrafficSync.Size">
+            <summary>
+            Dummy Traffic Size
+            </summary>
+        </member>
+        <member name="P:Fusion.Protocol.DummyTrafficSync.IsValid">
+            <summary>
+            Flag to signal if the Dummy Traffic is valid
             </summary>
         </member>
         <member name="F:Fusion.Protocol.HostMigration.PeerMode">
@@ -1149,9 +1176,14 @@
             Data Event Code
             </summary>
         </member>
+        <member name="F:Fusion.Protocol.EventCodes.DUMMY">
+            <summary>
+            Dummy Event Code
+            </summary>
+        </member>
         <member name="F:Fusion.Protocol.PhotonConstants.SERVER_ACTOR_ID">
             <summary>
-            Zero (0) means: if it should be the room itself (authorative event).
+            Zero (0) means: if it should be the room itself (authoritative event).
             
             <see cref="!:https://doc-api.photonengine.com/en/plugins/v4/interface_photon_1_1_hive_1_1_plugin_1_1_i_plugin_host.html#a756dbd7b16fac7b43cb153506a442a99"/>
             </summary>
@@ -1217,6 +1249,26 @@
         <member name="F:Fusion.Protocol.ProtocolMessageVersion.V1_2_3">
             <summary>
             Added Peer Unique Key
+            </summary>
+        </member>
+        <member name="F:Fusion.Protocol.ProtocolMessageVersion.V1_3_0">
+            <summary>
+            Added Join Message PlayerRef (2.x)
+            </summary>
+        </member>
+        <member name="F:Fusion.Protocol.ProtocolMessageVersion.V1_4_0">
+            <summary>
+            Rework Host Migration (2.x)
+            </summary>
+        </member>
+        <member name="F:Fusion.Protocol.ProtocolMessageVersion.V1_5_0">
+            <summary>
+            Added Encryption Support (2.x)
+            </summary>
+        </member>
+        <member name="F:Fusion.Protocol.ProtocolMessageVersion.V1_6_0">
+            <summary>
+            Added Dummy Traffic Support
             </summary>
         </member>
         <member name="F:Fusion.Protocol.ProtocolMessageVersion.LATEST">

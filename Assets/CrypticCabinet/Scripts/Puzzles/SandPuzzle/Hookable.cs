@@ -90,7 +90,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
         {
             if (!m_isHookInTriggerZone || m_hook == null)
             {
-                var hooks = FindObjectsOfType<Hook>().ToList();
+                var hooks = FindObjectsByType<Hook>(FindObjectsInactive.Exclude, FindObjectsSortMode.None).ToList();
                 if (hooks.Count > 0)
                 {
                     var thisPos = transform.position;

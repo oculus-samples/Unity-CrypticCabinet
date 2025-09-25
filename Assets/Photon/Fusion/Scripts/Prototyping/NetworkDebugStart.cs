@@ -189,7 +189,7 @@ public class NetworkDebugStart : Fusion.Behaviour {
     var config = NetworkProjectConfig.Global;
     var isMultiPeer = config.PeerMode == NetworkProjectConfig.PeerModes.Multiple;
 
-    var existingrunner = FindObjectOfType<NetworkRunner>();
+    var existingrunner = FindFirstObjectByType<NetworkRunner>();
 
     if (existingrunner && existingrunner != RunnerPrefab) {
       if (existingrunner.State != NetworkRunner.States.Shutdown) {
@@ -222,7 +222,7 @@ public class NetworkDebugStart : Fusion.Behaviour {
 
     if (StartMode == StartModes.Automatic) {
       if (TryGetSceneRef(out var sceneRef)) {
-        StartCoroutine(StartWithClients(AutoStartAs, sceneRef, isMultiPeer ? AutoClients : (AutoStartAs == GameMode.Client || AutoStartAs == GameMode.AutoHostOrClient ? 1 : 0)));
+        StartCoroutine(StartWithClients(AutoStartAs, sceneRef, isMultiPeer ? AutoClients : (AutoStartAs == GameMode.Client || AutoStartAs == GameMode.Shared || AutoStartAs == GameMode.AutoHostOrClient) ? 1 : 0));
       }
     } else {
       if (TryGetComponent<NetworkDebugStartGUI>(out var _) == false) {

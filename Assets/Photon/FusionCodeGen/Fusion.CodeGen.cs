@@ -972,7 +972,7 @@ namespace Fusion.CodeGen {
 
               il.Append(Pop()); // pop the GetRpcTargetStatus
 
-              il.AppendMacro(ctx.SetRpcInvokeInfoStatus(invokeLocal, RpcLocalInvokeResult.TagetPlayerIsNotLocal));
+              il.AppendMacro(ctx.SetRpcInvokeInfoStatus(invokeLocal, RpcLocalInvokeResult.TargetPlayerIsNotLocal));
               il.AppendMacro(ctx.SetRpcInvokeInfoStatus(RpcSendCullResult.TargetPlayerUnreachable));
               il.Append(Br(ret));
 
@@ -987,7 +987,7 @@ namespace Fusion.CodeGen {
                 Log.Assert(targetedInvokeLocal == null);
                 targetedInvokeLocal = Nop();
                 il.Append(Beq(targetedInvokeLocal));
-                il.AppendMacro(ctx.SetRpcInvokeInfoStatus(true, RpcLocalInvokeResult.TagetPlayerIsNotLocal));
+                il.AppendMacro(ctx.SetRpcInvokeInfoStatus(true, RpcLocalInvokeResult.TargetPlayerIsNotLocal));
               } else {
                 // will never get called
                 var checkDone = Nop();
@@ -1043,7 +1043,60 @@ namespace Fusion.CodeGen {
               }
             }
           }
+          
+          var messageSizeVar = ctx.CreateVariable(asm.Import<int>());
+          {
+            il.Append(Ldc_I4(RpcHeader.SIZE));
+            il.Append(Stloc(messageSizeVar));
 
+
+            for (int i = 0; i < rpc.Parameters.Count; ++i) {
+              var para = rpc.Parameters[i];
+
+              if (rpc.IsStatic && i == 0) {
+                Log.Assert(para.ParameterType.IsSame<NetworkRunner>());
+                continue;
+              }
+
+              if (IsInvokeOnlyParameter(para)) {
+                continue;
+              }
+
+              if (para == rpcTargetParameter) {
+                continue;
+              }
+
+              il.Append(Ldloc(messageSizeVar));
+
+              using (ctx.ValueGetter(il => il.Append(Ldarg(para)))) {
+                if (para.ParameterType.IsArray) {
+                  // do nothing
+                  EmitRpcArrayByteSize(il, ctx, para, para.ParameterType.GetElementTypeWithGenerics());
+                } else {
+                  TypeRegistry.EmitMaxByteCountWordAligned(para.ParameterType, il, ctx, para);
+                }
+              }
+
+              il.Append(Add());
+              il.Append(Stloc(messageSizeVar));
+            }
+          }
+          
+          // check the size
+          var sizeOk = Nop();
+          il.Append(Ldloc(messageSizeVar));
+          il.Append(Call(asm.SimulationMessage.GetMethod(nameof(SimulationMessage.CanAllocateUserPayload))));
+          il.Append(Brtrue_S(sizeOk));
+          il.AppendMacro(ctx.SetRpcInvokeInfoStatus(invokeLocal, RpcLocalInvokeResult.PayloadSizeExceeded));
+          il.AppendMacro(ctx.SetRpcInvokeInfoStatus(RpcSendCullResult.PayloadSizeExceeded));
+          if (!returnsRpcInvokeInfo) {
+            il.Append(Ldstr(rpc.ToString()));
+            il.Append(Ldloc(messageSizeVar));
+            il.Append(Call(asm.NetworkBehaviourUtils.GetMethod(nameof(NetworkBehaviourUtils.NotifyRpcPayloadSizeExceeded))));
+          }
+          il.Append(Br(ret));
+          il.Append(sizeOk);
+          
           // check if sending makes sense at all
           var afterSend = Nop();
 
@@ -1058,49 +1111,11 @@ namespace Fusion.CodeGen {
             il.Append(checkDone);
           }
 
-          var messageSizeVar = ctx.CreateVariable(asm.Import<int>());
-
           // create simulation message
-          
-          il.Append(Ldc_I4(RpcHeader.SIZE));
-          il.Append(Stloc(messageSizeVar));
-
-
-          for (int i = 0; i < rpc.Parameters.Count; ++i) {
-            var para = rpc.Parameters[i];
-
-            if (rpc.IsStatic && i == 0) {
-              Log.Assert(para.ParameterType.IsSame<NetworkRunner>());
-              continue;
-            }
-
-            if (IsInvokeOnlyParameter(para)) {
-              continue;
-            }
-            if (para == rpcTargetParameter) {
-              continue;
-            }
-
-            il.Append(Ldloc(messageSizeVar));
-
-            using (ctx.ValueGetter(il => il.Append(Ldarg(para)))) {
-              if (para.ParameterType.IsArray) {
-                // do nothing
-                EmitRpcArrayByteSize(il, ctx, para, para.ParameterType.GetElementTypeWithGenerics());
-              } else {
-                TypeRegistry.EmitMaxByteCountWordAligned(para.ParameterType, il, ctx, para);
-              }
-            }
-
-            il.Append(Add());
-            il.Append(Stloc(messageSizeVar));
-          }
-
           il.AppendMacro(ctx.LoadRunner());
           il.Append(Call(asm.NetworkRunner.GetProperty(nameof(NetworkRunner.Simulation))));
           il.Append(Ldloc(messageSizeVar));
-
-
+          
           il.Append(Call(asm.SimulationMessage.GetMethod(nameof(SimulationMessage.Allocate), 2)));
           il.Append(Stloc(message));
 
@@ -6219,7 +6234,8 @@ namespace Fusion.CodeGen {
           }
           return NetworkTypeInfo.MakeBlittable(imported, Math.Max(1, wordCount) * Allocator.REPLICATE_WORD_SIZE, isWeavable: true);
         } else {
-            throw new ArgumentException($"Value types need to implement either {nameof(INetworkStruct)} or {nameof(INetworkInput)} interface (type: {type.FullName})", nameof(type));
+          // TODO: unmanaged portable structs
+          throw new ArgumentException($"Value types need to implement either {nameof(INetworkStruct)} or {nameof(INetworkInput)} interface (type: {type.FullName})", nameof(type));
         }
       } else {
         // check for wapper?

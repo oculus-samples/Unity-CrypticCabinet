@@ -53,7 +53,7 @@ namespace CrypticCabinet.Puzzles.TeslaPuzzle
 
             if (MiniGenerators.Count == 0)
             {
-                var miniGenerators = FindObjectsOfType<ElectricGenerator>();
+                var miniGenerators = FindObjectsByType<ElectricGenerator>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
 
                 // Once we find all mini generators, we add them to our references
                 if (miniGenerators.Length == NUMBER_OF_MINI_GENERATORS)
@@ -64,7 +64,7 @@ namespace CrypticCabinet.Puzzles.TeslaPuzzle
 
             if (MainGenerator == null)
             {
-                var mainGenerators = FindObjectsOfType<MainGenerator>();
+                var mainGenerators = FindObjectsByType<MainGenerator>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
                 Debug.Assert(
                     mainGenerators.Length == NUMBER_OF_MAIN_GENERATORS,
                     "Mismatch for the number of expected main generators in the scene!");
@@ -74,7 +74,7 @@ namespace CrypticCabinet.Puzzles.TeslaPuzzle
 
             if (DirectionalApparatus == null)
             {
-                var directionalDevices = FindObjectsOfType<DirectionalApparatus>(true);
+                var directionalDevices = FindObjectsByType<DirectionalApparatus>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
                 if (directionalDevices.Length == NUMBER_OF_DIRECTIONAL_DEVICES)
                 {
                     // For this specific scenario we only want one directional apparatus. Pick the first one found in the scene.

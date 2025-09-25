@@ -130,7 +130,7 @@ namespace CrypticCabinet.Utils
 
         private void RandomlyPlaceFailedObjects()
         {
-            var ovrCameraRig = FindObjectOfType<OVRCameraRig>();
+            var ovrCameraRig = FindFirstObjectByType<OVRCameraRig>();
             var userPos = ovrCameraRig.centerEyeAnchor.position;
 
             foreach (var againstWallObject in m_againstWallObject.Where(o => !o.SuccessfullyPlaced).ToList())
@@ -566,7 +566,7 @@ namespace CrypticCabinet.Utils
 
             if (m_cameraRig == null)
             {
-                m_cameraRig = FindObjectOfType<OVRCameraRigRef>();
+                m_cameraRig = FindFirstObjectByType<OVRCameraRigRef>();
             }
 
             var headsetPos = m_cameraRig.CameraRig.centerEyeAnchor.position;
@@ -580,7 +580,7 @@ namespace CrypticCabinet.Utils
         {
             if (m_cameraRig == null)
             {
-                m_cameraRig = FindObjectOfType<OVRCameraRigRef>();
+                m_cameraRig = FindFirstObjectByType<OVRCameraRigRef>();
             }
 
             return m_cameraRig.CameraRig.centerEyeAnchor.position;

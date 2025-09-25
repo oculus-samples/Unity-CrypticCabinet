@@ -26,7 +26,7 @@ namespace CrypticCabinet.Puzzles.Orrery
             {
                 // Note: we assume the ceiling has uniform height, so any detected ceiling
                 // will be used as reference for the overall ceiling height.
-                m_ceilingDetector = FindObjectOfType<CeilingHeightDetector>();
+                m_ceilingDetector = FindFirstObjectByType<CeilingHeightDetector>();
             }
 
             if (m_ceilingDetector != null)

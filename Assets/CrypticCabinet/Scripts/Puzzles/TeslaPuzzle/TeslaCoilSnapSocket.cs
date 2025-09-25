@@ -45,7 +45,7 @@ namespace CrypticCabinet.Puzzles.TeslaPuzzle
         {
             if (m_teslaCoil == null)
             {
-                var teslaCoilSnappables = FindObjectsOfType<TeslaCoilSnappable>();
+                var teslaCoilSnappables = FindObjectsByType<TeslaCoilSnappable>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
                 // We should have a single tesla socket in the scene
                 Debug.Assert(teslaCoilSnappables.Length == 1, "More than a tesla coil snappable found in scene!");
                 m_teslaCoil = teslaCoilSnappables[0];

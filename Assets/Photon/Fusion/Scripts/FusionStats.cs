@@ -932,7 +932,7 @@ public class FusionStats : Fusion.Behaviour {
         // New Input System
       }
       else {
-        if (FindObjectOfType<EventSystem>() == null) {
+        if (FindFirstObjectByType<EventSystem>() == null) {
           var eventSystemGO = new GameObject("Event System");
           eventSystemGO.AddComponent<EventSystem>();
           eventSystemGO.AddComponent<StandaloneInputModule>();
@@ -1496,6 +1496,7 @@ public class FusionStats : Fusion.Behaviour {
         _canvasRT.sizeDelta = new Vector2(1024, 1024);
         _canvasRT.localPosition = new Vector3(0, 0, CanvasDistance);
         
+        // TODO: Cache this
         if (_canvasRT.GetComponent<FusionStatsBillboard>() == false) {
           _canvasRT.localRotation = default;
         }

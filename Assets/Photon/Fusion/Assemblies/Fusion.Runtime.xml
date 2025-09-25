@@ -719,6 +719,11 @@
             Reference to the current active communicator
             </summary>
         </member>
+        <member name="P:Fusion.CloudServices.CachedRegionSummary">
+            <summary>
+            Get the local client cached region summary
+            </summary>
+        </member>
         <member name="P:Fusion.CloudServices.IsNATPunchthroughEnabled">
             <summary>
             Signal if the local peer will try or accept connections using NAT Punch
@@ -1764,6 +1769,12 @@
         <member name="F:Fusion.NetworkMecanimAnimator.TriggerHashes">
             <summary>
             Triggers found in the current AnimatorController, converted to hashes.
+            </summary>
+        </member>
+        <member name="F:Fusion.NetworkMecanimAnimator.BITS_PER_BOOL">
+            <summary>
+            To ensure triggers are synced consistently, 1 bit is used for true/false and 3 more are used
+            to differentiate the state (these are incremented with every change to the underlying bool).
             </summary>
         </member>
         <member name="M:Fusion.NetworkMecanimAnimator.SetTrigger(System.Int32,System.Boolean)">
@@ -5491,7 +5502,7 @@
             <para>
             This setting has priority over the resultant correction rate, i.e. the restriction
             will be respected even if it makes the effective correction rate be different than
-            the one computed according to the min/max rates and start/end targetBlend values.
+            the one computed according to the min/max rates and start/end blend values.
             Suggested values are greater than zero and smaller than <see cref="F:Fusion.InterpolatedErrorCorrectionSettings.PosBlendStart">PosBlendStart</see>.
             </para>
             <para>
@@ -5512,7 +5523,7 @@
             <para>
             This setting has priority over the resultant correction rate, i.e. the restriction
             will be respected even if it makes the effective correction rate be different than
-            the one computed according to the min/max rates and start/end targetBlend values.
+            the one computed according to the min/max rates and start/end blend values.
             </para>
             <para>
             Note: as the factor is expressed in distance units (meters), it might need to be scaled
@@ -5569,7 +5580,7 @@
             <para>
             This setting has priority over the resultant correction rate, i.e. the restriction
             will be respected even if it makes the effective correction rate be different than
-            the one computed according to the min/max rates and start/end targetBlend values.
+            the one computed according to the min/max rates and start/end blend values.
             </para>
             </summary>
         </member>
@@ -6526,6 +6537,11 @@
             <param name="sources">The legal <see cref="T:Fusion.RpcSources"/> types that can trigger this Rpc. Default is <see cref="F:Fusion.RpcSources.All"/></param>
             <param name="targets">The <see cref="T:Fusion.RpcTargets"/> types that will receive and invoke this method. Default is <see cref="F:Fusion.RpcTargets.All"/></param>
         </member>
+        <member name="F:Fusion.RpcAttribute.MaxPayloadSize">
+            <summary>
+            Maximum allowed size for the payload of the RPC message.
+            </summary>
+        </member>
         <member name="F:Fusion.RpcChannel.Reliable">
             <summary>
             Rpc order preserved, delivery verified, resend in case of a failed delivery. 
@@ -6598,9 +6614,14 @@
             Not invoked because target player is local and this <see cref="T:Fusion.NetworkObject"/> current authority does not match flags set in <see cref="P:Fusion.RpcAttribute.Targets"/>
             </summary>
         </member>
-        <member name="F:Fusion.RpcLocalInvokeResult.TagetPlayerIsNotLocal">
+        <member name="F:Fusion.RpcLocalInvokeResult.TargetPlayerIsNotLocal">
             <summary>
             Not invoked because target player is not local.
+            </summary>
+        </member>
+        <member name="F:Fusion.RpcLocalInvokeResult.PayloadSizeExceeded">
+            <summary>
+            RPC is too large. See <see cref="F:Fusion.RpcAttribute.MaxPayloadSize"/> for the maximum allowed size.
             </summary>
         </member>
         <member name="T:Fusion.RpcSendCullResult">
@@ -6637,6 +6658,11 @@
         <member name="F:Fusion.RpcSendCullResult.TargetPlayerIsLocalButRpcIsNotInvokableLocally">
             <summary>
             Send culled because target player is local and <see cref="P:Fusion.RpcAttribute.InvokeLocal"/> is false.
+            </summary>
+        </member>
+        <member name="F:Fusion.RpcSendCullResult.PayloadSizeExceeded">
+            <summary>
+            RPC message size is too large to be sent. See <see cref="F:Fusion.RpcAttribute.MaxPayloadSize"/> for the maximum allowed size.
             </summary>
         </member>
         <member name="T:Fusion.RpcSendResult">
@@ -7829,14 +7855,13 @@
             </summary>
         </member>
         <member name="P:Fusion.NetworkRunner.IsCloudReady">
-            <summary>
-            Signal if the Local Peer is connected to Photon Cloud and is able to Create/Join Room but also receive Lobby Updates
-            </summary>
+            <inheritdoc cref="P:Fusion.CloudServices.IsCloudReady"/>
+        </member>
+        <member name="P:Fusion.NetworkRunner.IsInSession">
+            <inheritdoc cref="P:Fusion.CloudServices.IsInRoom"/>
         </member>
         <member name="P:Fusion.NetworkRunner.UserId">
-            <summary>
-            Photon Client UserID
-            </summary>
+            <inheritdoc cref="P:Fusion.CloudServices.UserId"/>
             <remarks>Returns null if Peer is not connected to Photon Cloud</remarks>
         </member>
         <member name="P:Fusion.NetworkRunner.AuthenticationValues">
@@ -7874,6 +7899,9 @@
             Signal if the Local Peer is in a Room and is the Room Master Client
             </summary>
         </member>
+        <member name="F:Fusion.NetworkRunner.CloudAddressRewriter">
+            <inheritdoc cref="F:Fusion.Photon.Realtime.LoadBalancingClient.AddressRewriter"/>
+        </member>
         <member name="F:Fusion.NetworkRunner._cloudOperation">
             <summary>
             Completion Source for the startup Photon Cloud Operations
@@ -7884,18 +7912,24 @@
             Responsible to manage the Photon Cloud related Services
             </summary>
         </member>
-        <member name="M:Fusion.NetworkRunner.JoinSessionLobby(Fusion.SessionLobby,System.String,Fusion.Photon.Realtime.AuthenticationValues,Fusion.Photon.Realtime.AppSettings,System.Nullable{System.Boolean})">
+        <member name="F:Fusion.NetworkRunner._cachedRegionSummary">
+            <summary>
+            The cached region summary for the local player. Initially empty but populated after the first connection.
+            </summary>
+        </member>
+        <member name="M:Fusion.NetworkRunner.JoinSessionLobby(Fusion.SessionLobby,System.String,Fusion.Photon.Realtime.AuthenticationValues,Fusion.Photon.Realtime.AppSettings,System.Nullable{System.Boolean},System.Boolean)">
             <summary>
             Join the Peer to a specific Lobby, either a prebuild or a custom one.
             
             More about matchmaking:
-            https://doc.photonengine.com/en-us/fusion/current/manual/matchmaking
+            https://doc.photonengine.com/fusion/v1/manual/matchmaking
             </summary>
             <param name="sessionLobby">Lobby Type to Join</param>
             <param name="lobbyID">Lobby ID</param>
             <param name="authentication">Authentication Values used to authenticate this peer</param>
             <param name="customAppSettings">Custom Photon Application Settings</param>
             <param name="useDefaultCloudPorts">Signal if the LoadBalancingClient should use the Default or Alternative Ports</param>
+            <param name="useCachedRegions">Signal if the cached regions ping should be used to speed up connection</param>
             <returns>Async Task to Join a Session Lobby. Can be used to wait for the process to be finished.</returns>
         </member>
         <member name="M:Fusion.NetworkRunner.StartGame(Fusion.StartGameArgs)">
@@ -7903,12 +7937,12 @@
             Starts the local Fusion Runner and takes care of all major setup necessary
             
             More about matchmaking:
-            https://doc.photonengine.com/en-us/fusion/current/manual/matchmaking
+            https://doc.photonengine.com/fusion/v1/manual/matchmaking
             </summary>
             <param name="args">Custom arguments used to setup the Fusion Simulation</param>
             <returns>Task that can be awaited to chain actions</returns>
         </member>
-        <member name="M:Fusion.NetworkRunner.ConnectToCloud(Fusion.Photon.Realtime.AuthenticationValues,Fusion.Photon.Realtime.AppSettings,Fusion.CloudCommunicator,System.Nullable{System.Boolean})">
+        <member name="M:Fusion.NetworkRunner.ConnectToCloud(Fusion.Photon.Realtime.AuthenticationValues,Fusion.Photon.Realtime.AppSettings,Fusion.CloudCommunicator,System.Nullable{System.Boolean},System.Boolean)">
             <summary>
             Connect the local peer to Photon Cloud using an async process.
             </summary>
@@ -7916,6 +7950,7 @@
             <param name="customAppSettings">Custom Photon Application Settings</param>
             <param name="externalCommunicator">External Communicator that will be reused on restart</param>
             <param name="useDefaultCloudPorts">Signal if the LoadBalancingClient should use the Default or Alternative Ports</param>
+            <param name="useCachedRegions">Signal if the cached regions ping should be used to speed up connection</param>
             <returns>Async Task of the connect to Photon Cloud process. Can be used to wait for the process to be finished.</returns>
         </member>
         <member name="M:Fusion.NetworkRunner.DisconnectFromCloud">
@@ -8075,6 +8110,20 @@
             <param name="sceneHandle">Scene handler to check</param>
             <returns><see cref="T:Fusion.NetworkRunner"/> reference, or null if not found</returns>
         </member>
+        <member name="T:Fusion.NetworkRunner.CloudConnectionLostHandler">
+            <summary>
+            If this callback is implemented, the default behavior of disconnecting
+            when the cloud connection is lost in server/client or host/client mode
+            is disabled. This callback will be invoked instead, leaving the decision
+            up to the user. It is called both on the server/host and on the client.
+            </summary>
+            <param name="networkRunner">NetworkRunner instance</param>
+            <param name="shutdownReason">Shutdown reason for the connection loss</param>
+            <param name="reconnecting">Flag to signal if the peer is attempting to reconnect to the Photon Cloud</param>
+        </member>
+        <member name="F:Fusion.NetworkRunner.CloudConnectionLost">
+            <inheritdoc cref="T:Fusion.NetworkRunner.CloudConnectionLostHandler"/>
+        </member>
         <member name="T:Fusion.HostMigrationToken">
             <summary>
             Transitory Holder with all necessary information to restart the Fusion Runner
@@ -8091,7 +8140,7 @@
             Fusion Start Arguments, used to configure the simulation mode and other settings
             
             More about matchmaking:
-            https://doc.photonengine.com/en-us/fusion/current/manual/matchmaking
+            https://doc.photonengine.com/fusion/v1/manual/matchmaking
             </summary>
         </member>
         <member name="F:Fusion.StartGameArgs.GameMode">
@@ -8240,6 +8289,7 @@
         <member name="F:Fusion.StartGameArgs.CustomSTUNServer">
             <summary>
             Specify a Custom STUN Server used to Resolve the peer Reflexive Addresses
+            It can be used to specify multiple STUN Servers separated by semicolon (;)
             
             Default: null (no custom STUN Server)
             </summary>
@@ -8278,6 +8328,13 @@
             
             Default: null
             </summary>
+        </member>
+        <member name="F:Fusion.StartGameArgs.UseCachedRegions">
+             <summary>
+             Enables the usage of the previous cached regions pings. This speeds up the region ping process and the runner startup process.
+            
+             Defaults: false
+             </summary>
         </member>
         <member name="M:Fusion.StartGameArgs.ToString">
             <summary>
@@ -8795,6 +8852,14 @@
             Main simulation class
             </summary>
         </member>
+        <member name="F:Fusion.Simulation.RELAY_SLACK">
+            <summary>
+            1.0 = no slack, don't set under 1.0
+            2.0 = 100% extra slack
+            3.0 = 200% extra slack
+            ... etc
+            </summary>
+        </member>
         <member name="P:Fusion.Simulation.IsResimulation">
             <summary>
             Use inside of FixedUpdateNetwork to determine if the tick currently being simulated has previously been simulated locally.
@@ -8942,6 +9007,11 @@
             </summary>
             <param name="player">Player to check for the UniqueId</param>
             <returns>UniqueId of a specific Player</returns>
+        </member>
+        <member name="M:Fusion.Simulation.BeforeNetworkRecv">
+            <summary>
+            Called before <see cref="M:Fusion.Simulation.NetworkRecv"/>.
+            </summary>
         </member>
         <member name="M:Fusion.Simulation.Update(System.Double)">
             <summary>
@@ -9176,6 +9246,11 @@
         <member name="P:Fusion.SimulationConfig.ClientPacketDeltaTime">
             <summary>
             Returns (<see cref="F:Fusion.SimulationConfig.ClientPacketInterval"/> * <see cref="P:Fusion.SimulationConfig.DeltaTime"/>). This is the effective time interval (in seconds) between client input/state updates from the client.
+            </summary>
+        </member>
+        <member name="F:Fusion.SimulationConfig.EnableHalfNetworkTick">
+            <summary>
+            Enable Half Network Tick
             </summary>
         </member>
         <member name="M:Fusion.SimulationConfig.Init(System.Nullable{System.Int32},System.Nullable{System.Int32})">
@@ -9458,6 +9533,11 @@
             <param name="sim">Simulation to get the Memory from</param>
             <param name="capacityInBytes">Size in bytes of the new <see cref="T:Fusion.SimulationMessage"/></param>
             <returns></returns>
+        </member>
+        <member name="M:Fusion.SimulationMessage.CanAllocateUserPayload(System.Int32)">
+            <summary>
+            Checks if a message with given size can be allocated.
+            </summary>
         </member>
         <member name="T:Fusion.SimulationModes">
             <summary>

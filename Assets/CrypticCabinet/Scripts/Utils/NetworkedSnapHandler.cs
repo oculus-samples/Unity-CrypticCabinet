@@ -158,7 +158,7 @@ namespace CrypticCabinet.Utils
 
         private static NetworkedSnappedObject GetNetworkObjectForId(Guid objectId)
         {
-            var snappedObjects = FindObjectsOfType<NetworkedSnappedObject>();
+            var snappedObjects = FindObjectsByType<NetworkedSnappedObject>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
             return snappedObjects.FirstOrDefault(o => o.SnapId == objectId);
         }
 
@@ -177,7 +177,7 @@ namespace CrypticCabinet.Utils
 
         private static SnapInteractor GetInteractorById(int id)
         {
-            var snapInteractors = FindObjectsOfType<SnapInteractor>();
+            var snapInteractors = FindObjectsByType<SnapInteractor>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
             foreach (var snapInteractor in snapInteractors)
             {
                 if (snapInteractor.Identifier == id)

@@ -87,7 +87,7 @@ namespace CrypticCabinet.Utils
 
                 var transformLoc = transform;
                 m_rigidbody.angularVelocity = Vector3.zero;
-                m_rigidbody.velocity = Vector3.zero;
+                m_rigidbody.linearVelocity = Vector3.zero;
                 m_rigidbody.position = transformLoc.position = m_originalPosition;
                 m_rigidbody.rotation = transformLoc.rotation = m_originalRotation;
                 m_rigidbody.Sleep();

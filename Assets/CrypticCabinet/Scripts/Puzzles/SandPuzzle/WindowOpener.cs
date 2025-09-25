@@ -205,7 +205,7 @@ namespace CrypticCabinet.Puzzles.SandPuzzle
             m_windowRoot.position = positions[0].WallPosition;
             m_ropeRoot.SetActive(true);
 
-            var ceilingHeightDetector = FindObjectOfType<CeilingHeightDetector>();
+            var ceilingHeightDetector = FindFirstObjectByType<CeilingHeightDetector>();
             CeilingPlacementUtils.SetYPositionToCeiling(m_ropeRoot.transform, ceilingHeightDetector);
             m_rope.Reset();
         }

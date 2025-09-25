@@ -68,7 +68,8 @@ public class FusionStatsMeterBar : FusionGraphBase
       BackImage.sprite = FusionStatsUtilities.MeterSprite;
       Bar.sprite = BackImage.sprite;
     }
-    
+
+    // TODO: Can remove these later. Backwards compat for mask removal on Dec 30 2021
     BackImage.type = Image.Type.Simple;
     if (Bar.rectTransform.parent != BackImage.rectTransform.parent) {
       var oldMask = Bar.transform.parent;

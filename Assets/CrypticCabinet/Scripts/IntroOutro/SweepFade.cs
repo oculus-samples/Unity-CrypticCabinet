@@ -26,7 +26,7 @@ namespace CrypticCabinet.IntroOutro
         {
             ForcePlaceObjects();
             m_targets.Clear();
-            m_targets.AddRange(FindObjectsOfType<FadeTarget>());
+            m_targets.AddRange(FindObjectsByType<FadeTarget>(FindObjectsInactive.Exclude, FindObjectsSortMode.None));
             CalculateCenterPoint();
             UpdateSweep();
         }

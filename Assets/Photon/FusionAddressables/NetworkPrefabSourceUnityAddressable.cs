@@ -41,7 +41,9 @@ namespace Fusion {
     }
 
     public override void Unload() {
-      Address.ReleaseAsset();
+      if (Address.IsValid()) {
+        Address.ReleaseAsset();
+      }
     }
   }
 

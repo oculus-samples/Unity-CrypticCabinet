@@ -159,6 +159,7 @@ public class SpawnerPrototype<T> : SimulationBehaviour, IPlayerJoined, IPlayerLe
       }
 
       UnregisterPlayer(player);
+      // TODO: May need to unregister AOI always interested.
     }
   }
 
