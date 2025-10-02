@@ -17,7 +17,7 @@ MonoBehaviour:
   m_tutorialConfig: {fileID: 11400000, guid: 55ef062a309ba3744aa98a9367203495, type: 2}
   m_showBanner: 1
   m_markdownPath: ./README.md
-  m_reduceTitleLevelBy1: 0
+  m_reduceTitleLevelBy1: 1
   m_pageConfigs:
   - SectionTitle: Header
     ShowSectionInContext: 0
@@ -27,39 +27,23 @@ MonoBehaviour:
     ShowSectionInContext: 1
     ShowSectionAsChild: 0
     HideTitle: 1
-  - SectionTitle: Before you get started
+  - SectionTitle: Project Description
     ShowSectionInContext: 1
     ShowSectionAsChild: 0
     HideTitle: 0
-  - SectionTitle: Learn
-    ShowSectionInContext: 1
-    ShowSectionAsChild: 0
-    HideTitle: 0
-  - SectionTitle: Mechanics and Features
-    ShowSectionInContext: 1
-    ShowSectionAsChild: 0
-    HideTitle: 0
-  - SectionTitle: How to run the project in Unity
-    ShowSectionInContext: 0
-    ShowSectionAsChild: 0
-    HideTitle: 0
-  - SectionTitle: Project Structure
-    ShowSectionInContext: 1
-    ShowSectionAsChild: 0
-    HideTitle: 0
-  - SectionTitle: Gameplay Phases
-    ShowSectionInContext: 1
-    ShowSectionAsChild: 0
-    HideTitle: 0
-  - SectionTitle: UI System
-    ShowSectionInContext: 1
-    ShowSectionAsChild: 0
-    HideTitle: 0
-  - SectionTitle: Getting the code
+  - SectionTitle: How to Run the Project in Unity
     ShowSectionInContext: 0
     ShowSectionAsChild: 0
     HideTitle: 0
   - SectionTitle: Dependencies
+    ShowSectionInContext: 1
+    ShowSectionAsChild: 0
+    HideTitle: 0
+  - SectionTitle: Getting the Code
+    ShowSectionInContext: 0
+    ShowSectionAsChild: 0
+    HideTitle: 0
+  - SectionTitle: Documentation
     ShowSectionInContext: 1
     ShowSectionAsChild: 0
     HideTitle: 0

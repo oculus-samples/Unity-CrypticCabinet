@@ -17,24 +17,21 @@ MonoBehaviour:
   m_context: {fileID: 11400000, guid: b05aea44e20f2b44f92707a0633fa98f, type: 2}
   m_markdownFile: {fileID: 0}
   m_priority: 1008
-  m_overrideMarkdownText: "# Key & UV Bulb\n\n    ![alt text](../Documentation/Images/UVbulb_screw.gif){style=\"width:40%;height:40%\"}\n   
+  m_overrideMarkdownText: "# Key & UV Bulb\n\n\n    ![alt text](../Documentation/Images/UVbulb_screw.gif){style=\"width:40%;height:40%\"}\n   
     ![alt text](../Documentation/Images/UVbulb_unscrew.gif){style=\"width:40%;height:40%\"}\n\n\nBoth
-    theUV bulb and the key require two interaction modes combined together.\nFirst,
-    a mode where they can be freely manipulated, allowing the user to grab, move
-    and rotate the objects as normal in the space. Second, a mode where the object
-    is locked to a position and can only be rotated around a single axis by the user.\nAlthough
-    both of these exist in the Meta Quest API in the form of the <a href=\"https://developer.oculus.com/documentation/unity/unity-isdk-grabbable/#one-grab-transformers\">OneGrabFreeTransformer
-    and OneGrabRotateTransformer</a>, it is not possible to dynamically switch between
-    them after the <a href=\"https://developer.oculus.com/documentation/unity/unity-isdk-grabbable/\">Grabbable</a>
-    has been initialized. The solution to this is to create a new script <a href=\"./Assets/CrypticCabinet/Scripts/Interactions/OneGrabToggleRotateTransformer.cs\">OneGrabToggleRotateTransformer</a>
-    which combines the functionality of the two aforementioned scripts with additional
-    logic to toggle between them at runtime.\nFor the use case of the key, once it's
-    snapped into the lock, it\u2019s changed to rotation only mode and the rotation
-    is tracked until it\u2019s spun anti-clock wise enough to unlock the drawer.\nIn
-    the case of the bulbs, it\u2019s a little more complex as they need to be snapped
-    in place, screwed and/or unscrewed.. This requires toggling between free movement
-    and locked rotation when snapped/unsnapped, then raising/lowering the bulb as
-    the screwing/unscrewing motion takes place.\n\n![alt text](../Documentation/Images/Key.gif){style=\"width:50%;height:50%\"}\n\n\n###
+    the UV bulb and the key require two interaction modes. First, a mode for free
+    manipulation, allowing users to grab, move, and rotate objects. Second, a mode
+    where the object is locked to a position and can only rotate around a single
+    axis. Although both modes exist in the Meta Quest API as <a href=\"https://developers.meta.com/horizon/documentation/unity/unity-isdk-grabbable/#one-grab-transformers\">OneGrabFreeTransformer
+    and OneGrabRotateTransformer</a>, they can't be dynamically switched after the
+    <a href=\"https://developers.meta.com/horizon/documentation/unity/unity-isdk-grabbable/\">Grabbable</a>
+    is initialized. The solution is a new script, <a href=\"./Assets/CrypticCabinet/Scripts/Interactions/OneGrabToggleRotateTransformer.cs\">OneGrabToggleRotateTransformer</a>,
+    combining both functionalities with logic to toggle between them at runtime.\n\nFor
+    the key, once snapped into the lock, it switches to rotation-only mode, tracking
+    rotation until it's spun anti-clockwise enough to unlock the drawer. For the
+    bulbs, they need to be snapped in place, screwed, and/or unscrewed. This requires
+    toggling between free movement and locked rotation when snapped/unsnapped, then
+    raising/lowering the bulb during the screwing/unscrewing motion.\n\n![alt text](../Documentation/Images/Key.gif){style=\"width:50%;height:50%\"}\n\n\n###
     Relevant Files\n- <a href=\"./Assets/CrypticCabinet/Scripts/Interactions/ScrewableObject.cs\">ScrewableObject.cs</a>\n-
     <a href=\"./Assets/CrypticCabinet/Scripts/Interactions/ScrewSnapZone.cs\">ScrewSnapZone.cs</a>\n-
     <a href=\"./Assets/CrypticCabinet/Scripts/Interactions/OneGrabToggleRotateTransformer.cs\">OneGrabToggleRotateTransformer.cs</a>\n"

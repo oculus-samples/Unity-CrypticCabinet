@@ -15,7 +15,7 @@ Built using the [Unity engine](https://unity.com/) with Unity 6000.0.50f1 and [P
 ## How to Run the Project in Unity
 
 1. [Configure the project](./Documentation/ProjectConfiguration.md) with Meta Quest and Photon.
-2. Use Unity 6000.0.50f1.
+2. Use *Unity 6000.0.50f1* or newer.
 3. Load the [Assets/CrypticCabinet/Scenes/MainScene.unity](./Assets/CrypticCabinet/Scenes/MainScene.unity) scene.
 4. To test in the Editor, use Quest Link:
     <details>
@@ -45,7 +45,7 @@ Built using the [Unity engine](https://unity.com/) with Unity 6000.0.50f1 and [P
 
 This project uses the following plugins and software:
 
-- [Unity](https://unity.com/download) 6000.0.50f1
+- [Unity](https://unity.com/download) 6000.0.50f1 or newer
 - [Meta XR Core SDK](https://assetstore.unity.com/packages/tools/integration/meta-xr-core-sdk-269169)
 - [Meta XR Platform SDK](https://assetstore.unity.com/packages/tools/integration/meta-xr-platform-sdk-262366)
 - [Meta XR Interaction SDK](https://assetstore.unity.com/packages/tools/integration/meta-xr-interaction-sdk-265014)

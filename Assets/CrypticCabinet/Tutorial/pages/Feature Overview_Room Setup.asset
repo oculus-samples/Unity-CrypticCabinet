@@ -17,51 +17,39 @@ MonoBehaviour:
   m_context: {fileID: 11400000, guid: b05aea44e20f2b44f92707a0633fa98f, type: 2}
   m_markdownFile: {fileID: 0}
   m_priority: 1001
-  m_overrideMarkdownText: "# Room Setup\nThis section describes the system used to
-    automatically populate a generic real world room with game objects.\nThe <a href=\"https://developer.oculus.com/documentation/unity/unity-scene-overview/\">Scene
-    API</a> is used to understand the space the user is in. Using the returned scene
-    primitives, a 3d grid of cells is generated to cover the entire room and track
-    where scene objects are placed.\nThis is to allow the room setup system to detect
-    safe locations where to place game objects and to minimize overlapping with real
-    world objects. This requires the user to set up their scene accurately to ensure
-    the best possible experience.\nFree space in the 3d grid is visualized as green
-    cells, while non-valid locations are shown in red. For example, in the following
-    image you can see that the wall has some available space (green), but we are
-    excluding the window (in red).Same for the floor which has red areas underneath
-    desks and shelving.\n\nNote: To visualize the 3d grid in build, toggle the debug
-    view by pressing down and holding on the left joystick, then press A on the right
-    controller.\n\n![alt text](../Documentation/Images/RoomSetup.png){style=\"width:40%;height:40%\"}\n\nThere
-    are four categories of placement location; \u201Cfloor\u201D, \u201Cwall\u201D,
-    \u201Cdesks\u201D and \u201Cagainst wall\u201D. \u201CAgainst wall\u201D objects
-    are the ones that need to be on the floor but also against a wall: a good example
-    of this is the cabinet.\nAs an object is placed it blocks out the cells that
-    it covers to prevent other objects from being placed in the same location.\nObjects
-    are placed in the following order:\n1. Objects on floor against a wall \n2. Objects
-    on walls \n3. Objects on desks (if no desks available, fallback to floor)\n4.
-    Objects on floor \n5. Objects on any horizontal location.\n\nWithin each category
-    objects are placed in order of size: largest to smallest.\nIf an object fails
-    to find a safe location, it is placed in a  random valid location. For example,
-    wall objects will stay on walls and floor objects will stay on floor, even if
-    they are overlapping with other objects or scene objects.\n\nAfter all objects
-    have been automatically placed, there\u2019s a few seconds of \u201Ceasing\u201D:
-    this allows for any objects that are overlapping to repel away from each other.The
-    easing is done using the Unity physics engine function <a href=\"https://docs.unity3d.com/ScriptReference/Physics.ComputePenetration.html\">ComputePenetration</a>,
-    this gives a direction and distance to move objects to cause them to no longer
-    overlap. Rather than jumping the objects to these new locations, this system
-    lerps towards the location allowing opportunities for multiple objects to move
-    away from each other over time.\n\n\nOnce the placement is complete, the user
-    then has an opportunity to preview the generated layout. Objects in this phase
-    are visualized as colored boxes:\n - Blue boxes: items that need to be physically
-    reached during the experience because the user will interact with them using
-    hands/controllers.\n - Green boxes: items that need to be visible, but don\u2019t
-    need to be reached.\n - Red boxes: items that are in a non valid location, are
-    overlapping with each other or are overlapping with scene objects.\nIn this phase,
-    the user has an opportunity to manually move these boxes around, if necessary,
-    to make sure there\u2019s no red boxes and that all blue boxes can be physically
-    reached.\n\n![alt text](../Documentation/Images/SpawningBoxes.png){style=\"width:50%;height:50%\"}\n\nAfter
-    this, the user can confirm the layout and start the experience.  Object positions
-    are then stored and used during gameplay to avoid re-doing these heavy calculations.\n\n\n###
-    Relevant Files\n- <a href=\"./Assets/CrypticCabinet/Scripts/Utils/ObjectPlacementManager.cs\">ObjectPlacementManager.cs</a>\n-
+  m_overrideMarkdownText: "# Room Setup\n\nThis section explains how to automatically
+    populate a generic real-world room with game objects. The <a href=\"https://developers.meta.com/horizon/documentation/unity/unity-scene-overview/\">Scene
+    API</a> helps understand the user's space. Using the scene primitives, a 3D grid
+    of cells is created to cover the room and track object placement. This system
+    detects safe locations for game objects, minimizing overlap with real-world objects.
+    Users must set up their scene accurately for the best experience.\n\nFree space
+    in the 3D grid appears as green cells, while non-valid locations are red. For
+    example, in the image below, the wall has some available space (green), but the
+    window is excluded (red). The floor also has red areas under desks and shelving.\n\nNote:
+    To visualize the 3D grid in the build, toggle the debug view by holding the left
+    joystick and pressing A on the right controller.\n\n![alt text](../Documentation/Images/RoomSetup.png){style=\"width:40%;height:40%\"}\n\nThere
+    are four categories of placement locations: \u201Cfloor,\u201D \u201Cwall,\u201D
+    \u201Cdesks,\u201D and \u201Cagainst wall.\u201D \u201CAgainst wall\u201D objects
+    need to be on the floor and against a wall, like a cabinet. As objects are placed,
+    they block the cells they cover to prevent other objects from being placed there.\n\nObjects
+    are placed in this order:\n1. Objects on the floor against a wall\n2. Objects
+    on walls\n3. Objects on desks (fallback to floor if no desks are available)\n4.
+    Objects on the floor\n5. Objects on any horizontal location\n\nWithin each category,
+    objects are placed from largest to smallest. If an object can't find a safe location,
+    it is placed randomly in a valid location. For example, wall objects stay on
+    walls, and floor objects stay on the floor, even if overlapping occurs.\n\nAfter
+    automatic placement, there are a few seconds of \u201Ceasing\u201D to allow overlapping
+    objects to repel each other. The Unity physics engine function <a href=\"https://docs.unity3d.com/ScriptReference/Physics.ComputePenetration.html\">ComputePenetration</a>
+    provides direction and distance to move objects apart. Instead of jumping to
+    new locations, the system lerps towards them, allowing multiple objects to move
+    over time.\n\nOnce placement is complete, users can preview the layout. Objects
+    are visualized as colored boxes:\n- Blue boxes: items that need to be physically
+    reached during the experience.\n- Green boxes: items that need to be visible
+    but not reached.\n- Red boxes: items in non-valid locations or overlapping with
+    other objects.\n\nUsers can manually move these boxes to ensure no red boxes
+    and that all blue boxes are reachable.\n\n![alt text](../Documentation/Images/SpawningBoxes.png){style=\"width:50%;height:50%\"}\n\nAfter
+    this, users confirm the layout and start the experience. Object positions are
+    stored for gameplay to avoid recalculating.\n\n\n### Relevant Files\n- <a href=\"./Assets/CrypticCabinet/Scripts/Utils/ObjectPlacementManager.cs\">ObjectPlacementManager.cs</a>\n-
     <a href=\"./Assets/CrypticCabinet/Scripts/SceneManagement/SceneUnderstandingLocationPlacer.cs\">SceneUnderstandingLocationPlacer.cs</a>\n-
     <a href=\"./Assets/CrypticCabinet/Scripts/SceneManagement/FloorSpaceFinder.cs\">FloorSpaceFinder.cs</a>\n-
     <a href=\"./Assets/CrypticCabinet/Scripts/SceneManagement/WallSpaceFinder.cs\">WallSpaceFinder.cs</a>\n-

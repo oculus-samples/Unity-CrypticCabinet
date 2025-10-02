@@ -17,24 +17,23 @@ MonoBehaviour:
   m_context: {fileID: 11400000, guid: b05aea44e20f2b44f92707a0633fa98f, type: 2}
   m_markdownFile: {fileID: 0}
   m_priority: 1005
-  m_overrideMarkdownText: '# Camera darkens when inside objects
+  m_overrideMarkdownText: '# Camera Darkens When Inside Objects
 
-    The camera darkens
-    if the user tries to put their head inside a piece of furniture such as the Orrery.
-    Initially the use of a Unity <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/Volumes.html">Volume</a>
-    (part of the Universal Render Pipeline) was explored. This provided an easy way
-    to fade out the majority of visible geometry as the user got closer. Unfortunately
-    this approach did not have an effect on the <a href="https://developer.oculus.com/documentation/unity/unity-passthrough/">passthrough</a>
-    rendering, since developers can not directly access the passthrough video feed
-    for privacy reasons. To overcome this limitation,it was decided to add an additional
-    trigger volume using OnTriggerEnter and OnTriggerExit to enable and disable the
-    passthrough. This trigger volume is slightly smaller than the fade volume so
-    that the passthrough smoothly switches off in the middle of the 3D geometry fading
-    effect.
+
+    The camera
+    darkens if the user tries to put their head inside furniture like the Orrery.
+    Initially, a Unity <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/Volumes.html">Volume</a>
+    was used to fade out visible geometry as the user approached. However, this didn''t
+    affect <a href="https://developers.meta.com/horizon/documentation/unity/unity-passthrough/">passthrough</a>
+    rendering due to privacy restrictions. To overcome this, an additional trigger
+    volume using OnTriggerEnter and OnTriggerExit was added to enable and disable
+    passthrough. This trigger volume is slightly smaller than the fade volume, ensuring
+    a smooth passthrough switch-off during the 3D geometry fading effect.
 
 
 
-    ### Relevant Files
+    ###
+    Relevant Files
 
     - <a href="./Assets/CrypticCabinet/Scripts/Utils/BlackoutVolume.cs">BlackoutVolume.cs</a>
 

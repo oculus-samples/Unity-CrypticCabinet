@@ -19,20 +19,21 @@ MonoBehaviour:
   m_priority: 1004
   m_overrideMarkdownText: '# LUT
 
+
     When the user activates the UV light or the
-    Orrery projection, the passthrough camera feed is darkened to give the effect
-    of being in a dark room, this is achieved using the <a href="https://developer.oculus.com/documentation/unity/unity-customize-passthrough-styling/">Passthrough
-    Styling Feature</a> of the  Meta Quest SDK with a <a href="https://developer.oculus.com/documentation/unity/unity-customize-passthrough-color-mapping/#color-look-up-tables-luts">Look
-    Up Table</a> (LUT). We use a central manager to control this to ensure consistency
-    if both interactions are enabled at the same time. The manager is also used for
-    multi-user scenarios to make sure that the effect is replicated for all users
-    in the experience.
+    Orrery projection, the passthrough camera feed darkens to simulate a dark room.
+    This uses the <a href="https://developers.meta.com/horizon/documentation/unity/unity-customize-passthrough-styling/">Passthrough
+    Styling Feature</a> of the Meta Quest SDK with a <a href="https://developers.meta.com/horizon/documentation/unity/unity-customize-passthrough-color-mapping/#color-look-up-tables-luts">Look-Up
+    Table</a> (LUT). A central manager controls this to ensure consistency if both
+    interactions are enabled simultaneously. The manager also ensures the effect
+    is replicated for all users in multi-user scenarios.
 
 
 
     ### Relevant Files
 
-    - <a href="./Assets/CrypticCabinet/Scripts/Passthrough/PassthroughChanger.cs">PassthroughChanger.cs</a>
+    -
+    <a href="./Assets/CrypticCabinet/Scripts/Passthrough/PassthroughChanger.cs">PassthroughChanger.cs</a>
 
     -
     <a href="./Assets/CrypticCabinet/Scripts/Passthrough/PassthroughConfigurator.cs">PassthroughConfigurator.cs</a>

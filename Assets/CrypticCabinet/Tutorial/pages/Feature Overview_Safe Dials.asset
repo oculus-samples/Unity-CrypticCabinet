@@ -19,21 +19,19 @@ MonoBehaviour:
   m_priority: 1006
   m_overrideMarkdownText: '# Safe Dials
 
+
     ![alt text](../Documentation/Images/Safe.gif){style="width:50%;height:50%"}
 
 
     There
-    is no off the shelf solution that would allow for a single finger to be used
-    to swipe up and down to scroll through the numbers on the safe in a natural way.
-    The <a href="./Assets/CrypticCabinet/Scripts/Puzzles/Safe/SwipeDetector.cs">final
-    implementation</a> simply puts a trigger collider on the index finger of the
-    user''s hands and then detects if they start in the middle of the dial and swipe
-    up or down. When a swipe has been detected the number carousel is animated up
-    or down and once all dials read the correct values the safe door animates open.
+    is no off-the-shelf solution for using a single finger to swipe through safe
+    numbers naturally. The <a href="./Assets/CrypticCabinet/Scripts/Puzzles/Safe/SwipeDetector.cs">final
+    implementation</a> uses a trigger collider on the user''s index finger to detect
+    swipes. When a swipe is detected, the number carousel animates up or down. Once
+    all dials read the correct values, the safe door opens.
 
 
-    ![alt
-    text](../Documentation/Images/DialColliders.png){style="width:50%;height:50%"}
+    ![alt text](../Documentation/Images/DialColliders.png){style="width:50%;height:50%"}
 
 
 

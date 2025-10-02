@@ -17,27 +17,43 @@ MonoBehaviour:
   m_context: {fileID: 11400000, guid: b05aea44e20f2b44f92707a0633fa98f, type: 2}
   m_markdownFile: {fileID: 0}
   m_priority: 1003
-  m_overrideMarkdownText: "# Rope\n![alt text](../Documentation/Images/Rope.gif){style=\"width:40%;height:40%\"}\n\nAfter
-    an initial prototype based on a chain of physics colliders, it was decided to
-    opt for a Verlet rope implementation instead, heavily based on <a href=\"https://github.com/GaryMcWhorter/Verlet-Chain-Unity\">this
-    open source example</a>. The issue with the first prototype was that the result
-    looked like the rope was made up of sticks and was quite difficult to tune, while
-    the second approach gave much more realistic results. \nIt took a few iterations
-    to fine tune the correct amount of bones for the skeleton of the final asset,
-    to make sure it looked fluid without affecting performance. \nAnother aspect
-    to improve its look and feel was to avoid making it feel elastic: that\u2019s
-    why, when pulling, it was preferred to make it come out of the ceiling instead
-    of stretching it.\nIn terms of interaction, the rope can be grabbed from any
-    point along its length, using one or two hands. This is implemented by placing
-    a Grabbable on the rope following the user's hand, once the user grabs the Grabbable
-    it locks to the nearest node in the rope and that node then follows the user's
-    hand. This is duplicated with a second Grabbable for the other hand. These grabbed
-    positions are synchronized with the other users over the network so remote users
-    can see the active player grabbing the rope.\nAnother important element to make
-    the rope feel more real was to ensure that it collided correctly with walls and
-    other objects in the scene. Collisions are calculated using <a href=\"https://docs.unity3d.com/ScriptReference/Physics.OverlapSphereNonAlloc.html\">Physics.OverlapSphereNonAlloc</a>
-    and <a href=\"https://docs.unity3d.com/ScriptReference/Physics.ComputePenetration.html\">Physics.ComputePenetration</a>
-    to push rope nodes away from each other and from scene objects. In terms of multiplayer,each
-    client calculates their own rope updates, but they share some fixed locations
-    when the rope is being held by a user.\n\n\n### Relevant Files\n- <a href=\"./Assets/CrypticCabinet/Scripts/Puzzles/SandPuzzle/Rope.cs\">Rope.cs</a>\n\n"
+  m_overrideMarkdownText: '# Rope
+
+
+    ![alt text](../Documentation/Images/Rope.gif){style="width:40%;height:40%"}
+
+
+    After
+    an initial prototype using a chain of physics colliders, a Verlet rope implementation
+    was chosen, based on <a href="https://github.com/GaryMcWhorter/Verlet-Chain-Unity">this
+    open-source example</a>. The first prototype made the rope look like sticks and
+    was hard to tune, while the second approach gave more realistic results. It took
+    several iterations to fine-tune the number of bones for the final asset to ensure
+    fluidity without affecting performance.
+
+
+    To improve its look and feel, the
+    rope was designed to avoid elasticity. When pulled, it comes out of the ceiling
+    instead of stretching. The rope can be grabbed from any point using one or two
+    hands. A Grabbable follows the user''s hand; once grabbed, it locks to the nearest
+    node, which then follows the user''s hand. This is duplicated for the other hand.
+    These positions are synchronized over the network so remote users can see the
+    active player grabbing the rope.
+
+
+    To make the rope feel real, it must collide
+    correctly with walls and other objects. Collisions are calculated using <a href="https://docs.unity3d.com/ScriptReference/Physics.OverlapSphereNonAlloc.html">Physics.OverlapSphereNonAlloc</a>
+    and <a href="https://docs.unity3d.com/ScriptReference/Physics.ComputePenetration.html">Physics.ComputePenetration</a>
+    to push rope nodes away from each other and scene objects. In multiplayer, each
+    client calculates their own rope updates but shares fixed locations when the
+    rope is held by a user.
+
+
+
+    ### Relevant Files
+
+    - <a href="./Assets/CrypticCabinet/Scripts/Puzzles/SandPuzzle/Rope.cs">Rope.cs</a>
+
+
+'
   m_overrideMarkdownRoot: .\Documentation/

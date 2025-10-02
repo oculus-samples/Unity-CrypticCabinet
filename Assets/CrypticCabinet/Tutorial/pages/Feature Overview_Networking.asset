@@ -17,16 +17,29 @@ MonoBehaviour:
   m_context: {fileID: 11400000, guid: b05aea44e20f2b44f92707a0633fa98f, type: 2}
   m_markdownFile: {fileID: 0}
   m_priority: 1002
-  m_overrideMarkdownText: "# Networking\nMultiplayer is connected and managed via
-    <a href=\"https://doc.photonengine.com/realtime/current/getting-started/quick-start\">Photon
-    Fusion</a>, given the app is designed for colocation it\u2019s not necessary
-    to have a lobby screen. When the host creates a new game they are presented with
-    a room code that they then share with their guests. This is handled within <a
-    href=\"./Assets/CrypticCabinet/Scripts/Photon/PhotonConnector.cs\">PhotonConnector</a>.
-    Also colocation events are triggered from here as well. A deep dive can be found
-    <a href=\"https://developer.oculus.com/documentation/unity/unity-colocation-deep-dive/\">here</a>
-    and called from within <a href=\"./Assets/CrypticCabinet/Scripts/Colocation/ColocationDriverNetObj.cs\">ColocationDriverNetObj</a>.\n\n\n###
-    Relevant Files\n- <a href=\"./Assets/CrypticCabinet/Scripts/Utils/GrabPassOwnership.cs\">GrabPassOwnership.cs</a>\n-
-    <a href=\"./Assets/CrypticCabinet/Scripts/Utils/NetworkedSnapHandler.cs\">NetworkedSnapHandler.cs</a>\n-
-    <a href=\"./Assets/CrypticCabinet/Scripts/Utils/NetworkedSnappedObject.cs\">NetworkedSnappedObject.cs</a>\n\n"
+  m_overrideMarkdownText: '# Networking
+
+
+    Multiplayer is managed via <a href="https://doc.photonengine.com/realtime/current/getting-started/quick-start">Photon
+    Fusion</a>. Since the app is designed for colocation, a lobby screen isn''t necessary.
+    When the host creates a new game, they receive a room code to share with guests.
+    This is handled in <a href="./Assets/CrypticCabinet/Scripts/Photon/PhotonConnector.cs">PhotonConnector</a>.
+    Colocation events are also triggered here. A deep dive is available <a href="https://developers.meta.com/horizon/documentation/unity/unity-colocation-deep-dive/">here</a>
+    and is called from <a href="./Assets/CrypticCabinet/Scripts/Colocation/ColocationDriverNetObj.cs">ColocationDriverNetObj</a>.
+
+
+
+    ###
+    Relevant Files
+
+    - <a href="./Assets/CrypticCabinet/Scripts/Utils/GrabPassOwnership.cs">GrabPassOwnership.cs</a>
+
+    -
+    <a href="./Assets/CrypticCabinet/Scripts/Utils/NetworkedSnapHandler.cs">NetworkedSnapHandler.cs</a>
+
+    -
+    <a href="./Assets/CrypticCabinet/Scripts/Utils/NetworkedSnappedObject.cs">NetworkedSnappedObject.cs</a>
+
+
+'
   m_overrideMarkdownRoot: .\Documentation/
